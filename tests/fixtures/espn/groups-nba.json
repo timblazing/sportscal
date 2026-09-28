@@ -1,0 +1,202 @@
+{
+ "groups": [
+  {
+   "name": "Eastern Conference",
+   "abbreviation": "East",
+   "children": [
+    {
+     "name": "Atlantic",
+     "abbreviation": "AT",
+     "teams": [
+      {
+       "id": "2",
+       "slug": "boston-celtics",
+       "displayName": "Boston Celtics"
+      },
+      {
+       "id": "17",
+       "slug": "brooklyn-nets",
+       "displayName": "Brooklyn Nets"
+      },
+      {
+       "id": "18",
+       "slug": "new-york-knicks",
+       "displayName": "New York Knicks"
+      },
+      {
+       "id": "20",
+       "slug": "philadelphia-76ers",
+       "displayName": "Philadelphia 76ers"
+      },
+      {
+       "id": "28",
+       "slug": "toronto-raptors",
+       "displayName": "Toronto Raptors"
+      }
+     ]
+    },
+    {
+     "name": "Central",
+     "abbreviation": "CE",
+     "teams": [
+      {
+       "id": "4",
+       "slug": "chicago-bulls",
+       "displayName": "Chicago Bulls"
+      },
+      {
+       "id": "5",
+       "slug": "cleveland-cavaliers",
+       "displayName": "Cleveland Cavaliers"
+      },
+      {
+       "id": "8",
+       "slug": "detroit-pistons",
+       "displayName": "Detroit Pistons"
+      },
+      {
+       "id": "11",
+       "slug": "indiana-pacers",
+       "displayName": "Indiana Pacers"
+      },
+      {
+       "id": "15",
+       "slug": "milwaukee-bucks",
+       "displayName": "Milwaukee Bucks"
+      }
+     ]
+    },
+    {
+     "name": "Southeast",
+     "abbreviation": "SE",
+     "teams": [
+      {
+       "id": "1",
+       "slug": "atlanta-hawks",
+       "displayName": "Atlanta Hawks"
+      },
+      {
+       "id": "14",
+       "slug": "miami-heat",
+       "displayName": "Miami Heat"
+      },
+      {
+       "id": "19",
+       "slug": "orlando-magic",
+       "displayName": "Orlando Magic"
+      },
+      {
+       "id": "27",
+       "slug": "washington-wizards",
+       "displayName": "Washington Wizards"
+      },
+      {
+       "id": "30",
+       "slug": "charlotte-hornets",
+       "displayName": "Charlotte Hornets"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Western Conference",
+   "abbreviation": "West",
+   "children": [
+    {
+     "name": "Northwest",
+     "abbreviation": "NW",
+     "teams": [
+      {
+       "id": "7",
+       "slug": "denver-nuggets",
+       "displayName": "Denver Nuggets"
+      },
+      {
+       "id": "16",
+       "slug": "minnesota-timberwolves",
+       "displayName": "Minnesota Timberwolves"
+      },
+      {
+       "id": "22",
+       "slug": "portland-trail-blazers",
+       "displayName": "Portland Trail Blazers"
+      },
+      {
+       "id": "25",
+       "slug": "oklahoma-city-thunder",
+       "displayName": "Oklahoma City Thunder"
+      },
+      {
+       "id": "26",
+       "slug": "utah-jazz",
+       "displayName": "Utah Jazz"
+      }
+     ]
+    },
+    {
+     "name": "Pacific",
+     "abbreviation": "PA",
+     "teams": [
+      {
+       "id": "9",
+       "slug": "golden-state-warriors",
+       "displayName": "Golden State Warriors"
+      },
+      {
+       "id": "12",
+       "slug": "la-clippers",
+       "displayName": "LA Clippers"
+      },
+      {
+       "id": "13",
+       "slug": "los-angeles-lakers",
+       "displayName": "Los Angeles Lakers"
+      },
+      {
+       "id": "21",
+       "slug": "phoenix-suns",
+       "displayName": "Phoenix Suns"
+      },
+      {
+       "id": "23",
+       "slug": "sacramento-kings",
+       "displayName": "Sacramento Kings"
+      }
+     ]
+    },
+    {
+     "name": "Southwest",
+     "abbreviation": "SW",
+     "teams": [
+      {
+       "id": "3",
+       "slug": "new-orleans-pelicans",
+       "displayName": "New Orleans Pelicans"
+      },
+      {
+       "id": "6",
+       "slug": "dallas-mavericks",
+       "displayName": "Dallas Mavericks"
+      },
+      {
+       "id": "10",
+       "slug": "houston-rockets",
+       "displayName": "Houston Rockets"
+      },
+      {
+       "id": "24",
+       "slug": "san-antonio-spurs",
+       "displayName": "San Antonio Spurs"
+      },
+      {
+       "id": "29",
+       "slug": "memphis-grizzlies",
+       "displayName": "Memphis Grizzlies"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

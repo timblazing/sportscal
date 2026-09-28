@@ -1,0 +1,4602 @@
+{
+ "sports": [
+  {
+   "leagues": [
+    {
+     "teams": [
+      {
+       "team": {
+        "id": "2001",
+        "slug": "adams-state-grizzlies",
+        "location": "Adams State",
+        "name": "Grizzlies",
+        "nickname": "Adams St",
+        "abbreviation": "ADSU",
+        "displayName": "Adams State Grizzlies",
+        "shortDisplayName": "Adams St",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2001.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2001.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2003",
+        "slug": "adrian-bulldogs",
+        "location": "Adrian",
+        "name": "Bulldogs",
+        "nickname": "Adrian",
+        "abbreviation": "ADR",
+        "displayName": "Adrian Bulldogs",
+        "shortDisplayName": "Adrian",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2003.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2003.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2005",
+        "slug": "air-force-falcons",
+        "location": "Air Force",
+        "name": "Falcons",
+        "nickname": "Air Force",
+        "abbreviation": "AF",
+        "displayName": "Air Force Falcons",
+        "shortDisplayName": "Air Force",
+        "color": "003594",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2005.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2005.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2006",
+        "slug": "akron-zips",
+        "location": "Akron",
+        "name": "Zips",
+        "nickname": "Akron",
+        "abbreviation": "AKR",
+        "displayName": "Akron Zips",
+        "shortDisplayName": "Akron",
+        "color": "041e42",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2006.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2006.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "333",
+        "slug": "alabama-crimson-tide",
+        "location": "Alabama",
+        "name": "Crimson Tide",
+        "nickname": "Alabama",
+        "abbreviation": "ALA",
+        "displayName": "Alabama Crimson Tide",
+        "shortDisplayName": "Alabama",
+        "color": "9e1b32",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/333.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2013",
+        "slug": "albany-state-golden-rams",
+        "location": "Albany State",
+        "name": "Golden Rams",
+        "nickname": "Albany St",
+        "abbreviation": "ABSU",
+        "displayName": "Albany State Golden Rams",
+        "shortDisplayName": "Albany St",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2013.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2013.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2790",
+        "slug": "albion-britons",
+        "location": "Albion",
+        "name": "Britons",
+        "nickname": "Albion",
+        "abbreviation": "ALBI",
+        "displayName": "Albion Britons",
+        "shortDisplayName": "Albion",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2790.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2790.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2015",
+        "slug": "albright-lions",
+        "location": "Albright",
+        "name": "Lions",
+        "nickname": "Albright",
+        "abbreviation": "ALBR",
+        "displayName": "Albright Lions",
+        "shortDisplayName": "Albright",
+        "color": "c82e48",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2015.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2015.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2026",
+        "slug": "app-state-mountaineers",
+        "location": "App State",
+        "name": "Mountaineers",
+        "nickname": "App State",
+        "abbreviation": "APP",
+        "displayName": "App State Mountaineers",
+        "shortDisplayName": "App State",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2026.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2026.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "9",
+        "slug": "arizona-state-sun-devils",
+        "location": "Arizona State",
+        "name": "Sun Devils",
+        "nickname": "Arizona St",
+        "abbreviation": "ASU",
+        "displayName": "Arizona State Sun Devils",
+        "shortDisplayName": "Arizona St",
+        "color": "ffc627",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/9.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "12",
+        "slug": "arizona-wildcats",
+        "location": "Arizona",
+        "name": "Wildcats",
+        "nickname": "Arizona",
+        "abbreviation": "ARIZ",
+        "displayName": "Arizona Wildcats",
+        "shortDisplayName": "Arizona",
+        "color": "cc0033",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/12.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "8",
+        "slug": "arkansas-razorbacks",
+        "location": "Arkansas",
+        "name": "Razorbacks",
+        "nickname": "Arkansas",
+        "abbreviation": "ARK",
+        "displayName": "Arkansas Razorbacks",
+        "shortDisplayName": "Arkansas",
+        "color": "a32136",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/8.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2032",
+        "slug": "arkansas-state-red-wolves",
+        "location": "Arkansas State",
+        "name": "Red Wolves",
+        "nickname": "Arkansas St",
+        "abbreviation": "ARST",
+        "displayName": "Arkansas State Red Wolves",
+        "shortDisplayName": "Arkansas St",
+        "color": "cc092f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2032.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2032.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "349",
+        "slug": "army-black-knights",
+        "location": "Army",
+        "name": "Black Knights",
+        "nickname": "Army",
+        "abbreviation": "ARMY",
+        "displayName": "Army Black Knights",
+        "shortDisplayName": "Army",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/349.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/349.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2",
+        "slug": "auburn-tigers",
+        "location": "Auburn",
+        "name": "Tigers",
+        "nickname": "Auburn",
+        "abbreviation": "AUB",
+        "displayName": "Auburn Tigers",
+        "shortDisplayName": "Auburn",
+        "color": "002b5c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "252",
+        "slug": "byu-cougars",
+        "location": "BYU",
+        "name": "Cougars",
+        "nickname": "BYU",
+        "abbreviation": "BYU",
+        "displayName": "BYU Cougars",
+        "shortDisplayName": "BYU",
+        "color": "0047ba",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/252.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2050",
+        "slug": "ball-state-cardinals",
+        "location": "Ball State",
+        "name": "Cardinals",
+        "nickname": "Ball State",
+        "abbreviation": "BALL",
+        "displayName": "Ball State Cardinals",
+        "shortDisplayName": "Ball State",
+        "color": "ba0c2f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2050.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2050.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "239",
+        "slug": "baylor-bears",
+        "location": "Baylor",
+        "name": "Bears",
+        "nickname": "Baylor",
+        "abbreviation": "BAY",
+        "displayName": "Baylor Bears",
+        "shortDisplayName": "Baylor",
+        "color": "154734",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/239.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "68",
+        "slug": "boise-state-broncos",
+        "location": "Boise State",
+        "name": "Broncos",
+        "nickname": "Boise St",
+        "abbreviation": "BOIS",
+        "displayName": "Boise State Broncos",
+        "shortDisplayName": "Boise St",
+        "color": "0033a0",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/68.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/68.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "103",
+        "slug": "boston-college-eagles",
+        "location": "Boston College",
+        "name": "Eagles",
+        "nickname": "Boston College",
+        "abbreviation": "BC",
+        "displayName": "Boston College Eagles",
+        "shortDisplayName": "Boston College",
+        "color": "8c2232",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/103.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/103.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "189",
+        "slug": "bowling-green-falcons",
+        "location": "Bowling Green",
+        "name": "Falcons",
+        "nickname": "Bowling Green",
+        "abbreviation": "BGSU",
+        "displayName": "Bowling Green Falcons",
+        "shortDisplayName": "Bowling Green",
+        "color": "fd5000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/189.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/189.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2084",
+        "slug": "buffalo-bulls",
+        "location": "Buffalo",
+        "name": "Bulls",
+        "nickname": "Buffalo",
+        "abbreviation": "BUF",
+        "displayName": "Buffalo Bulls",
+        "shortDisplayName": "Buffalo",
+        "color": "005bbb",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2084.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2084.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "13",
+        "slug": "cal-poly-mustangs",
+        "location": "Cal Poly",
+        "name": "Mustangs",
+        "nickname": "Cal Poly",
+        "abbreviation": "CP",
+        "displayName": "Cal Poly Mustangs",
+        "shortDisplayName": "Cal Poly",
+        "color": "1E4D2B",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/13.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/13.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "25",
+        "slug": "california-golden-bears",
+        "location": "California",
+        "name": "Golden Bears",
+        "nickname": "California",
+        "abbreviation": "CAL",
+        "displayName": "California Golden Bears",
+        "shortDisplayName": "California",
+        "color": "041e42",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/25.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/25.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2117",
+        "slug": "central-michigan-chippewas",
+        "location": "Central Michigan",
+        "name": "Chippewas",
+        "nickname": "C Michigan",
+        "abbreviation": "CMU",
+        "displayName": "Central Michigan Chippewas",
+        "shortDisplayName": "C Michigan",
+        "color": "4c0027",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2117.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2117.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2429",
+        "slug": "charlotte-49ers",
+        "location": "Charlotte",
+        "name": "49ers",
+        "nickname": "Charlotte",
+        "abbreviation": "CLT",
+        "displayName": "Charlotte 49ers",
+        "shortDisplayName": "Charlotte",
+        "color": "005035",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2429.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2429.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2132",
+        "slug": "cincinnati-bearcats",
+        "location": "Cincinnati",
+        "name": "Bearcats",
+        "nickname": "Cincinnati",
+        "abbreviation": "CIN",
+        "displayName": "Cincinnati Bearcats",
+        "shortDisplayName": "Cincinnati",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2132.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2132.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "228",
+        "slug": "clemson-tigers",
+        "location": "Clemson",
+        "name": "Tigers",
+        "nickname": "Clemson",
+        "abbreviation": "CLEM",
+        "displayName": "Clemson Tigers",
+        "shortDisplayName": "Clemson",
+        "color": "f56600",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/228.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "324",
+        "slug": "coastal-carolina-chanticleers",
+        "location": "Coastal Carolina",
+        "name": "Chanticleers",
+        "nickname": "Coastal",
+        "abbreviation": "CCU",
+        "displayName": "Coastal Carolina Chanticleers",
+        "shortDisplayName": "Coastal",
+        "color": "006f71",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/324.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/324.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "38",
+        "slug": "colorado-buffaloes",
+        "location": "Colorado",
+        "name": "Buffaloes",
+        "nickname": "Colorado",
+        "abbreviation": "COLO",
+        "displayName": "Colorado Buffaloes",
+        "shortDisplayName": "Colorado",
+        "color": "cfb87c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/38.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/38.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "36",
+        "slug": "colorado-state-rams",
+        "location": "Colorado State",
+        "name": "Rams",
+        "nickname": "Colorado St",
+        "abbreviation": "CSU",
+        "displayName": "Colorado State Rams",
+        "shortDisplayName": "Colorado St",
+        "color": "004c23",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/36.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/36.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "48",
+        "slug": "delaware-blue-hens",
+        "location": "Delaware",
+        "name": "Blue Hens",
+        "nickname": "Delaware",
+        "abbreviation": "DEL",
+        "displayName": "Delaware Blue Hens",
+        "shortDisplayName": "Delaware",
+        "color": "00539f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/48.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/48.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "150",
+        "slug": "duke-blue-devils",
+        "location": "Duke",
+        "name": "Blue Devils",
+        "nickname": "Duke",
+        "abbreviation": "DUKE",
+        "displayName": "Duke Blue Devils",
+        "shortDisplayName": "Duke",
+        "color": "00539b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "151",
+        "slug": "east-carolina-pirates",
+        "location": "East Carolina",
+        "name": "Pirates",
+        "nickname": "East Carolina",
+        "abbreviation": "ECU",
+        "displayName": "East Carolina Pirates",
+        "shortDisplayName": "East Carolina",
+        "color": "582c83",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/151.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/151.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2199",
+        "slug": "eastern-michigan-eagles",
+        "location": "Eastern Michigan",
+        "name": "Eagles",
+        "nickname": "E Michigan",
+        "abbreviation": "EMU",
+        "displayName": "Eastern Michigan Eagles",
+        "shortDisplayName": "E Michigan",
+        "color": "006938",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2199.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2199.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "331",
+        "slug": "eastern-washington-eagles",
+        "location": "Eastern Washington",
+        "name": "Eagles",
+        "nickname": "E Washington",
+        "abbreviation": "EWU",
+        "displayName": "Eastern Washington Eagles",
+        "shortDisplayName": "E Washington",
+        "color": "a10022",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/331.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/331.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2226",
+        "slug": "florida-atlantic-owls",
+        "location": "Florida Atlantic",
+        "name": "Owls",
+        "nickname": "FAU",
+        "abbreviation": "FAU",
+        "displayName": "Florida Atlantic Owls",
+        "shortDisplayName": "FAU",
+        "color": "003366",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2226.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2226.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "57",
+        "slug": "florida-gators",
+        "location": "Florida",
+        "name": "Gators",
+        "nickname": "Florida",
+        "abbreviation": "FLA",
+        "displayName": "Florida Gators",
+        "shortDisplayName": "Florida",
+        "color": "0021a5",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/57.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2229",
+        "slug": "florida-international-panthers",
+        "location": "Florida International",
+        "name": "Panthers",
+        "nickname": "FIU",
+        "abbreviation": "FIU",
+        "displayName": "Florida International Panthers",
+        "shortDisplayName": "FIU",
+        "color": "091f3f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2229.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2229.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "52",
+        "slug": "florida-state-seminoles",
+        "location": "Florida State",
+        "name": "Seminoles",
+        "nickname": "Florida St",
+        "abbreviation": "FSU",
+        "displayName": "Florida State Seminoles",
+        "shortDisplayName": "Florida St",
+        "color": "782f40",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/52.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "278",
+        "slug": "fresno-state-bulldogs",
+        "location": "Fresno State",
+        "name": "Bulldogs",
+        "nickname": "Fresno St",
+        "abbreviation": "FRES",
+        "displayName": "Fresno State Bulldogs",
+        "shortDisplayName": "Fresno St",
+        "color": "b1102b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/278.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/278.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "61",
+        "slug": "georgia-bulldogs",
+        "location": "Georgia",
+        "name": "Bulldogs",
+        "nickname": "Georgia",
+        "abbreviation": "UGA",
+        "displayName": "Georgia Bulldogs",
+        "shortDisplayName": "Georgia",
+        "color": "ba0c2f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/61.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "290",
+        "slug": "georgia-southern-eagles",
+        "location": "Georgia Southern",
+        "name": "Eagles",
+        "nickname": "GA Southern",
+        "abbreviation": "GASO",
+        "displayName": "Georgia Southern Eagles",
+        "shortDisplayName": "GA Southern",
+        "color": "041e42",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/290.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/290.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2247",
+        "slug": "georgia-state-panthers",
+        "location": "Georgia State",
+        "name": "Panthers",
+        "nickname": "Georgia St",
+        "abbreviation": "GAST",
+        "displayName": "Georgia State Panthers",
+        "shortDisplayName": "Georgia St",
+        "color": "0039a6",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2247.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2247.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "59",
+        "slug": "georgia-tech-yellow-jackets",
+        "location": "Georgia Tech",
+        "name": "Yellow Jackets",
+        "nickname": "Georgia Tech",
+        "abbreviation": "GT",
+        "displayName": "Georgia Tech Yellow Jackets",
+        "shortDisplayName": "Georgia Tech",
+        "color": "b3a369",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/59.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/59.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "62",
+        "slug": "hawaii-rainbow-warriors",
+        "location": "Hawai'i",
+        "name": "Rainbow Warriors",
+        "nickname": "Hawai'i",
+        "abbreviation": "HAW",
+        "displayName": "Hawai'i Rainbow Warriors",
+        "shortDisplayName": "Hawai'i",
+        "color": "005737",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/62.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/62.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "248",
+        "slug": "houston-cougars",
+        "location": "Houston",
+        "name": "Cougars",
+        "nickname": "Houston",
+        "abbreviation": "HOU",
+        "displayName": "Houston Cougars",
+        "shortDisplayName": "Houston",
+        "color": "c8102e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/248.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "304",
+        "slug": "idaho-state-bengals",
+        "location": "Idaho State",
+        "name": "Bengals",
+        "nickname": "Idaho St",
+        "abbreviation": "IDST",
+        "displayName": "Idaho State Bengals",
+        "shortDisplayName": "Idaho St",
+        "color": "ef8c00",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/304.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/304.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "356",
+        "slug": "illinois-fighting-illini",
+        "location": "Illinois",
+        "name": "Fighting Illini",
+        "nickname": "Illinois",
+        "abbreviation": "ILL",
+        "displayName": "Illinois Fighting Illini",
+        "shortDisplayName": "Illinois",
+        "color": "ff5f05",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/356.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "84",
+        "slug": "indiana-hoosiers",
+        "location": "Indiana",
+        "name": "Hoosiers",
+        "nickname": "Indiana",
+        "abbreviation": "IU",
+        "displayName": "Indiana Hoosiers",
+        "shortDisplayName": "Indiana",
+        "color": "970310",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/84.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2294",
+        "slug": "iowa-hawkeyes",
+        "location": "Iowa",
+        "name": "Hawkeyes",
+        "nickname": "Iowa",
+        "abbreviation": "IOWA",
+        "displayName": "Iowa Hawkeyes",
+        "shortDisplayName": "Iowa",
+        "color": "231f20",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2294.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "66",
+        "slug": "iowa-state-cyclones",
+        "location": "Iowa State",
+        "name": "Cyclones",
+        "nickname": "Iowa State",
+        "abbreviation": "ISU",
+        "displayName": "Iowa State Cyclones",
+        "shortDisplayName": "Iowa State",
+        "color": "ae192d",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/66.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "55",
+        "slug": "jacksonville-state-gamecocks",
+        "location": "Jacksonville State",
+        "name": "Gamecocks",
+        "nickname": "Jax State",
+        "abbreviation": "JXST",
+        "displayName": "Jacksonville State Gamecocks",
+        "shortDisplayName": "Jax State",
+        "color": "cc0000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/55.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/55.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "256",
+        "slug": "james-madison-dukes",
+        "location": "James Madison",
+        "name": "Dukes",
+        "nickname": "James Madison",
+        "abbreviation": "JMU",
+        "displayName": "James Madison Dukes",
+        "shortDisplayName": "James Madison",
+        "color": "450084",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/256.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/256.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2305",
+        "slug": "kansas-jayhawks",
+        "location": "Kansas",
+        "name": "Jayhawks",
+        "nickname": "Kansas",
+        "abbreviation": "KU",
+        "displayName": "Kansas Jayhawks",
+        "shortDisplayName": "Kansas",
+        "color": "0051ba",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2305.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2306",
+        "slug": "kansas-state-wildcats",
+        "location": "Kansas State",
+        "name": "Wildcats",
+        "nickname": "Kansas St",
+        "abbreviation": "KSU",
+        "displayName": "Kansas State Wildcats",
+        "shortDisplayName": "Kansas St",
+        "color": "330a57",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2306.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2306.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "338",
+        "slug": "kennesaw-state-owls",
+        "location": "Kennesaw State",
+        "name": "Owls",
+        "nickname": "Kennesaw St",
+        "abbreviation": "KENN",
+        "displayName": "Kennesaw State Owls",
+        "shortDisplayName": "Kennesaw St",
+        "color": "fdbb30",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/338.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/338.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2309",
+        "slug": "kent-state-golden-flashes",
+        "location": "Kent State",
+        "name": "Golden Flashes",
+        "nickname": "Kent State",
+        "abbreviation": "KENT",
+        "displayName": "Kent State Golden Flashes",
+        "shortDisplayName": "Kent State",
+        "color": "002664",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2309.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2309.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "96",
+        "slug": "kentucky-wildcats",
+        "location": "Kentucky",
+        "name": "Wildcats",
+        "nickname": "Kentucky",
+        "abbreviation": "UK",
+        "displayName": "Kentucky Wildcats",
+        "shortDisplayName": "Kentucky",
+        "color": "0033a0",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/96.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "99",
+        "slug": "lsu-tigers",
+        "location": "LSU",
+        "name": "Tigers",
+        "nickname": "LSU",
+        "abbreviation": "LSU",
+        "displayName": "LSU Tigers",
+        "shortDisplayName": "LSU",
+        "color": "461d76",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/99.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2335",
+        "slug": "liberty-flames",
+        "location": "Liberty",
+        "name": "Flames",
+        "nickname": "Liberty",
+        "abbreviation": "LIB",
+        "displayName": "Liberty Flames",
+        "shortDisplayName": "Liberty",
+        "color": "0a254e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2335.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2335.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "309",
+        "slug": "louisiana-ragin-cajuns",
+        "location": "Louisiana",
+        "name": "Ragin' Cajuns",
+        "nickname": "Louisiana",
+        "abbreviation": "UL",
+        "displayName": "Louisiana Ragin' Cajuns",
+        "shortDisplayName": "Louisiana",
+        "color": "ce181e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/309.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/309.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2348",
+        "slug": "louisiana-tech-bulldogs",
+        "location": "Louisiana Tech",
+        "name": "Bulldogs",
+        "nickname": "Louisiana Tech",
+        "abbreviation": "LT",
+        "displayName": "Louisiana Tech Bulldogs",
+        "shortDisplayName": "Louisiana Tech",
+        "color": "003087",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2348.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2348.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "97",
+        "slug": "louisville-cardinals",
+        "location": "Louisville",
+        "name": "Cardinals",
+        "nickname": "Louisville",
+        "abbreviation": "LOU",
+        "displayName": "Louisville Cardinals",
+        "shortDisplayName": "Louisville",
+        "color": "c9001f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/97.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "276",
+        "slug": "marshall-thundering-herd",
+        "location": "Marshall",
+        "name": "Thundering Herd",
+        "nickname": "Marshall",
+        "abbreviation": "MRSH",
+        "displayName": "Marshall Thundering Herd",
+        "shortDisplayName": "Marshall",
+        "color": "00b140",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/276.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/276.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "120",
+        "slug": "maryland-terrapins",
+        "location": "Maryland",
+        "name": "Terrapins",
+        "nickname": "Maryland",
+        "abbreviation": "MD",
+        "displayName": "Maryland Terrapins",
+        "shortDisplayName": "Maryland",
+        "color": "ce1126",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/120.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/120.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "113",
+        "slug": "massachusetts-minutemen",
+        "location": "Massachusetts",
+        "name": "Minutemen",
+        "nickname": "UMass",
+        "abbreviation": "MASS",
+        "displayName": "Massachusetts Minutemen",
+        "shortDisplayName": "UMass",
+        "color": "881c1c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/113.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/113.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "235",
+        "slug": "memphis-tigers",
+        "location": "Memphis",
+        "name": "Tigers",
+        "nickname": "Memphis",
+        "abbreviation": "MEM",
+        "displayName": "Memphis Tigers",
+        "shortDisplayName": "Memphis",
+        "color": "004991",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/235.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/235.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "193",
+        "slug": "miami-oh-redhawks",
+        "location": "Miami (OH)",
+        "name": "RedHawks",
+        "nickname": "Miami OH",
+        "abbreviation": "M-OH",
+        "displayName": "Miami (OH) RedHawks",
+        "shortDisplayName": "Miami OH",
+        "color": "c41230",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/193.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/193.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2390",
+        "slug": "miami-hurricanes",
+        "location": "Miami",
+        "name": "Hurricanes",
+        "nickname": "Miami",
+        "abbreviation": "MIA",
+        "displayName": "Miami Hurricanes",
+        "shortDisplayName": "Miami",
+        "color": "f47423",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2390.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "127",
+        "slug": "michigan-state-spartans",
+        "location": "Michigan State",
+        "name": "Spartans",
+        "nickname": "Michigan St",
+        "abbreviation": "MSU",
+        "displayName": "Michigan State Spartans",
+        "shortDisplayName": "Michigan St",
+        "color": "173f35",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/127.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "130",
+        "slug": "michigan-wolverines",
+        "location": "Michigan",
+        "name": "Wolverines",
+        "nickname": "Michigan",
+        "abbreviation": "MICH",
+        "displayName": "Michigan Wolverines",
+        "shortDisplayName": "Michigan",
+        "color": "00274c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/130.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2393",
+        "slug": "middle-tennessee-blue-raiders",
+        "location": "Middle Tennessee",
+        "name": "Blue Raiders",
+        "nickname": "MTSU",
+        "abbreviation": "MTSU",
+        "displayName": "Middle Tennessee Blue Raiders",
+        "shortDisplayName": "MTSU",
+        "color": "036eb7",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2393.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2393.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "135",
+        "slug": "minnesota-golden-gophers",
+        "location": "Minnesota",
+        "name": "Golden Gophers",
+        "nickname": "Minnesota",
+        "abbreviation": "MINN",
+        "displayName": "Minnesota Golden Gophers",
+        "shortDisplayName": "Minnesota",
+        "color": "5e0a2f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/135.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "344",
+        "slug": "mississippi-state-bulldogs",
+        "location": "Mississippi State",
+        "name": "Bulldogs",
+        "nickname": "Mississippi St",
+        "abbreviation": "MSST",
+        "displayName": "Mississippi State Bulldogs",
+        "shortDisplayName": "Mississippi St",
+        "color": "5d1725",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/344.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/344.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2623",
+        "slug": "missouri-state-bears",
+        "location": "Missouri State",
+        "name": "Bears",
+        "nickname": "Missouri St",
+        "abbreviation": "MOST",
+        "displayName": "Missouri State Bears",
+        "shortDisplayName": "Missouri St",
+        "color": "5e0009",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2623.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2623.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "142",
+        "slug": "missouri-tigers",
+        "location": "Missouri",
+        "name": "Tigers",
+        "nickname": "Missouri",
+        "abbreviation": "MIZ",
+        "displayName": "Missouri Tigers",
+        "shortDisplayName": "Missouri",
+        "color": "f1b82d",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/142.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "149",
+        "slug": "montana-grizzlies",
+        "location": "Montana",
+        "name": "Grizzlies",
+        "nickname": "Montana",
+        "abbreviation": "MONT",
+        "displayName": "Montana Grizzlies",
+        "shortDisplayName": "Montana",
+        "color": "751D4A",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/149.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/149.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "147",
+        "slug": "montana-state-bobcats",
+        "location": "Montana State",
+        "name": "Bobcats",
+        "nickname": "Montana St",
+        "abbreviation": "MTST",
+        "displayName": "Montana State Bobcats",
+        "shortDisplayName": "Montana St",
+        "color": "00205c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/147.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/147.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "152",
+        "slug": "nc-state-wolfpack",
+        "location": "NC State",
+        "name": "Wolfpack",
+        "nickname": "NC State",
+        "abbreviation": "NCSU",
+        "displayName": "NC State Wolfpack",
+        "shortDisplayName": "NC State",
+        "color": "cc0000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/152.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/152.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2426",
+        "slug": "navy-midshipmen",
+        "location": "Navy",
+        "name": "Midshipmen",
+        "nickname": "Navy",
+        "abbreviation": "NAVY",
+        "displayName": "Navy Midshipmen",
+        "shortDisplayName": "Navy",
+        "color": "00225b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2426.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2426.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "158",
+        "slug": "nebraska-cornhuskers",
+        "location": "Nebraska",
+        "name": "Cornhuskers",
+        "nickname": "Nebraska",
+        "abbreviation": "NEB",
+        "displayName": "Nebraska Cornhuskers",
+        "shortDisplayName": "Nebraska",
+        "color": "e31937",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/158.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2440",
+        "slug": "nevada-wolf-pack",
+        "location": "Nevada",
+        "name": "Wolf Pack",
+        "nickname": "Nevada",
+        "abbreviation": "NEV",
+        "displayName": "Nevada Wolf Pack",
+        "shortDisplayName": "Nevada",
+        "color": "041e42",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2440.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2440.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "167",
+        "slug": "new-mexico-lobos",
+        "location": "New Mexico",
+        "name": "Lobos",
+        "nickname": "New Mexico",
+        "abbreviation": "UNM",
+        "displayName": "New Mexico Lobos",
+        "shortDisplayName": "New Mexico",
+        "color": "ba0c2f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/167.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/167.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "166",
+        "slug": "new-mexico-state-aggies",
+        "location": "New Mexico State",
+        "name": "Aggies",
+        "nickname": "New Mexico St",
+        "abbreviation": "NMSU",
+        "displayName": "New Mexico State Aggies",
+        "shortDisplayName": "New Mexico St",
+        "color": "7e141b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/166.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/166.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "153",
+        "slug": "north-carolina-tar-heels",
+        "location": "North Carolina",
+        "name": "Tar Heels",
+        "nickname": "North Carolina",
+        "abbreviation": "UNC",
+        "displayName": "North Carolina Tar Heels",
+        "shortDisplayName": "North Carolina",
+        "color": "7bafd4",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/153.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2449",
+        "slug": "north-dakota-state-bison",
+        "location": "North Dakota State",
+        "name": "Bison",
+        "nickname": "N Dakota St",
+        "abbreviation": "NDSU",
+        "displayName": "North Dakota State Bison",
+        "shortDisplayName": "N Dakota St",
+        "color": "01402A",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2449.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2449.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "249",
+        "slug": "north-texas-mean-green",
+        "location": "North Texas",
+        "name": "Mean Green",
+        "nickname": "North Texas",
+        "abbreviation": "UNT",
+        "displayName": "North Texas Mean Green",
+        "shortDisplayName": "North Texas",
+        "color": "068f33",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/249.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/249.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2464",
+        "slug": "northern-arizona-lumberjacks",
+        "location": "Northern Arizona",
+        "name": "Lumberjacks",
+        "nickname": "N Arizona",
+        "abbreviation": "NAU",
+        "displayName": "Northern Arizona Lumberjacks",
+        "shortDisplayName": "N Arizona",
+        "color": "003976",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2464.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2464.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2458",
+        "slug": "northern-colorado-bears",
+        "location": "Northern Colorado",
+        "name": "Bears",
+        "nickname": "N Colorado",
+        "abbreviation": "UNCO",
+        "displayName": "Northern Colorado Bears",
+        "shortDisplayName": "N Colorado",
+        "color": "13558D",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2458.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2458.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2459",
+        "slug": "northern-illinois-huskies",
+        "location": "Northern Illinois",
+        "name": "Huskies",
+        "nickname": "N Illinois",
+        "abbreviation": "NIU",
+        "displayName": "Northern Illinois Huskies",
+        "shortDisplayName": "N Illinois",
+        "color": "c8102e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2459.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2459.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "77",
+        "slug": "northwestern-wildcats",
+        "location": "Northwestern",
+        "name": "Wildcats",
+        "nickname": "Northwestern",
+        "abbreviation": "NU",
+        "displayName": "Northwestern Wildcats",
+        "shortDisplayName": "Northwestern",
+        "color": "492f92",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/77.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/77.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "87",
+        "slug": "notre-dame-fighting-irish",
+        "location": "Notre Dame",
+        "name": "Fighting Irish",
+        "nickname": "Notre Dame",
+        "abbreviation": "ND",
+        "displayName": "Notre Dame Fighting Irish",
+        "shortDisplayName": "Notre Dame",
+        "color": "062340",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/87.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "195",
+        "slug": "ohio-bobcats",
+        "location": "Ohio",
+        "name": "Bobcats",
+        "nickname": "Ohio",
+        "abbreviation": "OHIO",
+        "displayName": "Ohio Bobcats",
+        "shortDisplayName": "Ohio",
+        "color": "154734",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/195.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/195.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "194",
+        "slug": "ohio-state-buckeyes",
+        "location": "Ohio State",
+        "name": "Buckeyes",
+        "nickname": "Ohio State",
+        "abbreviation": "OSU",
+        "displayName": "Ohio State Buckeyes",
+        "shortDisplayName": "Ohio State",
+        "color": "ba0c2f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/194.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "201",
+        "slug": "oklahoma-sooners",
+        "location": "Oklahoma",
+        "name": "Sooners",
+        "nickname": "Oklahoma",
+        "abbreviation": "OU",
+        "displayName": "Oklahoma Sooners",
+        "shortDisplayName": "Oklahoma",
+        "color": "990000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/201.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "197",
+        "slug": "oklahoma-state-cowboys",
+        "location": "Oklahoma State",
+        "name": "Cowboys",
+        "nickname": "Oklahoma St",
+        "abbreviation": "OKST",
+        "displayName": "Oklahoma State Cowboys",
+        "shortDisplayName": "Oklahoma St",
+        "color": "fe5c00",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/197.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/197.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "295",
+        "slug": "old-dominion-monarchs",
+        "location": "Old Dominion",
+        "name": "Monarchs",
+        "nickname": "Old Dominion",
+        "abbreviation": "ODU",
+        "displayName": "Old Dominion Monarchs",
+        "shortDisplayName": "Old Dominion",
+        "color": "003768",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/295.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/295.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "145",
+        "slug": "ole-miss-rebels",
+        "location": "Ole Miss",
+        "name": "Rebels",
+        "nickname": "Ole Miss",
+        "abbreviation": "MISS",
+        "displayName": "Ole Miss Rebels",
+        "shortDisplayName": "Ole Miss",
+        "color": "13294b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/145.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2483",
+        "slug": "oregon-ducks",
+        "location": "Oregon",
+        "name": "Ducks",
+        "nickname": "Oregon",
+        "abbreviation": "ORE",
+        "displayName": "Oregon Ducks",
+        "shortDisplayName": "Oregon",
+        "color": "00934b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2483.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "204",
+        "slug": "oregon-state-beavers",
+        "location": "Oregon State",
+        "name": "Beavers",
+        "nickname": "Oregon St",
+        "abbreviation": "ORST",
+        "displayName": "Oregon State Beavers",
+        "shortDisplayName": "Oregon St",
+        "color": "dc4405",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/204.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/204.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "213",
+        "slug": "penn-state-nittany-lions",
+        "location": "Penn State",
+        "name": "Nittany Lions",
+        "nickname": "Penn State",
+        "abbreviation": "PSU",
+        "displayName": "Penn State Nittany Lions",
+        "shortDisplayName": "Penn State",
+        "color": "061440",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/213.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "221",
+        "slug": "pittsburgh-panthers",
+        "location": "Pittsburgh",
+        "name": "Panthers",
+        "nickname": "Pitt",
+        "abbreviation": "PITT",
+        "displayName": "Pittsburgh Panthers",
+        "shortDisplayName": "Pitt",
+        "color": "003594",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/221.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/221.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2502",
+        "slug": "portland-state-vikings",
+        "location": "Portland State",
+        "name": "Vikings",
+        "nickname": "Portland St",
+        "abbreviation": "PRST",
+        "displayName": "Portland State Vikings",
+        "shortDisplayName": "Portland St",
+        "color": "00311e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2502.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2502.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2509",
+        "slug": "purdue-boilermakers",
+        "location": "Purdue",
+        "name": "Boilermakers",
+        "nickname": "Purdue",
+        "abbreviation": "PUR",
+        "displayName": "Purdue Boilermakers",
+        "shortDisplayName": "Purdue",
+        "color": "ceb888",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2509.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "242",
+        "slug": "rice-owls",
+        "location": "Rice",
+        "name": "Owls",
+        "nickname": "Rice",
+        "abbreviation": "RICE",
+        "displayName": "Rice Owls",
+        "shortDisplayName": "Rice",
+        "color": "00205b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/242.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/242.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "164",
+        "slug": "rutgers-scarlet-knights",
+        "location": "Rutgers",
+        "name": "Scarlet Knights",
+        "nickname": "Rutgers",
+        "abbreviation": "RUTG",
+        "displayName": "Rutgers Scarlet Knights",
+        "shortDisplayName": "Rutgers",
+        "color": "ce0e2d",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/164.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/164.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2567",
+        "slug": "smu-mustangs",
+        "location": "SMU",
+        "name": "Mustangs",
+        "nickname": "SMU",
+        "abbreviation": "SMU",
+        "displayName": "SMU Mustangs",
+        "shortDisplayName": "SMU",
+        "color": "a80000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2567.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "16",
+        "slug": "sacramento-state-hornets",
+        "location": "Sacramento State",
+        "name": "Hornets",
+        "nickname": "Sacramento St",
+        "abbreviation": "SAC",
+        "displayName": "Sacramento State Hornets",
+        "shortDisplayName": "Sacramento St",
+        "color": "00573C",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/16.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/16.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2534",
+        "slug": "sam-houston-bearkats",
+        "location": "Sam Houston",
+        "name": "Bearkats",
+        "nickname": "Sam Houston",
+        "abbreviation": "SHSU",
+        "displayName": "Sam Houston Bearkats",
+        "shortDisplayName": "Sam Houston",
+        "color": "f56423",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2534.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2534.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "21",
+        "slug": "san-diego-state-aztecs",
+        "location": "San Diego State",
+        "name": "Aztecs",
+        "nickname": "San Diego St",
+        "abbreviation": "SDSU",
+        "displayName": "San Diego State Aztecs",
+        "shortDisplayName": "San Diego St",
+        "color": "a6192e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/21.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/21.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "23",
+        "slug": "san-jose-state-spartans",
+        "location": "San José State",
+        "name": "Spartans",
+        "nickname": "San José St",
+        "abbreviation": "SJSU",
+        "displayName": "San José State Spartans",
+        "shortDisplayName": "San José St",
+        "color": "0038a8",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/23.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/23.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "6",
+        "slug": "south-alabama-jaguars",
+        "location": "South Alabama",
+        "name": "Jaguars",
+        "nickname": "South Alabama",
+        "abbreviation": "USA",
+        "displayName": "South Alabama Jaguars",
+        "shortDisplayName": "South Alabama",
+        "color": "00205b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/6.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/6.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2579",
+        "slug": "south-carolina-gamecocks",
+        "location": "South Carolina",
+        "name": "Gamecocks",
+        "nickname": "South Carolina",
+        "abbreviation": "SC",
+        "displayName": "South Carolina Gamecocks",
+        "shortDisplayName": "South Carolina",
+        "color": "73000a",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2579.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "58",
+        "slug": "south-florida-bulls",
+        "location": "South Florida",
+        "name": "Bulls",
+        "nickname": "South Florida",
+        "abbreviation": "USF",
+        "displayName": "South Florida Bulls",
+        "shortDisplayName": "South Florida",
+        "color": "006747",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/58.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2572",
+        "slug": "southern-miss-golden-eagles",
+        "location": "Southern Miss",
+        "name": "Golden Eagles",
+        "nickname": "Southern Miss",
+        "abbreviation": "USM",
+        "displayName": "Southern Miss Golden Eagles",
+        "shortDisplayName": "Southern Miss",
+        "color": "ffc72c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2572.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2572.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "24",
+        "slug": "stanford-cardinal",
+        "location": "Stanford",
+        "name": "Cardinal",
+        "nickname": "Stanford",
+        "abbreviation": "STAN",
+        "displayName": "Stanford Cardinal",
+        "shortDisplayName": "Stanford",
+        "color": "8c1515",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/24.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/24.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "183",
+        "slug": "syracuse-orange",
+        "location": "Syracuse",
+        "name": "Orange",
+        "nickname": "Syracuse",
+        "abbreviation": "SYR",
+        "displayName": "Syracuse Orange",
+        "shortDisplayName": "Syracuse",
+        "color": "000e54",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/183.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/183.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2628",
+        "slug": "tcu-horned-frogs",
+        "location": "TCU",
+        "name": "Horned Frogs",
+        "nickname": "TCU",
+        "abbreviation": "TCU",
+        "displayName": "TCU Horned Frogs",
+        "shortDisplayName": "TCU",
+        "color": "4d1979",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2628.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "218",
+        "slug": "temple-owls",
+        "location": "Temple",
+        "name": "Owls",
+        "nickname": "Temple",
+        "abbreviation": "TEM",
+        "displayName": "Temple Owls",
+        "shortDisplayName": "Temple",
+        "color": "a41e35",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/218.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/218.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2633",
+        "slug": "tennessee-volunteers",
+        "location": "Tennessee",
+        "name": "Volunteers",
+        "nickname": "Tennessee",
+        "abbreviation": "TENN",
+        "displayName": "Tennessee Volunteers",
+        "shortDisplayName": "Tennessee",
+        "color": "ff8200",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2633.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "245",
+        "slug": "texas-am-aggies",
+        "location": "Texas A&M",
+        "name": "Aggies",
+        "nickname": "Texas A&M",
+        "abbreviation": "TA&M",
+        "displayName": "Texas A&M Aggies",
+        "shortDisplayName": "Texas A&M",
+        "color": "500000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/245.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "251",
+        "slug": "texas-longhorns",
+        "location": "Texas",
+        "name": "Longhorns",
+        "nickname": "Texas",
+        "abbreviation": "TEX",
+        "displayName": "Texas Longhorns",
+        "shortDisplayName": "Texas",
+        "color": "af5c37",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/251.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "326",
+        "slug": "texas-state-bobcats",
+        "location": "Texas State",
+        "name": "Bobcats",
+        "nickname": "Texas St",
+        "abbreviation": "TXST",
+        "displayName": "Texas State Bobcats",
+        "shortDisplayName": "Texas St",
+        "color": "501214",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/326.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/326.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2641",
+        "slug": "texas-tech-red-raiders",
+        "location": "Texas Tech",
+        "name": "Red Raiders",
+        "nickname": "Texas Tech",
+        "abbreviation": "TTU",
+        "displayName": "Texas Tech Red Raiders",
+        "shortDisplayName": "Texas Tech",
+        "color": "da291c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2641.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2649",
+        "slug": "toledo-rockets",
+        "location": "Toledo",
+        "name": "Rockets",
+        "nickname": "Toledo",
+        "abbreviation": "TOL",
+        "displayName": "Toledo Rockets",
+        "shortDisplayName": "Toledo",
+        "color": "0b2240",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2649.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2649.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2653",
+        "slug": "troy-trojans",
+        "location": "Troy",
+        "name": "Trojans",
+        "nickname": "Troy",
+        "abbreviation": "TROY",
+        "displayName": "Troy Trojans",
+        "shortDisplayName": "Troy",
+        "color": "862633",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2653.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2653.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2655",
+        "slug": "tulane-green-wave",
+        "location": "Tulane",
+        "name": "Green Wave",
+        "nickname": "Tulane",
+        "abbreviation": "TULN",
+        "displayName": "Tulane Green Wave",
+        "shortDisplayName": "Tulane",
+        "color": "006747",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2655.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2655.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "202",
+        "slug": "tulsa-golden-hurricane",
+        "location": "Tulsa",
+        "name": "Golden Hurricane",
+        "nickname": "Tulsa",
+        "abbreviation": "TLSA",
+        "displayName": "Tulsa Golden Hurricane",
+        "shortDisplayName": "Tulsa",
+        "color": "003595",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/202.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/202.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "5",
+        "slug": "uab-blazers",
+        "location": "UAB",
+        "name": "Blazers",
+        "nickname": "UAB",
+        "abbreviation": "UAB",
+        "displayName": "UAB Blazers",
+        "shortDisplayName": "UAB",
+        "color": "1a5632",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/5.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/5.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "302",
+        "slug": "uc-davis-aggies",
+        "location": "UC Davis",
+        "name": "Aggies",
+        "nickname": "UC Davis",
+        "abbreviation": "UCD",
+        "displayName": "UC Davis Aggies",
+        "shortDisplayName": "UC Davis",
+        "color": "002855",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/302.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/302.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2116",
+        "slug": "ucf-knights",
+        "location": "UCF",
+        "name": "Knights",
+        "nickname": "UCF",
+        "abbreviation": "UCF",
+        "displayName": "UCF Knights",
+        "shortDisplayName": "UCF",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2116.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2116.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "26",
+        "slug": "ucla-bruins",
+        "location": "UCLA",
+        "name": "Bruins",
+        "nickname": "UCLA",
+        "abbreviation": "UCLA",
+        "displayName": "UCLA Bruins",
+        "shortDisplayName": "UCLA",
+        "color": "2774ae",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/26.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "41",
+        "slug": "uconn-huskies",
+        "location": "UConn",
+        "name": "Huskies",
+        "nickname": "UConn",
+        "abbreviation": "CONN",
+        "displayName": "UConn Huskies",
+        "shortDisplayName": "UConn",
+        "color": "0c2340",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/41.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2433",
+        "slug": "ul-monroe-warhawks",
+        "location": "UL Monroe",
+        "name": "Warhawks",
+        "nickname": "UL Monroe",
+        "abbreviation": "ULM",
+        "displayName": "UL Monroe Warhawks",
+        "shortDisplayName": "UL Monroe",
+        "color": "840029",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2433.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2433.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2439",
+        "slug": "unlv-rebels",
+        "location": "UNLV",
+        "name": "Rebels",
+        "nickname": "UNLV",
+        "abbreviation": "UNLV",
+        "displayName": "UNLV Rebels",
+        "shortDisplayName": "UNLV",
+        "color": "cf0a2c",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2439.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2439.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "30",
+        "slug": "usc-trojans",
+        "location": "USC",
+        "name": "Trojans",
+        "nickname": "USC",
+        "abbreviation": "USC",
+        "displayName": "USC Trojans",
+        "shortDisplayName": "USC",
+        "color": "9d2235",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/30.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2638",
+        "slug": "utep-miners",
+        "location": "UTEP",
+        "name": "Miners",
+        "nickname": "UTEP",
+        "abbreviation": "UTEP",
+        "displayName": "UTEP Miners",
+        "shortDisplayName": "UTEP",
+        "color": "ff8200",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2638.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2638.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2636",
+        "slug": "utsa-roadrunners",
+        "location": "UTSA",
+        "name": "Roadrunners",
+        "nickname": "UTSA",
+        "abbreviation": "UTSA",
+        "displayName": "UTSA Roadrunners",
+        "shortDisplayName": "UTSA",
+        "color": "0c2340",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2636.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2636.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "328",
+        "slug": "utah-state-aggies",
+        "location": "Utah State",
+        "name": "Aggies",
+        "nickname": "Utah State",
+        "abbreviation": "USU",
+        "displayName": "Utah State Aggies",
+        "shortDisplayName": "Utah State",
+        "color": "0f2439",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/328.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "254",
+        "slug": "utah-utes",
+        "location": "Utah",
+        "name": "Utes",
+        "nickname": "Utah",
+        "abbreviation": "UTAH",
+        "displayName": "Utah Utes",
+        "shortDisplayName": "Utah",
+        "color": "be0000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/254.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "238",
+        "slug": "vanderbilt-commodores",
+        "location": "Vanderbilt",
+        "name": "Commodores",
+        "nickname": "Vanderbilt",
+        "abbreviation": "VAN",
+        "displayName": "Vanderbilt Commodores",
+        "shortDisplayName": "Vanderbilt",
+        "color": "000000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/238.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "258",
+        "slug": "virginia-cavaliers",
+        "location": "Virginia",
+        "name": "Cavaliers",
+        "nickname": "Virginia",
+        "abbreviation": "UVA",
+        "displayName": "Virginia Cavaliers",
+        "shortDisplayName": "Virginia",
+        "color": "232d4b",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/258.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "259",
+        "slug": "virginia-tech-hokies",
+        "location": "Virginia Tech",
+        "name": "Hokies",
+        "nickname": "Virginia Tech",
+        "abbreviation": "VT",
+        "displayName": "Virginia Tech Hokies",
+        "shortDisplayName": "Virginia Tech",
+        "color": "6a2c3e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/259.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/259.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "154",
+        "slug": "wake-forest-demon-deacons",
+        "location": "Wake Forest",
+        "name": "Demon Deacons",
+        "nickname": "Wake Forest",
+        "abbreviation": "WAKE",
+        "displayName": "Wake Forest Demon Deacons",
+        "shortDisplayName": "Wake Forest",
+        "color": "ceb888",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/154.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/154.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "264",
+        "slug": "washington-huskies",
+        "location": "Washington",
+        "name": "Huskies",
+        "nickname": "Washington",
+        "abbreviation": "WASH",
+        "displayName": "Washington Huskies",
+        "shortDisplayName": "Washington",
+        "color": "33006f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/264.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/264.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "265",
+        "slug": "washington-state-cougars",
+        "location": "Washington State",
+        "name": "Cougars",
+        "nickname": "Washington St",
+        "abbreviation": "WSU",
+        "displayName": "Washington State Cougars",
+        "shortDisplayName": "Washington St",
+        "color": "a60f2d",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/265.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/265.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2692",
+        "slug": "weber-state-wildcats",
+        "location": "Weber State",
+        "name": "Wildcats",
+        "nickname": "Weber St",
+        "abbreviation": "WEB",
+        "displayName": "Weber State Wildcats",
+        "shortDisplayName": "Weber St",
+        "color": "18005a",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2692.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2692.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "277",
+        "slug": "west-virginia-mountaineers",
+        "location": "West Virginia",
+        "name": "Mountaineers",
+        "nickname": "West Virginia",
+        "abbreviation": "WVU",
+        "displayName": "West Virginia Mountaineers",
+        "shortDisplayName": "West Virginia",
+        "color": "eaaa00",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/277.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/277.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "98",
+        "slug": "western-kentucky-hilltoppers",
+        "location": "Western Kentucky",
+        "name": "Hilltoppers",
+        "nickname": "Western KY",
+        "abbreviation": "WKU",
+        "displayName": "Western Kentucky Hilltoppers",
+        "shortDisplayName": "Western KY",
+        "color": "e13a3e",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/98.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/98.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2711",
+        "slug": "western-michigan-broncos",
+        "location": "Western Michigan",
+        "name": "Broncos",
+        "nickname": "W Michigan",
+        "abbreviation": "WMU",
+        "displayName": "Western Michigan Broncos",
+        "shortDisplayName": "W Michigan",
+        "color": "532e1f",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2711.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2711.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "275",
+        "slug": "wisconsin-badgers",
+        "location": "Wisconsin",
+        "name": "Badgers",
+        "nickname": "Wisconsin",
+        "abbreviation": "WIS",
+        "displayName": "Wisconsin Badgers",
+        "shortDisplayName": "Wisconsin",
+        "color": "a00000",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/275.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "team": {
+        "id": "2751",
+        "slug": "wyoming-cowboys",
+        "location": "Wyoming",
+        "name": "Cowboys",
+        "nickname": "Wyoming",
+        "abbreviation": "WYO",
+        "displayName": "Wyoming Cowboys",
+        "shortDisplayName": "Wyoming",
+        "color": "492f24",
+        "isActive": true,
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2751.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2751.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

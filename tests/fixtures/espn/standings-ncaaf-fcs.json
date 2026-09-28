@@ -1,0 +1,950 @@
+{
+ "id": "81",
+ "name": "FCS",
+ "shortName": "FCS",
+ "isConference": false,
+ "children": [
+  {
+   "id": "20",
+   "name": "Big Sky Conference",
+   "abbreviation": "bsky",
+   "shortName": "Big Sky",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "147",
+       "displayName": "Montana State Bobcats"
+      }
+     },
+     {
+      "team": {
+       "id": "304",
+       "displayName": "Idaho State Bengals"
+      }
+     },
+     {
+      "team": {
+       "id": "149",
+       "displayName": "Montana Grizzlies"
+      }
+     },
+     {
+      "team": {
+       "id": "13",
+       "displayName": "Cal Poly Mustangs"
+      }
+     },
+     {
+      "team": {
+       "id": "2464",
+       "displayName": "Northern Arizona Lumberjacks"
+      }
+     },
+     {
+      "team": {
+       "id": "302",
+       "displayName": "UC Davis Aggies"
+      }
+     },
+     {
+      "team": {
+       "id": "2692",
+       "displayName": "Weber State Wildcats"
+      }
+     },
+     {
+      "team": {
+       "id": "2458",
+       "displayName": "Northern Colorado Bears"
+      }
+     },
+     {
+      "team": {
+       "id": "2502",
+       "displayName": "Portland State Vikings"
+      }
+     },
+     {
+      "team": {
+       "id": "331",
+       "displayName": "Eastern Washington Eagles"
+      }
+     },
+     {
+      "team": {
+       "id": "253",
+       "displayName": "Southern Utah Thunderbirds"
+      }
+     },
+     {
+      "team": {
+       "id": "70",
+       "displayName": "Idaho Vandals"
+      }
+     },
+     {
+      "team": {
+       "id": "3101",
+       "displayName": "Utah Tech Trailblazers"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "48",
+   "name": "Coastal Athletic Association",
+   "abbreviation": "caa",
+   "shortName": "CAA",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2097",
+       "displayName": "Campbell Fighting Camels"
+      }
+     },
+     {
+      "team": {
+       "id": "2210",
+       "displayName": "Elon Phoenix"
+      }
+     },
+     {
+      "team": {
+       "id": "2803",
+       "displayName": "Bryant Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "2405",
+       "displayName": "Monmouth Hawks"
+      }
+     },
+     {
+      "team": {
+       "id": "2619",
+       "displayName": "Stony Brook Seawolves"
+      }
+     },
+     {
+      "team": {
+       "id": "399",
+       "displayName": "UAlbany Great Danes"
+      }
+     },
+     {
+      "team": {
+       "id": "227",
+       "displayName": "Rhode Island Rams"
+      }
+     },
+     {
+      "team": {
+       "id": "2529",
+       "displayName": "Sacred Heart Pioneers"
+      }
+     },
+     {
+      "team": {
+       "id": "311",
+       "displayName": "Maine Black Bears"
+      }
+     },
+     {
+      "team": {
+       "id": "2448",
+       "displayName": "North Carolina A&T Aggies"
+      }
+     },
+     {
+      "team": {
+       "id": "2261",
+       "displayName": "Hampton Pirates"
+      }
+     },
+     {
+      "team": {
+       "id": "160",
+       "displayName": "New Hampshire Wildcats"
+      }
+     },
+     {
+      "team": {
+       "id": "119",
+       "displayName": "Towson Tigers"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "32",
+   "name": "FCS Independents",
+   "abbreviation": "indaa",
+   "shortName": "FCS Indep.",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2771",
+       "displayName": "Merrimack Warriors"
+      }
+     },
+     {
+      "team": {
+       "id": "2130",
+       "displayName": "Chicago State Cougars"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "22",
+   "name": "Ivy League",
+   "abbreviation": "ivy",
+   "shortName": "Ivy",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "108",
+       "displayName": "Harvard Crimson"
+      }
+     },
+     {
+      "team": {
+       "id": "171",
+       "displayName": "Columbia Lions"
+      }
+     },
+     {
+      "team": {
+       "id": "172",
+       "displayName": "Cornell Big Red"
+      }
+     },
+     {
+      "team": {
+       "id": "219",
+       "displayName": "Pennsylvania Quakers"
+      }
+     },
+     {
+      "team": {
+       "id": "163",
+       "displayName": "Princeton Tigers"
+      }
+     },
+     {
+      "team": {
+       "id": "225",
+       "displayName": "Brown Bears"
+      }
+     },
+     {
+      "team": {
+       "id": "43",
+       "displayName": "Yale Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "159",
+       "displayName": "Dartmouth Big Green"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "24",
+   "name": "Mid-Eastern Athletic Conference",
+   "abbreviation": "meac",
+   "shortName": "MEAC",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2569",
+       "displayName": "South Carolina State Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "2415",
+       "displayName": "Morgan State Bears"
+      }
+     },
+     {
+      "team": {
+       "id": "2169",
+       "displayName": "Delaware State Hornets"
+      }
+     },
+     {
+      "team": {
+       "id": "2450",
+       "displayName": "Norfolk State Spartans"
+      }
+     },
+     {
+      "team": {
+       "id": "2428",
+       "displayName": "North Carolina Central Eagles"
+      }
+     },
+     {
+      "team": {
+       "id": "47",
+       "displayName": "Howard Bison"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "21",
+   "name": "Missouri Valley Football Conference",
+   "abbreviation": "mvfc",
+   "shortName": "MVFC",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "155",
+       "displayName": "North Dakota Fighting Hawks"
+      }
+     },
+     {
+      "team": {
+       "id": "2571",
+       "displayName": "South Dakota State Jackrabbits"
+      }
+     },
+     {
+      "team": {
+       "id": "2287",
+       "displayName": "Illinois State Redbirds"
+      }
+     },
+     {
+      "team": {
+       "id": "79",
+       "displayName": "Southern Illinois Salukis"
+      }
+     },
+     {
+      "team": {
+       "id": "2754",
+       "displayName": "Youngstown State Penguins"
+      }
+     },
+     {
+      "team": {
+       "id": "233",
+       "displayName": "South Dakota Coyotes"
+      }
+     },
+     {
+      "team": {
+       "id": "2460",
+       "displayName": "Northern Iowa Panthers"
+      }
+     },
+     {
+      "team": {
+       "id": "282",
+       "displayName": "Indiana State Sycamores"
+      }
+     },
+     {
+      "team": {
+       "id": "93",
+       "displayName": "Murray State Racers"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "25",
+   "name": "Northeast Conference",
+   "abbreviation": "neast",
+   "shortName": "NEC",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2523",
+       "displayName": "Robert Morris Colonials"
+      }
+     },
+     {
+      "team": {
+       "id": "2184",
+       "displayName": "Duquesne Dukes"
+      }
+     },
+     {
+      "team": {
+       "id": "2681",
+       "displayName": "Wagner Seahawks"
+      }
+     },
+     {
+      "team": {
+       "id": "284",
+       "displayName": "Stonehill Skyhawks"
+      }
+     },
+     {
+      "team": {
+       "id": "2385",
+       "displayName": "Mercyhurst Lakers"
+      }
+     },
+     {
+      "team": {
+       "id": "2441",
+       "displayName": "New Haven Chargers"
+      }
+     },
+     {
+      "team": {
+       "id": "2115",
+       "displayName": "Central Connecticut Blue Devils"
+      }
+     },
+     {
+      "team": {
+       "id": "2341",
+       "displayName": "Long Island University Sharks"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "179",
+   "name": "Ohio Valley Conference",
+   "abbreviation": "OVC",
+   "shortName": "OVC",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2127",
+       "displayName": "Charleston Southern Buccaneers"
+      }
+     },
+     {
+      "team": {
+       "id": "2546",
+       "displayName": "Southeast Missouri State Redhawks"
+      }
+     },
+     {
+      "team": {
+       "id": "2710",
+       "displayName": "Western Illinois Leathernecks"
+      }
+     },
+     {
+      "team": {
+       "id": "2815",
+       "displayName": "Lindenwood Lions"
+      }
+     },
+     {
+      "team": {
+       "id": "2634",
+       "displayName": "Tennessee State Tigers"
+      }
+     },
+     {
+      "team": {
+       "id": "2197",
+       "displayName": "Eastern Illinois Panthers"
+      }
+     },
+     {
+      "team": {
+       "id": "2241",
+       "displayName": "Gardner-Webb Runnin' Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "2630",
+       "displayName": "UT Martin Skyhawks"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "27",
+   "name": "Patriot League",
+   "abbreviation": "pat",
+   "shortName": "Patriot",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2329",
+       "displayName": "Lehigh Mountain Hawks"
+      }
+     },
+     {
+      "team": {
+       "id": "2142",
+       "displayName": "Colgate Raiders"
+      }
+     },
+     {
+      "team": {
+       "id": "257",
+       "displayName": "Richmond Spiders"
+      }
+     },
+     {
+      "team": {
+       "id": "2729",
+       "displayName": "William & Mary Tribe"
+      }
+     },
+     {
+      "team": {
+       "id": "222",
+       "displayName": "Villanova Wildcats"
+      }
+     },
+     {
+      "team": {
+       "id": "322",
+       "displayName": "Lafayette Leopards"
+      }
+     },
+     {
+      "team": {
+       "id": "2230",
+       "displayName": "Fordham Rams"
+      }
+     },
+     {
+      "team": {
+       "id": "107",
+       "displayName": "Holy Cross Crusaders"
+      }
+     },
+     {
+      "team": {
+       "id": "2083",
+       "displayName": "Bucknell Bison"
+      }
+     },
+     {
+      "team": {
+       "id": "46",
+       "displayName": "Georgetown Hoyas"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "28",
+   "name": "Pioneer Football League",
+   "abbreviation": "pfl",
+   "shortName": "Pioneer",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2168",
+       "displayName": "Dayton Flyers"
+      }
+     },
+     {
+      "team": {
+       "id": "2086",
+       "displayName": "Butler Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "2900",
+       "displayName": "St. Thomas Tommies"
+      }
+     },
+     {
+      "team": {
+       "id": "2368",
+       "displayName": "Marist Red Foxes"
+      }
+     },
+     {
+      "team": {
+       "id": "2166",
+       "displayName": "Davidson Wildcats"
+      }
+     },
+     {
+      "team": {
+       "id": "2181",
+       "displayName": "Drake Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "2413",
+       "displayName": "Morehead State Eagles"
+      }
+     },
+     {
+      "team": {
+       "id": "56",
+       "displayName": "Stetson Hatters"
+      }
+     },
+     {
+      "team": {
+       "id": "2506",
+       "displayName": "Presbyterian Blue Hose"
+      }
+     },
+     {
+      "team": {
+       "id": "301",
+       "displayName": "San Diego Toreros"
+      }
+     },
+     {
+      "team": {
+       "id": "2674",
+       "displayName": "Valparaiso Beacons"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "29",
+   "name": "Southern Conference",
+   "abbreviation": "south",
+   "shortName": "Southern",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2635",
+       "displayName": "Tennessee Tech Golden Eagles"
+      }
+     },
+     {
+      "team": {
+       "id": "236",
+       "displayName": "Chattanooga Mocs"
+      }
+     },
+     {
+      "team": {
+       "id": "2193",
+       "displayName": "East Tennessee State Buccaneers"
+      }
+     },
+     {
+      "team": {
+       "id": "2382",
+       "displayName": "Mercer Bears"
+      }
+     },
+     {
+      "team": {
+       "id": "231",
+       "displayName": "Furman Paladins"
+      }
+     },
+     {
+      "team": {
+       "id": "2747",
+       "displayName": "Wofford Terriers"
+      }
+     },
+     {
+      "team": {
+       "id": "2717",
+       "displayName": "Western Carolina Catamounts"
+      }
+     },
+     {
+      "team": {
+       "id": "2535",
+       "displayName": "Samford Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "2643",
+       "displayName": "The Citadel Bulldogs"
+      }
+     },
+     {
+      "team": {
+       "id": "2678",
+       "displayName": "VMI Keydets"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "30",
+   "name": "Southland Conference",
+   "abbreviation": "land",
+   "shortName": "Southland",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2617",
+       "displayName": "Stephen F. Austin Lumberjacks"
+      }
+     },
+     {
+      "team": {
+       "id": "2320",
+       "displayName": "Lamar Cardinals"
+      }
+     },
+     {
+      "team": {
+       "id": "2545",
+       "displayName": "SE Louisiana Lions"
+      }
+     },
+     {
+      "team": {
+       "id": "2916",
+       "displayName": "Incarnate Word Cardinals"
+      }
+     },
+     {
+      "team": {
+       "id": "292",
+       "displayName": "UT Rio Grande Valley Vaqueros"
+      }
+     },
+     {
+      "team": {
+       "id": "2277",
+       "displayName": "Houston Christian Huskies"
+      }
+     },
+     {
+      "team": {
+       "id": "2447",
+       "displayName": "Nicholls Colonels"
+      }
+     },
+     {
+      "team": {
+       "id": "2377",
+       "displayName": "McNeese Cowboys"
+      }
+     },
+     {
+      "team": {
+       "id": "2837",
+       "displayName": "East Texas A&M Lions"
+      }
+     },
+     {
+      "team": {
+       "id": "2466",
+       "displayName": "Northwestern State Demons"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "31",
+   "name": "Southwestern Athletic Conference",
+   "abbreviation": "swac",
+   "shortName": "SWAC",
+   "isConference": true,
+   "children": [
+    {
+     "id": "33",
+     "name": "Southwestern Athletic - East",
+     "abbreviation": "swace",
+     "shortName": "SWAC - East",
+     "isConference": false,
+     "standings": {
+      "entries": [
+       {
+        "team": {
+         "id": "2296",
+         "displayName": "Jackson State Tigers"
+        }
+       },
+       {
+        "team": {
+         "id": "2010",
+         "displayName": "Alabama A&M Bulldogs"
+        }
+       },
+       {
+        "team": {
+         "id": "2011",
+         "displayName": "Alabama State Hornets"
+        }
+       },
+       {
+        "team": {
+         "id": "2065",
+         "displayName": "Bethune-Cookman Wildcats"
+        }
+       },
+       {
+        "team": {
+         "id": "50",
+         "displayName": "Florida A&M Rattlers"
+        }
+       },
+       {
+        "team": {
+         "id": "2400",
+         "displayName": "Mississippi Valley State Delta Devils"
+        }
+       }
+      ]
+     }
+    },
+    {
+     "id": "34",
+     "name": "Southwestern Athletic - West",
+     "abbreviation": "swacw",
+     "shortName": "SWAC - West",
+     "isConference": false,
+     "standings": {
+      "entries": [
+       {
+        "team": {
+         "id": "2016",
+         "displayName": "Alcorn State Braves"
+        }
+       },
+       {
+        "team": {
+         "id": "2029",
+         "displayName": "Arkansas-Pine Bluff Golden Lions"
+        }
+       },
+       {
+        "team": {
+         "id": "2755",
+         "displayName": "Grambling Tigers"
+        }
+       },
+       {
+        "team": {
+         "id": "2504",
+         "displayName": "Prairie View A&M Panthers"
+        }
+       },
+       {
+        "team": {
+         "id": "2582",
+         "displayName": "Southern Jaguars"
+        }
+       },
+       {
+        "team": {
+         "id": "2640",
+         "displayName": "Texas Southern Tigers"
+        }
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "177",
+   "name": "United Athletic Conference",
+   "abbreviation": "UAC",
+   "shortName": "UAC",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "2627",
+       "displayName": "Tarleton State Texans"
+      }
+     },
+     {
+      "team": {
+       "id": "2046",
+       "displayName": "Austin Peay Governors"
+      }
+     },
+     {
+      "team": {
+       "id": "110242",
+       "displayName": "West Florida Argonauts"
+      }
+     },
+     {
+      "team": {
+       "id": "2453",
+       "displayName": "North Alabama Lions"
+      }
+     },
+     {
+      "team": {
+       "id": "2110",
+       "displayName": "Central Arkansas Bears"
+      }
+     },
+     {
+      "team": {
+       "id": "2198",
+       "displayName": "Eastern Kentucky Colonels"
+      }
+     },
+     {
+      "team": {
+       "id": "2000",
+       "displayName": "Abilene Christian Wildcats"
+      }
+     },
+     {
+      "team": {
+       "id": "2698",
+       "displayName": "West Georgia Wolves"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,600 @@
+{
+ "season": {
+  "year": 2027,
+  "type": 1,
+  "name": "Preseason",
+  "displayName": "2026-27",
+  "half": 1
+ },
+ "requestedSeason": {
+  "year": 2027,
+  "type": 1,
+  "name": "Preseason",
+  "displayName": "2026-27"
+ },
+ "team": {
+  "id": "25",
+  "location": "Oklahoma City",
+  "name": "Thunder",
+  "abbreviation": "OKC",
+  "displayName": "Oklahoma City Thunder",
+  "color": "007ac1"
+ },
+ "events": [
+  {
+   "id": "401898389",
+   "date": "2026-10-07T00:00Z",
+   "name": "New Orleans Pelicans at Oklahoma City Thunder",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nba/game/_/gameId/401898389/pelicans-thunder",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401898389",
+     "date": "2026-10-07T00:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "BOK Center",
+      "address": {
+       "city": "Tulsa",
+       "state": "OK"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "25",
+       "homeAway": "home",
+       "team": {
+        "id": "25",
+        "location": "Oklahoma City",
+        "abbreviation": "OKC",
+        "displayName": "Oklahoma City Thunder",
+        "shortDisplayName": "Thunder",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "3",
+       "homeAway": "away",
+       "team": {
+        "id": "3",
+        "location": "New Orleans",
+        "abbreviation": "NO",
+        "displayName": "New Orleans Pelicans",
+        "shortDisplayName": "Pelicans",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/no.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Tue, October 6th at 8:00 PM EDT",
+       "shortDetail": "10/6 - 8:00 PM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401908620",
+   "date": "2026-10-08T00:00Z",
+   "name": "Milwaukee Bucks at Oklahoma City Thunder",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nba/game/_/gameId/401908620/bucks-thunder",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401908620",
+     "date": "2026-10-08T00:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Paycom Center",
+      "address": {
+       "city": "Oklahoma City",
+       "state": "OK"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "25",
+       "homeAway": "home",
+       "team": {
+        "id": "25",
+        "location": "Oklahoma City",
+        "abbreviation": "OKC",
+        "displayName": "Oklahoma City Thunder",
+        "shortDisplayName": "Thunder",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "15",
+       "homeAway": "away",
+       "team": {
+        "id": "15",
+        "location": "Milwaukee",
+        "abbreviation": "MIL",
+        "displayName": "Milwaukee Bucks",
+        "shortDisplayName": "Bucks",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mil.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Wed, October 7th at 8:00 PM EDT",
+       "shortDetail": "10/7 - 8:00 PM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401898402",
+   "date": "2026-10-12T23:00Z",
+   "name": "Oklahoma City Thunder at Atlanta Hawks",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nba/game/_/gameId/401898402/thunder-hawks",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401898402",
+     "date": "2026-10-12T23:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "State Farm Arena",
+      "address": {
+       "city": "Atlanta",
+       "state": "GA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "1",
+       "homeAway": "home",
+       "team": {
+        "id": "1",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Hawks",
+        "shortDisplayName": "Hawks",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "25",
+       "homeAway": "away",
+       "team": {
+        "id": "25",
+        "location": "Oklahoma City",
+        "abbreviation": "OKC",
+        "displayName": "Oklahoma City Thunder",
+        "shortDisplayName": "Thunder",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Mon, October 12th at 7:00 PM EDT",
+       "shortDetail": "10/12 - 7:00 PM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401908621",
+   "date": "2026-10-14T00:00Z",
+   "name": "Indiana Pacers at Oklahoma City Thunder",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nba/game/_/gameId/401908621/pacers-thunder",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401908621",
+     "date": "2026-10-14T00:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Paycom Center",
+      "address": {
+       "city": "Oklahoma City",
+       "state": "OK"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "25",
+       "homeAway": "home",
+       "team": {
+        "id": "25",
+        "location": "Oklahoma City",
+        "abbreviation": "OKC",
+        "displayName": "Oklahoma City Thunder",
+        "shortDisplayName": "Thunder",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "11",
+       "homeAway": "away",
+       "team": {
+        "id": "11",
+        "location": "Indiana",
+        "abbreviation": "IND",
+        "displayName": "Indiana Pacers",
+        "shortDisplayName": "Pacers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/ind.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Tue, October 13th at 8:00 PM EDT",
+       "shortDetail": "10/13 - 8:00 PM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401908622",
+   "date": "2026-10-16T00:30Z",
+   "name": "Oklahoma City Thunder at Houston Rockets",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nba/game/_/gameId/401908622/thunder-rockets",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401908622",
+     "date": "2026-10-16T00:30Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Toyota Center (Houston)",
+      "address": {
+       "city": "Houston",
+       "state": "TX"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "10",
+       "homeAway": "home",
+       "team": {
+        "id": "10",
+        "location": "Houston",
+        "abbreviation": "HOU",
+        "displayName": "Houston Rockets",
+        "shortDisplayName": "Rockets",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "25",
+       "homeAway": "away",
+       "team": {
+        "id": "25",
+        "location": "Oklahoma City",
+        "abbreviation": "OKC",
+        "displayName": "Oklahoma City Thunder",
+        "shortDisplayName": "Thunder",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Thu, October 15th at 8:30 PM EDT",
+       "shortDetail": "10/15 - 8:30 PM EDT"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

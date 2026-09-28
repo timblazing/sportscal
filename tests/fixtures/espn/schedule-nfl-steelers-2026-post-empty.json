@@ -1,0 +1,32 @@
+{
+ "timestamp": "2026-09-28T16:11:37Z",
+ "status": "success",
+ "season": {
+  "year": 2026,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2026",
+  "half": 1
+ },
+ "team": {
+  "id": "23",
+  "abbreviation": "PIT",
+  "location": "Pittsburgh",
+  "name": "Steelers",
+  "displayName": "Pittsburgh Steelers",
+  "clubhouse": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers",
+  "color": "000000",
+  "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+  "recordSummary": "2-1",
+  "seasonSummary": "2026",
+  "standingSummary": "1st in AFC North",
+  "groups": {
+   "id": "12",
+   "parent": {
+    "id": "8"
+   },
+   "isConference": false
+  }
+ },
+ "events": []
+}

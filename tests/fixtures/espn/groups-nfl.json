@@ -1,0 +1,224 @@
+{
+ "groups": [
+  {
+   "name": "American Football Conference",
+   "abbreviation": "AFC",
+   "children": [
+    {
+     "name": "AFC East",
+     "abbreviation": "EAST",
+     "teams": [
+      {
+       "id": "2",
+       "slug": "buffalo-bills",
+       "displayName": "Buffalo Bills"
+      },
+      {
+       "id": "15",
+       "slug": "miami-dolphins",
+       "displayName": "Miami Dolphins"
+      },
+      {
+       "id": "17",
+       "slug": "new-england-patriots",
+       "displayName": "New England Patriots"
+      },
+      {
+       "id": "20",
+       "slug": "new-york-jets",
+       "displayName": "New York Jets"
+      }
+     ]
+    },
+    {
+     "name": "AFC North",
+     "abbreviation": "NORTH",
+     "teams": [
+      {
+       "id": "4",
+       "slug": "cincinnati-bengals",
+       "displayName": "Cincinnati Bengals"
+      },
+      {
+       "id": "5",
+       "slug": "cleveland-browns",
+       "displayName": "Cleveland Browns"
+      },
+      {
+       "id": "23",
+       "slug": "pittsburgh-steelers",
+       "displayName": "Pittsburgh Steelers"
+      },
+      {
+       "id": "33",
+       "slug": "baltimore-ravens",
+       "displayName": "Baltimore Ravens"
+      }
+     ]
+    },
+    {
+     "name": "AFC South",
+     "abbreviation": "SOUTH",
+     "teams": [
+      {
+       "id": "10",
+       "slug": "tennessee-titans",
+       "displayName": "Tennessee Titans"
+      },
+      {
+       "id": "11",
+       "slug": "indianapolis-colts",
+       "displayName": "Indianapolis Colts"
+      },
+      {
+       "id": "30",
+       "slug": "jacksonville-jaguars",
+       "displayName": "Jacksonville Jaguars"
+      },
+      {
+       "id": "34",
+       "slug": "houston-texans",
+       "displayName": "Houston Texans"
+      }
+     ]
+    },
+    {
+     "name": "AFC West",
+     "abbreviation": "WEST",
+     "teams": [
+      {
+       "id": "7",
+       "slug": "denver-broncos",
+       "displayName": "Denver Broncos"
+      },
+      {
+       "id": "12",
+       "slug": "kansas-city-chiefs",
+       "displayName": "Kansas City Chiefs"
+      },
+      {
+       "id": "13",
+       "slug": "las-vegas-raiders",
+       "displayName": "Las Vegas Raiders"
+      },
+      {
+       "id": "24",
+       "slug": "los-angeles-chargers",
+       "displayName": "Los Angeles Chargers"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "National Football Conference",
+   "abbreviation": "NFC",
+   "children": [
+    {
+     "name": "NFC East",
+     "abbreviation": "EAST",
+     "teams": [
+      {
+       "id": "6",
+       "slug": "dallas-cowboys",
+       "displayName": "Dallas Cowboys"
+      },
+      {
+       "id": "19",
+       "slug": "new-york-giants",
+       "displayName": "New York Giants"
+      },
+      {
+       "id": "21",
+       "slug": "philadelphia-eagles",
+       "displayName": "Philadelphia Eagles"
+      },
+      {
+       "id": "28",
+       "slug": "washington-commanders",
+       "displayName": "Washington Commanders"
+      }
+     ]
+    },
+    {
+     "name": "NFC North",
+     "abbreviation": "NORTH",
+     "teams": [
+      {
+       "id": "3",
+       "slug": "chicago-bears",
+       "displayName": "Chicago Bears"
+      },
+      {
+       "id": "8",
+       "slug": "detroit-lions",
+       "displayName": "Detroit Lions"
+      },
+      {
+       "id": "9",
+       "slug": "green-bay-packers",
+       "displayName": "Green Bay Packers"
+      },
+      {
+       "id": "16",
+       "slug": "minnesota-vikings",
+       "displayName": "Minnesota Vikings"
+      }
+     ]
+    },
+    {
+     "name": "NFC South",
+     "abbreviation": "SOUTH",
+     "teams": [
+      {
+       "id": "1",
+       "slug": "atlanta-falcons",
+       "displayName": "Atlanta Falcons"
+      },
+      {
+       "id": "18",
+       "slug": "new-orleans-saints",
+       "displayName": "New Orleans Saints"
+      },
+      {
+       "id": "27",
+       "slug": "tampa-bay-buccaneers",
+       "displayName": "Tampa Bay Buccaneers"
+      },
+      {
+       "id": "29",
+       "slug": "carolina-panthers",
+       "displayName": "Carolina Panthers"
+      }
+     ]
+    },
+    {
+     "name": "NFC West",
+     "abbreviation": "WEST",
+     "teams": [
+      {
+       "id": "14",
+       "slug": "los-angeles-rams",
+       "displayName": "Los Angeles Rams"
+      },
+      {
+       "id": "22",
+       "slug": "arizona-cardinals",
+       "displayName": "Arizona Cardinals"
+      },
+      {
+       "id": "25",
+       "slug": "san-francisco-49ers",
+       "displayName": "San Francisco 49ers"
+      },
+      {
+       "id": "26",
+       "slug": "seattle-seahawks",
+       "displayName": "Seattle Seahawks"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

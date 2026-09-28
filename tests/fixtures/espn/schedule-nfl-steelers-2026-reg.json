@@ -1,0 +1,2313 @@
+{
+ "season": {
+  "year": 2026,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2026",
+  "half": 1
+ },
+ "requestedSeason": {
+  "year": 2026,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2026"
+ },
+ "team": {
+  "id": "23",
+  "location": "Pittsburgh",
+  "name": "Steelers",
+  "abbreviation": "PIT",
+  "displayName": "Pittsburgh Steelers",
+  "color": "000000"
+ },
+ "events": [
+  {
+   "id": "401872658",
+   "date": "2026-09-13T17:00Z",
+   "name": "Atlanta Falcons at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 1,
+    "text": "Week 1"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401872658/falcons-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401872658",
+     "date": "2026-09-13T17:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 20.0,
+        "displayValue": "20"
+       },
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "1",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 13.0,
+        "displayValue": "13"
+       },
+       "team": {
+        "id": "1",
+        "location": "Atlanta",
+        "nickname": "Falcons",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Falcons",
+        "shortDisplayName": "Falcons",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "FOX"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401872946",
+   "date": "2026-09-20T17:00Z",
+   "name": "Pittsburgh Steelers at New England Patriots",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 2,
+    "text": "Week 2"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401872946/steelers-patriots",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401872946",
+     "date": "2026-09-20T17:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Gillette Stadium",
+      "address": {
+       "city": "Foxborough",
+       "state": "MA",
+       "zipCode": "02035",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "17",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 20.0,
+        "displayValue": "20"
+       },
+       "team": {
+        "id": "17",
+        "location": "New England",
+        "nickname": "Patriots",
+        "abbreviation": "NE",
+        "displayName": "New England Patriots",
+        "shortDisplayName": "Patriots",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/ne.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 3.0,
+        "displayValue": "3"
+       },
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401872950",
+   "date": "2026-09-27T17:00Z",
+   "name": "Cincinnati Bengals at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 3,
+    "text": "Week 3"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401872950/bengals-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401872950",
+     "date": "2026-09-27T17:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 30.0,
+        "displayValue": "30"
+       },
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "4",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 27.0,
+        "displayValue": "27"
+       },
+       "team": {
+        "id": "4",
+        "location": "Cincinnati",
+        "nickname": "Bengals",
+        "abbreviation": "CIN",
+        "displayName": "Cincinnati Bengals",
+        "shortDisplayName": "Bengals",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/cin.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401872964",
+   "date": "2026-10-02T00:15Z",
+   "name": "Pittsburgh Steelers at Cleveland Browns",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 4,
+    "text": "Week 4"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401872964/steelers-browns",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401872964",
+     "date": "2026-10-02T00:15Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Huntington Bank Field",
+      "address": {
+       "city": "Cleveland",
+       "state": "OH",
+       "zipCode": "44114",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "5",
+       "homeAway": "home",
+       "team": {
+        "id": "5",
+        "location": "Cleveland",
+        "nickname": "Browns",
+        "abbreviation": "CLE",
+        "displayName": "Cleveland Browns",
+        "shortDisplayName": "Browns",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/cle.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "Prime Video"
+       },
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Thu, October 1st at 8:15 PM EDT",
+       "shortDetail": "10/1 - 8:15 PM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401872985",
+   "date": "2026-10-11T17:00Z",
+   "name": "Indianapolis Colts at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 5,
+    "text": "Week 5"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401872985/colts-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401872985",
+     "date": "2026-10-11T17:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "11",
+       "homeAway": "away",
+       "team": {
+        "id": "11",
+        "location": "Indianapolis",
+        "nickname": "Colts",
+        "abbreviation": "IND",
+        "displayName": "Indianapolis Colts",
+        "shortDisplayName": "Colts",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/ind.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, October 11th at 1:00 PM EDT",
+       "shortDetail": "10/11 - 1:00 PM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873002",
+   "date": "2026-10-18T17:00Z",
+   "name": "Pittsburgh Steelers at Tampa Bay Buccaneers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 6,
+    "text": "Week 6"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873002/steelers-buccaneers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873002",
+     "date": "2026-10-18T17:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Raymond James Stadium",
+      "address": {
+       "city": "Tampa",
+       "state": "FL",
+       "zipCode": "33607",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "27",
+       "homeAway": "home",
+       "team": {
+        "id": "27",
+        "location": "Tampa Bay",
+        "nickname": "Buccaneers",
+        "abbreviation": "TB",
+        "displayName": "Tampa Bay Buccaneers",
+        "shortDisplayName": "Buccaneers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/tb.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, October 18th at 1:00 PM EDT",
+       "shortDetail": "10/18 - 1:00 PM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873011",
+   "date": "2026-10-25T13:30Z",
+   "name": "Pittsburgh Steelers at New Orleans Saints",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 7,
+    "text": "Week 7"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873011/steelers-saints",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873011",
+     "date": "2026-10-25T13:30Z",
+     "timeValid": true,
+     "neutralSite": true,
+     "venue": {
+      "fullName": "Stade de France",
+      "address": {
+       "city": "Saint-Denis",
+       "country": "France"
+      }
+     },
+     "notes": [
+      {
+       "type": "event",
+       "headline": "NFL Paris Game"
+      }
+     ],
+     "competitors": [
+      {
+       "id": "18",
+       "homeAway": "home",
+       "team": {
+        "id": "18",
+        "location": "New Orleans",
+        "nickname": "Saints",
+        "abbreviation": "NO",
+        "displayName": "New Orleans Saints",
+        "shortDisplayName": "Saints",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/no.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "NFL Net",
+        "logo": "https://a.espncdn.com/guid/8281947e-bd6c-3a8a-9b1d-6fc957d1709a/logos/default.png",
+        "darkLogo": "https://a.espncdn.com/guid/8281947e-bd6c-3a8a-9b1d-6fc957d1709a/logos/default-dark.png"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, October 25th at 9:30 AM EDT",
+       "shortDetail": "10/25 - 9:30 AM EDT"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873027",
+   "date": "2026-11-01T18:00Z",
+   "name": "Cleveland Browns at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 8,
+    "text": "Week 8"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873027/browns-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873027",
+     "date": "2026-11-01T18:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "5",
+       "homeAway": "away",
+       "team": {
+        "id": "5",
+        "location": "Cleveland",
+        "nickname": "Browns",
+        "abbreviation": "CLE",
+        "displayName": "Cleveland Browns",
+        "shortDisplayName": "Browns",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/cle.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, November 1st at 1:00 PM EST",
+       "shortDetail": "11/1 - 1:00 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873064",
+   "date": "2026-11-16T01:20Z",
+   "name": "Pittsburgh Steelers at Cincinnati Bengals",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 10,
+    "text": "Week 10"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873064/steelers-bengals",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873064",
+     "date": "2026-11-16T01:20Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Paycor Stadium",
+      "address": {
+       "city": "Cincinnati",
+       "state": "OH",
+       "zipCode": "45202",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "4",
+       "homeAway": "home",
+       "team": {
+        "id": "4",
+        "location": "Cincinnati",
+        "nickname": "Bengals",
+        "abbreviation": "CIN",
+        "displayName": "Cincinnati Bengals",
+        "shortDisplayName": "Bengals",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/cin.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "NBC"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, November 15th at 8:20 PM EST",
+       "shortDetail": "11/15 - 8:20 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873076",
+   "date": "2026-11-22T21:25Z",
+   "name": "Pittsburgh Steelers at Philadelphia Eagles",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 11,
+    "text": "Week 11"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873076/steelers-eagles",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873076",
+     "date": "2026-11-22T21:25Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Lincoln Financial Field",
+      "address": {
+       "city": "Philadelphia",
+       "state": "PA",
+       "zipCode": "19148",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "21",
+       "homeAway": "home",
+       "team": {
+        "id": "21",
+        "location": "Philadelphia",
+        "nickname": "Eagles",
+        "abbreviation": "PHI",
+        "displayName": "Philadelphia Eagles",
+        "shortDisplayName": "Eagles",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/phi.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, November 22nd at 4:25 PM EST",
+       "shortDetail": "11/22 - 4:25 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873083",
+   "date": "2026-11-27T20:00Z",
+   "name": "Denver Broncos at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 12,
+    "text": "Week 12"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873083/broncos-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873083",
+     "date": "2026-11-27T20:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "7",
+       "homeAway": "away",
+       "team": {
+        "id": "7",
+        "location": "Denver",
+        "nickname": "Broncos",
+        "abbreviation": "DEN",
+        "displayName": "Denver Broncos",
+        "shortDisplayName": "Broncos",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/den.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "Prime Video"
+       },
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Fri, November 27th at 3:00 PM EST",
+       "shortDetail": "11/27 - 3:00 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873107",
+   "date": "2026-12-07T01:20Z",
+   "name": "Houston Texans at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 13,
+    "text": "Week 13"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873107/texans-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873107",
+     "date": "2026-12-07T01:20Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "34",
+       "homeAway": "away",
+       "team": {
+        "id": "34",
+        "location": "Houston",
+        "nickname": "Texans",
+        "abbreviation": "HOU",
+        "displayName": "Houston Texans",
+        "shortDisplayName": "Texans",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/hou.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "NBC"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, December 6th at 8:20 PM EST",
+       "shortDetail": "12/6 - 8:20 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873123",
+   "date": "2026-12-15T01:15Z",
+   "name": "Pittsburgh Steelers at Jacksonville Jaguars",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 14,
+    "text": "Week 14"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873123/steelers-jaguars",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873123",
+     "date": "2026-12-15T01:15Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "EverBank Stadium",
+      "address": {
+       "city": "Jacksonville",
+       "state": "FL",
+       "zipCode": "32202",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "30",
+       "homeAway": "home",
+       "team": {
+        "id": "30",
+        "location": "Jacksonville",
+        "nickname": "Jaguars",
+        "abbreviation": "JAX",
+        "displayName": "Jacksonville Jaguars",
+        "shortDisplayName": "Jaguars",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/jax.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "ESPN",
+        "logo": "https://a.espncdn.com/guid/335fd2d2-97b9-336b-81ee-573eb6bdcffc/logos/default.png",
+        "darkLogo": ""
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Mon, December 14th at 8:15 PM EST",
+       "shortDetail": "12/14 - 8:15 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873128",
+   "date": "2026-12-20T18:00Z",
+   "name": "Baltimore Ravens at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 15,
+    "text": "Week 15"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873128/ravens-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873128",
+     "date": "2026-12-20T18:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "33",
+       "homeAway": "away",
+       "team": {
+        "id": "33",
+        "location": "Baltimore",
+        "nickname": "Ravens",
+        "abbreviation": "BAL",
+        "displayName": "Baltimore Ravens",
+        "shortDisplayName": "Ravens",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/bal.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, December 20th at 1:00 PM EST",
+       "shortDetail": "12/20 - 1:00 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873144",
+   "date": "2026-12-27T05:00Z",
+   "name": "Carolina Panthers at Pittsburgh Steelers",
+   "timeValid": false,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 16,
+    "text": "Week 16"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873144/panthers-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873144",
+     "date": "2026-12-27T05:00Z",
+     "timeValid": false,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [
+      {
+       "type": "event",
+       "headline": "Flex Game: 12/26 or 12/27"
+      }
+     ],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "29",
+       "homeAway": "away",
+       "team": {
+        "id": "29",
+        "location": "Carolina",
+        "nickname": "Panthers",
+        "abbreviation": "CAR",
+        "displayName": "Carolina Panthers",
+        "shortDisplayName": "Panthers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "12/27 - TBD",
+       "shortDetail": "TBD"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873166",
+   "date": "2027-01-03T18:00Z",
+   "name": "Pittsburgh Steelers at Tennessee Titans",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 17,
+    "text": "Week 17"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873166/steelers-titans",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873166",
+     "date": "2027-01-03T18:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Nissan Stadium",
+      "address": {
+       "city": "Nashville",
+       "state": "TN",
+       "zipCode": "37213",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "10",
+       "homeAway": "home",
+       "team": {
+        "id": "10",
+        "location": "Tennessee",
+        "nickname": "Titans",
+        "abbreviation": "TEN",
+        "displayName": "Tennessee Titans",
+        "shortDisplayName": "Titans",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/ten.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "CBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, January 3rd at 1:00 PM EST",
+       "shortDetail": "1/3 - 1:00 PM EST"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873183",
+   "date": "2027-01-10T05:00Z",
+   "name": "Pittsburgh Steelers at Baltimore Ravens",
+   "timeValid": false,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "week": {
+    "number": 18,
+    "text": "Week 18"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873183/steelers-ravens",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873183",
+     "date": "2027-01-10T05:00Z",
+     "timeValid": false,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "M&T Bank Stadium",
+      "address": {
+       "city": "Baltimore",
+       "state": "MD",
+       "zipCode": "21230",
+       "country": "USA"
+      }
+     },
+     "notes": [
+      {
+       "type": "event",
+       "headline": "Flex Game: 1/9 or 1/10"
+      }
+     ],
+     "competitors": [
+      {
+       "id": "33",
+       "homeAway": "home",
+       "team": {
+        "id": "33",
+        "location": "Baltimore",
+        "nickname": "Ravens",
+        "abbreviation": "BAL",
+        "displayName": "Baltimore Ravens",
+        "shortDisplayName": "Ravens",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/bal.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [],
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "1/10 - TBD",
+       "shortDetail": "TBD"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

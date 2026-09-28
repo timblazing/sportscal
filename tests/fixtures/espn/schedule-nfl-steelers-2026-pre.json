@@ -1,0 +1,481 @@
+{
+ "season": {
+  "year": 2026,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2026",
+  "half": 1
+ },
+ "requestedSeason": {
+  "year": 2026,
+  "type": 1,
+  "name": "Preseason",
+  "displayName": "2026"
+ },
+ "team": {
+  "id": "23",
+  "location": "Pittsburgh",
+  "name": "Steelers",
+  "abbreviation": "PIT",
+  "displayName": "Pittsburgh Steelers",
+  "color": "000000"
+ },
+ "events": [
+  {
+   "id": "401873275",
+   "date": "2026-08-13T23:00Z",
+   "name": "Green Bay Packers at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "week": {
+    "number": 2,
+    "text": "Preseason Week 1"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873275/packers-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873275",
+     "date": "2026-08-13T23:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 28.0,
+        "displayValue": "28"
+       },
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "9",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 9.0,
+        "displayValue": "9"
+       },
+       "team": {
+        "id": "9",
+        "location": "Green Bay",
+        "nickname": "Packers",
+        "abbreviation": "GB",
+        "displayName": "Green Bay Packers",
+        "shortDisplayName": "Packers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/gb.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "NFL Net"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873288",
+   "date": "2026-08-21T23:00Z",
+   "name": "New York Jets at Pittsburgh Steelers",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "week": {
+    "number": 3,
+    "text": "Preseason Week 2"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873288/jets-steelers",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873288",
+     "date": "2026-08-21T23:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Acrisure Stadium",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "zipCode": "15212",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "23",
+       "homeAway": "home",
+       "winner": false,
+       "score": {
+        "value": 0.0,
+        "displayValue": "0"
+       },
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "20",
+       "homeAway": "away",
+       "winner": true,
+       "score": {
+        "value": 17.0,
+        "displayValue": "17"
+       },
+       "team": {
+        "id": "20",
+        "location": "New York",
+        "nickname": "Jets",
+        "abbreviation": "NYJ",
+        "displayName": "New York Jets",
+        "shortDisplayName": "Jets",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/nyj.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "NFL Net"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      },
+      {
+       "media": {
+        "shortName": "WCBS"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      },
+      {
+       "media": {
+        "shortName": "KDKA-TV"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401873298",
+   "date": "2026-08-27T23:00Z",
+   "name": "Pittsburgh Steelers at Buffalo Bills",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "week": {
+    "number": 4,
+    "text": "Preseason Week 3"
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nfl/game/_/gameId/401873298/steelers-bills",
+     "text": "Gamecast",
+     "shortText": "Summary",
+     "isExternal": false,
+     "isPremium": false
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401873298",
+     "date": "2026-08-27T23:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Highmark Stadium",
+      "address": {
+       "city": "Orchard Park",
+       "state": "NY",
+       "zipCode": "14127",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "2",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 28.0,
+        "displayValue": "28"
+       },
+       "team": {
+        "id": "2",
+        "location": "Buffalo",
+        "nickname": "Bills",
+        "abbreviation": "BUF",
+        "displayName": "Buffalo Bills",
+        "shortDisplayName": "Bills",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/buf.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "23",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 27.0,
+        "displayValue": "27"
+       },
+       "team": {
+        "id": "23",
+        "location": "Pittsburgh",
+        "nickname": "Steelers",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Steelers",
+        "shortDisplayName": "Steelers",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "NFL Net"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      },
+      {
+       "media": {
+        "shortName": "KDKA-TV"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
