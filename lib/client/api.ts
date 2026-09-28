@@ -1,5 +1,5 @@
 import type { CatalogTeam } from "@/lib/espn/teams";
-import type { ResolvedSeason, SeasonOption, SportsCalGame } from "@/lib/types";
+import type { ResolvedSeason, SportsCalGame } from "@/lib/types";
 import type { CalendarConfig } from "@/lib/validation/calendar-config";
 
 export type { CatalogTeam };
@@ -8,7 +8,6 @@ export interface ScheduleResponse {
   team: CatalogTeam;
   season: ResolvedSeason;
   autoSeason: ResolvedSeason;
-  seasonOptions: SeasonOption[];
   games: SportsCalGame[];
   fetchedAt: string;
 }

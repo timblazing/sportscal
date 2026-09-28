@@ -24,6 +24,7 @@ test("NFL → Steelers → schedule → download", async ({ page }) => {
 
 test("NBA → Thunder → customize title template", async ({ page }) => {
   await pickTeam(page, "NBA", "okc", "Oklahoma City Thunder");
+  await page.getByRole("button", { name: "Formatting options" }).click();
   const title = page.getByTestId("template-title");
   await title.fill("🏀 {teamAbbr} {homeAwaySymbol} {opponentAbbr}");
   await expect(page.getByTestId("event-preview").first()).toContainText(/🏀 OKC (vs|@) [A-Z]{2,4}/);

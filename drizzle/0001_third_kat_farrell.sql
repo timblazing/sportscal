@@ -1,0 +1,1 @@
+ALTER TABLE "calendar_configs" ALTER COLUMN "include_preseason" SET DEFAULT true;

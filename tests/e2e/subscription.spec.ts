@@ -21,6 +21,7 @@ test("save custom subscription, fetch it, then edit with the token", async ({ pa
   await page.evaluate(() => localStorage.clear());
   await page.goto("/");
   await pickTeam(page, "NBA", "thunder", "Oklahoma City Thunder");
+  await page.getByRole("button", { name: "Formatting options" }).click();
   await page.getByTestId("template-title").fill("{teamAbbr} {homeAwaySymbol} {opponentAbbr}");
   await page.getByTestId("subscribe-button").first().click();
 
@@ -48,10 +49,32 @@ test("save custom subscription, fetch it, then edit with the token", async ({ pa
   await page.goto(manageUrl);
   await expect(page).not.toHaveURL(/#token=/);
   await expect(page.getByText("Editing is enabled in this browser.")).toBeVisible();
+  await page.getByRole("button", { name: "Formatting options" }).click();
   await page.getByTestId("template-title").fill("Thunder game: {opponent}");
   await page.getByTestId("subscribe-button").first().click();
   await expect(page.getByText("Calendar saved").first()).toBeVisible();
 
   const updated = await (await request.get(feedPath)).text();
   expect(updated).toContain("SUMMARY:Thunder game: ");
+});
+
+test("custom formatting is shared by download and subscription", async ({ page, request }) => {
+  await page.goto("/");
+  await page.evaluate(() => localStorage.clear());
+  await page.goto("/");
+  await pickTeam(page, "NBA", "thunder", "Oklahoma City Thunder");
+  await page.getByRole("button", { name: "Formatting options" }).click();
+  await page.getByTestId("template-title").fill("Custom {teamAbbr} {opponent}");
+
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByTestId("download-button").first().click();
+  const download = await downloadPromise;
+  const downloadPath = await download.path();
+  const { readFileSync } = await import("node:fs");
+  expect(readFileSync(downloadPath!, "utf8")).toContain("SUMMARY:Custom OKC ");
+
+  await page.getByTestId("subscribe-button").first().click();
+  const feedUrl = await page.getByTestId("subscription-url").inputValue();
+  const feed = await (await request.get(new URL(feedUrl).pathname)).text();
+  expect(feed).toContain("SUMMARY:Custom OKC ");
 });

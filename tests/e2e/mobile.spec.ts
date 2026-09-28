@@ -9,6 +9,7 @@ test("mobile builder flow", async ({ page }) => {
   await pickTeam(page, "NCAAF", "sooners", "Oklahoma Sooners");
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   expect(overflow).toBeLessThanOrEqual(0);
+  await page.getByRole("button", { name: "Formatting options" }).click();
   await page.getByTestId("template-title").fill("{teamAbbr} {homeAwaySymbol} {opponentAbbr}");
   await expect(page.getByTestId("event-preview").first()).toContainText(/OU (vs|@) /);
   const download = page.waitForEvent("download");

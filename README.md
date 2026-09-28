@@ -25,8 +25,8 @@ No ticket links, store links, social links or app ads. Add more with templates i
 ## Features
 
 - Searchable team picker (name, school, mascot, abbreviation) grouped by conference/division from ESPN metadata
-- Automatic season detection: the in-progress season, the upcoming season once ESPN publishes it, otherwise the latest one. NBA labels come from ESPN (`2026-27`), never from the numeric season id. Manual season override lives in a small secondary menu.
-- Game types: Regular Season and Postseason on, Preseason off (NBA Play-In counts as postseason)
+- Automatic season detection: the in-progress season, the upcoming season once ESPN publishes it, otherwise the latest one. NBA labels come from ESPN (`2026-27`), never from the numeric season id.
+- Game types: Regular Season, Postseason, and Preseason on by default (NBA Play-In counts as postseason); individual types can be excluded in Advanced settings.
 - Global templates for calendar name, event title, description and location, with a click-to-insert variable picker and live preview
 - Minor per-game overrides (title, description, location, duration, include/exclude), stored as partial patches so later template changes still apply
 - League-default durations: NFL/NCAAF 3h30, NBA 2h30, adjustable
@@ -63,9 +63,9 @@ Deep links preselect the builder: `https://sportscal.site/?league=ncaaf&team=okl
 
 ### How feeds update
 
-Every feed request loads the configuration, resolves the season (when set to auto), reads the cached ESPN schedule, applies filters, templates and overrides, and generates the calendar. Schedules are never stored, so new start times, venue and broadcast changes, and postseason games show up on their own.
+Every feed request loads the configuration, resolves the current season, reads the cached ESPN schedule, applies filters, templates and overrides, and generates the calendar. Schedules are never stored, so new start times, venue and broadcast changes, and postseason games show up on their own.
 
-Auto-season feeds always represent **one** season: when ESPN's next season becomes the right one, the same URL switches to it. Calendar apps may keep events they already imported from the previous season; that depends on the app. Feeds pinned to a manual season never move.
+Feeds always represent **one** current season: when ESPN's next season becomes the right one, the same URL switches to it. Calendar apps may keep events they already imported from the previous season; that depends on the app.
 
 ### Stable UIDs
 

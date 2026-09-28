@@ -50,8 +50,7 @@ export default function AboutPage() {
           Feeds pick the season automatically: the current season while it&apos;s underway, the
           upcoming one once ESPN publishes it, and otherwise the most recent season. When a new season
           begins the same URL switches to it, so the feed always represents one season. Your calendar
-          app may keep events it already imported from the previous season. Calendars pinned to a
-          specific season never move.
+          app may keep events it already imported from the previous season.
         </p>
       </Section>
 

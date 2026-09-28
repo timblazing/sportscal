@@ -36,7 +36,7 @@ export function ActionBar({
         ) : (
           <DownloadIcon aria-hidden="true" />
         )}
-        Download .ics
+        Download
       </Button>
       <Button
         size="lg"
@@ -53,7 +53,7 @@ export function ActionBar({
         ) : (
           <RssIcon aria-hidden="true" />
         )}
-        {mode === "manage" ? "Save changes" : "Create subscription"}
+        {mode === "manage" ? "Save changes" : "Subscribe"}
       </Button>
     </div>
   );

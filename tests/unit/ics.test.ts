@@ -33,7 +33,7 @@ describe("ICS generation", () => {
   });
 
   it("includes one VEVENT per included game", () => {
-    expect(events).toHaveLength(17);
+    expect(events).toHaveLength(20);
   });
 
   it("uses stable UIDs, UTC start times and durations", () => {

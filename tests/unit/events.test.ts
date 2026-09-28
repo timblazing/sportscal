@@ -22,11 +22,11 @@ describe("stable UIDs", () => {
 });
 
 describe("filters", () => {
-  it("defaults to regular season + postseason, preseason off", () => {
+  it("includes preseason, regular season, and postseason by default", () => {
     const config = steelersConfig();
     const events = buildCalendarEvents(steelersGames(), config, "23");
-    expect(events.filter((e) => e.included)).toHaveLength(17);
-    expect(events.filter((e) => e.excludedBy === "seasonType")).toHaveLength(3);
+    expect(events.filter((e) => e.included)).toHaveLength(20);
+    expect(events.filter((e) => e.excludedBy === "seasonType")).toHaveLength(0);
   });
 
   it("can include preseason", () => {
@@ -111,7 +111,7 @@ describe("overrides", () => {
     const config = { ...steelersConfig(), overrides: { "401873002": { excluded: true } } };
     const events = buildCalendarEvents(steelersGames(), config, "23");
     expect(events.find((e) => e.gameId === "401873002")!.excludedBy).toBe("override");
-    expect(events.filter((e) => e.included)).toHaveLength(16);
+    expect(events.filter((e) => e.included)).toHaveLength(19);
   });
 
   it("merges field by field", () => {

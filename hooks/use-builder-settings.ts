@@ -9,7 +9,7 @@ import { DEFAULT_TEMPLATES, type GameOverride } from "@/lib/validation/calendar-
 export function defaultSettings(league: LeagueKey): BuilderSettings {
   return {
     seasonMode: "auto",
-    include: { preseason: false, regularSeason: true, postseason: true },
+    include: { preseason: true, regularSeason: true, postseason: true },
     templates: { ...DEFAULT_TEMPLATES },
     durationMinutes: LEAGUES[league].defaultDurationMinutes,
     busyStatus: "free",

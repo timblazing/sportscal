@@ -30,7 +30,7 @@ export const calendarConfigs = pgTable(
     seasonMode: varchar("season_mode", { length: 8 }).notNull().default("auto"),
     seasonOverride: integer("season_override"),
 
-    includePreseason: boolean("include_preseason").notNull().default(false),
+    includePreseason: boolean("include_preseason").notNull().default(true),
     includeRegularSeason: boolean("include_regular_season").notNull().default(true),
     includePostseason: boolean("include_postseason").notNull().default(true),
 

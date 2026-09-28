@@ -4,6 +4,7 @@ import { ChevronRightIcon } from "lucide-react";
 import { useId, useState } from "react";
 
 import { DurationInput } from "@/components/builder/duration-input";
+import { GameTypeOptions } from "@/components/builder/game-type-options";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Switch } from "@/components/ui/switch";
@@ -42,7 +43,7 @@ export function AdvancedSettings({
   onResetTemplates,
   onResetOverrides,
   overrideCount,
-  seasonControl,
+  counts,
 }: {
   settings: BuilderSettings;
   defaultDuration: number;
@@ -50,7 +51,7 @@ export function AdvancedSettings({
   onResetTemplates: () => void;
   onResetOverrides: () => void;
   overrideCount: number;
-  seasonControl?: React.ReactNode;
+  counts?: Partial<Record<keyof BuilderSettings["include"], number>>;
 }) {
   const [open, setOpen] = useState(false);
   return (
@@ -63,7 +64,11 @@ export function AdvancedSettings({
         />
       </CollapsibleTrigger>
       <CollapsibleContent className="space-y-5 border-t border-border px-4 py-4">
-        {seasonControl}
+        <GameTypeOptions
+          value={settings.include}
+          counts={counts}
+          onChange={(include) => onChange({ include })}
+        />
         <div className="space-y-1.5">
           <DurationInput
             value={settings.durationMinutes}

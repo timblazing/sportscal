@@ -13,7 +13,7 @@ const valid = () => defaultConfig("ncaaf", { id: "201", slug: "oklahoma-sooners"
 describe("calendar config validation", () => {
   it("has the specified defaults", () => {
     const c = valid();
-    expect(c.include).toEqual({ preseason: false, regularSeason: true, postseason: true });
+    expect(c.include).toEqual({ preseason: true, regularSeason: true, postseason: true });
     expect(c.templates).toEqual({
       calendarName: "{team} {season} Schedule",
       title: "{team} {homeAwaySymbol} {opponent}",

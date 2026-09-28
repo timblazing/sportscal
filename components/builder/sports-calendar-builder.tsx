@@ -1,14 +1,12 @@
 "use client";
 
-import { InfoIcon } from "lucide-react";
+import { ChevronRightIcon, InfoIcon } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 
 import { ActionBar } from "@/components/builder/action-bar";
 import { AdvancedSettings } from "@/components/builder/advanced-settings";
-import { GameTypeOptions } from "@/components/builder/game-type-options";
 import { LeagueSelector } from "@/components/builder/league-selector";
-import { SeasonSelector } from "@/components/builder/season-selector";
 import { TeamPicker } from "@/components/builder/team-picker";
 import { TeamSummary } from "@/components/builder/team-summary";
 import { TemplateEditor } from "@/components/builder/template-editor";
@@ -24,6 +22,7 @@ import {
   type SubscriptionInfo,
 } from "@/components/subscription/subscription-dialog";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Separator } from "@/components/ui/separator";
 import { defaultSettings, mergeSettings, useBuilderSettings } from "@/hooks/use-builder-settings";
 import { seedJson, useJson } from "@/hooks/use-json";
@@ -141,12 +140,8 @@ export function SportsCalendarBuilder({
     [saved, teams.data, teamSlug],
   );
 
-  const seasonParam =
-    settings.seasonMode === "manual" && settings.seasonOverride !== undefined
-      ? `&season=${settings.seasonOverride}`
-      : "";
   const schedule = useJson<ScheduleResponse>(
-    selectedTeam ? `/api/schedule?league=${league}&team=${selectedTeam.slug}${seasonParam}` : null,
+    selectedTeam ? `/api/schedule?league=${league}&team=${selectedTeam.slug}` : null,
   );
   const scheduleData = schedule.data?.team.id === selectedTeam?.id ? schedule.data : undefined;
 
@@ -300,21 +295,8 @@ export function SportsCalendarBuilder({
       {selectedTeam && (
         <>
           <Separator />
-          <TeamSummary team={selectedTeam} season={scheduleData?.season} gameCount={scheduleData?.games.length}>
-            <SeasonSelector
-              autoSeason={scheduleData?.autoSeason}
-              options={scheduleData?.seasonOptions ?? []}
-              seasonMode={settings.seasonMode}
-              seasonOverride={settings.seasonOverride}
-              onChange={(value) => update({ seasonMode: value.seasonMode, seasonOverride: value.seasonOverride })}
-            />
-          </TeamSummary>
-          <GameTypeOptions
-            value={settings.include}
-            counts={scheduleData ? counts : undefined}
-            onChange={(include) => update({ include })}
-          />
-          <div className="space-y-5">
+          <TeamSummary team={selectedTeam} season={scheduleData?.season} gameCount={scheduleData?.games.length} />
+          <FormattingOptions>
             <TemplateEditor
               label="Event title"
               help="Shown as the event name in your calendar."
@@ -358,7 +340,7 @@ export function SportsCalendarBuilder({
               preview={scheduleData ? calendarName : undefined}
               testId="template-calendar-name"
             />
-          </div>
+          </FormattingOptions>
           <AdvancedSettings
             settings={settings}
             defaultDuration={leagueConfig.defaultDurationMinutes}
@@ -372,6 +354,7 @@ export function SportsCalendarBuilder({
               toast("Override reset");
             }}
             overrideCount={overrideCount}
+            counts={scheduleData ? counts : undefined}
           />
         </>
       )}
@@ -389,9 +372,6 @@ export function SportsCalendarBuilder({
           saving={saving}
           disabled={!scheduleData}
         />
-        <p className="text-xs text-muted-foreground">
-          Download is a snapshot. Subscription URLs update when the schedule changes.
-        </p>
       </div>
 
       {scheduleData?.season.pendingNextSeason && (
@@ -452,9 +432,6 @@ export function SportsCalendarBuilder({
             saving={saving}
             disabled={!scheduleData}
           />
-          <p className="mt-2 text-center text-[11px] text-muted-foreground">
-            Download is a snapshot. Subscription URLs update when the schedule changes.
-          </p>
         </div>
       )}
 
@@ -477,8 +454,10 @@ export function SportsCalendarBuilder({
 function savedSettings(config: CalendarConfig): BuilderSettings {
   return {
     ...defaultSettings(config.league),
-    seasonMode: config.seasonMode,
-    seasonOverride: config.seasonOverride,
+    // Saved calendars created before the current-season-only UI may still
+    // contain a pinned season. Editing them brings them back to the live season.
+    seasonMode: "auto",
+    seasonOverride: undefined,
     include: config.include,
     templates: config.templates,
     durationMinutes: config.durationMinutes,
@@ -486,4 +465,22 @@ function savedSettings(config: CalendarConfig): BuilderSettings {
     includeEspnUrl: config.includeEspnUrl,
     overrides: config.overrides,
   };
+}
+
+function FormattingOptions({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <Collapsible open={open} onOpenChange={setOpen} className="rounded-lg border border-border">
+      <CollapsibleTrigger className="flex w-full items-center justify-between gap-2 rounded-lg px-4 py-3 text-left text-sm font-medium text-foreground hover:bg-accent/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none">
+        Formatting options
+        <ChevronRightIcon
+          aria-hidden="true"
+          className={`size-4 text-muted-foreground transition-transform${open ? " rotate-90" : ""}`}
+        />
+      </CollapsibleTrigger>
+      <CollapsibleContent className="space-y-5 border-t border-border px-4 py-4">
+        {children}
+      </CollapsibleContent>
+    </Collapsible>
+  );
 }
