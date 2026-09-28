@@ -96,11 +96,13 @@ The builder, downloads and canonical feeds work without a database. Saving custo
 
 | Variable                    | Required        | Description                                                              |
 | --------------------------- | --------------- | ------------------------------------------------------------------------ |
-| `DATABASE_URL`              | for saved feeds | PostgreSQL connection string                                             |
-| `NEXT_PUBLIC_APP_URL`       | yes             | Public origin for feed/manage URLs (`https://sportscal.site` in production, `http://localhost:3000` locally) |
+| `DATABASE_URL`              | for saved feeds | PostgreSQL connection string. Used for migrations, and for the app when no pooled URL is set |
+| `DATABASE_URL_POOLED`       | no              | Pooled connection for app traffic (Neon's `-pooler` host)                |
+| `APP_URL`                   | yes             | Public origin, read at runtime (`https://sportscal.site` in production, `http://localhost:3000` locally) |
 | `RATE_LIMIT_MAX`            | no              | Anonymous creates/updates per IP per window (default `20`)               |
 | `RATE_LIMIT_WINDOW_SECONDS` | no              | Rate limit window (default `3600`)                                       |
 | `RATE_LIMIT_SALT`           | no              | Salt for hashing IPs in the rate-limit table                             |
+| `RUN_MIGRATIONS`            | no              | Docker only: set `false` to skip migrations on container start           |
 | `DATABASE_POOL_MAX`         | no              | Max connections per server instance (default `5`)                        |
 
 ### Database
@@ -113,7 +115,7 @@ pnpm db:migrate    # apply migrations to DATABASE_URL
 pnpm db:studio     # browse data
 ```
 
-Any standard PostgreSQL works (Neon, Supabase, RDS, Railway, self-hosted). The driver is [`postgres`](https://github.com/porsager/postgres) with prepared statements disabled, so transaction-mode poolers (PgBouncer) are fine.
+Any standard PostgreSQL works (Neon, Supabase, RDS, self-hosted). The driver is [`postgres`](https://github.com/porsager/postgres) with prepared statements disabled, so transaction-mode poolers (PgBouncer) are fine.
 
 ## Tests
 
@@ -122,20 +124,36 @@ pnpm lint
 pnpm typecheck
 pnpm test        # unit/integration tests, fixture-based, no network
 pnpm test:live   # optional: live ESPN checks for the three example teams
-pnpm test:e2e    # Playwright: builds, starts the app, uses live ESPN + DATABASE_URL
+pnpm test:e2e    # Playwright: builds, starts the app, uses live ESPN + your database
 ```
 
 Unit tests use small sanitized ESPN fixtures in `tests/fixtures/espn` (Pittsburgh Steelers, Oklahoma City Thunder, Oklahoma Sooners) and parse generated calendars with [ical.js](https://github.com/kewisch/ical.js) as an independent validator. Run `pnpm exec playwright install chromium` once before E2E tests.
 
-## Deploying to Vercel
+## Deployment (Docker)
 
-1. Import the GitHub repository in Vercel (framework preset: Next.js).
-2. Create a PostgreSQL database (Vercel Marketplace → Neon, or any provider) and set `DATABASE_URL`.
-3. Set `NEXT_PUBLIC_APP_URL=https://sportscal.site`.
-4. Deploy. The `vercel-build` script runs `drizzle-kit migrate` before `next build`, so migrations apply on each deploy.
-5. Add the domain: **Project → Settings → Domains → Add `sportscal.site`** (and `www.sportscal.site` redirecting to it). At your DNS provider point the apex `A` record to `76.76.21.21` and `www` `CNAME` to `cname.vercel-dns.com` (or use Vercel nameservers). Vercel issues the TLS certificate automatically.
+Every push to `main` builds a Docker image and publishes it to GitHub Container Registry (`.github/workflows/docker.yml`):
 
-Feeds send `Cache-Control: public, max-age=300, s-maxage=900, stale-while-revalidate=3600`, so Vercel's CDN serves most calendar-app polling without touching ESPN. ESPN requests are cached server-side: team catalogs 24h, season metadata 6h, schedules 15 min (3h for completed seasons).
+```
+ghcr.io/timblazing/sportscal:latest        # latest main
+ghcr.io/timblazing/sportscal:sha-<commit>  # pinned build
+```
+
+On the server, copy `deploy/docker-compose.yml` and `deploy/.env.example` (as `.env`), fill in the values, then:
+
+```bash
+docker compose pull
+docker compose up -d
+```
+
+The container applies pending Drizzle migrations on start (using `DATABASE_URL`), then starts the Next.js standalone server on port 3000. Put a reverse proxy (Caddy, nginx, Traefik) in front for TLS and `sportscal.site`, and have it set `X-Forwarded-For` so rate limiting sees client IPs. The optional Watchtower service in the compose file pulls new `latest` images and restarts the app automatically after each push to `main`; without it, run `docker compose pull && docker compose up -d` to update.
+
+Build locally with `docker build -t sportscal .`. `GET /api/health` is the container health check.
+
+Feeds send `Cache-Control: public, max-age=300, s-maxage=900, stale-while-revalidate=3600`, so a caching proxy or CDN can absorb calendar-app polling. ESPN requests are cached in the server's data cache: team catalogs 24h, season metadata 6h, schedules 15 min (3h for completed seasons).
+
+### Neon
+
+Create a project with only **Postgres database** enabled, in the region nearest your server. Use the direct connection string as `DATABASE_URL` and the pooled one as `DATABASE_URL_POOLED`. Scale-to-zero is fine: migrations retry while the database wakes up.
 
 ## Adding a league
 

@@ -1,8 +1,11 @@
 import type { LeagueKey } from "@/lib/config/leagues";
 
-/** Public origin, from NEXT_PUBLIC_APP_URL (e.g. https://sportscal.site). */
+/**
+ * Public origin (e.g. https://sportscal.site). Read from APP_URL at runtime so
+ * a single Docker image works on any host.
+ */
 export function appUrl(): string {
-  return (process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000").replace(/\/+$/, "");
+  return (process.env.APP_URL || "http://localhost:3000").replace(/\/+$/, "");
 }
 
 export function canonicalFeedPath(league: LeagueKey, teamSlug: string): string {

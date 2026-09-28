@@ -19,7 +19,8 @@ const globalForDb = globalThis as unknown as { sportscalDb?: Database };
 /** Lazily create a single pooled client per server instance. */
 export function getDb(): Database {
   if (globalForDb.sportscalDb) return globalForDb.sportscalDb;
-  const url = process.env.DATABASE_URL;
+  // Prefer a pooled connection (e.g. Neon's -pooler host) for app traffic.
+  const url = process.env.DATABASE_URL_POOLED || process.env.DATABASE_URL;
   if (!url) throw new DatabaseNotConfiguredError();
   const client = postgres(url, {
     max: Number(process.env.DATABASE_POOL_MAX ?? 5),

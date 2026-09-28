@@ -9,9 +9,8 @@ export async function copyText(text: string, successMessage: string) {
   }
 }
 
-/** Absolute URL for a path, preferring the configured public origin. */
+/** Absolute URL for a path on the origin the visitor is using. */
 export function publicUrl(path: string): string {
-  const configured = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/+$/, "");
-  const origin = configured || (typeof window !== "undefined" ? window.location.origin : "");
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
   return `${origin}${path}`;
 }

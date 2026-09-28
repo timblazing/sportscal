@@ -15,7 +15,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "vercel-build": "drizzle-kit migrate && next build"
+    "db:migrate:prod": "node dist/migrate.mjs",
+    "build:migrate": "esbuild scripts/migrate.ts --bundle --platform=node --format=esm --target=node22 --outfile=dist/migrate.mjs --banner:js=\"import{createRequire}from'module';const require=createRequire(import.meta.url);\""
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -45,6 +46,7 @@
     "@types/react-dom": "^19",
     "dotenv": "^18.0.4",
     "drizzle-kit": "^0.31.11",
+    "esbuild": "^0.28.2",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
     "ical.js": "^2.2.1",

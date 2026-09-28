@@ -54,7 +54,7 @@
 
 :root {
   color-scheme: dark;
-  /* Dark-only palette (Vercel-inspired neutrals). Use these semantic tokens,
+  /* Dark-only palette (neutral dashboard palette). Use these semantic tokens,
      never literal colors, in components. */
   --background: #000000;
   --foreground: #ededed;

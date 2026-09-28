@@ -26,7 +26,7 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 240_000,
     env: {
-      NEXT_PUBLIC_APP_URL: `http://localhost:${PORT}`,
+      APP_URL: `http://localhost:${PORT}`,
       RATE_LIMIT_MAX: "1000",
     },
   },
