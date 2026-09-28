@@ -80,17 +80,17 @@ Next.js (App Router) · TypeScript (strict) · React · Tailwind CSS · shadcn/u
 
 ## Local development
 
-Requirements: Node.js 22.13+ (24 recommended), pnpm, Docker (or any PostgreSQL 14+).
+Requirements: Node.js 22.13+ (24 recommended), pnpm, and a PostgreSQL database — either a hosted one (e.g. a Neon dev branch) or the local Docker one below.
 
 ```bash
 pnpm install
-cp .env.example .env.local
-docker compose up -d        # local PostgreSQL on :5432
-pnpm db:migrate             # apply migrations
-pnpm dev                    # http://localhost:3000
+cp .env.example .env.local   # set DATABASE_URL (and DATABASE_URL_POOLED for Neon)
+docker compose up -d         # optional: local PostgreSQL on :5432 (Docker Desktop, OrbStack or Colima)
+pnpm db:migrate              # apply migrations to DATABASE_URL
+pnpm dev                     # http://localhost:3000
 ```
 
-The builder, downloads and canonical feeds work without a database. Saving custom subscriptions needs PostgreSQL.
+The root `docker-compose.yml` is only a local development database. The builder, downloads and canonical feeds work without a database; saving custom subscriptions needs PostgreSQL.
 
 ### Environment variables
 
@@ -131,29 +131,61 @@ Unit tests use small sanitized ESPN fixtures in `tests/fixtures/espn` (Pittsburg
 
 ## Deployment (Docker)
 
-Every push to `main` builds a Docker image and publishes it to GitHub Container Registry (`.github/workflows/docker.yml`):
+SportsCal ships as a single Docker image. Every push to `main` runs `.github/workflows/docker.yml`, which builds the image for `linux/amd64` and `linux/arm64` (about 10 minutes) and publishes it to GitHub Container Registry:
 
 ```
 ghcr.io/timblazing/sportscal:latest        # latest main
-ghcr.io/timblazing/sportscal:sha-<commit>  # pinned build
+ghcr.io/timblazing/sportscal:sha-<commit>  # pinned build, for rollbacks
 ```
 
-On the server, copy `deploy/docker-compose.yml` and `deploy/.env.example` (as `.env`), fill in the values, then:
+The package is public, so servers can pull without logging in. A separate `CI` workflow runs lint, typecheck, unit tests and a production build on every push and pull request.
+
+### Running on a VPS
+
+`compose.yaml` on the server:
+
+```yaml
+services:
+  sportscal:
+    image: ghcr.io/timblazing/sportscal:latest
+    container_name: sportscal
+    env_file: .env
+    ports:
+      - "127.0.0.1:3006:3000"   # host port is up to you; the container listens on 3000
+    restart: unless-stopped
+```
+
+`.env` next to it (see `deploy/.env.example`):
 
 ```bash
-docker compose pull
-docker compose up -d
+DATABASE_URL=postgresql://...neon.tech/neondb?sslmode=require&channel_binding=require          # direct
+DATABASE_URL_POOLED=postgresql://...-pooler...neon.tech/neondb?sslmode=require&channel_binding=require  # pooled
+APP_URL=https://sportscal.site
+RATE_LIMIT_SALT=any-random-string
 ```
 
-The container applies pending Drizzle migrations on start (using `DATABASE_URL`), then starts the Next.js standalone server on port 3000. Put a reverse proxy (Caddy, nginx, Traefik) in front for TLS and `sportscal.site`, and have it set `X-Forwarded-For` so rate limiting sees client IPs. The optional Watchtower service in the compose file pulls new `latest` images and restarts the app automatically after each push to `main`; without it, run `docker compose pull && docker compose up -d` to update.
+```bash
+docker compose pull && docker compose up -d
+```
 
-Build locally with `docker build -t sportscal .`. `GET /api/health` is the container health check.
+- The database is external (Neon), so no Postgres container or port is needed on the server.
+- On start the container applies pending Drizzle migrations using `DATABASE_URL` (retrying while Neon wakes from scale-to-zero), then starts the Next.js standalone server on port 3000. Set `RUN_MIGRATIONS=false` to skip.
+- Put a reverse proxy (Caddy, nginx, Traefik) in front for TLS on `sportscal.site`, and have it pass `X-Forwarded-For` so rate limiting sees real client IPs. Bind the host port to `127.0.0.1` when the proxy runs on the same machine.
+- `GET /api/health` is the container health check.
 
-Feeds send `Cache-Control: public, max-age=300, s-maxage=900, stale-while-revalidate=3600`, so a caching proxy or CDN can absorb calendar-app polling. ESPN requests are cached in the server's data cache: team catalogs 24h, season metadata 6h, schedules 15 min (3h for completed seasons).
+### Updating
+
+After a push to `main` and a finished image build, either run `docker compose pull && docker compose up -d`, or add Watchtower to update automatically — `deploy/docker-compose.yml` has a complete example with it. To roll back, pin `image:` to a `sha-<commit>` tag.
+
+Build the image locally with `docker build -t sportscal .`.
+
+### Caching
+
+Feeds send `Cache-Control: public, max-age=300, s-maxage=900, stale-while-revalidate=3600`, so a caching proxy or CDN in front can absorb calendar-app polling. ESPN requests are cached in the server's data cache: team catalogs 24h, season metadata 6h, schedules 15 min (3h for completed seasons). The cache lives in the container and starts empty after a restart.
 
 ### Neon
 
-Create a project with only **Postgres database** enabled, in the region nearest your server. Use the direct connection string as `DATABASE_URL` and the pooled one as `DATABASE_URL_POOLED`. Scale-to-zero is fine: migrations retry while the database wakes up.
+Create a project with only **Postgres database** enabled (object storage, functions, AI gateway and Neon Auth aren't used), in the region nearest your server. Neon shows two connection strings: the direct one is `DATABASE_URL`, the `-pooler` one is `DATABASE_URL_POOLED`. The Neon CLI/agent setup isn't needed.
 
 ## Adding a league
 
@@ -191,11 +223,15 @@ lib/
   db/                    Drizzle schema, client, saved-calendar repository
   security/              edit tokens (hashed, constant-time compare), rate limiting
   validation/            calendar config schema, limits, defaults
+scripts/migrate.ts       migration runner bundled into the Docker image
 app/
-  api/{leagues,teams,schedule,download,calendars}
+  api/{leagues,teams,schedule,download,calendars,health}
   calendar/[league]/[...path]   .ics feeds
   manage/[publicId]             edit a saved calendar
 components/{builder,schedule,subscription,layout,ui}
+Dockerfile, docker-entrypoint.sh   production image (migrate, then serve)
+deploy/                  example VPS compose file and .env
+.github/workflows/       ci.yml (checks), docker.yml (image on push to main)
 ```
 
 ## ESPN data disclaimer

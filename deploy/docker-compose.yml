@@ -1,18 +1,21 @@
-# Example production stack for a VPS. Copy this file and a .env next to it:
+# Example production stack for a VPS. Put a filled-in .env (see .env.example)
+# next to this file, then:
 #   docker compose pull && docker compose up -d
 services:
   sportscal:
     image: ghcr.io/timblazing/sportscal:latest
-    restart: unless-stopped
+    container_name: sportscal
     env_file: .env
     ports:
-      - "127.0.0.1:3000:3000" # put your reverse proxy (Caddy, nginx, Traefik) in front
+      - "127.0.0.1:3006:3000" # host port is up to you; put a reverse proxy in front
+    restart: unless-stopped
     labels:
       - com.centurylinklabs.watchtower.enable=true
 
-  # Optional: pull and restart automatically when a new image is pushed to GHCR.
+  # Optional: pulls new images published from main and restarts SportsCal.
   watchtower:
     image: containrrr/watchtower
+    container_name: watchtower
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
