@@ -77,8 +77,8 @@ export interface SportsCalendarBuilderProps {
   saved?: SavedCalendarContext & { config: CalendarConfig; team: CatalogTeam };
 }
 
-function teamsUrl(league: LeagueKey, showAll: boolean) {
-  return `/api/teams?league=${league}${showAll ? "&all=1" : ""}`;
+function teamsUrl(league: LeagueKey) {
+  return `/api/teams?league=${league}&all=1`;
 }
 
 export function SportsCalendarBuilder({
@@ -90,14 +90,13 @@ export function SportsCalendarBuilder({
   const mode = saved ? "manage" : "create";
   const [league, setLeague] = useState<LeagueKey>(saved?.config.league ?? initialLeague);
   const [teamSlug, setTeamSlug] = useState<string | undefined>(saved?.config.teamSlug ?? initialTeamSlug);
-  const [showAll, setShowAll] = useState(false);
   const { settings, setSettings, update, setOverride, resetForTeam } = useBuilderSettings(
     league,
     saved ? savedSettings(saved.config) : undefined,
   );
 
   useState(() => {
-    if (initialTeams) seedJson(teamsUrl(initialLeague, false), { teams: initialTeams });
+    if (initialTeams) seedJson(teamsUrl(initialLeague), { teams: initialTeams });
   });
 
   // Restore the last session's selection and templates (convenience only).
@@ -136,19 +135,11 @@ export function SportsCalendarBuilder({
   }, [saved, league, teamSlug, settings]);
 
   // --- Data ------------------------------------------------------------------
-  const teams = useJson<{ teams: CatalogTeam[] }>(saved ? null : teamsUrl(league, showAll));
+  const teams = useJson<{ teams: CatalogTeam[] }>(saved ? null : teamsUrl(league));
   const selectedTeam = useMemo(
     () => saved?.team ?? teams.data?.teams.find((t) => t.slug === teamSlug),
     [saved, teams.data, teamSlug],
   );
-
-  // A deep link to a non-default (e.g. FCS) team: expand the list automatically.
-  useEffect(() => {
-    if (teams.status === "success" && teamSlug && !selectedTeam && !showAll && league === "ncaaf") {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- reacting to fetched data
-      setShowAll(true);
-    }
-  }, [teams.status, teamSlug, selectedTeam, showAll, league]);
 
   const seasonParam =
     settings.seasonMode === "manual" && settings.seasonOverride !== undefined
@@ -188,7 +179,6 @@ export function SportsCalendarBuilder({
     if (next === league) return;
     setLeague(next);
     setTeamSlug(undefined);
-    setShowAll(false);
     resetForTeam(next, true);
   }
 
@@ -296,13 +286,11 @@ export function SportsCalendarBuilder({
       {mode === "create" && <LeagueSelector value={league} onChange={changeLeague} />}
       {mode === "create" && (
         <TeamPicker
-          league={league}
+          key={league}
           teams={teams.data?.teams}
           loading={teams.status === "loading" || teams.status === "idle"}
           selected={selectedTeam}
           onSelect={selectTeam}
-          showAll={showAll}
-          onShowAllChange={setShowAll}
         />
       )}
       {teams.status === "error" && !teams.data && (
@@ -481,7 +469,6 @@ export function SportsCalendarBuilder({
       <SubscriptionDialog
         info={subscription}
         onOpenChange={(open) => !open && setSubscription(null)}
-        onDownload={download}
       />
     </>
   );

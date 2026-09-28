@@ -1,14 +1,14 @@
 "use client";
 
-import { useId } from "react";
+import { CheckIcon, PlusIcon } from "lucide-react";
 
-import { Checkbox } from "@/components/ui/checkbox";
 import type { CalendarConfig } from "@/lib/validation/calendar-config";
+import { cn } from "@/lib/utils";
 
 type Include = CalendarConfig["include"];
 
 const OPTIONS: { key: keyof Include; label: string }[] = [
-  { key: "regularSeason", label: "Regular Season" },
+  { key: "regularSeason", label: "Regular season" },
   { key: "postseason", label: "Postseason" },
   { key: "preseason", label: "Preseason" },
 ];
@@ -22,30 +22,33 @@ export function GameTypeOptions({
   counts?: Partial<Record<keyof Include, number>>;
   onChange: (value: Include) => void;
 }) {
-  const baseId = useId();
   return (
     <fieldset>
       <legend className="mb-2 text-sm font-medium text-foreground">Include</legend>
-      <div className="grid gap-1 sm:grid-cols-3">
+      <div className="flex flex-wrap gap-2">
         {OPTIONS.map((option) => {
-          const id = `${baseId}-${option.key}`;
+          const on = value[option.key];
           const count = counts?.[option.key];
+          const Icon = on ? CheckIcon : PlusIcon;
           return (
-            <label
+            <button
               key={option.key}
-              htmlFor={id}
-              className="flex min-h-10 cursor-pointer items-center gap-2.5 rounded-md border border-border bg-card px-3 text-sm transition-colors hover:border-border-strong"
+              type="button"
+              aria-pressed={on}
+              onClick={() => onChange({ ...value, [option.key]: !on })}
+              className={cn(
+                "inline-flex h-8 items-center gap-1.5 rounded-full border pr-3 pl-2.5 text-sm whitespace-nowrap transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50",
+                on
+                  ? "border-border-strong bg-secondary text-foreground"
+                  : "border-border border-dashed text-muted-foreground hover:border-border-strong hover:text-foreground",
+              )}
             >
-              <Checkbox
-                id={id}
-                checked={value[option.key]}
-                onCheckedChange={(v) => onChange({ ...value, [option.key]: v === true })}
-              />
-              <span className="flex-1">{option.label}</span>
+              <Icon className="size-3.5 shrink-0" aria-hidden="true" />
+              {option.label}
               {count !== undefined && (
                 <span className="font-mono text-xs text-muted-foreground tabular">{count}</span>
               )}
-            </label>
+            </button>
           );
         })}
       </div>

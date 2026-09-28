@@ -30,20 +30,17 @@ test("NBA → Thunder → customize title template", async ({ page }) => {
   await expect(page).toHaveURL(/league=nba&team=oklahoma-city-thunder/);
 });
 
-test("NCAAF → FBS team picker grouped by conference", async ({ page }) => {
+test("NCAAF → team search includes every division", async ({ page }) => {
   await page.getByText("NCAAF", { exact: true }).click();
-  await page.getByTestId("team-picker").click();
-  await expect(page.getByRole("group", { name: "SEC" })).toBeVisible();
-  const search = page.getByPlaceholder("Team, school, mascot, or abbreviation");
-  await search.fill("montana grizzlies");
+  const search = page.getByTestId("team-picker");
+  await search.fill("zzzz");
   await expect(page.getByText("No teams found.")).toBeVisible();
   await search.fill("sooners");
   await page.getByRole("option", { name: /Oklahoma Sooners/ }).click();
+  await expect(search).toHaveValue("Oklahoma Sooners");
   await expect(page.getByTestId("season-summary")).toContainText("season");
   await expect(page.getByTestId("schedule-row").first()).toBeVisible();
 
-  await page.getByLabel(/Show all teams/).click();
-  await page.getByTestId("team-picker").click();
   await search.fill("montana grizzlies");
   await expect(page.getByRole("option", { name: /Montana Grizzlies/ })).toBeVisible();
 });

@@ -1,188 +1,145 @@
 "use client";
 
-import { CheckIcon, ChevronsUpDownIcon } from "lucide-react";
-import { useId, useMemo, useState } from "react";
+import { Command as CommandPrimitive } from "cmdk";
+import { SearchIcon } from "lucide-react";
+import { useId, useMemo, useRef, useState } from "react";
 
 import { TeamLogo } from "@/components/builder/team-logo";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { CatalogTeam } from "@/lib/client/api";
-import type { LeagueKey } from "@/lib/config/leagues";
 import { cn } from "@/lib/utils";
 
-interface TeamGroup {
-  label: string;
-  teams: CatalogTeam[];
-}
+const MAX_RESULTS = 50;
+const TIER_RANK: Record<CatalogTeam["tier"], number> = { primary: 0, secondary: 1, other: 2 };
 
-/** Group teams by conference/division using ESPN metadata. */
-export function groupTeams(league: LeagueKey, teams: CatalogTeam[]): TeamGroup[] {
-  const groups = new Map<string, { order: string; teams: CatalogTeam[] }>();
+/**
+ * Match every search term against a team's names, ranking exact abbreviation
+ * and name-prefix hits first, then top-tier teams (FBS before FCS and below).
+ */
+export function searchTeams(teams: CatalogTeam[], query: string): CatalogTeam[] {
+  const q = query.toLowerCase().trim();
+  const terms = q.split(/\s+/).filter(Boolean);
+  if (terms.length === 0) return [];
+
+  const scored: { team: CatalogTeam; score: number }[] = [];
   for (const team of teams) {
-    let label: string;
-    let order: string;
-    if (league === "ncaaf") {
-      const conf = team.conference?.name;
-      if (team.tier === "primary") {
-        label = conf ?? "FBS";
-        order = `0-${label === "Independents" ? "zzz" : label}`;
-      } else if (team.tier === "secondary") {
-        label = conf ? `FCS · ${conf}` : "FCS";
-        order = `1-${label}`;
-      } else {
-        label = "Other divisions";
-        order = "2";
-      }
-    } else {
-      const conf = team.conference?.shortName ?? team.conference?.name ?? "";
-      const division = team.division?.name ?? "";
-      label =
-        league === "nba" && division && conf
-          ? `${conf} · ${division}`
-          : division || conf || "Teams";
-      order = `${conf}-${division}`;
-    }
-    const group = groups.get(label) ?? { order, teams: [] };
-    group.teams.push(team);
-    groups.set(label, group);
+    const haystack = [
+      team.displayName,
+      team.location,
+      team.name,
+      team.shortName,
+      team.abbreviation,
+      team.slug,
+      team.conference?.name ?? "",
+    ]
+      .join(" ")
+      .toLowerCase();
+    if (!terms.every((t) => haystack.includes(t))) continue;
+
+    const name = team.displayName.toLowerCase();
+    let score = TIER_RANK[team.tier] * 10;
+    if (team.abbreviation.toLowerCase() === q) score -= 40;
+    else if (name.startsWith(q)) score -= 30;
+    else if (name.split(/\s+/).some((word) => word.startsWith(terms[0]))) score -= 20;
+    scored.push({ team, score });
   }
-  return [...groups.entries()]
-    .sort(([, a], [, b]) => a.order.localeCompare(b.order))
-    .map(([label, g]) => ({
-      label,
-      teams: g.teams.sort((a, b) => a.displayName.localeCompare(b.displayName)),
-    }));
+
+  return scored
+    .sort((a, b) => a.score - b.score || a.team.displayName.localeCompare(b.team.displayName))
+    .slice(0, MAX_RESULTS)
+    .map((s) => s.team);
 }
 
 export function TeamPicker({
-  league,
   teams,
   loading,
   selected,
   onSelect,
-  showAll,
-  onShowAllChange,
 }: {
-  league: LeagueKey;
   teams: CatalogTeam[] | undefined;
   loading: boolean;
   selected?: CatalogTeam;
   onSelect: (team: CatalogTeam) => void;
-  showAll: boolean;
-  onShowAllChange: (value: boolean) => void;
 }) {
-  const [open, setOpen] = useState(false);
-  const labelId = useId();
-  const showAllId = useId();
-  const groups = useMemo(() => (teams ? groupTeams(league, teams) : []), [league, teams]);
+  const inputId = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
+  // `null` while not typing: the field shows the selected team's name.
+  const [query, setQuery] = useState<string | null>(null);
+  const results = useMemo(() => (teams && query ? searchTeams(teams, query) : []), [teams, query]);
+  const open = query !== null && query.trim() !== "";
+  const showSelected = query === null && selected;
+
+  function choose(team: CatalogTeam) {
+    onSelect(team);
+    setQuery(null);
+    inputRef.current?.blur();
+  }
 
   return (
     <div className="space-y-2">
-      <span id={labelId} className="block text-sm font-medium text-foreground">
+      <label htmlFor={inputId} className="block text-sm font-medium text-foreground">
         Team
-      </span>
+      </label>
       {loading && !teams ? (
         <Skeleton className="h-10 w-full rounded-lg" aria-label="Loading teams" />
       ) : (
-        <Popover open={open} onOpenChange={setOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              role="combobox"
-              aria-expanded={open}
-              aria-labelledby={labelId}
-              data-testid="team-picker"
-              className="h-10 w-full justify-between bg-card px-3 font-normal dark:bg-card"
-            >
-              {selected ? (
-                <span className="flex min-w-0 items-center gap-2">
-                  <TeamLogo src={selected.logo} abbreviation={selected.abbreviation} />
-                  <span className="truncate text-foreground">{selected.displayName}</span>
-                </span>
+        <CommandPrimitive shouldFilter={false} loop className="relative">
+          <div className="relative">
+            <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center">
+              {showSelected ? (
+                <TeamLogo src={selected.logo} abbreviation={selected.abbreviation} />
               ) : (
-                <span className="text-muted-foreground">Search teams…</span>
+                <SearchIcon className="size-4 text-muted-foreground" aria-hidden="true" />
               )}
-              <ChevronsUpDownIcon className="size-4 text-muted-foreground" aria-hidden="true" />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent
-            className="w-(--radix-popover-trigger-width) min-w-72 p-0"
-            align="start"
-          >
-            <Command
-              filter={(value, search, keywords) => {
-                const haystack = `${value} ${(keywords ?? []).join(" ")}`.toLowerCase();
-                const terms = search.toLowerCase().trim().split(/\s+/).filter(Boolean);
-                return terms.every((t) => haystack.includes(t)) ? 1 : 0;
+            </span>
+            <CommandPrimitive.Input
+              id={inputId}
+              ref={inputRef}
+              data-testid="team-picker"
+              placeholder="Search teams…"
+              autoComplete="off"
+              spellCheck={false}
+              value={query ?? selected?.displayName ?? ""}
+              onValueChange={setQuery}
+              onFocus={(e) => e.currentTarget.select()}
+              onBlur={() => setQuery(null)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  setQuery(null);
+                  e.currentTarget.blur();
+                }
               }}
-            >
-              <CommandInput placeholder="Team, school, mascot, or abbreviation" />
-              <CommandList className="max-h-80">
-                <CommandEmpty>No teams found.</CommandEmpty>
-                {groups.map((group) => (
-                  <CommandGroup key={group.label} heading={group.label}>
-                    {group.teams.map((team) => (
-                      <CommandItem
-                        key={team.id}
-                        value={team.slug}
-                        keywords={[
-                          team.displayName,
-                          team.location,
-                          team.name,
-                          team.shortName,
-                          team.abbreviation,
-                          team.conference?.name ?? "",
-                        ]}
-                        onSelect={() => {
-                          onSelect(team);
-                          setOpen(false);
-                        }}
-                      >
-                        <TeamLogo
-                          src={team.tier === "other" ? undefined : team.logo}
-                          abbreviation={team.abbreviation}
-                        />
-                        <span className="truncate">{team.displayName}</span>
-                        <span className="ml-auto font-mono text-xs text-muted-foreground">
-                          {team.abbreviation}
-                        </span>
-                        <CheckIcon
-                          aria-hidden="true"
-                          className={cn(
-                            "size-4",
-                            selected?.id === team.id ? "opacity-100" : "opacity-0",
-                          )}
-                        />
-                      </CommandItem>
-                    ))}
-                  </CommandGroup>
-                ))}
-              </CommandList>
-            </Command>
-          </PopoverContent>
-        </Popover>
-      )}
-      {league === "ncaaf" && (
-        <div className="flex items-center gap-2 pt-0.5">
-          <Checkbox
-            id={showAllId}
-            checked={showAll}
-            onCheckedChange={(v) => onShowAllChange(v === true)}
-          />
-          <label htmlFor={showAllId} className="text-xs text-muted-foreground">
-            Show all teams <span className="text-muted-foreground/70">(FCS and other divisions)</span>
-          </label>
-        </div>
+              className={cn(
+                "h-10 w-full rounded-lg border border-border bg-card pr-3 pl-10 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground",
+                "hover:border-border-strong focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
+              )}
+            />
+          </div>
+          <CommandPrimitive.List
+            hidden={!open}
+            // Keep focus in the input so clicking a result doesn't blur-reset first.
+            onMouseDown={(e) => e.preventDefault()}
+            className="absolute inset-x-0 top-full z-50 mt-1.5 max-h-80 scroll-py-1 overflow-y-auto rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-lg outline-none"
+          >
+            <CommandPrimitive.Empty className="py-6 text-center text-sm text-muted-foreground">
+              No teams found.
+            </CommandPrimitive.Empty>
+            {results.map((team) => (
+              <CommandPrimitive.Item
+                key={team.id}
+                value={team.slug}
+                onSelect={() => choose(team)}
+                className="flex cursor-default items-center gap-2.5 rounded-md px-2 py-2 text-sm outline-none select-none data-[selected=true]:bg-muted"
+              >
+                <TeamLogo
+                  src={team.tier === "other" ? undefined : team.logo}
+                  abbreviation={team.abbreviation}
+                />
+                <span className="truncate">{team.displayName}</span>
+              </CommandPrimitive.Item>
+            ))}
+          </CommandPrimitive.List>
+        </CommandPrimitive>
       )}
     </div>
   );

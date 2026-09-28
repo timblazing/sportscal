@@ -9,11 +9,11 @@ export default async function HomePage({ searchParams }: PageProps<"/">) {
   const team =
     typeof params.team === "string" && /^[a-z0-9-]{1,100}$/.test(params.team) ? params.team : undefined;
 
-  // Server-render the default team list so the picker is usable immediately.
+  // Server-render the full team list so the picker is usable immediately.
   // If ESPN is unreachable the client fetch shows a retryable error instead.
   let initialTeams: CatalogTeam[] | undefined;
   try {
-    initialTeams = await getTeams(league);
+    initialTeams = await getTeams(league, { includeAll: true });
   } catch {
     initialTeams = undefined;
   }
