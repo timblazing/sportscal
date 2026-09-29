@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="4390" viewBox="0 0 1440 4390">
+  <g>
+    <rect width="1440" height="1120" fill="#000000"/>
+    <g transform="translate(64, 62)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">01 / FOUNDATIONS</text>
+    </g>
+    <g transform="translate(64, 103)">
+      <text x="0" y="48" font-family="Geist" font-size="48" fill="#EDEDED">Color</text>
+    </g>
+    <g transform="translate(64, 183)">
+      <text x="0" y="16" font-family="Geist" font-size="16" fill="#A1A1A1">SportsCal uses a dark neutral base, high contrast text, and restrained status accents.</text>
+    </g>
+    <g transform="translate(64, 251)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 303)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#000000" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Page / background</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#000000</text>
+      </g>
+    </g>
+    <g transform="translate(509, 303)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#0A0A0A" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Card / surface</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#0A0A0A</text>
+      </g>
+    </g>
+    <g transform="translate(954, 303)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#111111" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Surface / muted</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#111111</text>
+      </g>
+    </g>
+    <g transform="translate(64, 469)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#1A1A1A" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Surface / accent</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#1A1A1A</text>
+      </g>
+    </g>
+    <g transform="translate(509, 469)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#262626" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Border / default</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#262626</text>
+      </g>
+    </g>
+    <g transform="translate(954, 469)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#3A3A3A" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Border / strong</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#3A3A3A</text>
+      </g>
+    </g>
+    <g transform="translate(64, 635)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#EDEDED" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Text / primary</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#EDEDED</text>
+      </g>
+    </g>
+    <g transform="translate(509, 635)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#A1A1A1" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Text / muted</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#A1A1A1</text>
+      </g>
+    </g>
+    <g transform="translate(954, 635)">
+      <rect width="416" height="145" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(16, 16)">
+        <rect width="94" height="94" rx="6" ry="6" fill="#737373" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(127, 24)">
+        <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Text / subtle</text>
+      </g>
+      <g transform="translate(127, 60)">
+        <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">#737373</text>
+      </g>
+    </g>
+    <g transform="translate(64, 840)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">STATUS / USE ONLY FOR MEANING</text>
+    </g>
+    <g transform="translate(64, 879)">
+      <rect width="28" height="28" rx="14" ry="14" fill="#4ADE80"/>
+    </g>
+    <g transform="translate(106, 883)">
+      <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Success</text>
+    </g>
+    <g transform="translate(398, 879)">
+      <rect width="28" height="28" rx="14" ry="14" fill="#FBBF24"/>
+    </g>
+    <g transform="translate(440, 883)">
+      <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Warning</text>
+    </g>
+    <g transform="translate(732, 879)">
+      <rect width="28" height="28" rx="14" ry="14" fill="#60A5FA"/>
+    </g>
+    <g transform="translate(774, 883)">
+      <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Info</text>
+    </g>
+    <g transform="translate(1066, 879)">
+      <rect width="28" height="28" rx="14" ry="14" fill="#F87171"/>
+    </g>
+    <g transform="translate(1108, 883)">
+      <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Destructive</text>
+    </g>
+  </g>
+  <g transform="translate(0, 1240)">
+    <rect width="1440" height="1050" fill="#000000"/>
+    <g transform="translate(64, 62)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">02 / FOUNDATIONS</text>
+    </g>
+    <g transform="translate(64, 103)">
+      <text x="0" y="48" font-family="Geist" font-size="48" fill="#EDEDED">Typography</text>
+    </g>
+    <g transform="translate(64, 183)">
+      <text x="0" y="16" font-family="Geist" font-size="16" fill="#A1A1A1">Geist carries interface and display copy. Geist Mono labels data, metadata, and tokens.</text>
+    </g>
+    <g transform="translate(64, 251)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 310)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">DISPLAY / 48 PX</text>
+    </g>
+    <g transform="translate(420, 303)">
+      <text x="0" y="48" font-family="Geist" font-size="48" fill="#EDEDED">Clean sports schedules.</text>
+    </g>
+    <g transform="translate(64, 388)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 414)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">HEADING / 30 PX</text>
+    </g>
+    <g transform="translate(420, 407)">
+      <text x="0" y="30" font-family="Geist" font-size="30" fill="#EDEDED">Your team, on your calendar.</text>
+    </g>
+    <g transform="translate(64, 492)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 518)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">TITLE / 18 PX</text>
+    </g>
+    <g transform="translate(420, 511)">
+      <text x="0" y="18" font-family="Geist" font-size="18" font-weight="500" fill="#EDEDED">Schedule preview</text>
+    </g>
+    <g transform="translate(64, 596)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 622)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">BODY / 16 PX</text>
+    </g>
+    <g transform="translate(420, 615)">
+      <text x="0" y="16" font-family="Geist" font-size="16" fill="#EDEDED">Pick a team, tune how games appear, and subscribe to a feed.</text>
+    </g>
+    <g transform="translate(64, 700)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 726)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">BODY SMALL / 14 PX</text>
+    </g>
+    <g transform="translate(420, 719)">
+      <text x="0" y="14" font-family="Geist" font-size="14" fill="#A1A1A1">No accounts, no ads in your events.</text>
+    </g>
+    <g transform="translate(64, 804)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 830)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">CAPTION / 12 PX</text>
+    </g>
+    <g transform="translate(420, 823)">
+      <text x="0" y="12" font-family="Geist" font-size="12" fill="#A1A1A1">Schedule data sourced from ESPN public endpoints.</text>
+    </g>
+    <g transform="translate(64, 908)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 944)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">MONO / 11 PX</text>
+    </g>
+    <g transform="translate(420, 938)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">NFL · 2026 SEASON · 17 GAMES</text>
+    </g>
+  </g>
+  <g transform="translate(0, 2410)">
+    <rect width="1440" height="960" fill="#000000"/>
+    <g transform="translate(64, 62)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">03 / FOUNDATIONS</text>
+    </g>
+    <g transform="translate(64, 103)">
+      <text x="0" y="48" font-family="Geist" font-size="48" fill="#EDEDED">Spacing &amp; layout</text>
+    </g>
+    <g transform="translate(64, 183)">
+      <text x="0" y="16" font-family="Geist" font-size="16" fill="#A1A1A1">A 4 px base scale supports compact controls and generous page sections.</text>
+    </g>
+    <g transform="translate(64, 251)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 308)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 4</text>
+    </g>
+    <g transform="translate(326, 304)">
+      <rect width="20" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 308)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">4 px</text>
+    </g>
+    <g transform="translate(64, 351)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 377)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 8</text>
+    </g>
+    <g transform="translate(326, 373)">
+      <rect width="40" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 377)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">8 px</text>
+    </g>
+    <g transform="translate(64, 420)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 446)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 12</text>
+    </g>
+    <g transform="translate(326, 442)">
+      <rect width="60" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 446)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">12 px</text>
+    </g>
+    <g transform="translate(64, 489)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 515)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 16</text>
+    </g>
+    <g transform="translate(326, 511)">
+      <rect width="80" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 515)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">16 px</text>
+    </g>
+    <g transform="translate(64, 558)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 584)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 24</text>
+    </g>
+    <g transform="translate(326, 580)">
+      <rect width="120" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 584)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">24 px</text>
+    </g>
+    <g transform="translate(64, 627)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 653)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 32</text>
+    </g>
+    <g transform="translate(326, 649)">
+      <rect width="160" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 653)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">32 px</text>
+    </g>
+    <g transform="translate(64, 696)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 722)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 40</text>
+    </g>
+    <g transform="translate(326, 718)">
+      <rect width="200" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 722)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">40 px</text>
+    </g>
+    <g transform="translate(64, 765)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 791)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SPACE / 64</text>
+    </g>
+    <g transform="translate(326, 787)">
+      <rect width="320" height="28" rx="3" ry="3" fill="#EDEDED"/>
+    </g>
+    <g transform="translate(780, 791)">
+      <text x="0" y="13" font-family="Geist Mono" font-size="13" fill="#A1A1A1">64 px</text>
+    </g>
+    <g transform="translate(64, 834)">
+      <rect width="900" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(1010, 307)">
+      <rect width="366" height="560" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(24, 28)">
+        <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">LAYOUT</text>
+      </g>
+      <g transform="translate(24, 77)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Content width</text>
+      </g>
+      <g transform="translate(24, 103)">
+        <text x="0" y="12" font-family="Geist Mono" font-size="12" fill="#A1A1A1">1280 px max</text>
+      </g>
+      <g transform="translate(24, 134)">
+        <rect width="318" height="1" fill="#262626"/>
+      </g>
+      <g transform="translate(24, 154)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Page gutter</text>
+      </g>
+      <g transform="translate(24, 180)">
+        <text x="0" y="12" font-family="Geist Mono" font-size="12" fill="#A1A1A1">16 / 24 px</text>
+      </g>
+      <g transform="translate(24, 211)">
+        <rect width="318" height="1" fill="#262626"/>
+      </g>
+      <g transform="translate(24, 231)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Section gap</text>
+      </g>
+      <g transform="translate(24, 257)">
+        <text x="0" y="12" font-family="Geist Mono" font-size="12" fill="#A1A1A1">64 px</text>
+      </g>
+      <g transform="translate(24, 288)">
+        <rect width="318" height="1" fill="#262626"/>
+      </g>
+      <g transform="translate(24, 308)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Card padding</text>
+      </g>
+      <g transform="translate(24, 334)">
+        <text x="0" y="12" font-family="Geist Mono" font-size="12" fill="#A1A1A1">16 / 24 px</text>
+      </g>
+      <g transform="translate(24, 365)">
+        <rect width="318" height="1" fill="#262626"/>
+      </g>
+      <g transform="translate(24, 385)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Control height</text>
+      </g>
+      <g transform="translate(24, 411)">
+        <text x="0" y="12" font-family="Geist Mono" font-size="12" fill="#A1A1A1">32 / 40 px</text>
+      </g>
+      <g transform="translate(24, 442)">
+        <rect width="318" height="1" fill="#262626"/>
+      </g>
+      <g transform="translate(24, 462)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Grid gap</text>
+      </g>
+      <g transform="translate(24, 488)">
+        <text x="0" y="12" font-family="Geist Mono" font-size="12" fill="#A1A1A1">16 / 24 px</text>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(0, 3490)">
+    <rect width="1440" height="900" fill="#000000"/>
+    <g transform="translate(64, 62)">
+      <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">04 / FOUNDATIONS</text>
+    </g>
+    <g transform="translate(64, 103)">
+      <text x="0" y="48" font-family="Geist" font-size="48" fill="#EDEDED">Shape &amp; depth</text>
+    </g>
+    <g transform="translate(64, 183)">
+      <text x="0" y="16" font-family="Geist" font-size="16" fill="#A1A1A1">Use hairline borders to separate surfaces. Reserve focus rings for interaction.</text>
+    </g>
+    <g transform="translate(64, 251)">
+      <rect width="1312" height="1" fill="#262626"/>
+    </g>
+    <g transform="translate(64, 310)">
+      <rect width="305" height="260" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(24, 52)">
+        <rect width="257" height="120" rx="4" ry="4" fill="#111111" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(24, 22)">
+        <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SMALL</text>
+      </g>
+      <g transform="translate(24, 195)">
+        <text x="0" y="14" font-family="Geist Mono" font-size="14" fill="#A1A1A1">4 px</text>
+      </g>
+    </g>
+    <g transform="translate(398, 310)">
+      <rect width="305" height="260" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(24, 52)">
+        <rect width="257" height="120" rx="6" ry="6" fill="#111111" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(24, 22)">
+        <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">CONTROL</text>
+      </g>
+      <g transform="translate(24, 195)">
+        <text x="0" y="14" font-family="Geist Mono" font-size="14" fill="#A1A1A1">6 px</text>
+      </g>
+    </g>
+    <g transform="translate(732, 310)">
+      <rect width="305" height="260" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(24, 52)">
+        <rect width="257" height="120" rx="8" ry="8" fill="#111111" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(24, 22)">
+        <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">CARD</text>
+      </g>
+      <g transform="translate(24, 195)">
+        <text x="0" y="14" font-family="Geist Mono" font-size="14" fill="#A1A1A1">8 px</text>
+      </g>
+    </g>
+    <g transform="translate(1066, 310)">
+      <rect width="305" height="260" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(24, 52)">
+        <rect width="257" height="120" rx="32" ry="32" fill="#111111" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(24, 22)">
+        <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">FULL</text>
+      </g>
+      <g transform="translate(24, 195)">
+        <text x="0" y="14" font-family="Geist Mono" font-size="14" fill="#A1A1A1">9999 px</text>
+      </g>
+    </g>
+    <g transform="translate(64, 613)">
+      <rect width="645" height="205" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(24, 24)">
+        <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">SURFACE STACK</text>
+      </g>
+      <g transform="translate(24, 66)">
+        <rect width="290" height="105" rx="8" ry="8" fill="#111111" stroke="#3A3A3A" stroke-width="1"/>
+      </g>
+      <g transform="translate(341, 87)">
+        <rect width="255" height="56" rx="6" ry="6" fill="#EDEDED"/>
+        <g transform="translate(18, 16)">
+          <text x="0" y="14" font-family="Geist" font-size="14" font-weight="500" fill="#0A0A0A">Primary action</text>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(731, 613)">
+      <rect width="645" height="205" rx="8" ry="8" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+      <g transform="translate(24, 24)">
+        <text x="0" y="11" font-family="Geist Mono" font-size="11" fill="#A1A1A1">FOCUS &amp; ERROR</text>
+      </g>
+      <g transform="translate(24, 70)">
+        <rect width="270" height="90" rx="10" ry="10" fill="#3A3A3A"/>
+      </g>
+      <g transform="translate(27, 73)">
+        <rect width="264" height="84" rx="7" ry="7" fill="#000000" stroke="#A1A1A1" stroke-width="1"/>
+      </g>
+      <g transform="translate(43, 104)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Focused control</text>
+      </g>
+      <g transform="translate(332, 70)">
+        <rect width="270" height="90" rx="10" ry="10" fill="#F87171"/>
+      </g>
+      <g transform="translate(335, 73)">
+        <rect width="264" height="84" rx="7" ry="7" fill="#000000" stroke="#F87171" stroke-width="1"/>
+      </g>
+      <g transform="translate(351, 104)">
+        <text x="0" y="14" font-family="Geist" font-size="14" fill="#EDEDED">Invalid control</text>
+      </g>
+    </g>
+  </g>
+</svg>
