@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadIcon, Loader2Icon, RssIcon, SaveIcon } from "lucide-react";
+import { CalendarPlusIcon, Loader2Icon, SaveIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -23,25 +23,10 @@ export function ActionBar({
   className?: string;
 }) {
   return (
-    <div className={cn("flex gap-2", className)}>
+    <div className={cn("flex flex-col items-center gap-2", className)}>
       <Button
         size="lg"
-        className="h-10 flex-1"
-        onClick={onDownload}
-        disabled={disabled || downloading}
-        data-testid="download-button"
-      >
-        {downloading ? (
-          <Loader2Icon className="animate-spin" aria-hidden="true" />
-        ) : (
-          <DownloadIcon aria-hidden="true" />
-        )}
-        Download
-      </Button>
-      <Button
-        size="lg"
-        variant="outline"
-        className="h-10 flex-1"
+        className="h-10 w-full"
         onClick={onSubscribe}
         disabled={disabled || saving}
         data-testid="subscribe-button"
@@ -51,10 +36,23 @@ export function ActionBar({
         ) : mode === "manage" ? (
           <SaveIcon aria-hidden="true" />
         ) : (
-          <RssIcon aria-hidden="true" />
+          <CalendarPlusIcon aria-hidden="true" />
         )}
-        {mode === "manage" ? "Save changes" : "Subscribe"}
+        {mode === "manage" ? "Save changes" : "Add to calendar"}
       </Button>
+      <p className="text-xs text-muted-foreground">
+        Or{" "}
+        <button
+          type="button"
+          className="underline underline-offset-2 hover:text-foreground disabled:pointer-events-none disabled:opacity-50"
+          onClick={onDownload}
+          disabled={disabled || downloading}
+          data-testid="download-button"
+        >
+          {downloading ? "preparing download…" : "download a one-time .ics file"}
+        </button>{" "}
+        — it won&apos;t update when the schedule changes.
+      </p>
     </div>
   );
 }
