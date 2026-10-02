@@ -5,7 +5,7 @@
  * user input.
  */
 
-export const LEAGUE_KEYS = ["nfl", "nba", "ncaaf"] as const;
+export const LEAGUE_KEYS = ["nfl", "nba", "nhl", "ncaaf"] as const;
 export type LeagueKey = (typeof LEAGUE_KEYS)[number];
 
 export type NormalizedSeasonType = "preseason" | "regular" | "postseason" | "other";
@@ -83,6 +83,20 @@ export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
       "4": "other",
       "5": "postseason",
     },
+    teamGrouping: { kind: "groups" },
+    scheduleTimeZone: "America/New_York",
+    hasWeeks: false,
+  },
+  nhl: {
+    key: "nhl",
+    sport: "hockey",
+    league: "nhl",
+    label: "NHL",
+    name: "National Hockey League",
+    defaultDurationMinutes: 150,
+    // No Play-In: ESPN's seasontype=5 is empty for the NHL.
+    scheduleSeasonTypes: [1, 2, 3],
+    seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
     teamGrouping: { kind: "groups" },
     scheduleTimeZone: "America/New_York",
     hasWeeks: false,

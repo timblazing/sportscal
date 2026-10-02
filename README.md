@@ -20,6 +20,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 
 - **NFL**
 - **NBA**
+- **NHL**
 - **NCAAF** (NCAA Division I football — FBS by default, grouped by conference, with a "Show all teams" option for FCS and other divisions)
 
 ## Features
@@ -29,7 +30,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 - Game types: Regular Season, Postseason, and Preseason on by default (NBA Play-In counts as postseason); individual types can be excluded in Advanced settings.
 - Global templates for calendar name, event title, description and location, with a click-to-insert variable picker and live preview
 - Minor per-game overrides (title, description, location, duration, include/exclude), stored as partial patches so later template changes still apply
-- League-default durations: NFL/NCAAF 3h30, NBA 2h30, adjustable
+- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, adjustable
 - Events are **Free** (transparent) by default; optional Busy
 - Optional ESPN link in the iCalendar `URL` field (off by default, never in the description)
 - TBD kickoff times become all-day events and later turn into timed events **with the same UID**
@@ -188,7 +189,7 @@ Create a project with only **Postgres database** enabled (object storage, functi
 
 ## Adding a league
 
-Most of the work is one entry in `lib/config/leagues.ts`:
+Most of the work is one entry in `lib/config/leagues.ts`. The NHL entry is a minimal example:
 
 ```ts
 nhl: {
@@ -197,7 +198,7 @@ nhl: {
   league: "nhl",
   label: "NHL",
   name: "National Hockey League",
-  defaultDurationMinutes: 165,
+  defaultDurationMinutes: 150,
   scheduleSeasonTypes: [1, 2, 3],
   seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
   teamGrouping: { kind: "groups" },

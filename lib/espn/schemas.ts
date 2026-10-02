@@ -41,7 +41,7 @@ export const espnTeamsResponseSchema = z.looseObject({
   ),
 });
 
-/** GET site/.../groups — conference → division → teams (NFL/NBA). */
+/** GET site/.../groups — conference → division → teams (NFL/NBA/NHL). */
 type EspnGroupNode = {
   name?: string;
   abbreviation?: string;

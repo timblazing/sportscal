@@ -1,0 +1,42 @@
+{
+ "year": 2026,
+ "displayName": "2025-26",
+ "startDate": "2025-09-20T07:00Z",
+ "endDate": "2026-07-01T06:59Z",
+ "types": {
+  "items": [
+   {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre",
+    "startDate": "2025-09-20T07:00Z",
+    "endDate": "2025-10-07T06:59Z"
+   },
+   {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg",
+    "startDate": "2025-10-07T07:00Z",
+    "endDate": "2026-04-18T06:59Z"
+   },
+   {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post",
+    "startDate": "2026-04-18T07:00Z",
+    "endDate": "2026-07-01T06:59Z"
+   },
+   {
+    "id": "4",
+    "type": 4,
+    "name": "Off Season",
+    "abbreviation": "off",
+    "startDate": "2026-07-01T07:00Z",
+    "endDate": "2026-09-15T06:59Z"
+   }
+  ]
+ }
+}

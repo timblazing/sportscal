@@ -5,7 +5,7 @@ import {
   renderTemplate,
   unknownVariables,
 } from "@/lib/calendar/templates";
-import { soonersGames, steelersGames, thunderPlayoffGames } from "../helpers";
+import { nhlPenguinsGames, nhlPenguinsUpcomingGames, soonersGames, steelersGames, thunderPlayoffGames } from "../helpers";
 
 describe("renderTemplate", () => {
   it("substitutes known variables", () => {
@@ -73,5 +73,30 @@ describe("gameTemplateValues", () => {
 
     const tbd = soonersGames().find((g) => g.id === "401856763")!;
     expect(gameTemplateValues(tbd).time).toBe("TBD");
+  });
+
+  it("renders NHL series notes, no week, and OT/SO results", () => {
+    const games = nhlPenguinsGames();
+    const game1 = games.find((g) => g.id === "401869717")!;
+    const v = gameTemplateValues(game1);
+    expect(renderTemplate("{team} {homeAwaySymbol} {opponent} - {note}", v)).toBe("Penguins vs Flyers - East 1st Round - Game 1");
+    expect(renderTemplate("{week} {team}", v)).toBe("Penguins");
+    expect(v.league).toBe("NHL");
+    expect(v.result).toBe("L 2-3");
+
+    expect(gameTemplateValues(games.find((g) => g.id === "401802860")!).result).toBe("L 4-5 (OT)");
+    expect(gameTemplateValues(games.find((g) => g.id === "401803489")!).result).toBe("W 4-3 (SO)");
+    expect(gameTemplateValues(games.find((g) => g.id === "401869802")!).result).toBe("L 0-1 (OT)");
+    const scheduled = nhlPenguinsUpcomingGames().find((g) => !g.status.completed)!;
+    expect(gameTemplateValues(scheduled).result).toBeUndefined();
+  });
+
+  it("shows Global Series games as neutral with the venue city", () => {
+    const stockholm = nhlPenguinsGames().find((g) => g.id === "401802647")!;
+    const v = gameTemplateValues(stockholm);
+    expect(v.homeAway).toBe("Neutral");
+    expect(v.homeAwaySymbol).toBe("vs");
+    expect(v.venueFull).toBe("Avicii Arena, Stockholm");
+    expect(v.note).toBe("NHL Global Series");
   });
 });

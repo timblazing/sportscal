@@ -1,9 +1,12 @@
 "use client";
 
-import { LEAGUE_LIST, type LeagueKey } from "@/lib/config/leagues";
+import { useId } from "react";
+
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { LEAGUE_LIST, LEAGUES, isLeagueKey, type LeagueKey } from "@/lib/config/leagues";
 import { cn } from "@/lib/utils";
 
-/** Segmented league control built on native radios (arrow keys work for free). */
+/** League dropdown (Radix Select: keyboard and screen-reader support built in). */
 export function LeagueSelector({
   value,
   onChange,
@@ -11,37 +14,32 @@ export function LeagueSelector({
   value: LeagueKey;
   onChange: (league: LeagueKey) => void;
 }) {
+  const labelId = useId();
   return (
-    <fieldset>
-      <legend className="mb-2 text-sm font-medium text-foreground">League</legend>
-      <div className="grid grid-cols-3 gap-1 rounded-lg border border-border bg-card p-1">
-        {LEAGUE_LIST.map((league) => {
-          const checked = league.key === value;
-          return (
-            <label
-              key={league.key}
-              className={cn(
-                "relative flex h-9 cursor-pointer items-center justify-center rounded-md text-sm font-medium transition-colors",
-                "has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
-                checked
-                  ? "bg-secondary text-foreground shadow-[inset_0_0_0_1px_var(--border-strong)]"
-                  : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              <input
-                type="radio"
-                name="league"
-                value={league.key}
-                checked={checked}
-                onChange={() => onChange(league.key)}
-                className="sr-only"
-              />
-              <span>{league.label}</span>
-              <span className="sr-only"> — {league.name}</span>
-            </label>
-          );
-        })}
-      </div>
-    </fieldset>
+    <div className="space-y-2">
+      <span id={labelId} className="block text-sm font-medium text-foreground">
+        League
+      </span>
+      <Select value={value} onValueChange={(next) => isLeagueKey(next) && onChange(next)}>
+        <SelectTrigger
+          aria-labelledby={labelId}
+          data-testid="league-selector"
+          className={cn(
+            "h-10 w-full rounded-lg border-border bg-card px-3 text-base font-medium text-foreground data-[size=default]:h-10 md:text-sm",
+            "hover:border-border-strong",
+          )}
+        >
+          <SelectValue>{LEAGUES[value].label}</SelectValue>
+        </SelectTrigger>
+        <SelectContent position="popper" className="w-(--radix-select-trigger-width)">
+          {LEAGUE_LIST.map((league) => (
+            <SelectItem key={league.key} value={league.key} className="py-2 pl-3">
+              <span className="font-medium">{league.label}</span>
+              <span className="text-muted-foreground">{league.name}</span>
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
   );
 }

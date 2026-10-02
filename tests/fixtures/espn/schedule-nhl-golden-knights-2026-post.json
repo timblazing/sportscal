@@ -1,0 +1,448 @@
+{
+ "season": {
+  "year": 2027,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2026-27",
+  "half": 1
+ },
+ "requestedSeason": {
+  "year": 2026,
+  "type": 3,
+  "name": "Postseason",
+  "displayName": "2025-26"
+ },
+ "team": {
+  "id": "37",
+  "location": "Vegas",
+  "name": "Golden Knights",
+  "abbreviation": "VGK",
+  "displayName": "Vegas Golden Knights",
+  "color": "344043"
+ },
+ "events": [
+  {
+   "id": "401874174",
+   "date": "2026-06-10T00:00Z",
+   "name": "Carolina Hurricanes at Vegas Golden Knights",
+   "shortName": "CAR @ VGK",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2025-26"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nhl/game/_/gameId/401874174/hurricanes-golden-knights",
+     "text": "Gamecast"
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401874174",
+     "date": "2026-06-10T00:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "T-Mobile Arena",
+      "address": {
+       "city": "Las Vegas",
+       "state": "NV",
+       "country": "USA"
+      }
+     },
+     "notes": [
+      {
+       "type": "event",
+       "headline": "Stanley Cup Final - Game 4"
+      }
+     ],
+     "competitors": [
+      {
+       "id": "37",
+       "homeAway": "home",
+       "winner": false,
+       "score": {
+        "value": 3.0,
+        "displayValue": "3"
+       },
+       "team": {
+        "id": "37",
+        "location": "Vegas",
+        "nickname": "Golden Knights",
+        "abbreviation": "VGK",
+        "displayName": "Vegas Golden Knights",
+        "shortDisplayName": "Golden Knights",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/vgk.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/vgk.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "7",
+       "homeAway": "away",
+       "winner": true,
+       "score": {
+        "value": 5.0,
+        "displayValue": "5"
+       },
+       "team": {
+        "id": "7",
+        "location": "Carolina",
+        "nickname": "Hurricanes",
+        "abbreviation": "CAR",
+        "displayName": "Carolina Hurricanes",
+        "shortDisplayName": "Hurricanes",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/car.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/car.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "ABC"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "period": 3,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401874175",
+   "date": "2026-06-12T00:00Z",
+   "name": "Vegas Golden Knights at Carolina Hurricanes",
+   "shortName": "VGK @ CAR",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2025-26"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nhl/game/_/gameId/401874175/golden-knights-hurricanes",
+     "text": "Gamecast"
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401874175",
+     "date": "2026-06-12T00:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Lenovo Center",
+      "address": {
+       "city": "Raleigh",
+       "state": "NC",
+       "country": "USA"
+      }
+     },
+     "notes": [
+      {
+       "type": "event",
+       "headline": "Stanley Cup Final - Game 5"
+      }
+     ],
+     "competitors": [
+      {
+       "id": "7",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 4.0,
+        "displayValue": "4"
+       },
+       "team": {
+        "id": "7",
+        "location": "Carolina",
+        "nickname": "Hurricanes",
+        "abbreviation": "CAR",
+        "displayName": "Carolina Hurricanes",
+        "shortDisplayName": "Hurricanes",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/car.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/car.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "37",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 2.0,
+        "displayValue": "2"
+       },
+       "team": {
+        "id": "37",
+        "location": "Vegas",
+        "nickname": "Golden Knights",
+        "abbreviation": "VGK",
+        "displayName": "Vegas Golden Knights",
+        "shortDisplayName": "Golden Knights",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/vgk.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/vgk.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "ABC"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "period": 3,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401874176",
+   "date": "2026-06-15T00:00Z",
+   "name": "Carolina Hurricanes at Vegas Golden Knights",
+   "shortName": "CAR @ VGK",
+   "timeValid": true,
+   "season": {
+    "year": 2026,
+    "displayName": "2025-26"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nhl/game/_/gameId/401874176/hurricanes-golden-knights",
+     "text": "Gamecast"
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401874176",
+     "date": "2026-06-15T00:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "T-Mobile Arena",
+      "address": {
+       "city": "Las Vegas",
+       "state": "NV",
+       "country": "USA"
+      }
+     },
+     "notes": [
+      {
+       "type": "event",
+       "headline": "Stanley Cup Final - Game 6"
+      }
+     ],
+     "competitors": [
+      {
+       "id": "37",
+       "homeAway": "home",
+       "winner": false,
+       "score": {
+        "value": 0.0,
+        "displayValue": "0"
+       },
+       "team": {
+        "id": "37",
+        "location": "Vegas",
+        "nickname": "Golden Knights",
+        "abbreviation": "VGK",
+        "displayName": "Vegas Golden Knights",
+        "shortDisplayName": "Golden Knights",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/vgk.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/vgk.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "7",
+       "homeAway": "away",
+       "winner": true,
+       "score": {
+        "value": 3.0,
+        "displayValue": "3"
+       },
+       "team": {
+        "id": "7",
+        "location": "Carolina",
+        "nickname": "Hurricanes",
+        "abbreviation": "CAR",
+        "displayName": "Carolina Hurricanes",
+        "shortDisplayName": "Hurricanes",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/car.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/car.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "ABC"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "period": 3,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

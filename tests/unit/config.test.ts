@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import { LEAGUE_KEYS } from "@/lib/config/leagues";
 import {
   LIMITS,
   calendarConfigSchema,
@@ -30,6 +31,15 @@ describe("calendar config validation", () => {
     expect(calendarConfigSchema.safeParse({ ...valid(), teamId: "../../etc" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), teamSlug: "Oklahoma Sooners" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), evil: true }).success).toBe(false);
+  });
+
+  it("supports the NHL with a 2h30 default duration", () => {
+    expect(LEAGUE_KEYS).toContain("nhl");
+    const nhl = defaultConfig("nhl", { id: "16", slug: "pittsburgh-penguins" });
+    expect(nhl.durationMinutes).toBe(150);
+    expect(calendarConfigSchema.safeParse(nhl).success).toBe(true);
+    // Seattle and Utah have 6-digit ESPN ids.
+    expect(calendarConfigSchema.safeParse({ ...nhl, teamId: "129764", teamSlug: "utah-mammoth" }).success).toBe(true);
   });
 
   it("limits template and override sizes", () => {
