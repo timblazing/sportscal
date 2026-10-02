@@ -1,0 +1,32 @@
+{
+ "timestamp": "2026-10-02T23:34:12Z",
+ "status": "success",
+ "season": {
+  "year": 2027,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2026-27",
+  "half": 1
+ },
+ "team": {
+  "id": "16",
+  "abbreviation": "PIT",
+  "location": "Pittsburgh",
+  "name": "Penguins",
+  "displayName": "Pittsburgh Penguins",
+  "clubhouse": "https://www.espn.com/nhl/team/_/name/pit/pittsburgh-penguins",
+  "color": "000000",
+  "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/pit.png",
+  "recordSummary": "1-0-0",
+  "seasonSummary": "2026-27",
+  "standingSummary": "1st in Metropolitan Division",
+  "groups": {
+   "id": "33",
+   "parent": {
+    "id": "7"
+   },
+   "isConference": false
+  }
+ },
+ "events": []
+}

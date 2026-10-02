@@ -32,7 +32,7 @@ agent-browser snapshot -i
 
 ## Builder and calendar download
 
-1. Select the **NFL** league, enter `steelers` in the team picker, and choose **Pittsburgh Steelers**. Confirm the season summary and schedule rows appear.
+1. Open the **League** dropdown, choose **NFL**, enter `steelers` in the team picker, and choose **Pittsburgh Steelers**. Confirm the season summary and schedule rows appear.
 2. Confirm the first event preview contains `Steelers vs` or `Steelers @`.
 3. Download the first calendar using the visible download button:
 
@@ -44,6 +44,18 @@ agent-browser snapshot -i
 
    ```sh
    rg 'BEGIN:VCALENDAR|UID:espn-[0-9]+-23@sportscal\.site' /tmp/sportscal-steelers.ics
+   ```
+
+## NHL
+
+1. Reset local storage, open the **League** dropdown with the keyboard (focus it, press `Enter`), and confirm the options are NFL, NBA, NHL, NCAAF, each with its full name. Choose **NHL**.
+2. Search `pit` and choose **Pittsburgh Penguins**. Confirm the URL includes `league=nhl&team=pittsburgh-penguins`, the season reads `2026-27`, and schedule rows appear.
+3. Search `utah` and `st. louis` and confirm **Utah Mammoth** and **St. Louis Blues** appear.
+4. Fetch the canonical feed and check UIDs and the 2h30 duration:
+
+   ```sh
+   curl -s 'http://localhost:3100/calendar/nhl/pittsburgh-penguins.ics' | rg -c 'UID:espn-[0-9]+-16@sportscal\.site'
+   curl -s 'http://localhost:3100/calendar/nhl/pittsburgh-penguins.ics' | rg -m1 'DURATION:PT2H30M'
    ```
 
 ## Formatting and team search

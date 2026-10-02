@@ -134,3 +134,25 @@ describe("NCAAF season resolution", () => {
     });
   });
 });
+
+describe("NHL season resolution", () => {
+  const nhl2027 = season("nhl", "season-nhl-2027.json");
+  const nhl2026 = season("nhl", "season-nhl-2026.json");
+
+  it("is active once the 2026-27 regular season has started", () => {
+    expect(decideSeason({ current: nhl2027 }, at("2026-10-02T12:00:00Z"))).toEqual({
+      espnSeason: 2027,
+      displayName: "2026-27",
+      status: "active",
+    });
+  });
+
+  it("treats the preseason window as upcoming", () => {
+    expect(seasonPhase(nhl2027, at("2026-09-20T00:00:00Z"))).toBe("upcoming");
+  });
+
+  it("moves to 2026-27 in the offseason once games are published", () => {
+    const result = decideSeason({ current: nhl2026, next: nhl2027, nextEventCount: 1344 }, at("2026-08-01T00:00:00Z"));
+    expect(result).toEqual({ espnSeason: 2027, displayName: "2026-27", status: "upcoming" });
+  });
+});

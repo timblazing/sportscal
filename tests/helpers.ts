@@ -34,3 +34,16 @@ export const soonersGames = () =>
   gamesFromFixtures("ncaaf", "201", { espnSeason: 2026, displayName: "2026" }, [
     "schedule-ncaaf-sooners-2026-reg.json",
   ]);
+
+export const nhlPenguinsGames = () =>
+  gamesFromFixtures("nhl", "16", { espnSeason: 2026, displayName: "2025-26" }, [
+    "schedule-nhl-penguins-2026-reg.json",
+    "schedule-nhl-penguins-2026-post.json",
+  ]);
+
+export const nhlPenguinsUpcomingGames = () =>
+  gamesFromFixtures("nhl", "16", { espnSeason: 2027, displayName: "2026-27" }, [
+    "schedule-nhl-penguins-2027-pre.json",
+    "schedule-nhl-penguins-2027-reg.json",
+    "schedule-nhl-penguins-2027-post-empty.json",
+  ]);

@@ -36,7 +36,7 @@ export function parseTeamsResponse(data: unknown): EspnTeam[] {
   return parsed.sports.flatMap((s) => s.leagues.flatMap((l) => l.teams.map((t) => t.team)));
 }
 
-/** NFL/NBA: `/groups` returns conference → division → teams. */
+/** NFL/NBA/NHL: `/groups` returns conference → division → teams. */
 export function membershipFromGroups(data: unknown): Map<string, Membership> {
   const parsed = espnGroupsResponseSchema.parse(data);
   const map = new Map<string, Membership>();

@@ -9,7 +9,15 @@ import {
   membershipFromStandings,
   parseTeamsResponse,
 } from "@/lib/espn/teams";
-import { fixture, soonersGames, steelersGames, thunderPlayoffGames } from "../helpers";
+import {
+  fixture,
+  gamesFromFixtures,
+  nhlPenguinsGames,
+  nhlPenguinsUpcomingGames,
+  soonersGames,
+  steelersGames,
+  thunderPlayoffGames,
+} from "../helpers";
 
 describe("season type normalization", () => {
   const nba = LEAGUES.nba;
@@ -19,6 +27,19 @@ describe("season type normalization", () => {
     expect(normalizeSeasonType({ id: "3", abbreviation: "post", name: "Postseason" }, nba)).toBe("postseason");
     expect(normalizeSeasonType({ id: "5", name: "Play-In Season" }, nba)).toBe("postseason");
     expect(normalizeSeasonType({ id: "4", abbreviation: "off", name: "Off Season" }, nba)).toBe("other");
+  });
+  it("maps NHL season types with and without abbreviations", () => {
+    const nhl = LEAGUES.nhl;
+    expect(normalizeSeasonType({ id: "1", abbreviation: "pre", name: "Preseason" }, nhl)).toBe("preseason");
+    expect(normalizeSeasonType({ id: "2", abbreviation: "reg", name: "Regular Season" }, nhl)).toBe("regular");
+    expect(normalizeSeasonType({ id: "3", abbreviation: "post", name: "Postseason" }, nhl)).toBe("postseason");
+    expect(normalizeSeasonType({ id: "4", abbreviation: "off", name: "Off Season" }, nhl)).toBe("other");
+    expect(["1", "2", "3", "4"].map((id) => normalizeSeasonType({ id }, nhl))).toEqual([
+      "preseason",
+      "regular",
+      "postseason",
+      "other",
+    ]);
   });
   it("falls back to the league's id table", () => {
     expect(normalizeSeasonType({ id: "3" }, LEAGUES.nfl)).toBe("postseason");
@@ -134,6 +155,32 @@ describe("team catalogs", () => {
     expect(okc.division?.name).toBe("Northwest");
   });
 
+  it("groups NHL teams by conference and division (group nodes have no ids)", () => {
+    const membership = membershipFromGroups(fixture("groups-nhl.json"));
+    const catalog = buildCatalog(LEAGUES.nhl, parseTeamsResponse(fixture("teams-nhl.json")), membership);
+    expect(catalog).toHaveLength(32);
+    expect(catalog.every((t) => t.tier === "primary" && t.isFbs === undefined)).toBe(true);
+    expect(catalog.map((t) => t.displayName)).toEqual([...catalog.map((t) => t.displayName)].sort((a, b) => a.localeCompare(b)));
+    expect(new Set(catalog.map((t) => t.conference?.name))).toEqual(new Set(["Eastern Conference", "Western Conference"]));
+    expect(catalog.every((t) => t.conference?.id === undefined && t.division?.id === undefined)).toBe(true);
+
+    const divisions = new Map<string, number>();
+    for (const t of catalog) divisions.set(t.division!.name, (divisions.get(t.division!.name) ?? 0) + 1);
+    expect(Object.fromEntries(divisions)).toEqual({
+      "Atlantic Division": 8,
+      "Metropolitan Division": 8,
+      "Central Division": 8,
+      "Pacific Division": 8,
+    });
+
+    const pit = catalog.find((t) => t.slug === "pittsburgh-penguins")!;
+    expect(pit.id).toBe("16");
+    expect(pit.division?.name).toBe("Metropolitan Division");
+    const utah = catalog.find((t) => t.id === "129764")!;
+    expect(utah.slug).toBe("utah-mammoth");
+    expect(utah.displayName).toBe("Utah Mammoth");
+  });
+
   it("defaults NCAAF to FBS teams grouped by conference", () => {
     const membership = membershipFromStandings(fixture("standings-ncaaf-fbs.json"), "primary");
     membershipFromStandings(fixture("standings-ncaaf-fcs.json"), "secondary", membership);
@@ -151,5 +198,73 @@ describe("team catalogs", () => {
 
     expect(catalog.some((t) => t.tier === "secondary" && t.subdivision === "FCS" && t.isFbs === false)).toBe(true);
     expect(catalog.some((t) => t.tier === "other")).toBe(true);
+  });
+});
+
+describe("Pittsburgh Penguins (NHL)", () => {
+  it("loads the 84-game 2026-27 season with an empty postseason", () => {
+    const games = nhlPenguinsUpcomingGames();
+    expect(games.filter((g) => g.seasonType.normalized === "preseason")).toHaveLength(4);
+    expect(games.filter((g) => g.seasonType.normalized === "regular")).toHaveLength(84);
+    expect(games.filter((g) => g.seasonType.normalized === "postseason")).toHaveLength(0);
+    expect(games.every((g) => g.seasonDisplayName === "2026-27" && g.week === undefined)).toBe(true);
+    // ESPN omits `broadcasts` for some games.
+    expect(games.some((g) => g.broadcasts.length === 0)).toBe(true);
+  });
+
+  it("returns no games for an unpublished postseason", () => {
+    const games = gamesFromFixtures("nhl", "16", { espnSeason: 2027, displayName: "2026-27" }, [
+      "schedule-nhl-penguins-2027-post-empty.json",
+    ]);
+    expect(games).toEqual([]);
+  });
+
+  it("discards a response for a different season", () => {
+    const games = gamesFromFixtures("nhl", "16", { espnSeason: 2027, displayName: "2026-27" }, [
+      "schedule-nhl-penguins-2026-reg.json",
+    ]);
+    expect(games).toEqual([]);
+  });
+
+  it("normalizes Global Series games as neutral-site international games", () => {
+    const stockholm = nhlPenguinsGames().filter((g) => g.note === "NHL Global Series");
+    expect(stockholm.map((g) => g.id)).toEqual(["401802630", "401802647"]);
+    for (const g of stockholm) {
+      expect(g.neutralSite).toBe(true);
+      expect(g.venue).toEqual({ name: "Avicii Arena", city: "Stockholm", country: "Sweden" });
+    }
+  });
+
+  it("keeps Canadian venues' province as the state", () => {
+    const ottawa = nhlPenguinsGames().find((g) => g.id === "401803489")!;
+    expect(ottawa.venue).toMatchObject({ city: "Ottawa", state: "ON", country: "Canada" });
+  });
+
+  it("treats overtime and shootout finals as completed with a winner", () => {
+    const games = nhlPenguinsGames();
+    const ot = games.find((g) => g.id === "401802691")!;
+    const so = games.find((g) => g.id === "401802485")!;
+    for (const g of [ot, so]) {
+      expect(g.status.completed).toBe(true);
+      expect([g.homeTeam.winner, g.awayTeam.winner].filter(Boolean)).toHaveLength(1);
+    }
+    expect(ot.status.detail).toBe("Final/OT");
+    expect(so.status.detail).toBe("Final/SO");
+  });
+
+  it("carries playoff series notes", () => {
+    const playoffs = nhlPenguinsGames().filter((g) => g.seasonType.normalized === "postseason");
+    expect(playoffs).toHaveLength(6);
+    expect(playoffs[0].note).toBe("East 1st Round - Game 1");
+    const scf = gamesFromFixtures("nhl", "37", { espnSeason: 2026, displayName: "2025-26" }, [
+      "schedule-nhl-golden-knights-2026-post.json",
+    ]);
+    expect(scf.at(-1)!.note).toBe("Stanley Cup Final - Game 6");
+  });
+
+  it("uses team nicknames from schedule competitors", () => {
+    const g = nhlPenguinsGames().find((x) => x.id === "401802860")!;
+    expect(g.awayTeam.shortName).toBe("Mammoth");
+    expect(g.homeTeam.shortName).toBe("Penguins");
   });
 });

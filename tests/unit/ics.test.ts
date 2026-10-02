@@ -5,7 +5,7 @@ import { buildCalendarEvents } from "@/lib/calendar/events";
 import { generateIcs } from "@/lib/calendar/generator";
 import type { SportsCalGame } from "@/lib/types";
 import { defaultConfig, type CalendarConfig } from "@/lib/validation/calendar-config";
-import { soonersGames, steelersGames } from "../helpers";
+import { nhlPenguinsGames, soonersGames, steelersGames } from "../helpers";
 
 const NOW = new Date("2026-09-28T12:00:00Z");
 
@@ -116,5 +116,22 @@ describe("ICS details", () => {
     const { calendar, events } = parse(ics);
     expect(events).toHaveLength(0);
     expect(calendar.getFirstPropertyValue("x-wr-calname")).toBe("Thunder 2027-28 Schedule");
+  });
+});
+
+describe("NHL ICS generation", () => {
+  const config = defaultConfig("nhl", { id: "16", slug: "pittsburgh-penguins" });
+  const { events } = parse(generate(nhlPenguinsGames(), config, "16", "Penguins 2025-26 Schedule"));
+
+  it("times Global Series games in UTC with the NHL's 2h30 duration", () => {
+    expect(events).toHaveLength(14);
+    const event = events.find((e) => e.getFirstPropertyValue("uid") === "espn-401802647-16@sportscal.site")!;
+    expect(event).toBeDefined();
+    const start = event.getFirstPropertyValue("dtstart") as ICAL.Time;
+    expect(start.toJSDate().toISOString()).toBe("2025-11-16T14:00:00.000Z");
+    expect(start.zone?.tzid).toBe("UTC");
+    expect(String(event.getFirstPropertyValue("duration"))).toBe("PT2H30M");
+    expect(event.getFirstPropertyValue("summary")).toBe("Penguins vs Predators");
+    expect(event.getFirstPropertyValue("location")).toBe("Avicii Arena");
   });
 });

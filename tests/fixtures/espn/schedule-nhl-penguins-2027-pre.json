@@ -1,0 +1,603 @@
+{
+ "season": {
+  "year": 2027,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2026-27",
+  "half": 1
+ },
+ "requestedSeason": {
+  "year": 2027,
+  "type": 1,
+  "name": "Preseason",
+  "displayName": "2026-27"
+ },
+ "team": {
+  "id": "16",
+  "location": "Pittsburgh",
+  "name": "Penguins",
+  "abbreviation": "PIT",
+  "displayName": "Pittsburgh Penguins",
+  "color": "000000"
+ },
+ "events": [
+  {
+   "id": "401879456",
+   "date": "2026-09-21T23:00Z",
+   "name": "Buffalo Sabres at Pittsburgh Penguins",
+   "shortName": "BUF @ PIT",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nhl/game/_/gameId/401879456/sabres-penguins",
+     "text": "Gamecast"
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401879456",
+     "date": "2026-09-21T23:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "PPG Paints Arena",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "16",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 4.0,
+        "displayValue": "4"
+       },
+       "team": {
+        "id": "16",
+        "location": "Pittsburgh",
+        "nickname": "Penguins",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Penguins",
+        "shortDisplayName": "Penguins",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "2",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 1.0,
+        "displayValue": "1"
+       },
+       "team": {
+        "id": "2",
+        "location": "Buffalo",
+        "nickname": "Sabres",
+        "abbreviation": "BUF",
+        "displayName": "Buffalo Sabres",
+        "shortDisplayName": "Sabres",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/buf.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/buf.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "ESPN+"
+       },
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       }
+      },
+      {
+       "media": {
+        "shortName": "MSGB"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "period": 3,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401879451",
+   "date": "2026-09-22T23:00Z",
+   "name": "Detroit Red Wings at Pittsburgh Penguins",
+   "shortName": "DET @ PIT",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nhl/game/_/gameId/401879451/red-wings-penguins",
+     "text": "Gamecast"
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401879451",
+     "date": "2026-09-22T23:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "PPG Paints Arena",
+      "address": {
+       "city": "Pittsburgh",
+       "state": "PA",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "16",
+       "homeAway": "home",
+       "winner": false,
+       "score": {
+        "value": 4.0,
+        "displayValue": "4"
+       },
+       "team": {
+        "id": "16",
+        "location": "Pittsburgh",
+        "nickname": "Penguins",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Penguins",
+        "shortDisplayName": "Penguins",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "5",
+       "homeAway": "away",
+       "winner": true,
+       "score": {
+        "value": 7.0,
+        "displayValue": "7"
+       },
+       "team": {
+        "id": "5",
+        "location": "Detroit",
+        "nickname": "Red Wings",
+        "abbreviation": "DET",
+        "displayName": "Detroit Red Wings",
+        "shortDisplayName": "Red Wings",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/det.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/det.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "ESPN+"
+       },
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       }
+      },
+      {
+       "media": {
+        "shortName": "SportsNet PIT+"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      },
+      {
+       "media": {
+        "shortName": "DSN"
+       },
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       }
+      }
+     ],
+     "status": {
+      "period": 3,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401879455",
+   "date": "2026-09-24T23:00Z",
+   "name": "Pittsburgh Penguins at Columbus Blue Jackets",
+   "shortName": "PIT @ CBJ",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nhl/game/_/gameId/401879455/penguins-blue-jackets",
+     "text": "Gamecast"
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401879455",
+     "date": "2026-09-24T23:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Nationwide Arena",
+      "address": {
+       "city": "Columbus",
+       "state": "OH",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "29",
+       "homeAway": "home",
+       "winner": true,
+       "score": {
+        "value": 4.0,
+        "displayValue": "4"
+       },
+       "team": {
+        "id": "29",
+        "location": "Columbus",
+        "nickname": "Blue Jackets",
+        "abbreviation": "CBJ",
+        "displayName": "Columbus Blue Jackets",
+        "shortDisplayName": "Blue Jackets",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/cbj.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/cbj.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "16",
+       "homeAway": "away",
+       "winner": false,
+       "score": {
+        "value": 0.0,
+        "displayValue": "0"
+       },
+       "team": {
+        "id": "16",
+        "location": "Pittsburgh",
+        "nickname": "Penguins",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Penguins",
+        "shortDisplayName": "Penguins",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "status": {
+      "period": 3,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "401879457",
+   "date": "2026-09-26T19:00Z",
+   "name": "Pittsburgh Penguins at Buffalo Sabres",
+   "shortName": "PIT @ BUF",
+   "timeValid": true,
+   "season": {
+    "year": 2027,
+    "displayName": "2026-27"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/nhl/game/_/gameId/401879457/penguins-sabres",
+     "text": "Gamecast"
+    }
+   ],
+   "competitions": [
+    {
+     "id": "401879457",
+     "date": "2026-09-26T19:00Z",
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "KeyBank Center",
+      "address": {
+       "city": "Buffalo",
+       "state": "NY",
+       "country": "USA"
+      }
+     },
+     "notes": [],
+     "competitors": [
+      {
+       "id": "2",
+       "homeAway": "home",
+       "winner": false,
+       "score": {
+        "value": 1.0,
+        "displayValue": "1"
+       },
+       "team": {
+        "id": "2",
+        "location": "Buffalo",
+        "nickname": "Sabres",
+        "abbreviation": "BUF",
+        "displayName": "Buffalo Sabres",
+        "shortDisplayName": "Sabres",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/buf.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/buf.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "16",
+       "homeAway": "away",
+       "winner": true,
+       "score": {
+        "value": 3.0,
+        "displayValue": "3"
+       },
+       "team": {
+        "id": "16",
+        "location": "Pittsburgh",
+        "nickname": "Penguins",
+        "abbreviation": "PIT",
+        "displayName": "Pittsburgh Penguins",
+        "shortDisplayName": "Penguins",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500/pit.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/nhl/500-dark/pit.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "NHL Net"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      },
+      {
+       "media": {
+        "shortName": "MSGB"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      },
+      {
+       "media": {
+        "shortName": "SportsNet PIT+"
+       },
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "status": {
+      "period": 3,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

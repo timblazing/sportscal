@@ -12,6 +12,7 @@ import { getTeams } from "@/lib/espn/teams";
 const TARGETS = [
   { league: "nfl", slug: "pittsburgh-steelers" },
   { league: "nba", slug: "oklahoma-city-thunder" },
+  { league: "nhl", slug: "pittsburgh-penguins" },
   { league: "ncaaf", slug: "oklahoma-sooners" },
 ] as const;
 
