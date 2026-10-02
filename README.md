@@ -76,7 +76,7 @@ UIDs never change between refreshes, so calendar apps update events in place ins
 
 ## Stack
 
-Next.js (App Router) · TypeScript (strict) · React · Tailwind CSS · shadcn/ui · Geist · Lucide · [`ics`](https://github.com/adamgibbons/ics) · Zod · Drizzle ORM · PostgreSQL · pnpm · Vitest · Playwright
+Next.js (App Router) · TypeScript (strict) · React · Tailwind CSS · shadcn/ui · Geist · Lucide · [`ics`](https://github.com/adamgibbons/ics) · Zod · Drizzle ORM · PostgreSQL · pnpm · Vitest · agent-browser
 
 ## Local development
 
@@ -124,10 +124,9 @@ pnpm lint
 pnpm typecheck
 pnpm test        # unit/integration tests, fixture-based, no network
 pnpm test:live   # optional: live ESPN checks for the three example teams
-pnpm test:e2e    # Playwright: builds, starts the app, uses live ESPN + your database
 ```
 
-Unit tests use small sanitized ESPN fixtures in `tests/fixtures/espn` (Pittsburgh Steelers, Oklahoma City Thunder, Oklahoma Sooners) and parse generated calendars with [ical.js](https://github.com/kewisch/ical.js) as an independent validator. Run `pnpm exec playwright install chromium` once before E2E tests.
+Unit tests use small sanitized ESPN fixtures in `tests/fixtures/espn` (Pittsburgh Steelers, Oklahoma City Thunder, Oklahoma Sooners) and parse generated calendars with [ical.js](https://github.com/kewisch/ical.js) as an independent validator. For browser acceptance checks, install and set up [agent-browser](https://agent-browser.dev), start the production app with `pnpm build && pnpm start -p 3100`, then follow the [agent-browser E2E checklist](docs/testing/agent-browser-e2e.md) in another terminal. The browser workflow uses live ESPN data; checks that save subscriptions also need `DATABASE_URL` and migrated tables.
 
 ## Deployment (Docker)
 
