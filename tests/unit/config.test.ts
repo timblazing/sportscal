@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { LEAGUE_KEYS } from "@/lib/config/leagues";
+import { LEAGUE_KEYS, isLeagueKey } from "@/lib/config/leagues";
 import {
   LIMITS,
   calendarConfigSchema,
@@ -51,6 +51,15 @@ describe("calendar config validation", () => {
       title: "{homeTeam} v {awayTeam}",
     });
     expect(isDefaultConfig(epl)).toBe(true);
+  });
+
+  it("accepts WNBA configs and expansion team ids with a two-hour duration", () => {
+    expect(isLeagueKey("wnba")).toBe(true);
+    expect(LEAGUE_KEYS.indexOf("wnba")).toBe(LEAGUE_KEYS.indexOf("nba") + 1);
+    const config = defaultConfig("wnba", { id: "131935", slug: "toronto-tempo" });
+    expect(config.durationMinutes).toBe(120);
+    expect(calendarConfigSchema.parse(config)).toEqual(config);
+    expect(isDefaultConfig(config)).toBe(true);
   });
 
   it("limits template and override sizes", () => {

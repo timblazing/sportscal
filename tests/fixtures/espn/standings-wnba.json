@@ -1,0 +1,104 @@
+{
+ "id": "3",
+ "name": "Women's National Basketball Assoc.",
+ "abbreviation": "WNBA",
+ "shortName": "WNBA",
+ "children": [
+  {
+   "id": "1",
+   "name": "Eastern Conference",
+   "abbreviation": "E",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "20"
+      }
+     },
+     {
+      "team": {
+       "id": "16"
+      }
+     },
+     {
+      "team": {
+       "id": "5"
+      }
+     },
+     {
+      "team": {
+       "id": "9"
+      }
+     },
+     {
+      "team": {
+       "id": "19"
+      }
+     },
+     {
+      "team": {
+       "id": "131935"
+      }
+     },
+     {
+      "team": {
+       "id": "18"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "2",
+   "name": "Western Conference",
+   "abbreviation": "W",
+   "isConference": true,
+   "standings": {
+    "entries": [
+     {
+      "team": {
+       "id": "8"
+      }
+     },
+     {
+      "team": {
+       "id": "129689"
+      }
+     },
+     {
+      "team": {
+       "id": "17"
+      }
+     },
+     {
+      "team": {
+       "id": "3"
+      }
+     },
+     {
+      "team": {
+       "id": "132052"
+      }
+     },
+     {
+      "team": {
+       "id": "6"
+      }
+     },
+     {
+      "team": {
+       "id": "11"
+      }
+     },
+     {
+      "team": {
+       "id": "14"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "isConference": false
+}

@@ -1,0 +1,329 @@
+{
+ "season": {
+  "year": 2026,
+  "type": 3,
+  "name": "Postseason",
+  "displayName": "2026",
+  "half": 1
+ },
+ "team": {
+  "id": "20",
+  "abbreviation": "ATL",
+  "location": "Atlanta",
+  "name": "Dream",
+  "displayName": "Atlanta Dream",
+  "color": "e31837",
+  "logo": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png"
+ },
+ "events": [
+  {
+   "id": "401866517",
+   "date": "2026-04-29T23:00Z",
+   "name": "Atlanta Dream at Chicago Sky",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401866517",
+     "date": "2026-04-29T23:00Z",
+     "type": {
+      "id": "1",
+      "text": "Standard",
+      "abbreviation": "STD",
+      "slug": "standard",
+      "type": "standard"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Wintrust Arena",
+      "address": {
+       "city": "Chicago",
+       "state": "IL"
+      }
+     },
+     "competitors": [
+      {
+       "id": "19",
+       "homeAway": "home",
+       "winner": false,
+       "team": {
+        "id": "19",
+        "location": "Chicago",
+        "abbreviation": "CHI",
+        "displayName": "Chicago Sky",
+        "shortDisplayName": "Sky",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/chi.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/chi.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 78.0,
+        "displayValue": "78"
+       }
+      },
+      {
+       "id": "20",
+       "homeAway": "away",
+       "winner": true,
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 87.0,
+        "displayValue": "87"
+       }
+      }
+     ],
+     "notes": [],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       },
+       "market": {
+        "id": "2",
+        "type": "Home"
+       },
+       "media": {
+        "shortName": "CW26"
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 4,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401866517/dream-sky"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401866517"
+    }
+   ]
+  },
+  {
+   "id": "401867795",
+   "date": "2026-05-03T19:00Z",
+   "name": "Washington Mystics at Atlanta Dream",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "1",
+    "type": 1,
+    "name": "Preseason",
+    "abbreviation": "pre"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401867795",
+     "date": "2026-05-03T19:00Z",
+     "type": {
+      "id": "1",
+      "text": "Standard",
+      "abbreviation": "STD",
+      "slug": "standard",
+      "type": "standard"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Gateway Center",
+      "address": {
+       "city": "College Park",
+       "state": "GA"
+      }
+     },
+     "competitors": [
+      {
+       "id": "20",
+       "homeAway": "home",
+       "winner": false,
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 72.0,
+        "displayValue": "72"
+       }
+      },
+      {
+       "id": "16",
+       "homeAway": "away",
+       "winner": true,
+       "team": {
+        "id": "16",
+        "location": "Washington",
+        "abbreviation": "WSH",
+        "displayName": "Washington Mystics",
+        "shortDisplayName": "Mystics",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/wsh.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/wsh.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/scoreboard/wsh.png",
+          "rel": [
+           "full",
+           "scoreboard",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 83.0,
+        "displayValue": "83"
+       }
+      }
+     ],
+     "notes": [],
+     "broadcasts": [],
+     "status": {
+      "clock": 600.0,
+      "displayClock": "10:00",
+      "period": 4,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401867795/mystics-dream"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401867795"
+    }
+   ]
+  }
+ ],
+ "requestedSeason": {
+  "year": 2026,
+  "type": 1,
+  "name": "Preseason",
+  "displayName": "2026"
+ }
+}

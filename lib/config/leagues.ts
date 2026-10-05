@@ -5,7 +5,7 @@
  * user input.
  */
 
-export const LEAGUE_KEYS = ["nfl", "nba", "nhl", "ncaaf", "epl"] as const;
+export const LEAGUE_KEYS = ["nfl", "nba", "wnba", "nhl", "ncaaf", "epl"] as const;
 export type LeagueKey = (typeof LEAGUE_KEYS)[number];
 
 export type NormalizedSeasonType = "preseason" | "regular" | "postseason" | "other";
@@ -91,6 +91,20 @@ export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
       "5": "postseason",
     },
     teamGrouping: { kind: "groups" },
+    scheduleTimeZone: "America/New_York",
+    hasWeeks: false,
+  },
+  wnba: {
+    key: "wnba",
+    sport: "basketball",
+    league: "wnba",
+    label: "WNBA",
+    name: "Women's National Basketball Association",
+    defaultDurationMinutes: 120,
+    scheduleSeasonTypes: [1, 2, 3],
+    seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
+    // WNBA /groups has no team membership; standings group 3 lists both conferences.
+    teamGrouping: { kind: "standings", defaultGroupIds: ["3"], extendedGroupIds: [] },
     scheduleTimeZone: "America/New_York",
     hasWeeks: false,
   },

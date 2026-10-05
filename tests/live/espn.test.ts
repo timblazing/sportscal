@@ -12,6 +12,7 @@ import { getTeams } from "@/lib/espn/teams";
 const TARGETS = [
   { league: "nfl", slug: "pittsburgh-steelers" },
   { league: "nba", slug: "oklahoma-city-thunder" },
+  { league: "wnba", slug: "indiana-fever" },
   { league: "nhl", slug: "pittsburgh-penguins" },
   { league: "ncaaf", slug: "oklahoma-sooners" },
   { league: "epl", slug: "liverpool" },
@@ -24,6 +25,10 @@ describe.each(TARGETS)("live ESPN: $league $slug", ({ league, slug }) => {
     expect(season.displayName).toMatch(/^\d{4}(-\d{2})?$/);
 
     const teams = await getTeams(league);
+    if (league === "wnba") {
+      expect(teams).toHaveLength(15);
+      expect(teams.every((team) => team.tier === "primary" && team.conference && team.logo)).toBe(true);
+    }
     const team = teams.find((t) => t.slug === slug);
     expect(team).toBeDefined();
 
