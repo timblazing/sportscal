@@ -46,6 +46,7 @@ export function AdvancedSettings({
   counts,
   gameTypes,
   preseasonLabel,
+  postseasonLabel,
 }: {
   settings: BuilderSettings;
   defaultDuration: number;
@@ -55,6 +56,7 @@ export function AdvancedSettings({
   overrideCount: number;
   counts?: Partial<Record<keyof BuilderSettings["include"], number>>;
   preseasonLabel?: string;
+  postseasonLabel?: string;
   gameTypes?: ("preseason" | "regular" | "postseason")[];
 }) {
   const [open, setOpen] = useState(false);
@@ -73,6 +75,7 @@ export function AdvancedSettings({
           counts={counts}
           gameTypes={gameTypes}
           preseasonLabel={preseasonLabel}
+          postseasonLabel={postseasonLabel}
           onChange={(include) => onChange({ include })}
         />
         <div className="space-y-1.5">

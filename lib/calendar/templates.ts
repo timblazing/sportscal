@@ -27,7 +27,7 @@ export const TEMPLATE_VARIABLES: TemplateVariable[] = [
   { name: "awayAbbr", description: "Away team abbreviation" },
   { name: "homeAway", description: "Home, Away, or Neutral" },
   { name: "homeAwaySymbol", description: "vs for home/neutral games, @ for away games", common: true },
-  { name: "league", description: "League (NFL, NBA, NHL, NCAAF, Premier League, MLB)" },
+  { name: "league", description: "League label (NFL, MLS, Premier League, and more)" },
   { name: "season", description: "Season label from ESPN (2026, 2026-27)", common: true },
   { name: "seasonType", description: "Preseason, Regular Season, Postseason", common: true },
   { name: "week", description: "Week label when ESPN provides one (Week 6)", common: true },
@@ -128,7 +128,8 @@ function resultLabel(team: GameTeam, opponent: GameTeam, game: SportsCalGame): s
   if (!game.status.completed || !team.score || !opponent.score) return undefined;
   const outcome = team.winner ? "W" : opponent.winner ? "L" : LEAGUES[game.league].drawLabel ?? "T";
   // ESPN marks overtime/shootout finals in the status detail ("Final/OT", "Final/2OT", "Final/SO").
-  const extra = game.status.detail?.match(/^Final\/(\d*OT|SO)$/i)?.[1].toUpperCase();
+  const penalties = LEAGUES[game.league].sport === "soccer" && team.score === opponent.score && (team.winner || opponent.winner);
+  const extra = penalties ? "pens" : game.status.detail?.match(/^Final\/(\d*OT|SO)$/i)?.[1].toUpperCase();
   return `${outcome} ${team.score}-${opponent.score}${extra ? ` (${extra})` : ""}`;
 }
 

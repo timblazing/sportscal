@@ -1,0 +1,203 @@
+{
+ "season": {
+  "year": 2026,
+  "type": 3,
+  "name": "Postseason",
+  "displayName": "2026",
+  "half": 1
+ },
+ "team": {
+  "id": "8",
+  "abbreviation": "MIN",
+  "location": "Minnesota",
+  "name": "Lynx",
+  "displayName": "Minnesota Lynx",
+  "color": "266092",
+  "logo": "https://a.espncdn.com/i/teamlogos/wnba/500/min.png"
+ },
+ "events": [
+  {
+   "id": "401736430",
+   "date": "2025-07-02T00:00Z",
+   "name": "Indiana Fever at Minnesota Lynx",
+   "season": {
+    "year": 2025,
+    "displayName": "2025"
+   },
+   "seasonType": {
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401736430",
+     "date": "2025-07-02T00:00Z",
+     "type": {
+      "id": "39",
+      "text": "Commissioner's Cup",
+      "abbreviation": "CC",
+      "slug": "commissioners-cup",
+      "type": "commissioners-cup"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Target Center",
+      "address": {
+       "city": "Minneapolis",
+       "state": "MN"
+      }
+     },
+     "competitors": [
+      {
+       "id": "8",
+       "homeAway": "home",
+       "winner": false,
+       "team": {
+        "id": "8",
+        "location": "Minnesota",
+        "abbreviation": "MIN",
+        "displayName": "Minnesota Lynx",
+        "shortDisplayName": "Lynx",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/min.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/min.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 59.0,
+        "displayValue": "59"
+       }
+      },
+      {
+       "id": "5",
+       "homeAway": "away",
+       "winner": true,
+       "team": {
+        "id": "5",
+        "location": "Indiana",
+        "abbreviation": "IND",
+        "displayName": "Indiana Fever",
+        "shortDisplayName": "Fever",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/ind.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/ind.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 74.0,
+        "displayValue": "74"
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "WNBA Commissioner's Cup Championship"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "Prime Video"
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      },
+      {
+       "type": {
+        "id": "6",
+        "shortName": "Subscription Package"
+       },
+       "market": {
+        "id": "3",
+        "type": "Away"
+       },
+       "media": {
+        "shortName": "WNBA League Pass"
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 4,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401736430/fever-lynx"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401736430"
+    }
+   ]
+  }
+ ],
+ "requestedSeason": {
+  "year": 2025,
+  "type": 2,
+  "name": "Regular Season",
+  "displayName": "2025"
+ }
+}

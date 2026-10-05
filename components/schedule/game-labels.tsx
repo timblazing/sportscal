@@ -7,7 +7,7 @@ export function seasonTypeShort(game: SportsCalGame): string | undefined {
     case "preseason":
       return LEAGUES[game.league].preseasonLabel ?? "Preseason";
     case "postseason":
-      return /play-in/i.test(game.seasonType.name) ? "Play-In" : "Postseason";
+      return /play-in/i.test(game.seasonType.name) ? "Play-In" : LEAGUES[game.league].postseasonLabel ?? "Postseason";
     default:
       return undefined;
   }

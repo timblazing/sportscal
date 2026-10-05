@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { LEAGUE_KEYS } from "@/lib/config/leagues";
+import { LEAGUE_KEYS, isLeagueKey } from "@/lib/config/leagues";
 import {
   LIMITS,
   calendarConfigSchema,
@@ -27,7 +27,7 @@ describe("calendar config validation", () => {
   });
 
   it("rejects unknown leagues, bad ids and extra keys", () => {
-    expect(calendarConfigSchema.safeParse({ ...valid(), league: "xfl" }).success).toBe(false);
+    expect(calendarConfigSchema.safeParse({ ...valid(), league: "not-a-league" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), teamId: "../../etc" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), teamSlug: "Oklahoma Sooners" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), evil: true }).success).toBe(false);
@@ -42,6 +42,15 @@ describe("calendar config validation", () => {
     expect(calendarConfigSchema.safeParse({ ...nhl, teamId: "129764", teamSlug: "utah-mammoth" }).success).toBe(true);
   });
 
+  it("supports NCAAB defaults and saved calendar validation", () => {
+    expect(LEAGUE_KEYS).toContain("ncaab");
+    const config = defaultConfig("ncaab", { id: "150", slug: "duke-blue-devils" });
+    expect(config.durationMinutes).toBe(120);
+    expect(calendarConfigSchema.parse(config)).toEqual(config);
+    expect(isDefaultConfig(config)).toBe(true);
+    expect(calendarConfigSchema.parse({ ...config, seasonMode: "manual", seasonOverride: 2026 }).league).toBe("ncaab");
+  });
+
   it("registers Premier League soccer defaults", () => {
     expect(LEAGUE_KEYS).toContain("epl");
     const epl = defaultConfig("epl", { id: "364", slug: "liverpool" });
@@ -51,6 +60,15 @@ describe("calendar config validation", () => {
       title: "{homeTeam} v {awayTeam}",
     });
     expect(isDefaultConfig(epl)).toBe(true);
+  });
+
+  it("accepts WNBA configs and expansion team ids with a two-hour duration", () => {
+    expect(isLeagueKey("wnba")).toBe(true);
+    expect(LEAGUE_KEYS.indexOf("wnba")).toBe(LEAGUE_KEYS.indexOf("nba") + 1);
+    const config = defaultConfig("wnba", { id: "131935", slug: "toronto-tempo" });
+    expect(config.durationMinutes).toBe(120);
+    expect(calendarConfigSchema.parse(config)).toEqual(config);
+    expect(isDefaultConfig(config)).toBe(true);
   });
 
   it("limits template and override sizes", () => {

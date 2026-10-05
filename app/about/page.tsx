@@ -38,6 +38,10 @@ export default function AboutPage() {
           Premier League calendars include Premier League matches only, not domestic cups or European fixtures.
           Kick-off times can change when TV selections are made and update on the next refresh.
         </p>
+        <p>
+          MLS calendars include MLS matches and playoffs only; Leagues Cup, U.S. Open Cup and
+          CONCACAF Champions Cup are not included.
+        </p>
       </Section>
 
       <Section title="Downloads vs. subscriptions">
@@ -64,6 +68,11 @@ export default function AboutPage() {
           the same event (same UID) becomes a timed event — no duplicates. Games without a date
           aren&apos;t added until ESPN schedules them. Canceled games stay on the calendar marked as
           canceled.
+        </p>
+        <p>
+          Many college basketball games appear as all-day events until ESPN assigns start times.
+          Conference tournaments follow ESPN&apos;s regular-season grouping; NCAA Tournament and NIT
+          games are postseason.
         </p>
       </Section>
 

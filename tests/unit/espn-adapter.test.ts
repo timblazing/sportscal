@@ -2,6 +2,9 @@ import { describe, expect, it } from "vitest";
 
 import { LEAGUES } from "@/lib/config/leagues";
 import { normalizeBroadcasts, normalizeSeasonType, normalizeVenue } from "@/lib/espn/normalize";
+import { buildCalendarEvents } from "@/lib/calendar/events";
+import { generateIcs } from "@/lib/calendar/generator";
+import { defaultConfig } from "@/lib/validation/calendar-config";
 import { buildGames } from "@/lib/espn/schedules";
 import {
   buildCatalog,
@@ -277,5 +280,92 @@ describe("Pittsburgh Penguins (NHL)", () => {
     const g = nhlPenguinsGames().find((x) => x.id === "401802860")!;
     expect(g.awayTeam.shortName).toBe("Mammoth");
     expect(g.homeTeam.shortName).toBe("Penguins");
+  });
+});
+
+describe("NCAAB D-I catalogs and schedules", () => {
+  it("backfills standings-only teams without losing catalog metadata or adding duplicates", () => {
+    const membership = membershipFromStandings(fixture("standings-ncaab-d1.json"), "primary");
+    const raw = parseTeamsResponse(fixture("teams-ncaab.json"));
+    const catalog = buildCatalog(LEAGUES.ncaab, raw, membership);
+    const expected = {
+      "2511": "queens-university-royals",
+      "2598": "saint-francis-red-wolves",
+      "88": "southern-indiana-screaming-eagles",
+      "2815": "lindenwood-lions",
+    };
+    for (const [id, slug] of Object.entries(expected)) {
+      expect(raw.some((t) => t.id === id)).toBe(false);
+      expect(catalog.find((t) => t.id === id)).toMatchObject({ slug, tier: "primary", subdivision: "Division I" });
+      expect(catalog.find((t) => t.id === id)?.logo).toMatch(/^https:/);
+    }
+    expect(new Set(catalog.map((t) => t.id)).size).toBe(catalog.length);
+    expect(catalog.every((t) => t.isFbs === undefined)).toBe(true);
+    expect(catalog.find((t) => t.id === "150")).toMatchObject({ conference: { name: "ACC" }, color: "#00539b" });
+    expect(catalog.find((t) => t.id === "2697")?.tier).toBe("other");
+    expect([...membership.keys()].every((id) => catalog.find((t) => t.id === id)?.tier === "primary")).toBe(true);
+    expect(catalog.some((t) => t.conference?.name === "Metro")).toBe(true);
+  });
+
+  it("preserves an inactive catalog entry over active standings metadata", () => {
+    const membership = membershipFromStandings(fixture("standings-ncaab-d1.json"), "primary");
+    const catalog = buildCatalog(LEAGUES.ncaab, [{ id: "150", displayName: "Duke Blue Devils", isActive: false }], membership);
+    expect(catalog.some((t) => t.id === "150")).toBe(false);
+  });
+
+  it("loads Duke's upcoming games even when the empty postseason echoes another season", () => {
+    const games = gamesFromFixtures("ncaab", "150", { espnSeason: 2027, displayName: "2026-27" }, [
+      "schedule-ncaab-duke-2027-reg.json", "schedule-ncaab-duke-2027-post-empty.json",
+    ]);
+    expect(games).toHaveLength(33);
+    expect(games.filter((g) => g.timeTBD)).toHaveLength(26);
+    expect(games[0].localDate).toBe("2026-11-02");
+    expect(games.find((g) => g.note === "Champions Classic")).toMatchObject({ neutralSite: true, timeTBD: true });
+    const empty = fixture("schedule-ncaab-duke-2027-post-empty.json") as object;
+    expect(buildGames([{ ...empty, season: { year: 2026 } }], {
+      league: LEAGUES.ncaab, teamId: "150", season: { espnSeason: 2027, displayName: "2026-27" },
+    })).toEqual([]);
+  });
+
+  it("keeps ACC tournaments regular and NCAA rounds postseason with notes", () => {
+    const games = gamesFromFixtures("ncaab", "150", { espnSeason: 2026, displayName: "2025-26" }, [
+      "schedule-ncaab-duke-2026-reg.json", "schedule-ncaab-duke-2026-post.json",
+    ]);
+    const acc = games.filter((g) => g.note?.includes("ACC Tournament"));
+    expect(acc).toHaveLength(3);
+    expect(acc.every((g) => g.neutralSite && g.seasonType.normalized === "regular")).toBe(true);
+    const ncaa = games.filter((g) => g.seasonType.normalized === "postseason");
+    expect(ncaa).toHaveLength(4);
+    expect(ncaa.every((g) => g.note?.includes("East Region") && !g.week)).toBe(true);
+  });
+
+  it("tolerates a non-D-I opponent without a logo or abbreviation", () => {
+    const [game] = gamesFromFixtures("ncaab", "147", { espnSeason: 2027, displayName: "2026-27" }, [
+      "schedule-ncaab-montana-state-2027-reg.json",
+    ]);
+    expect(game.awayTeam).toMatchObject({ displayName: "Northwest Indian RedHawks", abbreviation: "" });
+    expect(game.awayTeam.logo).toBeUndefined();
+    const config = defaultConfig("ncaab", { id: "147", slug: "montana-state-bobcats" });
+    config.templates.title = "{teamAbbr} {homeAwaySymbol} {opponentAbbr}";
+    config.templates.description = "{opponent} {venue}";
+    const [event] = buildCalendarEvents([game], config, "147");
+    expect(event.title).toBe("MTST vs");
+    expect(event.description).toContain("NW Indian");
+    expect(generateIcs([event], { calendarName: "Montana State" })).toContain("BEGIN:VEVENT");
+  });
+
+  it("documents existing placeholder handling without inventing bracket games", () => {
+    const response = fixture("schedule-ncaab-duke-2027-reg.json") as { events: { competitions: { competitors: { team: object; homeAway: string }[] }[] }[] };
+    const event = structuredClone(response.events[0]);
+    const opponent = event.competitions[0].competitors.find((c) => c.homeAway === "away")!;
+    opponent.team = { id: "-1", displayName: "TBD" };
+    const [game] = buildGames([{ events: [event] }], {
+      league: LEAGUES.ncaab, teamId: "150", season: { espnSeason: 2027, displayName: "2026-27" },
+    });
+    expect(game.awayTeam).toMatchObject({ id: "-1", displayName: "TBD" });
+    event.competitions[0].competitors = event.competitions[0].competitors.filter((c) => c.homeAway === "home");
+    expect(buildGames([{ events: [event] }], {
+      league: LEAGUES.ncaab, teamId: "150", season: { espnSeason: 2027, displayName: "2026-27" },
+    })).toEqual([]);
   });
 });

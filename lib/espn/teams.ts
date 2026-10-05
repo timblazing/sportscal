@@ -17,11 +17,12 @@ import {
 export interface CatalogTeam extends SportsCalTeam {
   /** "primary" teams are shown by default; others only with "Show all teams". */
   tier: "primary" | "secondary" | "other";
-  /** Subdivision label for college football ("FBS", "FCS"). */
+  /** College subdivision label ("FBS", "FCS", "Division I"). */
   subdivision?: string;
 }
 
 interface Membership {
+  team?: EspnTeam;
   conference?: SportsCalTeam["conference"];
   division?: SportsCalTeam["division"];
   subdivision?: string;
@@ -59,7 +60,7 @@ export function membershipFromGroups(data: unknown): Map<string, Membership> {
   return map;
 }
 
-/** NCAAF: standings for a division group (FBS=80, FCS=81) list conferences with entries. */
+/** College standings groups list conferences containing team entries. */
 export function membershipFromStandings(
   data: unknown,
   tier: Membership["tier"],
@@ -72,6 +73,7 @@ export function membershipFromStandings(
     for (const entry of node.standings?.entries ?? []) {
       if (map.has(entry.team.id)) continue;
       map.set(entry.team.id, {
+        team: entry.team,
         tier,
         subdivision,
         conference: conf
@@ -90,6 +92,21 @@ export function membershipFromStandings(
   return map;
 }
 
+/** MLS: direct standings children are conferences without isConference flags. */
+export function membershipFromConferenceStandings(data: unknown): Map<string, Membership> {
+  const root = espnStandingsNodeSchema.parse(data);
+  const map = new Map<string, Membership>();
+  for (const conference of root.children ?? []) {
+    for (const entry of conference.standings?.entries ?? []) {
+      map.set(entry.team.id, {
+        tier: "primary",
+        conference: { id: conference.id, name: conference.name ?? "", shortName: conference.abbreviation },
+      });
+    }
+  }
+  return map;
+}
+
 function conferenceLabel(node: EspnStandingsNode): string {
   const name = node.shortName ?? node.name ?? "";
   return /independent|indep\./i.test(name) ? "Independents" : name;
@@ -102,11 +119,15 @@ export function buildCatalog(
 ): CatalogTeam[] {
   const seen = new Set<string>();
   const catalog: CatalogTeam[] = [];
-  for (const raw of teams) {
-    if (seen.has(raw.id) || raw.isActive === false) continue;
+  // Standings can include active D-I transitions omitted from the team endpoint.
+  // Put catalog entries first so their richer metadata wins when ids overlap.
+  const standingsTeams = [...membership.values()].flatMap((m) => m.team ? [m.team] : []);
+  for (const raw of [...teams, ...standingsTeams]) {
+    if (seen.has(raw.id)) continue;
     seen.add(raw.id);
+    if (raw.isActive === false) continue;
     const m = membership.get(raw.id);
-    const tier: CatalogTeam["tier"] = m?.tier ?? (league.teamGrouping.kind === "groups" || league.teamGrouping.kind === "flat" ? "primary" : "other");
+    const tier: CatalogTeam["tier"] = m?.tier ?? (league.teamGrouping.kind === "groups" || league.teamGrouping.kind === "flat" || league.teamGrouping.kind === "conferenceStandings" ? "primary" : "other");
     const team = normalizeTeam(raw, league, {
       conference: m?.conference,
       division: m?.division,
@@ -135,6 +156,11 @@ async function loadCatalog(leagueKey: LeagueKey): Promise<CatalogTeam[]> {
       revalidate: REVALIDATE.teams,
     });
     membership = membershipFromGroups(data);
+  } else if (league.teamGrouping.kind === "conferenceStandings") {
+    const data = await espnFetchJson(buildEspnUrl("standings", league, ["standings"]), {
+      revalidate: REVALIDATE.teams,
+    });
+    membership = membershipFromConferenceStandings(data);
   } else {
     const { defaultGroupIds, extendedGroupIds } = league.teamGrouping;
     const groups = [
@@ -165,7 +191,7 @@ async function loadCatalog(leagueKey: LeagueKey): Promise<CatalogTeam[]> {
  * Normalized team catalog, cached as a whole (the raw NCAAF team list is close
  * to Next's per-fetch cache limit, the normalized catalog is small).
  */
-export const getTeamCatalog = unstable_cache(loadCatalog, ["espn-team-catalog-v2"], {
+export const getTeamCatalog = unstable_cache(loadCatalog, ["espn-team-catalog-v3"], {
   revalidate: REVALIDATE.teams,
 });
 

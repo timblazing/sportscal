@@ -1,0 +1,13 @@
+{
+ "status": "success",
+ "groups": [
+  {
+   "name": "Eastern Conference",
+   "abbreviation": "E"
+  },
+  {
+   "name": "Western Conference",
+   "abbreviation": "W"
+  }
+ ]
+}

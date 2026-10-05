@@ -5,7 +5,7 @@
  * user input.
  */
 
-export const LEAGUE_KEYS = ["nfl", "nba", "nhl", "ncaaf", "epl", "mlb"] as const;
+export const LEAGUE_KEYS = ["nfl", "nba", "wnba", "nhl", "ncaaf", "ncaab", "mlb", "mls", "epl"] as const;
 export type LeagueKey = (typeof LEAGUE_KEYS)[number];
 
 export type NormalizedSeasonType = "preseason" | "regular" | "postseason" | "other";
@@ -16,6 +16,8 @@ export type TeamGroupingSource =
   | { kind: "groups" }
   /** Site API standings for the listed group ids (conference → teams). */
   | { kind: "flat" }
+  /** Root standings children are conferences, even without isConference. */
+  | { kind: "conferenceStandings" }
   | {
       kind: "standings";
       /** Groups shown by default (e.g. FBS). */
@@ -47,6 +49,7 @@ export interface LeagueConfig {
   preseasonLabel?: string;
   titleTemplate?: string;
   postponedStatus?: "tentative" | "cancelled";
+  postseasonLabel?: string;
   note?: string;
   /**
    * Fallback mapping of ESPN season type ids to normalized values. The adapter
@@ -62,6 +65,8 @@ export interface LeagueConfig {
   /** Whether games are organised by week (football) — affects preview text. */
   hasWeeks: boolean;
 }
+
+const MLS_SCHEDULE_TYPES = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
   nfl: {
@@ -94,6 +99,20 @@ export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
       "5": "postseason",
     },
     teamGrouping: { kind: "groups" },
+    scheduleTimeZone: "America/New_York",
+    hasWeeks: false,
+  },
+  wnba: {
+    key: "wnba",
+    sport: "basketball",
+    league: "wnba",
+    label: "WNBA",
+    name: "Women's National Basketball Association",
+    defaultDurationMinutes: 120,
+    scheduleSeasonTypes: [1, 2, 3],
+    seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
+    // WNBA /groups has no team membership; standings group 3 lists both conferences.
+    teamGrouping: { kind: "standings", defaultGroupIds: ["3"], extendedGroupIds: [] },
     scheduleTimeZone: "America/New_York",
     hasWeeks: false,
   },
@@ -140,6 +159,47 @@ export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
     preseasonLabel: "Spring Training",
     titleTemplate: "{team} {homeAwaySymbol} {opponent} {doubleheader}",
     postponedStatus: "cancelled",
+  },
+  ncaab: {
+    key: "ncaab",
+    sport: "basketball",
+    league: "mens-college-basketball",
+    label: "NCAAB",
+    name: "NCAA Division I Men's Basketball",
+    defaultDurationMinutes: 120,
+    // Conference tournaments and MTEs are regular season; NCAA/NIT games are postseason.
+    scheduleSeasonTypes: [2, 3],
+    seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
+    teamGrouping: { kind: "standings", defaultGroupIds: ["50"], extendedGroupIds: [] },
+    scheduleTimeZone: "America/New_York",
+    hasWeeks: false,
+  },
+  mls: {
+    key: "mls",
+    sport: "soccer",
+    league: "usa.1",
+    label: "MLS",
+    name: "Major League Soccer",
+    defaultDurationMinutes: 120,
+    // All-Star (2) is excluded; every playoff series slot and MLS Cup is included.
+    scheduleSeasonTypes: MLS_SCHEDULE_TYPES,
+    scheduleQueries: MLS_SCHEDULE_TYPES.flatMap((seasontype): Record<string, string | number | boolean>[] => [
+      { seasontype },
+      { seasontype, fixture: true },
+    ]),
+    regularSeasonTypeId: 1,
+    seasonTypeFallback: {
+      "0": "other", "1": "regular", "2": "other",
+      ...Object.fromEntries(MLS_SCHEDULE_TYPES.slice(1).map((id) => [String(id), "postseason" as const])),
+    },
+    gameTypes: ["regular", "postseason"],
+    postseasonLabel: "Playoffs",
+    teamGrouping: { kind: "conferenceStandings" },
+    scheduleTimeZone: "America/New_York",
+    hasWeeks: false,
+    drawLabel: "D",
+    defaultTemplates: { title: "{homeTeam} v {awayTeam}" },
+    note: "MLS matches and playoffs only; Leagues Cup, U.S. Open Cup and CONCACAF Champions Cup are not included.",
   },
   epl: {
     key: "epl",

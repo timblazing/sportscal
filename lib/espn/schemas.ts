@@ -70,7 +70,7 @@ type EspnStandingsNode = {
   abbreviation?: string;
   shortName?: string;
   isConference?: boolean;
-  standings?: { entries?: { team: { id: string } }[] };
+  standings?: { entries?: { team: EspnTeam }[] };
   children?: EspnStandingsNode[];
 };
 export const espnStandingsNodeSchema: z.ZodType<EspnStandingsNode> = z.lazy(() =>
@@ -82,7 +82,7 @@ export const espnStandingsNodeSchema: z.ZodType<EspnStandingsNode> = z.lazy(() =
     isConference: z.boolean().optional(),
     standings: z
       .looseObject({
-        entries: z.array(z.looseObject({ team: z.looseObject({ id: idLike }) })).optional(),
+        entries: z.array(z.looseObject({ team: espnTeamSchema })).optional(),
       })
       .optional(),
     children: z.array(espnStandingsNodeSchema).optional(),
@@ -131,6 +131,7 @@ export const espnCompetitorSchema = z.looseObject({
       z.string(),
     ])
     .optional(),
+  shootoutScore: z.unknown().optional(),
   team: espnTeamSchema,
 });
 export type EspnCompetitor = z.infer<typeof espnCompetitorSchema>;

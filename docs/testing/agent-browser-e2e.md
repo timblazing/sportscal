@@ -67,6 +67,27 @@ agent-browser snapshot -i
 5. Download the calendar and inspect it with an independent ICS parser. Also fetch `/calendar/mlb/los-angeles-dodgers.ics` and `/calendar/mlb/athletics.ics`. Confirm distinct doubleheader UIDs, the postponed original is CANCELLED on July 18, the makeup is confirmed, and if-necessary postseason games are TENTATIVE.
 6. Repeat the MLB selection at 393×852; confirm no horizontal overflow. Repeat a selection for NFL to confirm its toggle still says Preseason.
 7. With a migrated database configured, customize an MLB calendar, save its subscription, and reopen its manage link. Confirm MLB, the doubleheader template, 3h duration, and overrides survive the round trip. Unit route coverage uses a mocked database; it does not verify a deployed PostgreSQL instance.
+## WNBA
+
+1. Reset local storage, open the **League** dropdown, and choose **WNBA**. Confirm it follows NBA and shows **Women's National Basketball Association** as secondary text.
+2. Search `fever`, choose **Indiana Fever**, and confirm the URL includes `league=wnba&team=indiana-fever`, the single-year season label, and schedule rows.
+3. Confirm the **Include** chips offer Preseason, Regular Season, and Postseason. Toggle each and confirm the preview/count changes. Restore all three.
+4. Search `western` and confirm the Western Conference teams appear. Search `golden state`, `toronto`, and `portland` to check expansion teams and logos.
+5. Download the Fever calendar and open the canonical subscription dialog. Confirm the URL ends in `/calendar/wnba/indiana-fever.ics`. Fetch it and check `X-WR-CALNAME`, `UID:espn-…-5@sportscal.site`, and `DURATION:PT2H`.
+6. Open `http://localhost:3100/?league=wnba&team=atlanta-dream`. TBD postseason games should appear on their Eastern calendar date as all-day events. With the description template `{note}`, if-necessary notes should appear in the preview and downloaded calendar.
+7. At a phone viewport of 393×852, repeat Fever selection, Include filtering, download, and canonical subscription; check there is no horizontal overflow.
+8. With a migrated PostgreSQL database, change the title to `{league}: {opponent}`, save a custom subscription, and confirm its feed and private manage link retain WNBA, the formatting, and the chosen filters.
+
+The WNBA fixture regressions run in Vitest; browser checks use live ESPN data. All-star events and a separate Commissioner's Cup filter are outside this flow. Cup games belong to Regular Season. Next-season data may be unpublished; verify the existing pending state after the competitive season ends.
+## MLS
+
+1. Reset local storage, open the **League** dropdown, choose **MLS**, search `San Diego`, and choose **San Diego FC** under **Western Conference**. Also search `LAFC` and an Eastern Conference club to confirm conference grouping and name/abbreviation search.
+2. Confirm the season reads `2026`, the preview title uses `Home v Away`, and both played results and upcoming fixtures appear. The scope note says MLS matches and playoffs only.
+3. Open **Advanced settings**. Confirm **Regular season** and **Playoffs** chips appear and **Preseason** does not. The default duration is 2 hours.
+4. Download the calendar using the visible download button. Confirm 34 regular-season events, `SUMMARY:` values containing ` v `, stable `espn-{eventId}-22529@sportscal.site` UIDs, and `DURATION:PT2H`.
+5. Fetch `/calendar/mls/san-diego-fc.ics`; confirm HTTP 200, `text/calendar`, and the same events as the download. Open Subscribe with unchanged defaults and confirm this canonical URL.
+6. The builder currently selects the season automatically. To check historical support, POST an Inter Miami CF configuration to `/api/download` with `seasonMode: "manual"`, `seasonOverride: 2025`, `teamId: "20232"`, and `teamSlug: "inter-miami-cf"`. Confirm 40 events (34 regular games plus Round One Game 1/2/3, Semifinal, Conference Final and MLS Cup). Repeat with `include.postseason: false`; confirm 34 events and no 2026 dates in either file.
+7. At 393×852, confirm MLS is selectable, the scope note wraps, and the page has no horizontal overflow. Check browser console/errors after the flow.
 
 ## Formatting and team search
 
@@ -138,3 +159,14 @@ Close the isolated browser session when finished:
 ```sh
 agent-browser close
 ```
+
+## NCAAB (men's Division I basketball)
+
+1. Reset local storage, choose **NCAAB** in the League dropdown, search `duke`, and select **Duke Blue Devils**. Confirm the URL includes `league=ncaab&team=duke-blue-devils`, the season is `2026-27` (upcoming in October 2026), and schedule rows appear.
+2. Confirm TBD start times appear as all-day events and a Champions Classic game shows **Neutral site** / `vs`. Search `kansas jayhawks` and `queens university`; both teams must be selectable. Conference searches such as `ACC` must also match.
+3. Choose Duke again and override the season to `2025-26`. ACC Tournament games belong to **Regular season**, while NCAA Tournament games belong to **Postseason**. Toggle postseason off and confirm conference tournament games remain.
+4. Download Duke's calendar. Fetch `/calendar/ncaab/duke-blue-devils.ics` twice and confirm valid `BEGIN:VCALENDAR`, one `VEVENT` per included game, `DTSTART;VALUE=DATE` for TBD games, `DURATION:PT2H` for timed games, and unchanged UIDs between requests.
+5. With a migrated database configured, customize the title and save a subscription. Confirm its NCAAB feed and private manage link work; edit the title and confirm the feed updates while UIDs retain the public calendar ID.
+6. At 393×852, repeat the Duke selection and confirm no horizontal overflow and visible schedule rows.
+
+NCAAB fixtures are trimmed live ESPN captures from 2026-10-05. The Montana State fixture uses the live Northwest Indian matchup with optional opponent abbreviation/logo fields removed to cover missing metadata. Synthetic TBD competitors and DST timestamps are constructed in unit tests; no bracket placeholders are added by the adapter.

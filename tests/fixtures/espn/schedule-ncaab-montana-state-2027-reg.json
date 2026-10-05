@@ -1,0 +1,124 @@
+{
+  "season": {
+    "year": 2027,
+    "type": 1,
+    "name": "Preseason",
+    "displayName": "2026-27",
+    "half": 1
+  },
+  "requestedSeason": {
+    "year": 2027,
+    "type": 2,
+    "name": "Regular Season",
+    "displayName": "2026-27"
+  },
+  "events": [
+    {
+      "id": "401925880",
+      "date": "2026-11-26T02:00Z",
+      "name": "Northwest Indian RedHawks at Montana State Bobcats",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 4,
+        "text": "Week 4"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925880/nw-indian-montana-st",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401925880",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401925880",
+          "date": "2026-11-26T02:00Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Worthington Arena",
+            "address": {
+              "city": "Bozeman",
+              "state": "MT"
+            }
+          },
+          "competitors": [
+            {
+              "id": "147",
+              "homeAway": "home",
+              "team": {
+                "id": "147",
+                "location": "Montana State",
+                "nickname": "Montana St",
+                "abbreviation": "MTST",
+                "displayName": "Montana State Bobcats",
+                "shortDisplayName": "Montana St",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/147.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/147.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "3218",
+              "homeAway": "away",
+              "team": {
+                "id": "3218",
+                "location": "Northwest Indian",
+                "nickname": "NW Indian",
+                "displayName": "Northwest Indian RedHawks",
+                "shortDisplayName": "NW Indian"
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Wed, November 25th at 9:00 PM EST",
+              "shortDetail": "11/25 - 9:00 PM EST"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
