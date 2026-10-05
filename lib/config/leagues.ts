@@ -5,7 +5,7 @@
  * user input.
  */
 
-export const LEAGUE_KEYS = ["nfl", "nba", "nhl", "ncaaf"] as const;
+export const LEAGUE_KEYS = ["nfl", "nba", "nhl", "ncaaf", "epl"] as const;
 export type LeagueKey = (typeof LEAGUE_KEYS)[number];
 
 export type NormalizedSeasonType = "preseason" | "regular" | "postseason" | "other";
@@ -15,6 +15,7 @@ export type TeamGroupingSource =
   /** Site API `/groups` endpoint (conference → division → teams). */
   | { kind: "groups" }
   /** Site API standings for the listed group ids (conference → teams). */
+  | { kind: "flat" }
   | {
       kind: "standings";
       /** Groups shown by default (e.g. FBS). */
@@ -38,6 +39,12 @@ export interface LeagueConfig {
    * endpoint must be queried for. ESPN only returns one season type per request.
    */
   scheduleSeasonTypes: number[];
+  scheduleQueries?: Record<string, string | number | boolean>[];
+  regularSeasonTypeId?: number;
+  gameTypes?: ("preseason" | "regular" | "postseason")[];
+  defaultTemplates?: Partial<Record<"calendarName" | "title" | "description" | "location", string>>;
+  drawLabel?: string;
+  note?: string;
   /**
    * Fallback mapping of ESPN season type ids to normalized values. The adapter
    * prefers ESPN's own names/abbreviations and only falls back to this.
@@ -114,6 +121,28 @@ export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
     teamGrouping: { kind: "standings", defaultGroupIds: ["80"], extendedGroupIds: ["81"] },
     scheduleTimeZone: "America/New_York",
     hasWeeks: true,
+  },
+  epl: {
+    key: "epl",
+    sport: "soccer",
+    league: "eng.1",
+    label: "Premier League",
+    name: "English Premier League",
+    defaultDurationMinutes: 120,
+    scheduleSeasonTypes: [1],
+    scheduleQueries: [{ seasontype: 1 }, { seasontype: 1, fixture: true }],
+    regularSeasonTypeId: 1,
+    seasonTypeFallback: { "1": "regular" },
+    gameTypes: ["regular"],
+    teamGrouping: { kind: "flat" },
+    scheduleTimeZone: "Europe/London",
+    hasWeeks: false,
+    drawLabel: "D",
+    note: "Premier League matches only.",
+    defaultTemplates: {
+      title: "{homeTeam} v {awayTeam}",
+      calendarName: "{team} Premier League {season}",
+    },
   },
 };
 

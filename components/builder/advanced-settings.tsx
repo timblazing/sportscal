@@ -44,6 +44,7 @@ export function AdvancedSettings({
   onResetOverrides,
   overrideCount,
   counts,
+  gameTypes,
 }: {
   settings: BuilderSettings;
   defaultDuration: number;
@@ -52,6 +53,7 @@ export function AdvancedSettings({
   onResetOverrides: () => void;
   overrideCount: number;
   counts?: Partial<Record<keyof BuilderSettings["include"], number>>;
+  gameTypes?: ("preseason" | "regular" | "postseason")[];
 }) {
   const [open, setOpen] = useState(false);
   return (
@@ -67,6 +69,7 @@ export function AdvancedSettings({
         <GameTypeOptions
           value={settings.include}
           counts={counts}
+          gameTypes={gameTypes}
           onChange={(include) => onChange({ include })}
         />
         <div className="space-y-1.5">

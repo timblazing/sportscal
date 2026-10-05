@@ -37,8 +37,8 @@ export const TEMPLATE_VARIABLES: TemplateVariable[] = [
   { name: "city", description: "Venue city" },
   { name: "state", description: "Venue state" },
   { name: "broadcast", description: "TV / streaming networks", common: true },
-  { name: "date", description: "Game date (Eastern Time)" },
-  { name: "time", description: "Start time (Eastern Time) or TBD" },
+  { name: "date", description: "Game date (in the league's time zone)" },
+  { name: "time", description: "Start time (in the league's time zone) or TBD" },
   { name: "status", description: "Scheduled, Final, Postponed, Canceled" },
   { name: "result", description: "Final result for your team (W 24-17)" },
 ];
@@ -93,13 +93,11 @@ export function renderTemplate(template: string, values: TemplateValues): string
 // Values from the normalized game model
 // ---------------------------------------------------------------------------
 
-const DISPLAY_TZ = "America/New_York";
-
 function formatDate(game: SportsCalGame): string {
   if (game.dateTBD) return "TBD";
   const d = new Date(game.startDate);
   return new Intl.DateTimeFormat("en-US", {
-    timeZone: DISPLAY_TZ,
+    timeZone: LEAGUES[game.league].scheduleTimeZone,
     weekday: "short",
     month: "short",
     day: "numeric",
@@ -110,7 +108,7 @@ function formatDate(game: SportsCalGame): string {
 function formatTime(game: SportsCalGame): string {
   if (game.dateTBD || game.timeTBD) return "TBD";
   return new Intl.DateTimeFormat("en-US", {
-    timeZone: DISPLAY_TZ,
+    timeZone: LEAGUES[game.league].scheduleTimeZone,
     hour: "numeric",
     minute: "2-digit",
     timeZoneName: "short",
@@ -127,7 +125,7 @@ function statusLabel(game: SportsCalGame): string {
 
 function resultLabel(team: GameTeam, opponent: GameTeam, game: SportsCalGame): string | undefined {
   if (!game.status.completed || !team.score || !opponent.score) return undefined;
-  const outcome = team.winner ? "W" : opponent.winner ? "L" : "T";
+  const outcome = team.winner ? "W" : opponent.winner ? "L" : LEAGUES[game.league].drawLabel ?? "T";
   // ESPN marks overtime/shootout finals in the status detail ("Final/OT", "Final/2OT", "Final/SO").
   const extra = game.status.detail?.match(/^Final\/(\d*OT|SO)$/i)?.[1].toUpperCase();
   return `${outcome} ${team.score}-${opponent.score}${extra ? ` (${extra})` : ""}`;

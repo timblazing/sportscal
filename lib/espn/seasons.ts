@@ -97,7 +97,7 @@ export async function fetchSeason(league: LeagueConfig, year: number): Promise<S
 
 /** Count of regular-season events ESPN lists for a season (0 when unpublished). */
 export async function fetchSeasonEventCount(league: LeagueConfig, year: number): Promise<number> {
-  const url = buildEspnUrl("core", league, ["seasons", year, "types", 2, "events"], { limit: 1 });
+  const url = buildEspnUrl("core", league, ["seasons", year, "types", league.regularSeasonTypeId ?? 2, "events"], { limit: 1 });
   try {
     const data = await espnFetchJson(url, { revalidate: REVALIDATE.seasons });
     return espnPagedCountSchema.parse(data).count;

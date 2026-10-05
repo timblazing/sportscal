@@ -43,4 +43,9 @@ describe("ESPN URL building", () => {
     expect(() => buildEspnUrl("site", LEAGUES.nfl, ["//evil.com"])).toThrow();
     expect(() => buildEspnUrl("site", LEAGUES.nfl, ["teams", "1?x=y"])).toThrow();
   });
+
+  it("serializes boolean ESPN query values", () => {
+    expect(buildEspnUrl("site", LEAGUES.epl, ["teams", "364", "schedule"], { season: 2026, fixture: true }))
+      .toContain("fixture=true");
+  });
 });

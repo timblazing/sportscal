@@ -47,6 +47,17 @@ describe("season type normalization", () => {
   });
 });
 
+describe("flat soccer team catalogs", () => {
+  it("normalizes soccer URL slugs and omits grouping metadata", () => {
+    const teams = buildCatalog(LEAGUES.epl, [
+      { id: "1", slug: "eng.man_city", displayName: "Manchester City", shortDisplayName: "Man City", isActive: true },
+      { id: "2", slug: "eng.man_city_alt", displayName: "Manchester City", shortDisplayName: "Man City", isActive: true },
+    ], new Map());
+    expect(teams.map((team) => team.slug)).toEqual(["manchester-city", "manchester-city-2"]);
+    expect(teams.every((team) => team.tier === "primary" && !team.conference && !team.division)).toBe(true);
+  });
+});
+
 describe("optional fields", () => {
   it("never fails on missing broadcasts or venues", () => {
     expect(normalizeBroadcasts(undefined)).toEqual([]);

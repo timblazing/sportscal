@@ -16,17 +16,21 @@ const OPTIONS: { key: keyof Include; label: string }[] = [
 export function GameTypeOptions({
   value,
   counts,
+  gameTypes,
   onChange,
 }: {
   value: Include;
   counts?: Partial<Record<keyof Include, number>>;
+  gameTypes?: ("preseason" | "regular" | "postseason")[];
   onChange: (value: Include) => void;
 }) {
+  const available = gameTypes ?? ["regular", "postseason", "preseason"];
+  if (available.length <= 1) return null;
   return (
     <fieldset>
       <legend className="mb-2 text-sm font-medium text-foreground">Include</legend>
       <div className="flex flex-wrap gap-2">
-        {OPTIONS.map((option) => {
+        {OPTIONS.filter((option) => available.includes(option.key === "regularSeason" ? "regular" : option.key === "postseason" ? "postseason" : "preseason")).map((option) => {
           const on = value[option.key];
           const count = counts?.[option.key];
           const Icon = on ? CheckIcon : PlusIcon;

@@ -99,4 +99,22 @@ describe("gameTemplateValues", () => {
     expect(v.venueFull).toBe("Avicii Arena, Stockholm");
     expect(v.note).toBe("NHL Global Series");
   });
+
+  it("uses Premier League draw labels and the league time zone", () => {
+    const source = steelersGames()[0];
+    const game = {
+      ...source,
+      league: "epl" as const,
+      startDate: "2026-08-01T14:00:00.000Z",
+      seasonDisplayName: "2026-27",
+      status: { ...source.status, completed: true },
+      homeTeam: { ...source.homeTeam, shortName: "Liverpool", score: "1", winner: false },
+      awayTeam: { ...source.awayTeam, shortName: "Man City", score: "1", winner: false },
+      selectedTeamHomeAway: "home" as const,
+    };
+    const values = gameTemplateValues(game);
+    expect(values.result).toBe("D 1-1");
+    expect(values.time).toMatch(/3:00 PM GMT\+1/);
+    expect(renderTemplate("{homeTeam} v {awayTeam}", values)).toBe("Liverpool v Man City");
+  });
 });
