@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { SearchIcon } from "lucide-react";
 
 import { LogoMark } from "@/components/layout/logo";
+import { useTeamSearch } from "@/components/search/team-search-provider";
+import { Button } from "@/components/ui/button";
 import { GITHUB_URL } from "@/lib/config/site";
 
 function GitHubIcon() {
@@ -12,17 +17,29 @@ function GitHubIcon() {
 }
 
 export function SiteHeader() {
+  const { openTeamSearch, closeToLanding } = useTeamSearch();
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 supports-[backdrop-filter]:bg-background/80 supports-[backdrop-filter]:backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
-          href="/?reset=1"
+          href="/"
+          onClick={closeToLanding}
           className="-mx-1.5 flex items-center gap-2 rounded-md px-1.5 py-1 text-sm font-semibold tracking-tight text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
         >
           <LogoMark />
           SportsCal
         </Link>
         <nav aria-label="Site" className="flex items-center gap-1 text-sm">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={openTeamSearch}
+            aria-label="Search teams and leagues"
+            className="mr-1 h-8 gap-2 px-2.5 text-muted-foreground sm:w-48 sm:justify-start sm:bg-muted/50"
+          >
+            <SearchIcon aria-hidden="true" className="size-4" />
+            <span className="hidden sm:inline">Search teams…</span>
+          </Button>
           <Link
             href="/about"
             className="rounded-md px-2.5 py-1.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
