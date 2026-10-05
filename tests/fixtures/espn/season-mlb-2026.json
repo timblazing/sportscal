@@ -1,0 +1,64 @@
+{
+  "year": 2026,
+  "startDate": "2026-02-19T08:00Z",
+  "endDate": "2026-11-12T07:59Z",
+  "displayName": "2026",
+  "type": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2026/types/3?lang=en&region=us",
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post",
+    "year": 2026,
+    "startDate": "2026-09-29T07:00Z",
+    "endDate": "2026-11-12T07:59Z",
+    "hasGroups": false,
+    "hasStandings": false,
+    "hasLegs": false,
+    "groups": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2026/types/3/groups?lang=en&region=us"
+    },
+    "weeks": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2026/types/3/weeks?lang=en&region=us"
+    },
+    "corrections": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2026/types/3/corrections?lang=en&region=us"
+    },
+    "leaders": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2026/types/3/leaders?lang=en&region=us"
+    },
+    "slug": "post-season"
+  },
+  "types": {
+    "items": [
+      {
+        "id": "1",
+        "name": "Spring Training",
+        "abbreviation": "pre",
+        "startDate": "2026-02-19T08:00Z",
+        "endDate": "2026-03-25T06:59Z"
+      },
+      {
+        "id": "2",
+        "name": "Regular Season",
+        "abbreviation": "reg",
+        "startDate": "2026-03-25T07:00Z",
+        "endDate": "2026-09-29T06:59Z"
+      },
+      {
+        "id": "3",
+        "name": "Postseason",
+        "abbreviation": "post",
+        "startDate": "2026-09-29T07:00Z",
+        "endDate": "2026-11-12T07:59Z"
+      },
+      {
+        "id": "4",
+        "name": "Off Season",
+        "abbreviation": "off",
+        "startDate": "2026-11-12T08:00Z",
+        "endDate": "2027-02-18T07:59Z"
+      }
+    ]
+  }
+}

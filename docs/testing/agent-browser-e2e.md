@@ -48,7 +48,7 @@ agent-browser snapshot -i
 
 ## NHL
 
-1. Reset local storage, open the **League** dropdown with the keyboard (focus it, press `Enter`), and confirm the options are NFL, NBA, NHL, NCAAF, each with its full name. Choose **NHL**.
+1. Reset local storage, open the **League** dropdown with the keyboard (focus it, press `Enter`), and confirm the options follow the registry (NFL, NBA, NHL, NCAAF, Premier League, MLB), each with its full name. Choose **NHL**.
 2. Search `pit` and choose **Pittsburgh Penguins**. Confirm the URL includes `league=nhl&team=pittsburgh-penguins`, the season reads `2026-27`, and schedule rows appear.
 3. Search `utah` and `st. louis` and confirm **Utah Mammoth** and **St. Louis Blues** appear.
 4. Fetch the canonical feed and check UIDs and the 2h30 duration:
@@ -57,6 +57,16 @@ agent-browser snapshot -i
    curl -s 'http://localhost:3100/calendar/nhl/pittsburgh-penguins.ics' | rg -c 'UID:espn-[0-9]+-16@sportscal\.site'
    curl -s 'http://localhost:3100/calendar/nhl/pittsburgh-penguins.ics' | rg -m1 'DURATION:PT2H30M'
    ```
+
+## MLB
+
+1. Reset local storage, open the **League** dropdown with the keyboard, and select **MLB**. Confirm the trigger shows MLB and its option includes **Major League Baseball**.
+2. Search `dodgers` and choose **Los Angeles Dodgers**. Confirm the URL includes `league=mlb&team=los-angeles-dodgers` and the schedule appears. With search cleared, confirm 30 teams grouped by American/National League and six divisions.
+3. Open **Advanced settings**. Confirm **Spring Training** replaces Preseason and the duration is 3h. Toggle Spring Training off and on; confirm the included count changes. Open formatting options and confirm the default title ends with `{doubleheader}`; reset templates and confirm that default returns.
+4. Inspect July 19 doubleheader rows: titles end in **Game 1** and **Game 2**. Both February 28 split-squad games appear. No MLB row or template displays Week N.
+5. Download the calendar and inspect it with an independent ICS parser. Also fetch `/calendar/mlb/los-angeles-dodgers.ics` and `/calendar/mlb/athletics.ics`. Confirm distinct doubleheader UIDs, the postponed original is CANCELLED on July 18, the makeup is confirmed, and if-necessary postseason games are TENTATIVE.
+6. Repeat the MLB selection at 393×852; confirm no horizontal overflow. Repeat a selection for NFL to confirm its toggle still says Preseason.
+7. With a migrated database configured, customize an MLB calendar, save its subscription, and reopen its manage link. Confirm MLB, the doubleheader template, 3h duration, and overrides survive the round trip. Unit route coverage uses a mocked database; it does not verify a deployed PostgreSQL instance.
 
 ## Formatting and team search
 

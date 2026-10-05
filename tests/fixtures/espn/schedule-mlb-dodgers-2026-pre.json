@@ -1,0 +1,440 @@
+{
+  "requestedSeason": {
+    "year": 2026,
+    "type": 1,
+    "displayName": "2026"
+  },
+  "events": [
+    {
+      "id": "401833010",
+      "date": "2026-02-28T20:05Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "1",
+        "type": 1,
+        "name": "Spring Training",
+        "abbreviation": "pre"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401833010",
+          "date": "2026-02-28T20:05Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Camelback Ranch - Glendale",
+            "address": {
+              "city": "Phoenix",
+              "state": "Arizona"
+            }
+          },
+          "competitors": [
+            {
+              "id": "19",
+              "homeAway": "home",
+              "winner": false,
+              "score": {
+                "value": 2.0,
+                "displayValue": "2"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "16",
+              "homeAway": "away",
+              "winner": true,
+              "score": {
+                "value": 6.0,
+                "displayValue": "6"
+              },
+              "team": {
+                "id": "16",
+                "location": "Chicago",
+                "abbreviation": "CHC",
+                "displayName": "Chicago Cubs",
+                "shortDisplayName": "Cubs",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/chc.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "SportsNet LA"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401833017",
+      "date": "2026-02-28T20:05Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "1",
+        "type": 1,
+        "name": "Spring Training",
+        "abbreviation": "pre"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401833017",
+          "date": "2026-02-28T20:05Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Surprise Stadium",
+            "address": {
+              "city": "Surprise",
+              "state": "Arizona"
+            }
+          },
+          "competitors": [
+            {
+              "id": "13",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "value": 7.0,
+                "displayValue": "7"
+              },
+              "team": {
+                "id": "13",
+                "location": "Texas",
+                "abbreviation": "TEX",
+                "displayName": "Texas Rangers",
+                "shortDisplayName": "Rangers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/tex.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "19",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "value": 6.0,
+                "displayValue": "6"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401833209",
+      "date": "2026-03-15T20:05Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "1",
+        "type": 1,
+        "name": "Spring Training",
+        "abbreviation": "pre"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401833209",
+          "date": "2026-03-15T20:05Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Sloan Park",
+            "address": {
+              "city": "Mesa",
+              "state": "Arizona"
+            }
+          },
+          "competitors": [
+            {
+              "id": "16",
+              "homeAway": "home",
+              "winner": false,
+              "score": {
+                "value": 8.0,
+                "displayValue": "8"
+              },
+              "team": {
+                "id": "16",
+                "location": "Chicago",
+                "abbreviation": "CHC",
+                "displayName": "Chicago Cubs",
+                "shortDisplayName": "Cubs",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/chc.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "19",
+              "homeAway": "away",
+              "winner": true,
+              "score": {
+                "value": 14.0,
+                "displayValue": "14"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "Marquee Sports Net"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401833214",
+      "date": "2026-03-15T20:05Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "1",
+        "type": 1,
+        "name": "Spring Training",
+        "abbreviation": "pre"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401833214",
+          "date": "2026-03-15T20:05Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Camelback Ranch - Glendale",
+            "address": {
+              "city": "Phoenix",
+              "state": "Arizona"
+            }
+          },
+          "competitors": [
+            {
+              "id": "19",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "value": 5.0,
+                "displayValue": "5"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "13",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "value": 3.0,
+                "displayValue": "3"
+              },
+              "team": {
+                "id": "13",
+                "location": "Texas",
+                "abbreviation": "TEX",
+                "displayName": "Texas Rangers",
+                "shortDisplayName": "Rangers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/tex.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "SportsNet LA"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

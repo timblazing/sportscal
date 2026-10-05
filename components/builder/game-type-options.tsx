@@ -17,10 +17,12 @@ export function GameTypeOptions({
   value,
   counts,
   gameTypes,
+  preseasonLabel,
   onChange,
 }: {
   value: Include;
   counts?: Partial<Record<keyof Include, number>>;
+  preseasonLabel?: string;
   gameTypes?: ("preseason" | "regular" | "postseason")[];
   onChange: (value: Include) => void;
 }) {
@@ -48,7 +50,7 @@ export function GameTypeOptions({
               )}
             >
               <Icon className="size-3.5 shrink-0" aria-hidden="true" />
-              {option.label}
+              {option.key === "preseason" ? preseasonLabel ?? option.label : option.label}
               {count !== undefined && (
                 <span className="font-mono text-xs text-muted-foreground tabular">{count}</span>
               )}

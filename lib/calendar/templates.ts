@@ -27,10 +27,11 @@ export const TEMPLATE_VARIABLES: TemplateVariable[] = [
   { name: "awayAbbr", description: "Away team abbreviation" },
   { name: "homeAway", description: "Home, Away, or Neutral" },
   { name: "homeAwaySymbol", description: "vs for home/neutral games, @ for away games", common: true },
-  { name: "league", description: "League (NFL, NBA, NHL, NCAAF)" },
+  { name: "league", description: "League (NFL, NBA, NHL, NCAAF, Premier League, MLB)" },
   { name: "season", description: "Season label from ESPN (2026, 2026-27)", common: true },
   { name: "seasonType", description: "Preseason, Regular Season, Postseason", common: true },
   { name: "week", description: "Week label when ESPN provides one (Week 6)", common: true },
+  { name: "doubleheader", description: "Doubleheader game number (Game 1 or Game 2)" },
   { name: "note", description: "ESPN game note (bowl name, playoff round)", common: true },
   { name: "venue", description: "Venue name", common: true },
   { name: "venueFull", description: "Venue with city and state" },
@@ -134,7 +135,7 @@ function resultLabel(team: GameTeam, opponent: GameTeam, game: SportsCalGame): s
 function seasonTypeLabel(game: SportsCalGame): string {
   switch (game.seasonType.normalized) {
     case "preseason":
-      return "Preseason";
+      return LEAGUES[game.league].preseasonLabel ?? "Preseason";
     case "regular":
       return "Regular Season";
     case "postseason":
@@ -173,6 +174,7 @@ export function gameTemplateValues(game: SportsCalGame): TemplateValues {
     season: game.seasonDisplayName,
     seasonType: seasonTypeLabel(game),
     week: game.week?.label ?? (game.week?.number !== undefined ? `Week ${game.week.number}` : undefined),
+    doubleheader: game.doubleheader ? `Game ${game.doubleheader.game}` : undefined,
     note: game.note,
     venue: venue?.name,
     venueFull,

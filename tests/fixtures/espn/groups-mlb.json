@@ -1,0 +1,144 @@
+{
+  "groups": [
+    {
+      "name": "American League",
+      "abbreviation": "AL",
+      "children": [
+        {
+          "name": "American League East",
+          "abbreviation": "ALE",
+          "teams": [
+            {
+              "id": "1"
+            },
+            {
+              "id": "2"
+            },
+            {
+              "id": "10"
+            },
+            {
+              "id": "14"
+            },
+            {
+              "id": "30"
+            }
+          ]
+        },
+        {
+          "name": "American League Central",
+          "abbreviation": "ALC",
+          "teams": [
+            {
+              "id": "4"
+            },
+            {
+              "id": "5"
+            },
+            {
+              "id": "6"
+            },
+            {
+              "id": "7"
+            },
+            {
+              "id": "9"
+            }
+          ]
+        },
+        {
+          "name": "American League West",
+          "abbreviation": "ALW",
+          "teams": [
+            {
+              "id": "3"
+            },
+            {
+              "id": "11"
+            },
+            {
+              "id": "12"
+            },
+            {
+              "id": "13"
+            },
+            {
+              "id": "18"
+            }
+          ]
+        }
+      ],
+      "teams": []
+    },
+    {
+      "name": "National League",
+      "abbreviation": "NL",
+      "children": [
+        {
+          "name": "National League East",
+          "abbreviation": "NLE",
+          "teams": [
+            {
+              "id": "15"
+            },
+            {
+              "id": "20"
+            },
+            {
+              "id": "21"
+            },
+            {
+              "id": "22"
+            },
+            {
+              "id": "28"
+            }
+          ]
+        },
+        {
+          "name": "National League Central",
+          "abbreviation": "NLC",
+          "teams": [
+            {
+              "id": "8"
+            },
+            {
+              "id": "16"
+            },
+            {
+              "id": "17"
+            },
+            {
+              "id": "23"
+            },
+            {
+              "id": "24"
+            }
+          ]
+        },
+        {
+          "name": "National League West",
+          "abbreviation": "NLW",
+          "teams": [
+            {
+              "id": "19"
+            },
+            {
+              "id": "25"
+            },
+            {
+              "id": "26"
+            },
+            {
+              "id": "27"
+            },
+            {
+              "id": "29"
+            }
+          ]
+        }
+      ],
+      "teams": []
+    }
+  ]
+}

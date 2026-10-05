@@ -7,7 +7,7 @@ export const LIMITS = {
   title: 200,
   description: 2000,
   location: 300,
-  overrides: 150,
+  overrides: 250,
   overrideTitle: 200,
   overrideDescription: 2000,
   overrideLocation: 300,
@@ -22,6 +22,14 @@ export const DEFAULT_TEMPLATES = {
   description: "",
   location: "{venue}",
 } as const;
+
+export function defaultTemplates(league: LeagueKey) {
+  return {
+    ...DEFAULT_TEMPLATES,
+    ...LEAGUES[league].defaultTemplates,
+    title: LEAGUES[league].titleTemplate ?? LEAGUES[league].defaultTemplates?.title ?? DEFAULT_TEMPLATES.title,
+  };
+}
 
 export type TemplateField = keyof typeof DEFAULT_TEMPLATES;
 
@@ -91,7 +99,7 @@ export function defaultConfig(
     teamSlug: team.slug,
     seasonMode: "auto",
     include: { preseason: true, regularSeason: true, postseason: true },
-    templates: { ...DEFAULT_TEMPLATES, ...LEAGUES[league].defaultTemplates },
+    templates: defaultTemplates(league),
     durationMinutes: LEAGUES[league].defaultDurationMinutes,
     busyStatus: "free",
     includeEspnUrl: false,

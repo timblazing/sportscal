@@ -1,0 +1,742 @@
+{
+  "requestedSeason": {
+    "year": 2026,
+    "type": 2,
+    "displayName": "2026"
+  },
+  "events": [
+    {
+      "id": "401816157",
+      "date": "2026-07-19T00:08Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401816157",
+          "date": "2026-07-19T00:08Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Yankee Stadium",
+            "address": {
+              "city": "Bronx",
+              "state": "New York"
+            }
+          },
+          "competitors": [
+            {
+              "id": "10",
+              "homeAway": "home",
+              "score": {
+                "value": 0.0,
+                "displayValue": "0"
+              },
+              "team": {
+                "id": "10",
+                "location": "New York",
+                "abbreviation": "NYY",
+                "displayName": "New York Yankees",
+                "shortDisplayName": "Yankees",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "19",
+              "homeAway": "away",
+              "score": {
+                "value": 0.0,
+                "displayValue": "0"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [
+            {
+              "type": "event",
+              "headline": "Inclement Weather - Makeup date July 19"
+            }
+          ],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Radio"
+              },
+              "media": {
+                "shortName": "ERADM"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "6",
+              "name": "STATUS_POSTPONED",
+              "state": "post",
+              "completed": false,
+              "description": "Postponed",
+              "detail": "Postponed",
+              "shortDetail": "Postponed"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401897386",
+      "date": "2026-07-19T16:35Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401897386",
+          "date": "2026-07-19T16:35Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Yankee Stadium",
+            "address": {
+              "city": "Bronx",
+              "state": "New York"
+            }
+          },
+          "competitors": [
+            {
+              "id": "10",
+              "homeAway": "home",
+              "winner": false,
+              "score": {
+                "value": 2.0,
+                "displayValue": "2"
+              },
+              "team": {
+                "id": "10",
+                "location": "New York",
+                "abbreviation": "NYY",
+                "displayName": "New York Yankees",
+                "shortDisplayName": "Yankees",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "19",
+              "homeAway": "away",
+              "winner": true,
+              "score": {
+                "value": 8.0,
+                "displayValue": "8"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [
+            {
+              "type": "event",
+              "headline": "Doubleheader - Game 1 - Makeup from July 18"
+            }
+          ],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "SportsNet LA"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "YES"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401816172",
+      "date": "2026-07-19T23:20Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401816172",
+          "date": "2026-07-19T23:20Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Yankee Stadium",
+            "address": {
+              "city": "Bronx",
+              "state": "New York"
+            }
+          },
+          "competitors": [
+            {
+              "id": "10",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "value": 2.0,
+                "displayValue": "2"
+              },
+              "team": {
+                "id": "10",
+                "location": "New York",
+                "abbreviation": "NYY",
+                "displayName": "New York Yankees",
+                "shortDisplayName": "Yankees",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "19",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "value": 1.0,
+                "displayValue": "1"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [
+            {
+              "type": "event",
+              "headline": "Doubleheader - Game 2"
+            }
+          ],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "NBC"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "Peacock"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Radio"
+              },
+              "media": {
+                "shortName": "ERADM"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401814699",
+      "date": "2026-03-27T00:30Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 13,
+        "text": "Week 13"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401814699",
+          "date": "2026-03-27T00:30Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Dodger Stadium",
+            "address": {
+              "city": "Los Angeles",
+              "state": "California"
+            }
+          },
+          "competitors": [
+            {
+              "id": "19",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "value": 8.0,
+                "displayValue": "8"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "29",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "value": 2.0,
+                "displayValue": "2"
+              },
+              "team": {
+                "id": "29",
+                "location": "Arizona",
+                "abbreviation": "ARI",
+                "displayName": "Arizona Diamondbacks",
+                "shortDisplayName": "Diamondbacks",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ari.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "NBC"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "Peacock"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401814704",
+      "date": "2026-03-28T02:10Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 13,
+        "text": "Week 13"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401814704",
+          "date": "2026-03-28T02:10Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Dodger Stadium",
+            "address": {
+              "city": "Los Angeles",
+              "state": "California"
+            }
+          },
+          "competitors": [
+            {
+              "id": "19",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "value": 5.0,
+                "displayValue": "5"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "29",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "value": 4.0,
+                "displayValue": "4"
+              },
+              "team": {
+                "id": "29",
+                "location": "Arizona",
+                "abbreviation": "ARI",
+                "displayName": "Arizona Diamondbacks",
+                "shortDisplayName": "Diamondbacks",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ari.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "SportsNet LA"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "DBACKS.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "MLB Net"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401816452",
+      "date": "2026-08-09T00:10Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401816452",
+          "date": "2026-08-09T00:10Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Chase Field",
+            "address": {
+              "city": "Phoenix",
+              "state": "Arizona"
+            }
+          },
+          "competitors": [
+            {
+              "id": "29",
+              "homeAway": "home",
+              "winner": false,
+              "score": {
+                "value": 1.0,
+                "displayValue": "1"
+              },
+              "team": {
+                "id": "29",
+                "location": "Arizona",
+                "abbreviation": "ARI",
+                "displayName": "Arizona Diamondbacks",
+                "shortDisplayName": "Diamondbacks",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ari.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "19",
+              "homeAway": "away",
+              "winner": true,
+              "score": {
+                "value": 2.0,
+                "displayValue": "2"
+              },
+              "team": {
+                "id": "19",
+                "location": "Los Angeles",
+                "abbreviation": "LAD",
+                "displayName": "Los Angeles Dodgers",
+                "shortDisplayName": "Dodgers",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "SportsNet LA"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "DBACKS.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final/10",
+              "shortDetail": "Final/10"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

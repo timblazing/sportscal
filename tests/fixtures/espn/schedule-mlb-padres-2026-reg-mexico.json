@@ -1,0 +1,265 @@
+{
+  "requestedSeason": {
+    "year": 2026,
+    "type": 2,
+    "displayName": "2026"
+  },
+  "events": [
+    {
+      "id": "401815094",
+      "date": "2026-04-25T22:05Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 17,
+        "text": "Week 17"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401815094",
+          "date": "2026-04-25T22:05Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Estadio Alfredo Harp Hel\u00fa",
+            "address": {
+              "city": "Mexico City"
+            }
+          },
+          "competitors": [
+            {
+              "id": "29",
+              "homeAway": "home",
+              "winner": false,
+              "score": {
+                "value": 4.0,
+                "displayValue": "4"
+              },
+              "team": {
+                "id": "29",
+                "location": "Arizona",
+                "abbreviation": "ARI",
+                "displayName": "Arizona Diamondbacks",
+                "shortDisplayName": "Diamondbacks",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ari.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "25",
+              "homeAway": "away",
+              "winner": true,
+              "score": {
+                "value": 6.0,
+                "displayValue": "6"
+              },
+              "team": {
+                "id": "25",
+                "location": "San Diego",
+                "abbreviation": "SD",
+                "displayName": "San Diego Padres",
+                "shortDisplayName": "Padres",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/sd.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [
+            {
+              "type": "event",
+              "headline": "MLB World Tour: Mexico City Series"
+            }
+          ],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "Padres.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "DBACKS.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401815109",
+      "date": "2026-04-26T20:05Z",
+      "season": {
+        "year": 2026,
+        "displayName": "2026"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 17,
+        "text": "Week 17"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "401815109",
+          "date": "2026-04-26T20:05Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Estadio Alfredo Harp Hel\u00fa",
+            "address": {
+              "city": "Mexico City"
+            }
+          },
+          "competitors": [
+            {
+              "id": "29",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "value": 12.0,
+                "displayValue": "12"
+              },
+              "team": {
+                "id": "29",
+                "location": "Arizona",
+                "abbreviation": "ARI",
+                "displayName": "Arizona Diamondbacks",
+                "shortDisplayName": "Diamondbacks",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ari.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "25",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "value": 7.0,
+                "displayValue": "7"
+              },
+              "team": {
+                "id": "25",
+                "location": "San Diego",
+                "abbreviation": "SD",
+                "displayName": "San Diego Padres",
+                "shortDisplayName": "Padres",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/sd.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [
+            {
+              "type": "event",
+              "headline": "MLB World Tour: Mexico City Series"
+            }
+          ],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "Padres.TV"
+              }
+            },
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "DBACKS.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "3",
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

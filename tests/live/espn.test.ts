@@ -14,6 +14,8 @@ const TARGETS = [
   { league: "nba", slug: "oklahoma-city-thunder" },
   { league: "nhl", slug: "pittsburgh-penguins" },
   { league: "ncaaf", slug: "oklahoma-sooners" },
+  { league: "mlb", slug: "los-angeles-dodgers" },
+  { league: "mlb", slug: "athletics" },
   { league: "epl", slug: "liverpool" },
 ] as const;
 
@@ -30,6 +32,7 @@ describe.each(TARGETS)("live ESPN: $league $slug", ({ league, slug }) => {
     const games = await fetchTeamGames(league, team!.id, season);
     if (league === "epl") expect(games).toHaveLength(38);
     for (const g of games) {
+      if (league === "mlb") expect(g.week).toBeUndefined();
       expect(g.homeTeam.id === team!.id || g.awayTeam.id === team!.id).toBe(true);
     }
   });

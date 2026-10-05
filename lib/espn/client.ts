@@ -87,6 +87,8 @@ function remember(url: string, data: unknown) {
 
 export interface EspnFetchOptions {
   revalidate: number;
+  /** Skip both the raw fetch cache and the raw last-good memory map. */
+  cache?: "none";
   tags?: string[];
 }
 
@@ -94,7 +96,9 @@ export async function espnFetchJson(url: string, options: EspnFetchOptions): Pro
   try {
     const res = await fetch(url, {
       headers: { accept: "application/json" },
-      next: { revalidate: options.revalidate, tags: options.tags },
+      ...(options.cache === "none"
+        ? { cache: "no-store" as const }
+        : { next: { revalidate: options.revalidate, tags: options.tags } }),
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
     if (res.status === 404) throw new EspnNotFoundError(url);
@@ -105,11 +109,11 @@ export async function espnFetchJson(url: string, options: EspnFetchOptions): Pro
       if (data.error.code === 404) throw new EspnNotFoundError(url);
       throw new EspnError(data.error.message ?? "ESPN error", data.error.code, url);
     }
-    remember(url, data);
+    if (options.cache !== "none") remember(url, data);
     return data;
   } catch (error) {
     if (error instanceof EspnNotFoundError) throw error;
-    const cached = lastGood.get(url);
+    const cached = options.cache === "none" ? undefined : lastGood.get(url);
     if (cached !== undefined) return cached;
     if (error instanceof EspnError) throw error;
     throw new EspnError(

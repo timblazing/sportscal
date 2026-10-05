@@ -1,0 +1,672 @@
+{
+  "sports": [
+    {
+      "leagues": [
+        {
+          "teams": [
+            {
+              "team": {
+                "abbreviation": "ARI",
+                "color": "aa182c",
+                "displayName": "Arizona Diamondbacks",
+                "id": "29",
+                "isActive": true,
+                "location": "Arizona",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ari.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Diamondbacks",
+                "shortDisplayName": "Diamondbacks",
+                "slug": "arizona-diamondbacks"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "ATH",
+                "color": "003831",
+                "displayName": "Athletics",
+                "id": "11",
+                "isActive": true,
+                "location": "Athletics",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ath.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Athletics",
+                "shortDisplayName": "Athletics",
+                "slug": "athletics"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "ATL",
+                "color": "0c2340",
+                "displayName": "Atlanta Braves",
+                "id": "15",
+                "isActive": true,
+                "location": "Atlanta",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/atl.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Braves",
+                "shortDisplayName": "Braves",
+                "slug": "atlanta-braves"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "BAL",
+                "color": "df4601",
+                "displayName": "Baltimore Orioles",
+                "id": "1",
+                "isActive": true,
+                "location": "Baltimore",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/bal.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Orioles",
+                "shortDisplayName": "Orioles",
+                "slug": "baltimore-orioles"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "BOS",
+                "color": "0d2b56",
+                "displayName": "Boston Red Sox",
+                "id": "2",
+                "isActive": true,
+                "location": "Boston",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/bos.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Red Sox",
+                "shortDisplayName": "Red Sox",
+                "slug": "boston-red-sox"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "CHC",
+                "color": "0e3386",
+                "displayName": "Chicago Cubs",
+                "id": "16",
+                "isActive": true,
+                "location": "Chicago",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/chc.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Cubs",
+                "shortDisplayName": "Cubs",
+                "slug": "chicago-cubs"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "CHW",
+                "color": "000000",
+                "displayName": "Chicago White Sox",
+                "id": "4",
+                "isActive": true,
+                "location": "Chicago",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "White Sox",
+                "shortDisplayName": "White Sox",
+                "slug": "chicago-white-sox"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "CIN",
+                "color": "c6011f",
+                "displayName": "Cincinnati Reds",
+                "id": "17",
+                "isActive": true,
+                "location": "Cincinnati",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/cin.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Reds",
+                "shortDisplayName": "Reds",
+                "slug": "cincinnati-reds"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "CLE",
+                "color": "002b5c",
+                "displayName": "Cleveland Guardians",
+                "id": "5",
+                "isActive": true,
+                "location": "Cleveland",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/cle.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Guardians",
+                "shortDisplayName": "Guardians",
+                "slug": "cleveland-guardians"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "COL",
+                "color": "33006f",
+                "displayName": "Colorado Rockies",
+                "id": "27",
+                "isActive": true,
+                "location": "Colorado",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/col.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Rockies",
+                "shortDisplayName": "Rockies",
+                "slug": "colorado-rockies"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "DET",
+                "color": "0a2240",
+                "displayName": "Detroit Tigers",
+                "id": "6",
+                "isActive": true,
+                "location": "Detroit",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/det.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Tigers",
+                "shortDisplayName": "Tigers",
+                "slug": "detroit-tigers"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "HOU",
+                "color": "002d62",
+                "displayName": "Houston Astros",
+                "id": "18",
+                "isActive": true,
+                "location": "Houston",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/hou.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Astros",
+                "shortDisplayName": "Astros",
+                "slug": "houston-astros"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "KC",
+                "color": "004687",
+                "displayName": "Kansas City Royals",
+                "id": "7",
+                "isActive": true,
+                "location": "Kansas City",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/kc.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Royals",
+                "shortDisplayName": "Royals",
+                "slug": "kansas-city-royals"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "LAA",
+                "color": "ba0021",
+                "displayName": "Los Angeles Angels",
+                "id": "3",
+                "isActive": true,
+                "location": "Los Angeles",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/laa.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Angels",
+                "shortDisplayName": "Angels",
+                "slug": "los-angeles-angels"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "LAD",
+                "color": "005a9c",
+                "displayName": "Los Angeles Dodgers",
+                "id": "19",
+                "isActive": true,
+                "location": "Los Angeles",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/lad.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Dodgers",
+                "shortDisplayName": "Dodgers",
+                "slug": "los-angeles-dodgers"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "MIA",
+                "color": "00a3e0",
+                "displayName": "Miami Marlins",
+                "id": "28",
+                "isActive": true,
+                "location": "Miami",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/mia.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Marlins",
+                "shortDisplayName": "Marlins",
+                "slug": "miami-marlins"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "MIL",
+                "color": "13294b",
+                "displayName": "Milwaukee Brewers",
+                "id": "8",
+                "isActive": true,
+                "location": "Milwaukee",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/mil.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Brewers",
+                "shortDisplayName": "Brewers",
+                "slug": "milwaukee-brewers"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "MIN",
+                "color": "031f40",
+                "displayName": "Minnesota Twins",
+                "id": "9",
+                "isActive": true,
+                "location": "Minnesota",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/min.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Twins",
+                "shortDisplayName": "Twins",
+                "slug": "minnesota-twins"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "NYM",
+                "color": "002d72",
+                "displayName": "New York Mets",
+                "id": "21",
+                "isActive": true,
+                "location": "New York",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/nym.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Mets",
+                "shortDisplayName": "Mets",
+                "slug": "new-york-mets"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "NYY",
+                "color": "132448",
+                "displayName": "New York Yankees",
+                "id": "10",
+                "isActive": true,
+                "location": "New York",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Yankees",
+                "shortDisplayName": "Yankees",
+                "slug": "new-york-yankees"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "PHI",
+                "color": "e81828",
+                "displayName": "Philadelphia Phillies",
+                "id": "22",
+                "isActive": true,
+                "location": "Philadelphia",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/phi.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Phillies",
+                "shortDisplayName": "Phillies",
+                "slug": "philadelphia-phillies"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "PIT",
+                "color": "000000",
+                "displayName": "Pittsburgh Pirates",
+                "id": "23",
+                "isActive": true,
+                "location": "Pittsburgh",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/pit.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Pirates",
+                "shortDisplayName": "Pirates",
+                "slug": "pittsburgh-pirates"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "SD",
+                "color": "2f241d",
+                "displayName": "San Diego Padres",
+                "id": "25",
+                "isActive": true,
+                "location": "San Diego",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/sd.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Padres",
+                "shortDisplayName": "Padres",
+                "slug": "san-diego-padres"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "SF",
+                "color": "000000",
+                "displayName": "San Francisco Giants",
+                "id": "26",
+                "isActive": true,
+                "location": "San Francisco",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/sf.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Giants",
+                "shortDisplayName": "Giants",
+                "slug": "san-francisco-giants"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "SEA",
+                "color": "005c5c",
+                "displayName": "Seattle Mariners",
+                "id": "12",
+                "isActive": true,
+                "location": "Seattle",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/sea.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Mariners",
+                "shortDisplayName": "Mariners",
+                "slug": "seattle-mariners"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "STL",
+                "color": "be0a14",
+                "displayName": "St. Louis Cardinals",
+                "id": "24",
+                "isActive": true,
+                "location": "St. Louis",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/stl.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Cardinals",
+                "shortDisplayName": "Cardinals",
+                "slug": "st-louis-cardinals"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "TB",
+                "color": "092c5c",
+                "displayName": "Tampa Bay Rays",
+                "id": "30",
+                "isActive": true,
+                "location": "Tampa Bay",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/tb.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Rays",
+                "shortDisplayName": "Rays",
+                "slug": "tampa-bay-rays"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "TEX",
+                "color": "003278",
+                "displayName": "Texas Rangers",
+                "id": "13",
+                "isActive": true,
+                "location": "Texas",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/tex.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Rangers",
+                "shortDisplayName": "Rangers",
+                "slug": "texas-rangers"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "TOR",
+                "color": "134a8e",
+                "displayName": "Toronto Blue Jays",
+                "id": "14",
+                "isActive": true,
+                "location": "Toronto",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/tor.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Blue Jays",
+                "shortDisplayName": "Blue Jays",
+                "slug": "toronto-blue-jays"
+              }
+            },
+            {
+              "team": {
+                "abbreviation": "WSH",
+                "color": "ab0003",
+                "displayName": "Washington Nationals",
+                "id": "20",
+                "isActive": true,
+                "location": "Washington",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/wsh.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ],
+                "name": "Nationals",
+                "shortDisplayName": "Nationals",
+                "slug": "washington-nationals"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

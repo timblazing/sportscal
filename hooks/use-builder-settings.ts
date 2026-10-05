@@ -4,13 +4,13 @@ import { useCallback, useState } from "react";
 
 import type { BuilderSettings } from "@/lib/client/storage";
 import { LEAGUES, type LeagueKey } from "@/lib/config/leagues";
-import { DEFAULT_TEMPLATES, type GameOverride } from "@/lib/validation/calendar-config";
+import { defaultTemplates, type GameOverride } from "@/lib/validation/calendar-config";
 
 export function defaultSettings(league: LeagueKey): BuilderSettings {
   return {
     seasonMode: "auto",
     include: { preseason: true, regularSeason: true, postseason: true },
-    templates: { ...DEFAULT_TEMPLATES, ...LEAGUES[league].defaultTemplates },
+    templates: defaultTemplates(league),
     durationMinutes: LEAGUES[league].defaultDurationMinutes,
     busyStatus: "free",
     includeEspnUrl: false,
@@ -66,7 +66,7 @@ export function useBuilderSettings(league: LeagueKey, initial?: BuilderSettings)
       seasonOverride: undefined,
       overrides: {},
       durationMinutes: leagueChanged ? LEAGUES[nextLeague].defaultDurationMinutes : s.durationMinutes,
-      templates: leagueChanged ? { ...DEFAULT_TEMPLATES, ...LEAGUES[nextLeague].defaultTemplates } : s.templates,
+      templates: leagueChanged ? defaultTemplates(nextLeague) : s.templates,
     }));
   }, []);
 

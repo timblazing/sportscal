@@ -1,3 +1,5 @@
+import { unstable_cache } from "next/cache";
+
 import { LEAGUES, type LeagueConfig, type LeagueKey } from "@/lib/config/leagues";
 import type { ResolvedSeason, SportsCalGame } from "@/lib/types";
 import { REVALIDATE, buildEspnUrl, espnFetchJson } from "@/lib/espn/client";
@@ -41,7 +43,30 @@ export function buildGames(
       if (game) byId.set(game.id, game);
     }
   }
-  return [...byId.values()].sort(compareGames);
+  const games = [...byId.values()].sort(compareGames);
+  if (context.league.key === "mlb") markDoubleheaders(games);
+  return games;
+}
+
+/** Only unambiguous, timed same-opponent pairs on the same Eastern date. */
+function markDoubleheaders(games: SportsCalGame[]) {
+  const pairs = new Map<string, SportsCalGame[]>();
+  for (const game of games) {
+    if (game.dateTBD || game.timeTBD || game.status.postponed || game.status.cancelled) continue;
+    const opponent = game.selectedTeamHomeAway === "home" ? game.awayTeam : game.homeTeam;
+    const key = `${game.localDate}:${opponent.id}`;
+    const group = pairs.get(key) ?? [];
+    group.push(game);
+    pairs.set(key, group);
+  }
+  for (const group of pairs.values()) {
+    if (group.length !== 2) continue;
+    const [first, second] = group;
+    const elapsed = Date.parse(second.startDate) - Date.parse(first.startDate);
+    if (elapsed <= 0 || elapsed > 10 * 60 * 60 * 1000) continue;
+    first.doubleheader ??= { game: 1 };
+    second.doubleheader ??= { game: 2 };
+  }
 }
 
 export function compareGames(a: SportsCalGame, b: SportsCalGame): number {
@@ -54,6 +79,12 @@ export function compareGames(a: SportsCalGame, b: SportsCalGame): number {
 // ESPN data access
 // ---------------------------------------------------------------------------
 
+// Store only normalized games, never multi-megabyte ESPN responses. Failed
+// refreshes throw through Next's cache; fallback is outside the cached loader
+// so transient failures cannot replace a successful cache entry with stale data.
+const lastGoodSchedules = new Map<string, SportsCalGame[]>();
+const LAST_GOOD_SCHEDULES_MAX = 100;
+
 export async function fetchTeamGames(
   leagueKey: LeagueKey,
   teamId: string,
@@ -62,17 +93,36 @@ export async function fetchTeamGames(
   const league = LEAGUES[leagueKey];
   const revalidate =
     season.status === "completed" ? REVALIDATE.offseasonSchedule : REVALIDATE.activeSchedule;
-  const queries = league.scheduleQueries ?? league.scheduleSeasonTypes.map((seasontype) => ({ seasontype }));
-  const responses = await Promise.all(
-    queries.map((query) =>
-      espnFetchJson(
+  const keyParts = ["espn-normalized-schedule-v1", leagueKey, teamId,
+    String(season.espnSeason), season.status, season.displayName];
+  const key = JSON.stringify(keyParts);
+  const cached = unstable_cache(async () => {
+    const queries = league.scheduleQueries ?? league.scheduleSeasonTypes.map((seasontype) => ({ seasontype }));
+    const responses = await Promise.all(
+      queries.map((query) => espnFetchJson(
         buildEspnUrl("site", league, ["teams", teamId, "schedule"], {
           season: season.espnSeason,
           ...query,
         }),
-        { revalidate, tags: [`schedule:${leagueKey}:${teamId}`] },
-      ),
-    ),
-  );
-  return buildGames(responses, { league, teamId, season });
+        { revalidate, cache: "none" },
+      )),
+    );
+    // Distinguish malformed upstream responses from genuinely empty schedules.
+    for (const response of responses) espnScheduleResponseSchema.parse(response);
+    return buildGames(responses, { league, teamId, season });
+  }, keyParts, { revalidate, tags: [`schedule:${leagueKey}:${teamId}`] });
+
+  try {
+    const games = await cached();
+    lastGoodSchedules.delete(key);
+    lastGoodSchedules.set(key, games);
+    if (lastGoodSchedules.size > LAST_GOOD_SCHEDULES_MAX) {
+      lastGoodSchedules.delete(lastGoodSchedules.keys().next().value!);
+    }
+    return games;
+  } catch (error) {
+    const fallback = lastGoodSchedules.get(key);
+    if (fallback) return fallback;
+    throw error;
+  }
 }

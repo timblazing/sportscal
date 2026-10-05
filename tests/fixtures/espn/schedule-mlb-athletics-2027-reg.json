@@ -1,0 +1,499 @@
+{
+  "requestedSeason": {
+    "year": 2027,
+    "type": 2,
+    "displayName": "2027"
+  },
+  "events": [
+    {
+      "id": "401893767",
+      "date": "2027-03-25T04:00Z",
+      "season": {
+        "year": 2027,
+        "displayName": "2027"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 12,
+        "text": "Week 12"
+      },
+      "timeValid": false,
+      "competitions": [
+        {
+          "id": "401893767",
+          "date": "2027-03-25T04:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "PNC Park",
+            "address": {
+              "city": "Pittsburgh",
+              "state": "Pennsylvania"
+            }
+          },
+          "competitors": [
+            {
+              "id": "23",
+              "homeAway": "home",
+              "team": {
+                "id": "23",
+                "location": "Pittsburgh",
+                "abbreviation": "PIT",
+                "displayName": "Pittsburgh Pirates",
+                "shortDisplayName": "Pirates",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/pit.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "11",
+              "homeAway": "away",
+              "team": {
+                "id": "11",
+                "location": "Athletics",
+                "abbreviation": "ATH",
+                "displayName": "Athletics",
+                "shortDisplayName": "Athletics",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ath.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Scheduled",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401893781",
+      "date": "2027-03-26T04:00Z",
+      "season": {
+        "year": 2027,
+        "displayName": "2027"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 13,
+        "text": "Week 13"
+      },
+      "timeValid": false,
+      "competitions": [
+        {
+          "id": "401893781",
+          "date": "2027-03-26T04:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "PNC Park",
+            "address": {
+              "city": "Pittsburgh",
+              "state": "Pennsylvania"
+            }
+          },
+          "competitors": [
+            {
+              "id": "23",
+              "homeAway": "home",
+              "team": {
+                "id": "23",
+                "location": "Pittsburgh",
+                "abbreviation": "PIT",
+                "displayName": "Pittsburgh Pirates",
+                "shortDisplayName": "Pirates",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/pit.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "11",
+              "homeAway": "away",
+              "team": {
+                "id": "11",
+                "location": "Athletics",
+                "abbreviation": "ATH",
+                "displayName": "Athletics",
+                "shortDisplayName": "Athletics",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ath.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Scheduled",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401893787",
+      "date": "2027-03-27T04:00Z",
+      "season": {
+        "year": 2027,
+        "displayName": "2027"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 13,
+        "text": "Week 13"
+      },
+      "timeValid": false,
+      "competitions": [
+        {
+          "id": "401893787",
+          "date": "2027-03-27T04:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "PNC Park",
+            "address": {
+              "city": "Pittsburgh",
+              "state": "Pennsylvania"
+            }
+          },
+          "competitors": [
+            {
+              "id": "23",
+              "homeAway": "home",
+              "team": {
+                "id": "23",
+                "location": "Pittsburgh",
+                "abbreviation": "PIT",
+                "displayName": "Pittsburgh Pirates",
+                "shortDisplayName": "Pirates",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/pit.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "11",
+              "homeAway": "away",
+              "team": {
+                "id": "11",
+                "location": "Athletics",
+                "abbreviation": "ATH",
+                "displayName": "Athletics",
+                "shortDisplayName": "Athletics",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ath.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Scheduled",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401893814",
+      "date": "2027-03-29T04:00Z",
+      "season": {
+        "year": 2027,
+        "displayName": "2027"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 13,
+        "text": "Week 13"
+      },
+      "timeValid": false,
+      "competitions": [
+        {
+          "id": "401893814",
+          "date": "2027-03-29T04:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Yankee Stadium",
+            "address": {
+              "city": "Bronx",
+              "state": "New York"
+            }
+          },
+          "competitors": [
+            {
+              "id": "10",
+              "homeAway": "home",
+              "team": {
+                "id": "10",
+                "location": "New York",
+                "abbreviation": "NYY",
+                "displayName": "New York Yankees",
+                "shortDisplayName": "Yankees",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "11",
+              "homeAway": "away",
+              "team": {
+                "id": "11",
+                "location": "Athletics",
+                "abbreviation": "ATH",
+                "displayName": "Athletics",
+                "shortDisplayName": "Athletics",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ath.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Scheduled",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401893829",
+      "date": "2027-03-30T04:00Z",
+      "season": {
+        "year": 2027,
+        "displayName": "2027"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 13,
+        "text": "Week 13"
+      },
+      "timeValid": false,
+      "competitions": [
+        {
+          "id": "401893829",
+          "date": "2027-03-30T04:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Yankee Stadium",
+            "address": {
+              "city": "Bronx",
+              "state": "New York"
+            }
+          },
+          "competitors": [
+            {
+              "id": "10",
+              "homeAway": "home",
+              "team": {
+                "id": "10",
+                "location": "New York",
+                "abbreviation": "NYY",
+                "displayName": "New York Yankees",
+                "shortDisplayName": "Yankees",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/nyy.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "11",
+              "homeAway": "away",
+              "team": {
+                "id": "11",
+                "location": "Athletics",
+                "abbreviation": "ATH",
+                "displayName": "Athletics",
+                "shortDisplayName": "Athletics",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/mlb/500/ath.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "shortName": "Streaming"
+              },
+              "media": {
+                "shortName": "MLB.TV"
+              }
+            }
+          ],
+          "status": {
+            "type": {
+              "id": "1",
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Scheduled",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

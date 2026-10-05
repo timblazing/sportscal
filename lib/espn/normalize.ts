@@ -128,6 +128,7 @@ function shortSeasonLabel(displayName: string | undefined, abbreviation: string 
 export function normalizeBroadcasts(broadcasts: EspnBroadcast[] | undefined): string[] {
   const names = new Set<string>();
   for (const b of broadcasts ?? []) {
+    if (b.type?.shortName?.toLowerCase() === "radio") continue;
     const list = b.media?.shortName ? [b.media.shortName] : (b.names ?? []);
     for (const name of list) {
       const trimmed = name.trim();
@@ -167,7 +168,7 @@ export function dateInZone(iso: string, timeZone: string): string {
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
-function normalizeStatus(event: EspnEvent): SportsCalGame["status"] {
+function normalizeStatus(event: EspnEvent, note?: string): SportsCalGame["status"] {
   const type = event.competitions[0]?.status?.type;
   const name = type?.name?.toUpperCase() ?? "";
   const state = type?.state === "in" || type?.state === "post" ? type.state : "pre";
@@ -178,6 +179,7 @@ function normalizeStatus(event: EspnEvent): SportsCalGame["status"] {
     completed: Boolean(type?.completed) && !cancelled && !postponed,
     ...(cancelled ? { cancelled } : {}),
     ...(postponed ? { postponed } : {}),
+    ...(/if necessary/i.test(note ?? "") ? { tentative: true } : {}),
     detail: type?.detail ?? type?.shortDetail ?? type?.description,
   };
 }
@@ -223,6 +225,7 @@ export function normalizeGame(
   const typeId =
     seasonTypeRaw.id ?? (seasonTypeRaw.type !== undefined ? String(seasonTypeRaw.type) : undefined);
   const note = competition.notes?.map((n) => n.headline?.trim()).find(Boolean);
+  const doubleheader = note?.match(/^doubleheader\s*[-–—]\s*game\s*(\d+)/i);
 
   return {
     id: event.id,
@@ -241,7 +244,7 @@ export function normalizeGame(
       normalized: normalizeSeasonType({ ...seasonTypeRaw, id: typeId }, league),
     },
     week:
-      event.week && (event.week.number !== undefined || event.week.text)
+      league.hasWeeks && event.week && (event.week.number !== undefined || event.week.text)
         ? { number: event.week.number, label: event.week.text }
         : undefined,
     homeTeam: normalizeGameTeam(home, league),
@@ -251,7 +254,10 @@ export function normalizeGame(
     venue: normalizeVenue(competition.venue),
     broadcasts: normalizeBroadcasts(competition.broadcasts),
     note: note || undefined,
-    status: normalizeStatus(event),
+    doubleheader: doubleheader
+      ? { game: Number(doubleheader[1]) }
+      : undefined,
+    status: normalizeStatus(event, note),
     espnUrl: findEspnUrl(event),
   };
 }
