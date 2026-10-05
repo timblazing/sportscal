@@ -1,3 +1,4 @@
+import { LEAGUES } from "@/lib/config/leagues";
 import type { SportsCalGame } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -6,7 +7,7 @@ export function seasonTypeShort(game: SportsCalGame): string | undefined {
     case "preseason":
       return "Preseason";
     case "postseason":
-      return /play-in/i.test(game.seasonType.name) ? "Play-In" : "Postseason";
+      return /play-in/i.test(game.seasonType.name) ? "Play-In" : LEAGUES[game.league].postseasonLabel ?? "Postseason";
     default:
       return undefined;
   }

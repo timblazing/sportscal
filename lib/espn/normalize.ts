@@ -107,7 +107,7 @@ export function normalizeSeason(raw: EspnSeason, league: LeagueConfig): SeasonMe
     startDate: t.startDate,
     endDate: t.endDate,
   }));
-  const seasonName = shortSeasonLabel(raw.displayName, raw.abbreviation, league.name);
+  const seasonName = shortSeasonLabel(raw.displayName, raw.abbreviation, [league.name, league.label]);
   return {
     year: raw.year,
     displayName: seasonName || raw.displayName || String(raw.year),
@@ -117,10 +117,10 @@ export function normalizeSeason(raw: EspnSeason, league: LeagueConfig): SeasonMe
   };
 }
 
-function shortSeasonLabel(displayName: string | undefined, abbreviation: string | undefined, leagueName: string): string | undefined {
+function shortSeasonLabel(displayName: string | undefined, abbreviation: string | undefined, leagueNames: string[]): string | undefined {
   if (abbreviation && /^\d{4}(-\d{2,4})?$/.test(abbreviation)) return abbreviation;
-  const suffix = ` ${leagueName}`;
-  return displayName?.toLowerCase().endsWith(suffix.toLowerCase())
+  const suffix = leagueNames.map((name) => ` ${name}`).find((suffix) => displayName?.toLowerCase().endsWith(suffix.toLowerCase()));
+  return displayName && suffix
     ? displayName.slice(0, -suffix.length)
     : undefined;
 }
@@ -229,7 +229,7 @@ export function normalizeGame(
     league: league.key,
     seasonId: event.season?.year ?? context.seasonYear,
     seasonDisplayName:
-      shortSeasonLabel(event.season?.displayName, event.season?.abbreviation, league.name) ??
+      shortSeasonLabel(event.season?.displayName, event.season?.abbreviation, [league.name, league.label]) ??
       event.season?.displayName ?? context.seasonDisplayName,
     startDate: startDate ?? "",
     localDate: startDate ? dateInZone(startDate, league.scheduleTimeZone) : undefined,
