@@ -5,9 +5,12 @@ import { getTeams, type CatalogTeam } from "@/lib/espn/teams";
 
 export default async function HomePage({ searchParams }: PageProps<"/">) {
   const params = await searchParams;
-  const league: LeagueKey = isLeagueKey(params.league) ? params.league : "nfl";
+  const resetBuilder = params.reset === "1";
+  const league: LeagueKey = !resetBuilder && isLeagueKey(params.league) ? params.league : "nfl";
   const team =
-    typeof params.team === "string" && /^[a-z0-9-]{1,100}$/.test(params.team) ? params.team : undefined;
+    !resetBuilder && typeof params.team === "string" && /^[a-z0-9-]{1,100}$/.test(params.team)
+      ? params.team
+      : undefined;
 
   // Server-render the full team list so the picker is usable immediately.
   // If ESPN is unreachable the client fetch shows a retryable error instead.
@@ -30,9 +33,11 @@ export default async function HomePage({ searchParams }: PageProps<"/">) {
         </p>
       </div>
       <SportsCalendarBuilder
+        key={resetBuilder ? "reset" : "builder"}
         initialLeague={league}
         initialTeamSlug={team}
         initialTeams={initialTeams}
+        resetBuilder={resetBuilder}
       />
       <SavedCalendarsList />
     </div>
