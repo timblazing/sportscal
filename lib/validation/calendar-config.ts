@@ -91,7 +91,7 @@ export function defaultConfig(
     teamSlug: team.slug,
     seasonMode: "auto",
     include: { preseason: true, regularSeason: true, postseason: true },
-    templates: { ...DEFAULT_TEMPLATES },
+    templates: { ...DEFAULT_TEMPLATES, ...LEAGUES[league].defaultTemplates },
     durationMinutes: LEAGUES[league].defaultDurationMinutes,
     busyStatus: "free",
     includeEspnUrl: false,

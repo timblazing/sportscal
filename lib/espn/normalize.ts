@@ -39,11 +39,12 @@ export function normalizeTeam(
   const displayName =
     raw.displayName || [raw.location, raw.name].filter(Boolean).join(" ") || raw.id;
   const location = raw.location ?? raw.shortDisplayName ?? displayName;
+  const soccer = league.sport === "soccer";
   return {
     id: raw.id,
-    slug: raw.slug || slugify(displayName) || raw.id,
-    name: raw.name ?? raw.nickname ?? displayName,
-    shortName: raw.shortDisplayName ?? raw.nickname ?? raw.name ?? displayName,
+    slug: soccer ? slugify(displayName) || raw.id : raw.slug || slugify(displayName) || raw.id,
+    name: soccer ? raw.shortDisplayName ?? raw.displayName ?? displayName : raw.name ?? raw.nickname ?? displayName,
+    shortName: raw.shortDisplayName ?? (soccer ? raw.displayName : raw.nickname) ?? raw.name ?? displayName,
     displayName,
     location,
     abbreviation: raw.abbreviation ?? "",
@@ -60,13 +61,14 @@ function normalizeScore(score: EspnCompetitor["score"]): string | undefined {
   return score.displayValue ?? (score.value !== undefined ? String(score.value) : undefined);
 }
 
-export function normalizeGameTeam(competitor: EspnCompetitor): GameTeam {
+export function normalizeGameTeam(competitor: EspnCompetitor, league?: LeagueConfig): GameTeam {
   const t = competitor.team;
   const displayName = t.displayName ?? [t.location, t.name ?? t.nickname].filter(Boolean).join(" ");
+  const soccer = league?.sport === "soccer" || Boolean(t.slug?.includes("."));
   return {
     id: t.id,
-    name: t.name ?? t.nickname ?? t.shortDisplayName ?? displayName,
-    shortName: t.shortDisplayName ?? t.nickname ?? t.location ?? displayName,
+    name: soccer ? t.shortDisplayName ?? t.displayName ?? displayName : t.name ?? t.nickname ?? t.shortDisplayName ?? displayName,
+    shortName: t.shortDisplayName ?? (soccer ? t.displayName : t.nickname) ?? t.location ?? displayName,
     displayName: displayName || t.abbreviation || "TBD",
     location: t.location ?? t.shortDisplayName ?? displayName,
     abbreviation: t.abbreviation ?? "",
@@ -105,13 +107,22 @@ export function normalizeSeason(raw: EspnSeason, league: LeagueConfig): SeasonMe
     startDate: t.startDate,
     endDate: t.endDate,
   }));
+  const seasonName = shortSeasonLabel(raw.displayName, raw.abbreviation, league.name);
   return {
     year: raw.year,
-    displayName: raw.displayName ?? String(raw.year),
+    displayName: seasonName || raw.displayName || String(raw.year),
     startDate: raw.startDate,
     endDate: raw.endDate,
     types,
   };
+}
+
+function shortSeasonLabel(displayName: string | undefined, abbreviation: string | undefined, leagueName: string): string | undefined {
+  if (abbreviation && /^\d{4}(-\d{2,4})?$/.test(abbreviation)) return abbreviation;
+  const suffix = ` ${leagueName}`;
+  return displayName?.toLowerCase().endsWith(suffix.toLowerCase())
+    ? displayName.slice(0, -suffix.length)
+    : undefined;
 }
 
 export function normalizeBroadcasts(broadcasts: EspnBroadcast[] | undefined): string[] {
@@ -217,7 +228,9 @@ export function normalizeGame(
     id: event.id,
     league: league.key,
     seasonId: event.season?.year ?? context.seasonYear,
-    seasonDisplayName: event.season?.displayName ?? context.seasonDisplayName,
+    seasonDisplayName:
+      shortSeasonLabel(event.season?.displayName, event.season?.abbreviation, league.name) ??
+      event.season?.displayName ?? context.seasonDisplayName,
     startDate: startDate ?? "",
     localDate: startDate ? dateInZone(startDate, league.scheduleTimeZone) : undefined,
     dateTBD,
@@ -231,8 +244,8 @@ export function normalizeGame(
       event.week && (event.week.number !== undefined || event.week.text)
         ? { number: event.week.number, label: event.week.text }
         : undefined,
-    homeTeam: normalizeGameTeam(home),
-    awayTeam: normalizeGameTeam(away),
+    homeTeam: normalizeGameTeam(home, league),
+    awayTeam: normalizeGameTeam(away, league),
     selectedTeamHomeAway: selected,
     neutralSite: Boolean(competition.neutralSite),
     venue: normalizeVenue(competition.venue),

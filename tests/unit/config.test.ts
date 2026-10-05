@@ -42,6 +42,17 @@ describe("calendar config validation", () => {
     expect(calendarConfigSchema.safeParse({ ...nhl, teamId: "129764", teamSlug: "utah-mammoth" }).success).toBe(true);
   });
 
+  it("registers Premier League soccer defaults", () => {
+    expect(LEAGUE_KEYS).toContain("epl");
+    const epl = defaultConfig("epl", { id: "364", slug: "liverpool" });
+    expect(epl.durationMinutes).toBe(120);
+    expect(epl.templates).toMatchObject({
+      calendarName: "{team} Premier League {season}",
+      title: "{homeTeam} v {awayTeam}",
+    });
+    expect(isDefaultConfig(epl)).toBe(true);
+  });
+
   it("limits template and override sizes", () => {
     const long = "x".repeat(LIMITS.description + 1);
     expect(calendarConfigSchema.safeParse({ ...valid(), templates: { ...valid().templates, description: long } }).success).toBe(false);

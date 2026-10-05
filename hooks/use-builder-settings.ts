@@ -10,7 +10,7 @@ export function defaultSettings(league: LeagueKey): BuilderSettings {
   return {
     seasonMode: "auto",
     include: { preseason: true, regularSeason: true, postseason: true },
-    templates: { ...DEFAULT_TEMPLATES },
+    templates: { ...DEFAULT_TEMPLATES, ...LEAGUES[league].defaultTemplates },
     durationMinutes: LEAGUES[league].defaultDurationMinutes,
     busyStatus: "free",
     includeEspnUrl: false,
@@ -66,6 +66,7 @@ export function useBuilderSettings(league: LeagueKey, initial?: BuilderSettings)
       seasonOverride: undefined,
       overrides: {},
       durationMinutes: leagueChanged ? LEAGUES[nextLeague].defaultDurationMinutes : s.durationMinutes,
+      templates: leagueChanged ? { ...DEFAULT_TEMPLATES, ...LEAGUES[nextLeague].defaultTemplates } : s.templates,
     }));
   }, []);
 

@@ -280,6 +280,7 @@ export function SportsCalendarBuilder({
     <div className="space-y-6">
       {mode === "create" && <LeagueSelector value={league} onChange={changeLeague} />}
       {mode === "create" && (
+        <div className="space-y-2">
         <TeamPicker
           key={league}
           teams={teams.data?.teams}
@@ -287,6 +288,8 @@ export function SportsCalendarBuilder({
           selected={selectedTeam}
           onSelect={selectTeam}
         />
+        {leagueConfig.note && <p className="text-xs text-muted-foreground">{leagueConfig.note}</p>}
+        </div>
       )}
       {teams.status === "error" && !teams.data && (
         <ScheduleError message="We couldn't load teams from ESPN. Try again in a moment." onRetry={teams.retry} />
@@ -301,7 +304,7 @@ export function SportsCalendarBuilder({
               label="Event title"
               help="Shown as the event name in your calendar."
               value={settings.templates.title}
-              defaultValue={DEFAULT_TEMPLATES.title}
+              defaultValue={{ ...DEFAULT_TEMPLATES, ...leagueConfig.defaultTemplates }.title}
               maxLength={LIMITS.title}
               onChange={(title) => update({ templates: { ...settings.templates, title } })}
               preview={exampleValues ? renderTemplate(settings.templates.title, exampleValues) : undefined}
@@ -333,7 +336,7 @@ export function SportsCalendarBuilder({
               label="Calendar name"
               help="The name your calendar app shows for this calendar."
               value={settings.templates.calendarName}
-              defaultValue={DEFAULT_TEMPLATES.calendarName}
+              defaultValue={{ ...DEFAULT_TEMPLATES, ...leagueConfig.defaultTemplates }.calendarName}
               maxLength={LIMITS.calendarName}
               variables={CALENDAR_NAME_VARIABLES}
               onChange={(calendarName) => update({ templates: { ...settings.templates, calendarName } })}
@@ -346,7 +349,7 @@ export function SportsCalendarBuilder({
             defaultDuration={leagueConfig.defaultDurationMinutes}
             onChange={update}
             onResetTemplates={() => {
-              update({ templates: { ...DEFAULT_TEMPLATES } });
+              update({ templates: { ...DEFAULT_TEMPLATES, ...leagueConfig.defaultTemplates } });
               toast("Templates reset");
             }}
             onResetOverrides={() => {
@@ -355,6 +358,7 @@ export function SportsCalendarBuilder({
             }}
             overrideCount={overrideCount}
             counts={scheduleData ? counts : undefined}
+            gameTypes={leagueConfig.gameTypes}
           />
         </>
       )}

@@ -51,7 +51,7 @@ export function buildEspnUrl(
   api: EspnApi,
   league: LeagueConfig,
   segments: (string | number)[],
-  query: Record<string, string | number | undefined> = {},
+  query: Record<string, string | number | boolean | undefined> = {},
 ): string {
   const parts = segments.map(String);
   for (const part of parts) {

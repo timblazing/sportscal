@@ -104,6 +104,7 @@ export type EspnSeasonType = z.infer<typeof espnSeasonTypeSchema>;
 export const espnSeasonSchema = z.looseObject({
   year: z.number(),
   displayName: z.string().optional(),
+  abbreviation: z.string().optional(),
   startDate: z.string().optional(),
   endDate: z.string().optional(),
   types: z
@@ -185,7 +186,7 @@ export const espnEventSchema = z.looseObject({
   name: z.string().optional(),
   timeValid: z.boolean().optional(),
   season: z
-    .looseObject({ year: z.number().optional(), displayName: z.string().optional() })
+    .looseObject({ year: z.number().optional(), displayName: z.string().optional(), abbreviation: z.string().optional() })
     .optional(),
   seasonType: z
     .looseObject({

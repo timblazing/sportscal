@@ -62,12 +62,13 @@ export async function fetchTeamGames(
   const league = LEAGUES[leagueKey];
   const revalidate =
     season.status === "completed" ? REVALIDATE.offseasonSchedule : REVALIDATE.activeSchedule;
+  const queries = league.scheduleQueries ?? league.scheduleSeasonTypes.map((seasontype) => ({ seasontype }));
   const responses = await Promise.all(
-    league.scheduleSeasonTypes.map((seasonType) =>
+    queries.map((query) =>
       espnFetchJson(
         buildEspnUrl("site", league, ["teams", teamId, "schedule"], {
           season: season.espnSeason,
-          seasontype: seasonType,
+          ...query,
         }),
         { revalidate, tags: [`schedule:${leagueKey}:${teamId}`] },
       ),

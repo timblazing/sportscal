@@ -34,6 +34,10 @@ export default function AboutPage() {
           API endpoints. SportsCal is not affiliated with or endorsed by ESPN or any league or team.
           If ESPN changes or removes data, calendars reflect that on the next refresh.
         </p>
+        <p>
+          Premier League calendars include Premier League matches only, not domestic cups or European fixtures.
+          Kick-off times can change when TV selections are made and update on the next refresh.
+        </p>
       </Section>
 
       <Section title="Downloads vs. subscriptions">

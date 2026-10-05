@@ -10,6 +10,8 @@ export function GET() {
         label: l.label,
         name: l.name,
         defaultDurationMinutes: l.defaultDurationMinutes,
+        gameTypes: l.gameTypes ?? ["regular", "postseason", "preseason"],
+        note: l.note,
       })),
     },
     { headers: { "cache-control": "public, max-age=3600, s-maxage=86400" } },
