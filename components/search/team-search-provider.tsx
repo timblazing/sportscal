@@ -1,8 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Command as CommandPrimitive } from "cmdk";
-import { AlertCircleIcon, CalendarDaysIcon, SearchIcon } from "lucide-react";
+import { AlertCircleIcon, SearchIcon } from "lucide-react";
 import {
   createContext,
   useCallback,
@@ -14,25 +13,36 @@ import {
   type ReactNode,
 } from "react";
 
+import { LeagueLogo } from "@/components/builder/league-logo";
 import { TeamLogo } from "@/components/builder/team-logo";
 import { searchTeams } from "@/components/builder/team-picker";
 import { Button } from "@/components/ui/button";
 import {
   Command,
+  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
+  CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { apiFetch, type CatalogTeam } from "@/lib/client/api";
 import { LEAGUE_LIST, LEAGUES, type LeagueKey } from "@/lib/config/leagues";
 
-const SportsCalendarBuilder = dynamic(
-  () => import("@/components/builder/sports-calendar-builder").then((module) => module.SportsCalendarBuilder),
-  { loading: () => <div className="h-72 animate-pulse rounded-lg bg-muted" aria-label="Loading calendar builder" /> },
-);
+const loadBuilder = () => import("@/components/builder/sports-calendar-builder");
+
+const SportsCalendarBuilder = dynamic(() => loadBuilder().then((module) => module.SportsCalendarBuilder), {
+  loading: () => (
+    <div className="flex-1 space-y-4 px-4 py-4" aria-label="Loading calendar builder">
+      <Skeleton className="h-4 w-40" />
+      <Skeleton className="h-24 w-full rounded-lg" />
+      <Skeleton className="h-12 w-full rounded-lg" />
+      <Skeleton className="h-12 w-full rounded-lg" />
+    </div>
+  ),
+});
 
 const SavedCalendarsList = dynamic(
   () => import("@/components/subscription/saved-calendars-list").then((module) => module.SavedCalendarsList),
@@ -51,7 +61,11 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [builderOpen, setBuilderOpen] = useState(false);
   const [selectedTeam, setSelectedTeam] = useState<CatalogTeam | null>(null);
-  const openTeamSearch = useCallback(() => setSearchOpen(true), []);
+  const openTeamSearch = useCallback(() => {
+    // Warm the builder chunk while the user is picking a team so the sheet doesn't flash a loader.
+    void loadBuilder();
+    setSearchOpen(true);
+  }, []);
   const closeToLanding = useCallback(() => {
     setSearchOpen(false);
     setBuilderOpen(false);
@@ -73,33 +87,34 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
       />
       <Sheet open={builderOpen} onOpenChange={setBuilderOpen}>
         <SheetContent
-          side="bottom"
-          className="max-h-[92dvh] overflow-y-auto rounded-t-2xl p-0 sm:inset-x-auto sm:inset-y-0 sm:top-0 sm:right-0 sm:bottom-auto sm:left-auto sm:h-dvh sm:max-h-none sm:w-[min(92vw,80rem)] sm:max-w-none sm:rounded-none sm:border-t-0 sm:border-l sm:data-[side=bottom]:inset-x-auto sm:data-[side=bottom]:top-0 sm:data-[side=bottom]:right-0 sm:data-[side=bottom]:bottom-auto sm:data-[side=bottom]:left-auto sm:data-[side=bottom]:h-dvh sm:data-[side=bottom]:border-t-0 sm:data-[side=bottom]:data-open:slide-in-from-right-10 sm:data-[side=bottom]:data-closed:slide-out-to-right-10"
+          side="right"
+          className="w-full gap-0 p-0 sm:max-w-md"
+          onOpenAutoFocus={(event) => event.preventDefault()}
         >
           {selectedTeam && (
             <>
-              <SheetHeader className="sticky top-0 z-10 border-b border-border bg-background/95 px-5 py-4 pr-14 backdrop-blur-sm sm:px-7">
-                <div className="flex items-center gap-3">
-                  <TeamLogo src={selectedTeam.logo} abbreviation={selectedTeam.abbreviation} />
-                  <div className="min-w-0 flex-1">
-                    <SheetTitle className="truncate text-base">{selectedTeam.displayName}</SheetTitle>
-                    <SheetDescription>{LEAGUES[selectedTeam.league].label} schedule and calendar settings</SheetDescription>
-                  </div>
-                  <Button variant="outline" size="sm" onClick={openTeamSearch}>
-                    <SearchIcon aria-hidden="true" />
-                    Change team
-                  </Button>
+              <SheetHeader className="flex-row items-center gap-3 border-b border-border p-4 pr-12">
+                <TeamLogo src={selectedTeam.logo} abbreviation={selectedTeam.abbreviation} size={36} />
+                <div className="min-w-0 flex-1">
+                  <SheetTitle className="truncate text-base">{selectedTeam.displayName}</SheetTitle>
+                  <SheetDescription className="truncate">
+                    {LEAGUES[selectedTeam.league].label} calendar
+                  </SheetDescription>
                 </div>
+                <Button variant="ghost" size="sm" onClick={openTeamSearch}>
+                  <SearchIcon aria-hidden="true" />
+                  Change
+                </Button>
               </SheetHeader>
-              <div className="min-h-0 px-4 py-5 sm:px-7 sm:py-7">
-                <SportsCalendarBuilder
-                  key={selectedTeam.id}
-                  initialLeague={selectedTeam.league}
-                  initialTeamSlug={selectedTeam.slug}
-                  initialTeams={[selectedTeam]}
-                />
+              <SportsCalendarBuilder
+                key={selectedTeam.id}
+                layout="sheet"
+                initialLeague={selectedTeam.league}
+                initialTeamSlug={selectedTeam.slug}
+                initialTeams={[selectedTeam]}
+              >
                 <SavedCalendarsList />
-              </div>
+              </SportsCalendarBuilder>
             </>
           )}
         </SheetContent>
@@ -192,81 +207,75 @@ function TeamSearchDialog({
   };
 
   return (
-    <Dialog
+    <CommandDialog
       open={open}
       onOpenChange={(nextOpen) => {
         if (!nextOpen) setQuery("");
         onOpenChange(nextOpen);
       }}
+      title="Search teams and leagues"
+      description="Choose a team to see its schedule and calendar settings."
+      className="top-[14dvh] bg-popover/60 ring-foreground/10 backdrop-blur-xl supports-backdrop-filter:bg-popover/50 sm:max-w-xl"
     >
-      <DialogContent className="top-[12dvh] max-h-[76dvh] max-w-2xl translate-y-0 gap-0 overflow-hidden rounded-2xl p-0 sm:top-1/2 sm:max-w-2xl sm:-translate-y-1/2">
-        <DialogHeader className="sr-only">
-          <DialogTitle>Search teams and leagues</DialogTitle>
-          <DialogDescription>Choose a team to see its schedule and calendar settings.</DialogDescription>
-        </DialogHeader>
-        <Command shouldFilter={false} loop className="h-[min(76dvh,42rem)] rounded-2xl">
-          <div className="border-b border-border p-3 sm:p-4">
-            <CommandInput
-              autoFocus
-              value={query}
-              onValueChange={setQuery}
-              placeholder="Search teams or leagues…"
-              className="h-11 text-base"
-            />
-          </div>
-          <CommandList className="max-h-none flex-1 px-2 py-2">
-            {!trimmedQuery ? (
-              <CommandGroup heading="Browse a league">
-                {LEAGUE_LIST.map((league) => (
-                  <CommandPrimitive.Item
-                    key={league.key}
-                    value={`league:${league.key}`}
-                    onSelect={() => setQuery(league.label)}
-                    className="flex cursor-default items-center gap-3 rounded-md px-3 py-2.5 text-sm outline-none data-[selected=true]:bg-muted"
-                  >
-                    <CalendarDaysIcon className="size-4 text-muted-foreground" aria-hidden="true" />
-                    <span className="font-medium">{league.label}</span>
-                    <span className="truncate text-muted-foreground">{league.name}</span>
-                  </CommandPrimitive.Item>
-                ))}
-              </CommandGroup>
-            ) : (
-              <>
-                {visibleGroups.map(([leagueKey, teams]) => (
-                  <CommandGroup key={leagueKey} heading={LEAGUES[leagueKey].label}>
-                    {teams.map((team) => (
-                      <CommandPrimitive.Item
-                        key={`${team.league}:${team.id}`}
-                        value={`${team.league}:${team.slug}:${team.displayName}`}
-                        onSelect={() => {
-                          setQuery("");
-                          onSelect(team);
-                        }}
-                        className="flex cursor-default items-center gap-3 rounded-md px-3 py-2.5 text-sm outline-none data-[selected=true]:bg-muted"
-                      >
-                        <TeamLogo src={team.logo} abbreviation={team.abbreviation} />
-                        <span className="min-w-0 flex-1 truncate">{team.displayName}</span>
-                        <span className="text-xs text-muted-foreground">{LEAGUES[team.league].label}</span>
-                      </CommandPrimitive.Item>
-                    ))}
-                  </CommandGroup>
-                ))}
-                {loading && <p className="px-3 py-5 text-center text-sm text-muted-foreground">Loading teams…</p>}
-                {!loading && teamsByQuery.length === 0 && <CommandEmpty>No teams or leagues found.</CommandEmpty>}
-              </>
-            )}
-          </CommandList>
-          <div className="flex min-h-10 items-center justify-between border-t border-border px-4 text-xs text-muted-foreground">
-            <span>{loading ? "Loading available teams" : "Search across all available leagues"}</span>
-            {failedLeagues.size > 0 && (
-              <button type="button" onClick={retryFailed} className="inline-flex items-center gap-1.5 hover:text-foreground">
-                <AlertCircleIcon className="size-3.5" aria-hidden="true" />
-                Retry {failedLeagues.size} league{failedLeagues.size === 1 ? "" : "s"}
-              </button>
-            )}
-          </div>
-        </Command>
-      </DialogContent>
-    </Dialog>
+      <Command shouldFilter={false} loop className="h-[min(70dvh,34rem)] bg-transparent">
+        <CommandInput
+          autoFocus
+          value={query}
+          onValueChange={setQuery}
+          placeholder="Search teams or leagues…"
+        />
+        <CommandList className="max-h-none flex-1 py-1">
+          {!trimmedQuery ? (
+            <CommandGroup heading="Browse a league">
+              {LEAGUE_LIST.map((league) => (
+                <CommandItem
+                  key={league.key}
+                  value={`league:${league.key}`}
+                  onSelect={() => setQuery(league.label)}
+                  className="gap-3 py-2"
+                >
+                  <LeagueLogo league={league.key} label={league.label} size={20} />
+                  <span className="font-medium">{league.label}</span>
+                  <span className="truncate text-muted-foreground">{league.name}</span>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          ) : (
+            <>
+              {visibleGroups.map(([leagueKey, teams]) => (
+                <CommandGroup key={leagueKey} heading={LEAGUES[leagueKey].label}>
+                  {teams.map((team) => (
+                    <CommandItem
+                      key={`${team.league}:${team.id}`}
+                      value={`${team.league}:${team.slug}:${team.displayName}`}
+                      onSelect={() => {
+                        setQuery("");
+                        onSelect(team);
+                      }}
+                      className="gap-3 py-2"
+                    >
+                      <TeamLogo src={team.logo} abbreviation={team.abbreviation} />
+                      <span className="min-w-0 flex-1 truncate">{team.displayName}</span>
+                      <span className="text-xs text-muted-foreground">{LEAGUES[team.league].label}</span>
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              ))}
+              {loading && <p className="px-3 py-5 text-center text-sm text-muted-foreground">Loading teams…</p>}
+              {!loading && teamsByQuery.length === 0 && <CommandEmpty>No teams or leagues found.</CommandEmpty>}
+            </>
+          )}
+        </CommandList>
+        <div className="flex min-h-10 items-center justify-between border-t border-border/60 px-3 text-xs text-muted-foreground">
+          <span>{loading ? "Loading available teams" : "Search across all available leagues"}</span>
+          {failedLeagues.size > 0 && (
+            <button type="button" onClick={retryFailed} className="inline-flex items-center gap-1.5 hover:text-foreground">
+              <AlertCircleIcon className="size-3.5" aria-hidden="true" />
+              Retry {failedLeagues.size} league{failedLeagues.size === 1 ? "" : "s"}
+            </button>
+          )}
+        </div>
+      </Command>
+    </CommandDialog>
   );
 }

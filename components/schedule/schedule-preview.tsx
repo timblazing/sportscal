@@ -86,10 +86,13 @@ export function SchedulePreview({
   events,
   showBroadcast,
   onEdit,
+  between,
 }: {
   events: CalendarEvent[];
   showBroadcast: boolean;
   onEdit: (event: CalendarEvent) => void;
+  /** Rendered between the preview and the full schedule. */
+  between?: React.ReactNode;
 }) {
   const previews = useMemo(() => pickPreviewEvents(events, 3), [events]);
   const includedCount = events.filter((e) => e.included).length;
@@ -117,6 +120,8 @@ export function SchedulePreview({
         )}
       </section>
 
+      {between}
+
       <section aria-labelledby="schedule-heading" className="space-y-2">
         <div className="flex items-baseline justify-between gap-2">
           <h2 id="schedule-heading" className="text-sm font-medium text-foreground">
@@ -126,7 +131,7 @@ export function SchedulePreview({
             {includedCount} of {events.length} games in calendar
           </span>
         </div>
-        <ul className="divide-y divide-border overflow-hidden rounded-lg border border-border bg-card">
+        <ul className="@container divide-y divide-border overflow-hidden rounded-lg border border-border bg-card">
           {events.map((event) => (
             <ScheduleEventRow key={event.gameId} event={event} onEdit={onEdit} />
           ))}

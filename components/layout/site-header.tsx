@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { SearchIcon } from "lucide-react";
 
 import { LogoMark } from "@/components/layout/logo";
 import { useTeamSearch } from "@/components/search/team-search-provider";
@@ -29,31 +28,18 @@ export function SiteHeader() {
           <LogoMark />
           SportsCal
         </Link>
-        <nav aria-label="Site" className="flex items-center gap-1 text-sm">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={openTeamSearch}
-            aria-label="Search teams and leagues"
-            className="mr-1 h-8 gap-2 px-2.5 text-muted-foreground sm:w-48 sm:justify-start sm:bg-muted/50"
-          >
-            <SearchIcon aria-hidden="true" className="size-4" />
-            <span className="hidden sm:inline">Search teams…</span>
+        <nav aria-label="Site" className="flex items-center gap-1">
+          <Button size="sm" onClick={openTeamSearch}>
+            Get started
           </Button>
-          <Link
-            href="/about"
-            className="rounded-md px-2.5 py-1.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-          >
-            About
-          </Link>
           <a
             href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            aria-label="SportsCal on GitHub"
+            className="flex items-center rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
             <GitHubIcon />
-            <span>GitHub</span>
           </a>
         </nav>
       </div>

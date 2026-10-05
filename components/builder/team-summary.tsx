@@ -27,22 +27,24 @@ export function TeamSummary({
         <h2 className="truncate text-lg font-semibold tracking-tight text-foreground">
           {team.displayName}
         </h2>
-        {season ? (
-          <p className="text-sm text-muted-foreground" data-testid="season-summary">
-            <span className="font-mono tabular">{season.displayName}</span> season ·{" "}
-            {STATUS[season.status]}
-            {gameCount !== undefined && (
-              <>
-                {" "}
-                · <span className="font-mono tabular">{gameCount}</span> game{gameCount === 1 ? "" : "s"}
-              </>
-            )}
-          </p>
-        ) : (
-          <Skeleton className="h-5 w-48" />
-        )}
+        <SeasonLine season={season} gameCount={gameCount} />
         {children}
       </div>
     </div>
+  );
+}
+
+export function SeasonLine({ season, gameCount }: { season?: ResolvedSeason; gameCount?: number }) {
+  if (!season) return <Skeleton className="h-5 w-48" />;
+  return (
+    <p className="text-sm text-muted-foreground" data-testid="season-summary">
+      <span className="font-mono tabular">{season.displayName}</span> season · {STATUS[season.status]}
+      {gameCount !== undefined && (
+        <>
+          {" "}
+          · <span className="font-mono tabular">{gameCount}</span> game{gameCount === 1 ? "" : "s"}
+        </>
+      )}
+    </p>
   );
 }

@@ -33,22 +33,15 @@ export function LandingPage() {
     <div>
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:min-h-[min(720px,calc(100svh-3.5rem))] lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:gap-20 lg:py-24">
         <div className="max-w-3xl space-y-8">
-          <p className="flex items-center gap-2 text-sm text-muted-foreground">
-            <CalendarDaysIcon className="size-4" aria-hidden="true" />
-            Game schedules, made for your calendar
-          </p>
           <h1 className="text-5xl leading-[0.98] font-semibold tracking-[-0.055em] text-balance text-foreground sm:text-7xl lg:text-[5.25rem]">
             Never miss the games you follow.
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Find your team, choose how its games appear, and add the schedule to the calendar app you already use.
           </p>
-          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
-            <Button size="lg" onClick={openTeamSearch} className="h-11 px-5 text-sm">
-              Get started <ArrowRightIcon aria-hidden="true" />
-            </Button>
-            <span className="text-sm text-muted-foreground">No account. No clutter in your events.</span>
-          </div>
+          <Button size="lg" onClick={openTeamSearch} className="h-11 px-5 text-sm">
+            Get started
+          </Button>
         </div>
 
         <div className="relative hidden min-h-[22rem] items-center justify-center lg:flex" aria-hidden="true">

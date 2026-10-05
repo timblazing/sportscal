@@ -38,15 +38,15 @@ export function ScheduleEventRow({
       data-game-id={game.id}
       data-included={event.included}
       className={cn(
-        "grid grid-cols-[4.75rem_1fr_auto] items-start gap-x-3 gap-y-1 px-3 py-2.5 sm:grid-cols-[5.5rem_4.5rem_1fr_auto] sm:items-center",
+        "grid grid-cols-[5.75rem_1fr_auto] items-start gap-x-3 gap-y-1 px-3 py-2.5 @md:grid-cols-[5.5rem_4.5rem_1fr_auto] @md:items-center",
         muted && "opacity-55",
       )}
     >
       <div className="font-mono text-xs leading-5 text-foreground tabular">
         {formatEventDate(event.timing)}
-        <span className="block text-muted-foreground sm:hidden">{formatEventTime(event.timing)}</span>
+        <span className="block text-muted-foreground @md:hidden">{formatEventTime(event.timing)}</span>
       </div>
-      <div className="hidden font-mono text-xs text-muted-foreground tabular sm:block">
+      <div className="hidden font-mono text-xs text-muted-foreground tabular @md:block">
         {formatEventTime(event.timing)}
       </div>
       <div className="min-w-0 space-y-0.5">

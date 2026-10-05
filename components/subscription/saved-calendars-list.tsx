@@ -30,7 +30,7 @@ export function SavedCalendarsList() {
   const calendars = useSyncExternalStore(subscribe, snapshot, () => EMPTY);
   if (calendars.length === 0) return null;
   return (
-    <section aria-labelledby="saved-heading" className="mt-16 max-w-xl space-y-2">
+    <section aria-labelledby="saved-heading" className="mt-2 space-y-2">
       <h2 id="saved-heading" className="text-sm font-medium text-foreground">
         Your saved calendars
       </h2>

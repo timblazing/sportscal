@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 import { ActionBar } from "@/components/builder/action-bar";
 import { AdvancedSettings } from "@/components/builder/advanced-settings";
-import { TeamSummary } from "@/components/builder/team-summary";
+import { SeasonLine, TeamSummary } from "@/components/builder/team-summary";
 import { TemplateEditor } from "@/components/builder/template-editor";
 import { EventOverrideDialog, type OverrideTarget } from "@/components/schedule/event-override-dialog";
 import {
@@ -73,6 +73,10 @@ export interface SportsCalendarBuilderProps {
   initialTeams?: CatalogTeam[];
   /** Manage mode: editing an existing saved calendar. League and team are fixed. */
   saved?: SavedCalendarContext & { config: CalendarConfig; team: CatalogTeam };
+  /** "sheet" renders a single narrow column with a pinned action footer. */
+  layout?: "page" | "sheet";
+  /** Extra content rendered at the end of the scrolling area (sheet layout). */
+  children?: React.ReactNode;
 }
 
 function teamsUrl(league: LeagueKey) {
@@ -84,6 +88,8 @@ export function SportsCalendarBuilder({
   initialTeamSlug,
   initialTeams,
   saved,
+  layout = "page",
+  children,
 }: SportsCalendarBuilderProps) {
   const mode = saved ? "manage" : "create";
   const league = saved?.config.league ?? initialLeague;
@@ -250,6 +256,74 @@ export function SportsCalendarBuilder({
   const leagueConfig = LEAGUES[league];
 
   // --- Render ----------------------------------------------------------------
+  const settingsPanels = (
+    <>
+      <FormattingOptions>
+        <TemplateEditor
+          label="Event title"
+          help="Shown as the event name in your calendar."
+          value={settings.templates.title}
+          defaultValue={defaultTemplates(league).title}
+          maxLength={LIMITS.title}
+          onChange={(title) => update({ templates: { ...settings.templates, title } })}
+          preview={exampleValues ? renderTemplate(settings.templates.title, exampleValues) : undefined}
+          testId="template-title"
+        />
+        <TemplateEditor
+          label="Description"
+          help="Blank by default. Add only what you want — e.g. {broadcast} or {note}."
+          value={settings.templates.description}
+          defaultValue={DEFAULT_TEMPLATES.description}
+          maxLength={LIMITS.description}
+          multiline
+          placeholder="Blank by default"
+          onChange={(description) => update({ templates: { ...settings.templates, description } })}
+          preview={exampleValues ? renderTemplate(settings.templates.description, exampleValues) : undefined}
+          testId="template-description"
+        />
+        <TemplateEditor
+          label="Location"
+          help="Defaults to the venue ESPN lists for each game."
+          value={settings.templates.location}
+          defaultValue={DEFAULT_TEMPLATES.location}
+          maxLength={LIMITS.location}
+          onChange={(location) => update({ templates: { ...settings.templates, location } })}
+          preview={exampleValues ? renderTemplate(settings.templates.location, exampleValues) : undefined}
+          testId="template-location"
+        />
+        <TemplateEditor
+          label="Calendar name"
+          help="The name your calendar app shows for this calendar."
+          value={settings.templates.calendarName}
+          defaultValue={defaultTemplates(league).calendarName}
+          maxLength={LIMITS.calendarName}
+          variables={CALENDAR_NAME_VARIABLES}
+          onChange={(calendarName) => update({ templates: { ...settings.templates, calendarName } })}
+          preview={scheduleData ? calendarName : undefined}
+          testId="template-calendar-name"
+        />
+      </FormattingOptions>
+      <AdvancedSettings
+        settings={settings}
+        defaultDuration={leagueConfig.defaultDurationMinutes}
+        onChange={update}
+        onResetTemplates={() => {
+          update({ templates: defaultTemplates(league) });
+          toast("Templates reset");
+        }}
+        onResetOverrides={() => {
+          update({ overrides: {} });
+          toast("Override reset");
+        }}
+        overrideCount={overrideCount}
+        counts={scheduleData ? counts : undefined}
+        gameTypes={leagueConfig.gameTypes}
+        preseasonLabel={leagueConfig.preseasonLabel}
+        postseasonLabel={leagueConfig.postseasonLabel}
+      />
+    </>
+  );
+
   const controls = (
     <div className="space-y-6">
       {teams.status === "error" && !teams.data && (
@@ -261,86 +335,26 @@ export function SportsCalendarBuilder({
           <Separator />
           <TeamSummary team={selectedTeam} season={scheduleData?.season} gameCount={scheduleData?.games.length} />
           {mode === "create" && leagueConfig.note && <p className="-mt-4 text-xs text-muted-foreground">{leagueConfig.note}</p>}
-          <FormattingOptions>
-            <TemplateEditor
-              label="Event title"
-              help="Shown as the event name in your calendar."
-              value={settings.templates.title}
-              defaultValue={defaultTemplates(league).title}
-              maxLength={LIMITS.title}
-              onChange={(title) => update({ templates: { ...settings.templates, title } })}
-              preview={exampleValues ? renderTemplate(settings.templates.title, exampleValues) : undefined}
-              testId="template-title"
-            />
-            <TemplateEditor
-              label="Description"
-              help="Blank by default. Add only what you want — e.g. {broadcast} or {note}."
-              value={settings.templates.description}
-              defaultValue={DEFAULT_TEMPLATES.description}
-              maxLength={LIMITS.description}
-              multiline
-              placeholder="Blank by default"
-              onChange={(description) => update({ templates: { ...settings.templates, description } })}
-              preview={exampleValues ? renderTemplate(settings.templates.description, exampleValues) : undefined}
-              testId="template-description"
-            />
-            <TemplateEditor
-              label="Location"
-              help="Defaults to the venue ESPN lists for each game."
-              value={settings.templates.location}
-              defaultValue={DEFAULT_TEMPLATES.location}
-              maxLength={LIMITS.location}
-              onChange={(location) => update({ templates: { ...settings.templates, location } })}
-              preview={exampleValues ? renderTemplate(settings.templates.location, exampleValues) : undefined}
-              testId="template-location"
-            />
-            <TemplateEditor
-              label="Calendar name"
-              help="The name your calendar app shows for this calendar."
-              value={settings.templates.calendarName}
-              defaultValue={defaultTemplates(league).calendarName}
-              maxLength={LIMITS.calendarName}
-              variables={CALENDAR_NAME_VARIABLES}
-              onChange={(calendarName) => update({ templates: { ...settings.templates, calendarName } })}
-              preview={scheduleData ? calendarName : undefined}
-              testId="template-calendar-name"
-            />
-          </FormattingOptions>
-          <AdvancedSettings
-            settings={settings}
-            defaultDuration={leagueConfig.defaultDurationMinutes}
-            onChange={update}
-            onResetTemplates={() => {
-              update({ templates: defaultTemplates(league) });
-              toast("Templates reset");
-            }}
-            onResetOverrides={() => {
-              update({ overrides: {} });
-              toast("Override reset");
-            }}
-            overrideCount={overrideCount}
-            counts={scheduleData ? counts : undefined}
-            gameTypes={leagueConfig.gameTypes}
-            preseasonLabel={leagueConfig.preseasonLabel}
-            postseasonLabel={leagueConfig.postseasonLabel}
-          />
+          {layout === "page" && settingsPanels}
         </>
       )}
     </div>
   );
 
+  const actionBar = (
+    <ActionBar
+      mode={mode}
+      onDownload={download}
+      onSubscribe={subscribe}
+      downloading={downloading}
+      saving={saving}
+      disabled={!scheduleData}
+    />
+  );
+
   const preview = selectedTeam && (
     <div className="space-y-4">
-      <div className="hidden space-y-2 lg:block">
-        <ActionBar
-          mode={mode}
-          onDownload={download}
-          onSubscribe={subscribe}
-          downloading={downloading}
-          saving={saving}
-          disabled={!scheduleData}
-        />
-      </div>
+      {layout === "page" && <div className="hidden space-y-2 lg:block">{actionBar}</div>}
 
       {scheduleData?.season.pendingNextSeason && (
         <Alert className="border-border bg-card">
@@ -367,40 +381,67 @@ export function SportsCalendarBuilder({
           {schedule.status === "error" && (
             <ScheduleError message={schedule.error.message} onRetry={schedule.retry} />
           )}
-          <SchedulePreview events={events} showBroadcast={showBroadcast} onEdit={openOverride} />
+          <SchedulePreview
+            events={events}
+            showBroadcast={showBroadcast}
+            onEdit={openOverride}
+            between={layout === "sheet" ? settingsPanels : undefined}
+          />
         </>
+      )}
+    </div>
+  );
+
+  const sheetBody = (
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex-1 space-y-5 overflow-y-auto px-4 py-4" data-testid="sheet-scroll">
+        {teams.status === "error" && !teams.data && (
+          <ScheduleError message="We couldn't load teams from ESPN. Try again in a moment." onRetry={teams.retry} />
+        )}
+        {selectedTeam && (
+          <>
+            <SeasonLine season={scheduleData?.season} gameCount={scheduleData?.games.length} />
+            {leagueConfig.note && <p className="-mt-3 text-xs text-muted-foreground">{leagueConfig.note}</p>}
+            {preview}
+          </>
+        )}
+        {children}
+      </div>
+      {selectedTeam && (
+        <div className="border-t border-border bg-popover px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+          {actionBar}
+        </div>
       )}
     </div>
   );
 
   return (
     <>
-      <div
-        className={
-          selectedTeam
-            ? "grid gap-10 pb-32 lg:pb-0 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] xl:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] xl:gap-14"
-            : "max-w-xl"
-        }
-      >
-        <section aria-label="Calendar settings">{controls}</section>
-        {preview && (
-          <section aria-label="Calendar preview" className="lg:sticky lg:top-20 lg:self-start">
-            {preview}
-          </section>
-        )}
-      </div>
+      {layout === "sheet" ? (
+        sheetBody
+      ) : (
+        <>
+          <div
+            className={
+              selectedTeam
+                ? "grid gap-10 pb-32 lg:pb-0 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] xl:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] xl:gap-14"
+                : "max-w-xl"
+            }
+          >
+            <section aria-label="Calendar settings">{controls}</section>
+            {preview && (
+              <section aria-label="Calendar preview" className="lg:sticky lg:top-20 lg:self-start">
+                {preview}
+              </section>
+            )}
+          </div>
 
-      {selectedTeam && (
-        <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-sm lg:hidden">
-          <ActionBar
-            mode={mode}
-            onDownload={download}
-            onSubscribe={subscribe}
-            downloading={downloading}
-            saving={saving}
-            disabled={!scheduleData}
-          />
-        </div>
+          {selectedTeam && (
+            <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-sm lg:hidden">
+              {actionBar}
+            </div>
+          )}
+        </>
       )}
 
       <EventOverrideDialog
