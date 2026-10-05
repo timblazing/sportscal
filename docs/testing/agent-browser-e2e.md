@@ -58,6 +58,16 @@ agent-browser snapshot -i
    curl -s 'http://localhost:3100/calendar/nhl/pittsburgh-penguins.ics' | rg -m1 'DURATION:PT2H30M'
    ```
 
+## MLS
+
+1. Reset local storage, open the **League** dropdown, choose **MLS**, search `San Diego`, and choose **San Diego FC** under **Western Conference**. Also search `LAFC` and an Eastern Conference club to confirm conference grouping and name/abbreviation search.
+2. Confirm the season reads `2026`, the preview title uses `Home v Away`, and both played results and upcoming fixtures appear. The scope note says MLS matches and playoffs only.
+3. Open **Advanced settings**. Confirm **Regular season** and **Playoffs** chips appear and **Preseason** does not. The default duration is 2 hours.
+4. Download the calendar using the visible download button. Confirm 34 regular-season events, `SUMMARY:` values containing ` v `, stable `espn-{eventId}-22529@sportscal.site` UIDs, and `DURATION:PT2H`.
+5. Fetch `/calendar/mls/san-diego-fc.ics`; confirm HTTP 200, `text/calendar`, and the same events as the download. Open Subscribe with unchanged defaults and confirm this canonical URL.
+6. The builder currently selects the season automatically. To check historical support, POST an Inter Miami CF configuration to `/api/download` with `seasonMode: "manual"`, `seasonOverride: 2025`, `teamId: "20232"`, and `teamSlug: "inter-miami-cf"`. Confirm 40 events (34 regular games plus Round One Game 1/2/3, Semifinal, Conference Final and MLS Cup). Repeat with `include.postseason: false`; confirm 34 events and no 2026 dates in either file.
+7. At 393×852, confirm MLS is selectable, the scope note wraps, and the page has no horizontal overflow. Check browser console/errors after the flow.
+
 ## Formatting and team search
 
 1. Reset local storage, select **NBA**, search `okc`, and choose **Oklahoma City Thunder**. Open **Formatting options**.

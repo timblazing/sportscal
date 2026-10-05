@@ -62,17 +62,29 @@ export async function fetchTeamGames(
   const league = LEAGUES[leagueKey];
   const revalidate =
     season.status === "completed" ? REVALIDATE.offseasonSchedule : REVALIDATE.activeSchedule;
-  const queries = league.scheduleQueries ?? league.scheduleSeasonTypes.map((seasontype) => ({ seasontype }));
-  const responses = await Promise.all(
-    queries.map((query) =>
-      espnFetchJson(
-        buildEspnUrl("site", league, ["teams", teamId, "schedule"], {
-          season: season.espnSeason,
-          ...query,
-        }),
-        { revalidate, tags: [`schedule:${leagueKey}:${teamId}`] },
-      ),
+  const queries = (league.scheduleQueries ?? league.scheduleSeasonTypes.map((seasontype) => ({ seasontype })))
+    .filter((query) => season.status !== "completed" || !("fixture" in query && query.fixture === true));
+  const requests = queries.map((query) =>
+    espnFetchJson(
+      buildEspnUrl("site", league, ["teams", teamId, "schedule"], {
+        season: season.espnSeason,
+        ...query,
+      }),
+      { revalidate, tags: [`schedule:${leagueKey}:${teamId}`] },
     ),
   );
+  let responses: unknown[];
+  // Only MLS's large soccer fan-out tolerates missing optional playoff data.
+  // Regular results and fixtures remain required; existing leagues still fail closed.
+  if (league.scheduleQueries && league.scheduleQueries.length > 2) {
+    const results = await Promise.allSettled(requests);
+    responses = [];
+    results.forEach((result, index) => {
+      if (result.status === "fulfilled") responses.push(result.value);
+      else if (queries[index].seasontype === league.regularSeasonTypeId) throw result.reason;
+    });
+  } else {
+    responses = await Promise.all(requests);
+  }
   return buildGames(responses, { league, teamId, season });
 }

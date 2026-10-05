@@ -42,6 +42,22 @@ export function mergeSettings(league: LeagueKey, stored?: Partial<BuilderSetting
   };
 }
 
+/** Carry edited templates across leagues, updating only fields still at their defaults. */
+export function templatesForLeagueChange(
+  templates: BuilderSettings["templates"],
+  previousLeague: LeagueKey,
+  nextLeague: LeagueKey,
+): BuilderSettings["templates"] {
+  const previous = defaultSettings(previousLeague).templates;
+  const next = defaultSettings(nextLeague).templates;
+  return Object.fromEntries(
+    Object.entries(templates).map(([field, value]) => {
+      const key = field as keyof BuilderSettings["templates"];
+      return [field, value === previous[key] ? next[key] : value];
+    }),
+  ) as BuilderSettings["templates"];
+}
+
 export function useBuilderSettings(league: LeagueKey, initial?: BuilderSettings) {
   const [settings, setSettings] = useState<BuilderSettings>(() => initial ?? defaultSettings(league));
 
@@ -66,9 +82,9 @@ export function useBuilderSettings(league: LeagueKey, initial?: BuilderSettings)
       seasonOverride: undefined,
       overrides: {},
       durationMinutes: leagueChanged ? LEAGUES[nextLeague].defaultDurationMinutes : s.durationMinutes,
-      templates: leagueChanged ? { ...DEFAULT_TEMPLATES, ...LEAGUES[nextLeague].defaultTemplates } : s.templates,
+      templates: leagueChanged ? templatesForLeagueChange(s.templates, league, nextLeague) : s.templates,
     }));
-  }, []);
+  }, [league]);
 
   return { settings, setSettings, update, setOverride, resetForTeam };
 }

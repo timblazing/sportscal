@@ -21,6 +21,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 - **NFL**
 - **NBA**
 - **NHL**
+- **MLS** (regular-season matches and all MLS Cup playoff rounds; other competitions excluded)
 - **NCAAF** (NCAA Division I football — FBS by default, grouped by conference, with a "Show all teams" option for FCS and other divisions)
 
 ## Features
@@ -30,7 +31,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 - Game types: Regular Season, Postseason, and Preseason on by default (NBA Play-In counts as postseason); individual types can be excluded in Advanced settings.
 - Global templates for calendar name, event title, description and location, with a click-to-insert variable picker and live preview
 - Minor per-game overrides (title, description, location, duration, include/exclude), stored as partial patches so later template changes still apply
-- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, adjustable
+- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, MLS 2h, adjustable
 - Events are **Free** (transparent) by default; optional Busy
 - Optional ESPN link in the iCalendar `URL` field (off by default, never in the description)
 - TBD kickoff times become all-day events and later turn into timed events **with the same UID**
@@ -43,6 +44,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 Canonical feeds use the default settings and need no database record:
 
 ```
+https://sportscal.site/calendar/mls/san-diego-fc.ics
 https://sportscal.site/calendar/nfl/pittsburgh-steelers.ics
 https://sportscal.site/calendar/nba/oklahoma-city-thunder.ics
 https://sportscal.site/calendar/ncaaf/oklahoma-sooners.ics

@@ -282,6 +282,7 @@ export function SportsCalendarBuilder({
       {mode === "create" && (
         <div className="space-y-2">
         <TeamPicker
+        groupByConference={leagueConfig.teamGrouping.kind === "conferenceStandings"}
           key={league}
           teams={teams.data?.teams}
           loading={teams.status === "loading" || teams.status === "idle"}
@@ -359,6 +360,7 @@ export function SportsCalendarBuilder({
             overrideCount={overrideCount}
             counts={scheduleData ? counts : undefined}
             gameTypes={leagueConfig.gameTypes}
+            postseasonLabel={leagueConfig.postseasonLabel}
           />
         </>
       )}
