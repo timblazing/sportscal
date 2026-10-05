@@ -118,22 +118,28 @@
     font-variant-numeric: tabular-nums;
   }
 }
-@keyframes marquee {
+.logo-loop {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.logo-loop__track {
+  animation: logo-loop-scroll linear infinite;
+  will-change: transform;
+}
+
+.logo-loop:hover .logo-loop__track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-loop-scroll {
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-1 * var(--logo-loop-distance)));
   }
 }
 
-@layer utilities {
-  .marquee {
-    animation: marquee 30s linear infinite;
-  }
-  .marquee:hover {
-    animation-play-state: paused;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .marquee {
-      animation: none;
-    }
+@media (prefers-reduced-motion: reduce) {
+  .logo-loop__track {
+    animation: none;
   }
 }

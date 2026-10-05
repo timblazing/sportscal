@@ -3,10 +3,9 @@
 import { ArrowRightIcon, CalendarDaysIcon, ChevronDownIcon, Clock3Icon, MapPinIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
-import { LeagueLogo } from "@/components/builder/league-logo";
+import { LogoLoop } from "@/components/landing/logo-loop";
 import { Button } from "@/components/ui/button";
 import { useTeamSearch } from "@/components/search/team-search-provider";
-import { LEAGUE_LIST } from "@/lib/config/leagues";
 
 const faqs = [
   {
@@ -72,22 +71,14 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section aria-label="Available leagues" className="overflow-hidden border-y border-border bg-card/50 py-6">
-        <div className="marquee flex w-max items-center">
-          {[0, 1].map((copy) => (
-            <ul key={copy} className="flex shrink-0 items-center gap-14 pr-14" aria-hidden={copy === 1 || undefined}>
-              {LEAGUE_LIST.map((league) => (
-                <li key={league.key} className="flex items-center" title={league.label}>
-                  <LeagueLogo league={league.key} label={league.label} size={40} />
-                </li>
-              ))}
-            </ul>
-          ))}
+      <section aria-label="Available leagues" className="mx-auto max-w-7xl overflow-hidden border-y border-border bg-card/50 py-6">
+        <div className="px-4 sm:px-6">
+          <LogoLoop />
         </div>
       </section>
 
       <section id="about" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28">
-        <div className="grid gap-10 border-b border-border pb-12 md:grid-cols-[minmax(12rem,0.7fr)_minmax(0,1.3fr)] md:gap-16">
+        <div className="grid gap-10 pb-12 md:grid-cols-[minmax(12rem,0.7fr)_minmax(0,1.3fr)] md:gap-16">
           <h2 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">About</h2>
           <div className="max-w-2xl space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
