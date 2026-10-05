@@ -90,6 +90,21 @@ export function membershipFromStandings(
   return map;
 }
 
+/** MLS: direct standings children are conferences without isConference flags. */
+export function membershipFromConferenceStandings(data: unknown): Map<string, Membership> {
+  const root = espnStandingsNodeSchema.parse(data);
+  const map = new Map<string, Membership>();
+  for (const conference of root.children ?? []) {
+    for (const entry of conference.standings?.entries ?? []) {
+      map.set(entry.team.id, {
+        tier: "primary",
+        conference: { id: conference.id, name: conference.name ?? "", shortName: conference.abbreviation },
+      });
+    }
+  }
+  return map;
+}
+
 function conferenceLabel(node: EspnStandingsNode): string {
   const name = node.shortName ?? node.name ?? "";
   return /independent|indep\./i.test(name) ? "Independents" : name;
@@ -106,7 +121,7 @@ export function buildCatalog(
     if (seen.has(raw.id) || raw.isActive === false) continue;
     seen.add(raw.id);
     const m = membership.get(raw.id);
-    const tier: CatalogTeam["tier"] = m?.tier ?? (league.teamGrouping.kind === "groups" || league.teamGrouping.kind === "flat" ? "primary" : "other");
+    const tier: CatalogTeam["tier"] = m?.tier ?? (league.teamGrouping.kind === "groups" || league.teamGrouping.kind === "flat" || league.teamGrouping.kind === "conferenceStandings" ? "primary" : "other");
     const team = normalizeTeam(raw, league, {
       conference: m?.conference,
       division: m?.division,
@@ -135,6 +150,11 @@ async function loadCatalog(leagueKey: LeagueKey): Promise<CatalogTeam[]> {
       revalidate: REVALIDATE.teams,
     });
     membership = membershipFromGroups(data);
+  } else if (league.teamGrouping.kind === "conferenceStandings") {
+    const data = await espnFetchJson(buildEspnUrl("standings", league, ["standings"]), {
+      revalidate: REVALIDATE.teams,
+    });
+    membership = membershipFromConferenceStandings(data);
   } else {
     const { defaultGroupIds, extendedGroupIds } = league.teamGrouping;
     const groups = [

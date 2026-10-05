@@ -38,6 +38,10 @@ export default function AboutPage() {
           Premier League calendars include Premier League matches only, not domestic cups or European fixtures.
           Kick-off times can change when TV selections are made and update on the next refresh.
         </p>
+        <p>
+          MLS calendars include MLS matches and playoffs only; Leagues Cup, U.S. Open Cup and
+          CONCACAF Champions Cup are not included.
+        </p>
       </Section>
 
       <Section title="Downloads vs. subscriptions">
