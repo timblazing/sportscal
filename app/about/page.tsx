@@ -69,6 +69,11 @@ export default function AboutPage() {
           aren&apos;t added until ESPN schedules them. Canceled games stay on the calendar marked as
           canceled.
         </p>
+        <p>
+          Many college basketball games appear as all-day events until ESPN assigns start times.
+          Conference tournaments follow ESPN&apos;s regular-season grouping; NCAA Tournament and NIT
+          games are postseason.
+        </p>
       </Section>
 
       <Section title="Privacy">

@@ -1,0 +1,600 @@
+{
+  "id": "50",
+  "name": "NCAA Division I",
+  "shortName": "Division I",
+  "abbreviation": "NCAA",
+  "isConference": false,
+  "children": [
+    {
+      "id": "1",
+      "name": "America East Conference",
+      "shortName": "Am. East",
+      "abbreviation": "aeast",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "399",
+              "location": "UAlbany",
+              "name": "Great Danes",
+              "abbreviation": "UALB",
+              "displayName": "UAlbany Great Danes",
+              "shortDisplayName": "UAlbany",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/399.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/399.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "name": "Atlantic Coast Conference",
+      "shortName": "ACC",
+      "abbreviation": "acc",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "97",
+              "location": "Louisville",
+              "name": "Cardinals",
+              "abbreviation": "LOU",
+              "displayName": "Louisville Cardinals",
+              "shortDisplayName": "Louisville",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/97.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "team": {
+              "id": "150",
+              "location": "Duke",
+              "name": "Blue Devils",
+              "abbreviation": "DUKE",
+              "displayName": "Duke Blue Devils",
+              "shortDisplayName": "Duke",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "46",
+      "name": "Atlantic Sun Conference",
+      "shortName": "Atlantic Sun",
+      "abbreviation": "ASUN",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "2511",
+              "location": "Queens University",
+              "name": "Royals",
+              "abbreviation": "QUC",
+              "displayName": "Queens University Royals",
+              "shortDisplayName": "Queens",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2511.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2511.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "8",
+      "name": "Big 12 Conference",
+      "shortName": "Big 12",
+      "abbreviation": "big12",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "2305",
+              "location": "Kansas",
+              "name": "Jayhawks",
+              "abbreviation": "KU",
+              "displayName": "Kansas Jayhawks",
+              "shortDisplayName": "Kansas",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2305.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "team": {
+              "id": "248",
+              "location": "Houston",
+              "name": "Cougars",
+              "abbreviation": "HOU",
+              "displayName": "Houston Cougars",
+              "shortDisplayName": "Houston",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/248.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "7",
+      "name": "Big Ten Conference",
+      "shortName": "Big Ten",
+      "abbreviation": "big10",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "356",
+              "location": "Illinois",
+              "name": "Fighting Illini",
+              "abbreviation": "ILL",
+              "displayName": "Illinois Fighting Illini",
+              "shortDisplayName": "Illinois",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/356.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "11",
+      "name": "Conference USA",
+      "shortName": "CUSA",
+      "abbreviation": "usa",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "98",
+              "location": "Western Kentucky",
+              "name": "Hilltoppers",
+              "abbreviation": "WKU",
+              "displayName": "Western Kentucky Hilltoppers",
+              "shortDisplayName": "Western KY",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/98.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/98.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "19",
+      "name": "Northeast Conference",
+      "shortName": "NEC",
+      "abbreviation": "neast",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "2598",
+              "location": "Saint Francis",
+              "name": "Red Wolves",
+              "abbreviation": "SFPA",
+              "displayName": "Saint Francis Red Wolves",
+              "shortDisplayName": "Saint Francis",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2598.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2598.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "20",
+      "name": "Ohio Valley Conference",
+      "shortName": "OVC",
+      "abbreviation": "ovc",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "88",
+              "location": "Southern Indiana",
+              "name": "Screaming Eagles",
+              "abbreviation": "USI",
+              "displayName": "Southern Indiana Screaming Eagles",
+              "shortDisplayName": "S Indiana",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/88.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/88.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "team": {
+              "id": "2815",
+              "location": "Lindenwood",
+              "name": "Lions",
+              "abbreviation": "LIN",
+              "displayName": "Lindenwood Lions",
+              "shortDisplayName": "Lindenwood",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2815.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2815.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "22",
+      "name": "Patriot League",
+      "shortName": "Patriot",
+      "abbreviation": "pat",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "104",
+              "location": "Boston University",
+              "name": "Terriers",
+              "abbreviation": "BU",
+              "displayName": "Boston University Terriers",
+              "shortDisplayName": "Boston U",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/104.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/104.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "23",
+      "name": "Southeastern Conference",
+      "shortName": "SEC",
+      "abbreviation": "sec",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "99",
+              "location": "LSU",
+              "name": "Tigers",
+              "abbreviation": "LSU",
+              "displayName": "LSU Tigers",
+              "shortDisplayName": "LSU",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/99.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "team": {
+              "id": "96",
+              "location": "Kentucky",
+              "name": "Wildcats",
+              "abbreviation": "UK",
+              "displayName": "Kentucky Wildcats",
+              "shortDisplayName": "Kentucky",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/96.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "team": {
+              "id": "333",
+              "location": "Alabama",
+              "name": "Crimson Tide",
+              "abbreviation": "ALA",
+              "displayName": "Alabama Crimson Tide",
+              "shortDisplayName": "Alabama",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/333.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "29",
+      "name": "West Coast Conference",
+      "shortName": "WCC",
+      "abbreviation": "wcc",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "2608",
+              "location": "Saint Mary's",
+              "name": "Gaels",
+              "abbreviation": "SMC",
+              "displayName": "Saint Mary's Gaels",
+              "shortDisplayName": "Saint Mary's",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2608.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "13",
+      "name": "Metro Conference",
+      "abbreviation": "Metro",
+      "shortName": "Metro",
+      "isConference": true,
+      "standings": {
+        "entries": [
+          {
+            "team": {
+              "id": "2561",
+              "location": "Siena",
+              "name": "Saints",
+              "abbreviation": "SIE",
+              "displayName": "Siena Saints",
+              "shortDisplayName": "Siena",
+              "isActive": true,
+              "logos": [
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2561.png",
+                  "rel": [
+                    "full",
+                    "default"
+                  ]
+                },
+                {
+                  "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2561.png",
+                  "rel": [
+                    "full",
+                    "dark"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

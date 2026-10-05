@@ -1,0 +1,4161 @@
+{
+  "season": {
+    "year": 2027,
+    "type": 1,
+    "name": "Preseason",
+    "displayName": "2026-27",
+    "half": 1
+  },
+  "requestedSeason": {
+    "year": 2027,
+    "type": 2,
+    "name": "Regular Season",
+    "displayName": "2026-27"
+  },
+  "events": [
+    {
+      "id": "401909562",
+      "date": "2026-11-02T05:00Z",
+      "name": "Army Black Knights at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 1,
+        "text": "Week 1"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909562/army-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909562",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909562",
+          "date": "2026-11-02T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "349",
+              "homeAway": "away",
+              "team": {
+                "id": "349",
+                "location": "Army",
+                "nickname": "Army",
+                "abbreviation": "ARMY",
+                "displayName": "Army Black Knights",
+                "shortDisplayName": "Army",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/349.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/349.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "11/2 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909563",
+      "date": "2026-11-05T05:00Z",
+      "name": "Coastal Carolina Chanticleers at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 1,
+        "text": "Week 1"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909563/coastal-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909563",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909563",
+          "date": "2026-11-05T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "324",
+              "homeAway": "away",
+              "team": {
+                "id": "324",
+                "location": "Coastal Carolina",
+                "nickname": "Coastal",
+                "abbreviation": "CCU",
+                "displayName": "Coastal Carolina Chanticleers",
+                "shortDisplayName": "Coastal",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/324.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/324.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "11/5 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909564",
+      "date": "2026-11-10T05:00Z",
+      "name": "Michigan State Spartans at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 2,
+        "text": "Week 2"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909564/michigan-st-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909564",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909564",
+          "date": "2026-11-10T05:00Z",
+          "timeValid": false,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "United Center",
+            "address": {
+              "city": "Chicago",
+              "state": "IL"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "127",
+              "homeAway": "away",
+              "team": {
+                "id": "127",
+                "location": "Michigan State",
+                "nickname": "Michigan St",
+                "abbreviation": "MSU",
+                "displayName": "Michigan State Spartans",
+                "shortDisplayName": "Michigan St",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/127.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Champions Classic"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "11/10 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909565",
+      "date": "2026-11-13T05:00Z",
+      "name": "SIU Edwardsville Cougars at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 2,
+        "text": "Week 2"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909565/siue-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909565",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909565",
+          "date": "2026-11-13T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2565",
+              "homeAway": "away",
+              "team": {
+                "id": "2565",
+                "location": "SIU Edwardsville",
+                "nickname": "SIUE",
+                "abbreviation": "SIUE",
+                "displayName": "SIU Edwardsville Cougars",
+                "shortDisplayName": "SIUE",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2565.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2565.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "11/13 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909566",
+      "date": "2026-11-17T05:00Z",
+      "name": "Illinois Fighting Illini at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 3,
+        "text": "Week 3"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909566/illinois-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909566",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909566",
+          "date": "2026-11-17T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "356",
+              "homeAway": "away",
+              "team": {
+                "id": "356",
+                "location": "Illinois",
+                "nickname": "Illinois",
+                "abbreviation": "ILL",
+                "displayName": "Illinois Fighting Illini",
+                "shortDisplayName": "Illinois",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/356.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "11/17 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909567",
+      "date": "2026-11-22T04:00Z",
+      "name": "Duke Blue Devils at Washington State Cougars",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 3,
+        "text": "Week 3"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909567/duke-washington-st",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909567",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909567",
+          "date": "2026-11-22T04:00Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Acrisure Arena",
+            "address": {
+              "city": "Palm Springs",
+              "state": "CA"
+            }
+          },
+          "competitors": [
+            {
+              "id": "265",
+              "homeAway": "home",
+              "team": {
+                "id": "265",
+                "location": "Washington State",
+                "nickname": "Washington St",
+                "abbreviation": "WSU",
+                "displayName": "Washington State Cougars",
+                "shortDisplayName": "Washington St",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/265.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/265.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [
+            {
+              "headline": "Acrisure Series"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Sat, November 21st at 11:00 PM EST",
+              "shortDetail": "11/21 - 11:00 PM EST"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909568",
+      "date": "2026-11-26T00:00Z",
+      "name": "UConn Huskies at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 4,
+        "text": "Week 4"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909568/uconn-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909568",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909568",
+          "date": "2026-11-26T00:00Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "T-Mobile Arena",
+            "address": {
+              "city": "Las Vegas",
+              "state": "NV"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "41",
+              "homeAway": "away",
+              "team": {
+                "id": "41",
+                "location": "UConn",
+                "nickname": "UConn",
+                "abbreviation": "CONN",
+                "displayName": "UConn Huskies",
+                "shortDisplayName": "UConn",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/41.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Wed, November 25th at 7:00 PM EST",
+              "shortDetail": "11/25 - 7:00 PM EST"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401906775",
+      "date": "2026-12-02T02:30Z",
+      "name": "Duke Blue Devils at Florida Gators",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 5,
+        "text": "Week 5"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401906775/duke-florida",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401906775",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401906775",
+          "date": "2026-12-02T02:30Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Stephen C. O'Connell Center",
+            "address": {
+              "city": "Gainesville",
+              "state": "FL"
+            }
+          },
+          "competitors": [
+            {
+              "id": "57",
+              "homeAway": "home",
+              "team": {
+                "id": "57",
+                "location": "Florida",
+                "nickname": "Florida",
+                "abbreviation": "FLA",
+                "displayName": "Florida Gators",
+                "shortDisplayName": "Florida",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/57.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "ACC/SEC Men's Challenge"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Tue, December 1st at 9:30 PM EST",
+              "shortDetail": "12/1 - 9:30 PM EST"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909569",
+      "date": "2026-12-04T05:00Z",
+      "name": "Harvard Crimson at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 5,
+        "text": "Week 5"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909569/harvard-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909569",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909569",
+          "date": "2026-12-04T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "108",
+              "homeAway": "away",
+              "team": {
+                "id": "108",
+                "location": "Harvard",
+                "nickname": "Harvard",
+                "abbreviation": "HARV",
+                "displayName": "Harvard Crimson",
+                "shortDisplayName": "Harvard",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/108.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/108.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "12/4 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401906786",
+      "date": "2026-12-09T02:00Z",
+      "name": "Duke Blue Devils at Georgia Bulldogs",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 6,
+        "text": "Week 6"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401906786/duke-georgia",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401906786",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401906786",
+          "date": "2026-12-09T02:00Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Madison Square Garden",
+            "address": {
+              "city": "New York",
+              "state": "NY"
+            }
+          },
+          "competitors": [
+            {
+              "id": "61",
+              "homeAway": "home",
+              "team": {
+                "id": "61",
+                "location": "Georgia",
+                "nickname": "Georgia",
+                "abbreviation": "UGA",
+                "displayName": "Georgia Bulldogs",
+                "shortDisplayName": "Georgia",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/61.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Jimmy V Classic"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Tue, December 8th at 9:00 PM EST",
+              "shortDetail": "12/8 - 9:00 PM EST"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909570",
+      "date": "2026-12-15T05:00Z",
+      "name": "Campbell Fighting Camels at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 7,
+        "text": "Week 7"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909570/campbell-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909570",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909570",
+          "date": "2026-12-15T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2097",
+              "homeAway": "away",
+              "team": {
+                "id": "2097",
+                "location": "Campbell",
+                "nickname": "Campbell",
+                "abbreviation": "CAM",
+                "displayName": "Campbell Fighting Camels",
+                "shortDisplayName": "Campbell",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2097.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2097.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "12/15 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909691",
+      "date": "2026-12-17T05:00Z",
+      "name": "Grambling Tigers at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 7,
+        "text": "Week 7"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909691/grambling-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909691",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909691",
+          "date": "2026-12-17T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2755",
+              "homeAway": "away",
+              "team": {
+                "id": "2755",
+                "location": "Grambling",
+                "nickname": "Grambling",
+                "abbreviation": "GRAM",
+                "displayName": "Grambling Tigers",
+                "shortDisplayName": "Grambling",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2755.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2755.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "12/17 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909692",
+      "date": "2026-12-21T05:00Z",
+      "name": "Texas Tech Red Raiders at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 8,
+        "text": "Week 8"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909692/texas-tech-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909692",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909692",
+          "date": "2026-12-21T05:00Z",
+          "timeValid": false,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Madison Square Garden",
+            "address": {
+              "city": "New York",
+              "state": "NY"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2641",
+              "homeAway": "away",
+              "team": {
+                "id": "2641",
+                "location": "Texas Tech",
+                "nickname": "Texas Tech",
+                "abbreviation": "TTU",
+                "displayName": "Texas Tech Red Raiders",
+                "shortDisplayName": "Texas Tech",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2641.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "12/21 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918098",
+      "date": "2026-12-30T05:00Z",
+      "name": "Duke Blue Devils at Georgia Tech Yellow Jackets",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 9,
+        "text": "Week 9"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918098/duke-georgia-tech",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918098",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918098",
+          "date": "2026-12-30T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "McCamish Pavilion",
+            "address": {
+              "city": "Atlanta",
+              "state": "GA"
+            }
+          },
+          "competitors": [
+            {
+              "id": "59",
+              "homeAway": "home",
+              "team": {
+                "id": "59",
+                "location": "Georgia Tech",
+                "nickname": "Georgia Tech",
+                "abbreviation": "GT",
+                "displayName": "Georgia Tech Yellow Jackets",
+                "shortDisplayName": "Georgia Tech",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/59.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/59.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "12/30 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918100",
+      "date": "2027-01-02T05:00Z",
+      "name": "California Golden Bears at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 9,
+        "text": "Week 9"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918100/california-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918100",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918100",
+          "date": "2027-01-02T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "25",
+              "homeAway": "away",
+              "team": {
+                "id": "25",
+                "location": "California",
+                "nickname": "California",
+                "abbreviation": "CAL",
+                "displayName": "California Golden Bears",
+                "shortDisplayName": "California",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/25.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/25.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/2 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918111",
+      "date": "2027-01-05T05:00Z",
+      "name": "Duke Blue Devils at Syracuse Orange",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 10,
+        "text": "Week 10"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918111/duke-syracuse",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918111",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918111",
+          "date": "2027-01-05T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "JMA Wireless Dome",
+            "address": {
+              "city": "Syracuse",
+              "state": "NY"
+            }
+          },
+          "competitors": [
+            {
+              "id": "183",
+              "homeAway": "home",
+              "team": {
+                "id": "183",
+                "location": "Syracuse",
+                "nickname": "Syracuse",
+                "abbreviation": "SYR",
+                "displayName": "Syracuse Orange",
+                "shortDisplayName": "Syracuse",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/183.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/183.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/5 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918120",
+      "date": "2027-01-09T05:00Z",
+      "name": "Pittsburgh Panthers at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 10,
+        "text": "Week 10"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918120/pitt-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918120",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918120",
+          "date": "2027-01-09T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "221",
+              "homeAway": "away",
+              "team": {
+                "id": "221",
+                "location": "Pittsburgh",
+                "nickname": "Pitt",
+                "abbreviation": "PITT",
+                "displayName": "Pittsburgh Panthers",
+                "shortDisplayName": "Pitt",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/221.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/221.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/9 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918131",
+      "date": "2027-01-13T05:00Z",
+      "name": "Stanford Cardinal at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 11,
+        "text": "Week 11"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918131/stanford-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918131",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918131",
+          "date": "2027-01-13T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "24",
+              "homeAway": "away",
+              "team": {
+                "id": "24",
+                "location": "Stanford",
+                "nickname": "Stanford",
+                "abbreviation": "STAN",
+                "displayName": "Stanford Cardinal",
+                "shortDisplayName": "Stanford",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/24.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/24.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/13 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918140",
+      "date": "2027-01-16T05:00Z",
+      "name": "Duke Blue Devils at Boston College Eagles",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 11,
+        "text": "Week 11"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918140/duke-boston-college",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918140",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918140",
+          "date": "2027-01-16T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Conte Forum",
+            "address": {
+              "city": "Chestnut Hill",
+              "state": "MA"
+            }
+          },
+          "competitors": [
+            {
+              "id": "103",
+              "homeAway": "home",
+              "team": {
+                "id": "103",
+                "location": "Boston College",
+                "nickname": "Boston College",
+                "abbreviation": "BC",
+                "displayName": "Boston College Eagles",
+                "shortDisplayName": "Boston College",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/103.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/103.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/16 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918148",
+      "date": "2027-01-20T05:00Z",
+      "name": "Duke Blue Devils at Wake Forest Demon Deacons",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 12,
+        "text": "Week 12"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918148/duke-wake-forest",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918148",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918148",
+          "date": "2027-01-20T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "LJVM Coliseum",
+            "address": {
+              "city": "Winston-Salem",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "154",
+              "homeAway": "home",
+              "team": {
+                "id": "154",
+                "location": "Wake Forest",
+                "nickname": "Wake Forest",
+                "abbreviation": "WAKE",
+                "displayName": "Wake Forest Demon Deacons",
+                "shortDisplayName": "Wake Forest",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/154.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/154.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/20 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401925968",
+      "date": "2027-01-21T05:00Z",
+      "name": "Duke Blue Devils at Boston College Eagles",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 12,
+        "text": "Week 12"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401925968/duke-boston-college",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401925968",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401925968",
+          "date": "2027-01-21T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Conte Forum",
+            "address": {
+              "city": "Chestnut Hill",
+              "state": "MA"
+            }
+          },
+          "competitors": [
+            {
+              "id": "103",
+              "homeAway": "home",
+              "team": {
+                "id": "103",
+                "location": "Boston College",
+                "nickname": "Boston College",
+                "abbreviation": "BC",
+                "displayName": "Boston College Eagles",
+                "shortDisplayName": "Boston College",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/103.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/103.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/21 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918156",
+      "date": "2027-01-23T05:00Z",
+      "name": "Notre Dame Fighting Irish at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 12,
+        "text": "Week 12"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918156/notre-dame-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918156",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918156",
+          "date": "2027-01-23T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "87",
+              "homeAway": "away",
+              "team": {
+                "id": "87",
+                "location": "Notre Dame",
+                "nickname": "Notre Dame",
+                "abbreviation": "ND",
+                "displayName": "Notre Dame Fighting Irish",
+                "shortDisplayName": "Notre Dame",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/87.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/23 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918170",
+      "date": "2027-01-30T05:00Z",
+      "name": "Duke Blue Devils at Clemson Tigers",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 13,
+        "text": "Week 13"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918170/duke-clemson",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918170",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918170",
+          "date": "2027-01-30T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Littlejohn Coliseum",
+            "address": {
+              "city": "Clemson",
+              "state": "SC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "228",
+              "homeAway": "home",
+              "team": {
+                "id": "228",
+                "location": "Clemson",
+                "nickname": "Clemson",
+                "abbreviation": "CLEM",
+                "displayName": "Clemson Tigers",
+                "shortDisplayName": "Clemson",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/228.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "1/30 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918173",
+      "date": "2027-02-02T00:00Z",
+      "name": "Miami Hurricanes at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 14,
+        "text": "Week 14"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918173/miami-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918173",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918173",
+          "date": "2027-02-02T00:00Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2390",
+              "homeAway": "away",
+              "team": {
+                "id": "2390",
+                "location": "Miami",
+                "nickname": "Miami",
+                "abbreviation": "MIA",
+                "displayName": "Miami Hurricanes",
+                "shortDisplayName": "Miami",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2390.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Mon, February 1st at 7:00 PM EST",
+              "shortDetail": "2/1 - 7:00 PM EST"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918187",
+      "date": "2027-02-06T05:00Z",
+      "name": "Duke Blue Devils at Virginia Cavaliers",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 14,
+        "text": "Week 14"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918187/duke-virginia",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918187",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918187",
+          "date": "2027-02-06T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "John Paul Jones Arena",
+            "address": {
+              "city": "Charlottesville",
+              "state": "VA"
+            }
+          },
+          "competitors": [
+            {
+              "id": "258",
+              "homeAway": "home",
+              "team": {
+                "id": "258",
+                "location": "Virginia",
+                "nickname": "Virginia",
+                "abbreviation": "UVA",
+                "displayName": "Virginia Cavaliers",
+                "shortDisplayName": "Virginia",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/258.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "2/6 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918190",
+      "date": "2027-02-09T05:00Z",
+      "name": "Duke Blue Devils at SMU Mustangs",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 15,
+        "text": "Week 15"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918190/duke-smu",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918190",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918190",
+          "date": "2027-02-09T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Moody Coliseum (Dallas)",
+            "address": {
+              "city": "Dallas",
+              "state": "TX"
+            }
+          },
+          "competitors": [
+            {
+              "id": "2567",
+              "homeAway": "home",
+              "team": {
+                "id": "2567",
+                "location": "SMU",
+                "nickname": "SMU",
+                "abbreviation": "SMU",
+                "displayName": "SMU Mustangs",
+                "shortDisplayName": "SMU",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2567.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "2/9 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918203",
+      "date": "2027-02-13T22:30Z",
+      "name": "North Carolina Tar Heels at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 15,
+        "text": "Week 15"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918203/north-carolina-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918203",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918203",
+          "date": "2027-02-13T22:30Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "153",
+              "homeAway": "away",
+              "team": {
+                "id": "153",
+                "location": "North Carolina",
+                "nickname": "North Carolina",
+                "abbreviation": "UNC",
+                "displayName": "North Carolina Tar Heels",
+                "shortDisplayName": "North Carolina",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/153.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ABC"
+              }
+            }
+          ],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Sat, February 13th at 5:30 PM EST",
+              "shortDetail": "2/13 - 5:30 PM EST"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918207",
+      "date": "2027-02-16T05:00Z",
+      "name": "Florida State Seminoles at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 16,
+        "text": "Week 16"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918207/florida-st-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918207",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918207",
+          "date": "2027-02-16T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "52",
+              "homeAway": "away",
+              "team": {
+                "id": "52",
+                "location": "Florida State",
+                "nickname": "Florida St",
+                "abbreviation": "FSU",
+                "displayName": "Florida State Seminoles",
+                "shortDisplayName": "Florida St",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/52.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "2/16 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401909693",
+      "date": "2027-02-20T05:00Z",
+      "name": "Gonzaga Bulldogs at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 16,
+        "text": "Week 16"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909693/gonzaga-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401909693",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401909693",
+          "date": "2027-02-20T05:00Z",
+          "timeValid": false,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Little Caesars Arena",
+            "address": {
+              "city": "Detroit",
+              "state": "MI"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2250",
+              "homeAway": "away",
+              "team": {
+                "id": "2250",
+                "location": "Gonzaga",
+                "nickname": "Gonzaga",
+                "abbreviation": "GONZ",
+                "displayName": "Gonzaga Bulldogs",
+                "shortDisplayName": "Gonzaga",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2250.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "2/20 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918228",
+      "date": "2027-02-24T05:00Z",
+      "name": "Duke Blue Devils at Louisville Cardinals",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 17,
+        "text": "Week 17"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918228/duke-louisville",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918228",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918228",
+          "date": "2027-02-24T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "KFC Yum! Center",
+            "address": {
+              "city": "Louisville",
+              "state": "KY"
+            }
+          },
+          "competitors": [
+            {
+              "id": "97",
+              "homeAway": "home",
+              "team": {
+                "id": "97",
+                "location": "Louisville",
+                "nickname": "Louisville",
+                "abbreviation": "LOU",
+                "displayName": "Louisville Cardinals",
+                "shortDisplayName": "Louisville",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/97.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "2/24 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918235",
+      "date": "2027-02-27T05:00Z",
+      "name": "NC State Wolfpack at Duke Blue Devils",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 17,
+        "text": "Week 17"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918235/nc-state-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918235",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918235",
+          "date": "2027-02-27T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "152",
+              "homeAway": "away",
+              "team": {
+                "id": "152",
+                "location": "NC State",
+                "nickname": "NC State",
+                "abbreviation": "NCSU",
+                "displayName": "NC State Wolfpack",
+                "shortDisplayName": "NC State",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/152.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/152.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "2/27 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918238",
+      "date": "2027-03-02T00:00Z",
+      "name": "Virginia Cavaliers at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 18,
+        "text": "Week 18"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918238/virginia-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918238",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918238",
+          "date": "2027-03-02T00:00Z",
+          "timeValid": true,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Cameron Indoor Stadium",
+            "address": {
+              "city": "Durham",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "258",
+              "homeAway": "away",
+              "team": {
+                "id": "258",
+                "location": "Virginia",
+                "nickname": "Virginia",
+                "abbreviation": "UVA",
+                "displayName": "Virginia Cavaliers",
+                "shortDisplayName": "Virginia",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/258.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "Mon, March 1st at 7:00 PM EST",
+              "shortDetail": "3/1 - 7:00 PM EST"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401918251",
+      "date": "2027-03-06T05:00Z",
+      "name": "Duke Blue Devils at North Carolina Tar Heels",
+      "timeValid": false,
+      "season": {
+        "year": 2027,
+        "displayName": "2026-27"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 18,
+        "text": "Week 18"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401918251/duke-north-carolina",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401918251",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401918251",
+          "date": "2027-03-06T05:00Z",
+          "timeValid": false,
+          "neutralSite": false,
+          "venue": {
+            "fullName": "Dean E. Smith Center",
+            "address": {
+              "city": "Chapel Hill",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "153",
+              "homeAway": "home",
+              "team": {
+                "id": "153",
+                "location": "North Carolina",
+                "nickname": "North Carolina",
+                "abbreviation": "UNC",
+                "displayName": "North Carolina Tar Heels",
+                "shortDisplayName": "North Carolina",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/153.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "150",
+              "homeAway": "away",
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [],
+          "notes": [],
+          "status": {
+            "type": {
+              "name": "STATUS_SCHEDULED",
+              "state": "pre",
+              "completed": false,
+              "description": "Scheduled",
+              "detail": "3/6 - TBD",
+              "shortDetail": "TBD"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

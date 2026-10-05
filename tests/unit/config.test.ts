@@ -42,6 +42,15 @@ describe("calendar config validation", () => {
     expect(calendarConfigSchema.safeParse({ ...nhl, teamId: "129764", teamSlug: "utah-mammoth" }).success).toBe(true);
   });
 
+  it("supports NCAAB defaults and saved calendar validation", () => {
+    expect(LEAGUE_KEYS).toContain("ncaab");
+    const config = defaultConfig("ncaab", { id: "150", slug: "duke-blue-devils" });
+    expect(config.durationMinutes).toBe(120);
+    expect(calendarConfigSchema.parse(config)).toEqual(config);
+    expect(isDefaultConfig(config)).toBe(true);
+    expect(calendarConfigSchema.parse({ ...config, seasonMode: "manual", seasonOverride: 2026 }).league).toBe("ncaab");
+  });
+
   it("registers Premier League soccer defaults", () => {
     expect(LEAGUE_KEYS).toContain("epl");
     const epl = defaultConfig("epl", { id: "364", slug: "liverpool" });

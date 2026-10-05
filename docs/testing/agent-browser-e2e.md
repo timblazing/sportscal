@@ -150,3 +150,14 @@ Close the isolated browser session when finished:
 ```sh
 agent-browser close
 ```
+
+## NCAAB (men's Division I basketball)
+
+1. Reset local storage, choose **NCAAB** in the League dropdown, search `duke`, and select **Duke Blue Devils**. Confirm the URL includes `league=ncaab&team=duke-blue-devils`, the season is `2026-27` (upcoming in October 2026), and schedule rows appear.
+2. Confirm TBD start times appear as all-day events and a Champions Classic game shows **Neutral site** / `vs`. Search `kansas jayhawks` and `queens university`; both teams must be selectable. Conference searches such as `ACC` must also match.
+3. Choose Duke again and override the season to `2025-26`. ACC Tournament games belong to **Regular season**, while NCAA Tournament games belong to **Postseason**. Toggle postseason off and confirm conference tournament games remain.
+4. Download Duke's calendar. Fetch `/calendar/ncaab/duke-blue-devils.ics` twice and confirm valid `BEGIN:VCALENDAR`, one `VEVENT` per included game, `DTSTART;VALUE=DATE` for TBD games, `DURATION:PT2H` for timed games, and unchanged UIDs between requests.
+5. With a migrated database configured, customize the title and save a subscription. Confirm its NCAAB feed and private manage link work; edit the title and confirm the feed updates while UIDs retain the public calendar ID.
+6. At 393×852, repeat the Duke selection and confirm no horizontal overflow and visible schedule rows.
+
+NCAAB fixtures are trimmed live ESPN captures from 2026-10-05. The Montana State fixture uses the live Northwest Indian matchup with optional opponent abbreviation/logo fields removed to cover missing metadata. Synthetic TBD competitors and DST timestamps are constructed in unit tests; no bracket placeholders are added by the adapter.

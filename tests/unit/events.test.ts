@@ -39,6 +39,7 @@ describe("durations", () => {
   it("uses league defaults and overrides", () => {
     expect(defaultConfig("nfl", { id: "1", slug: "a" }).durationMinutes).toBe(210);
     expect(defaultConfig("ncaaf", { id: "1", slug: "a" }).durationMinutes).toBe(210);
+    expect(defaultConfig("ncaab", { id: "150", slug: "duke-blue-devils" }).durationMinutes).toBe(120);
     expect(defaultConfig("nba", { id: "1", slug: "a" }).durationMinutes).toBe(150);
     expect(defaultConfig("mls", { id: "22529", slug: "san-diego-fc" }).durationMinutes).toBe(120);
     const config = { ...steelersConfig(), overrides: { "401873002": { durationMinutes: 240 } } };

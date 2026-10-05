@@ -5,7 +5,7 @@
  * user input.
  */
 
-export const LEAGUE_KEYS = ["nfl", "nba", "wnba", "nhl", "ncaaf", "mls", "epl"] as const;
+export const LEAGUE_KEYS = ["nfl", "nba", "wnba", "nhl", "ncaaf", "ncaab", "mls", "epl"] as const;
 export type LeagueKey = (typeof LEAGUE_KEYS)[number];
 
 export type NormalizedSeasonType = "preseason" | "regular" | "postseason" | "other";
@@ -140,6 +140,20 @@ export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
     teamGrouping: { kind: "standings", defaultGroupIds: ["80"], extendedGroupIds: ["81"] },
     scheduleTimeZone: "America/New_York",
     hasWeeks: true,
+  },
+  ncaab: {
+    key: "ncaab",
+    sport: "basketball",
+    league: "mens-college-basketball",
+    label: "NCAAB",
+    name: "NCAA Division I Men's Basketball",
+    defaultDurationMinutes: 120,
+    // Conference tournaments and MTEs are regular season; NCAA/NIT games are postseason.
+    scheduleSeasonTypes: [2, 3],
+    seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
+    teamGrouping: { kind: "standings", defaultGroupIds: ["50"], extendedGroupIds: [] },
+    scheduleTimeZone: "America/New_York",
+    hasWeeks: false,
   },
   mls: {
     key: "mls",

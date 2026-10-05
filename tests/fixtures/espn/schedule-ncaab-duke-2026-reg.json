@@ -1,0 +1,742 @@
+{
+  "season": {
+    "year": 2027,
+    "type": 1,
+    "name": "Preseason",
+    "displayName": "2026-27",
+    "half": 1
+  },
+  "requestedSeason": {
+    "year": 2026,
+    "type": 2,
+    "name": "Regular Season",
+    "displayName": "2025-26"
+  },
+  "events": [
+    {
+      "id": "401817228",
+      "date": "2025-11-05T01:45Z",
+      "name": "Texas Longhorns at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 1,
+        "text": "Week 1"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401817228/texas-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401817228",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401817228",
+          "date": "2025-11-05T01:45Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Spectrum Center",
+            "address": {
+              "city": "Charlotte",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "75",
+                "value": 75.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "251",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "60",
+                "value": 60.0
+              },
+              "team": {
+                "id": "251",
+                "location": "Texas",
+                "nickname": "Texas",
+                "abbreviation": "TEX",
+                "displayName": "Texas Longhorns",
+                "shortDisplayName": "Texas",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/251.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            },
+            {
+              "media": {
+                "shortName": "ERADM"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Dick Vitale Invitational presented by Belk"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401817238",
+      "date": "2026-02-21T23:30Z",
+      "name": "Michigan Wolverines at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 16,
+        "text": "Week 16"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401817238/michigan-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401817238",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401817238",
+          "date": "2026-02-21T23:30Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Capital One Arena",
+            "address": {
+              "city": "Washington",
+              "state": "DC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "68",
+                "value": 68.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "130",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "63",
+                "value": 63.0
+              },
+              "team": {
+                "id": "130",
+                "location": "Michigan",
+                "nickname": "Michigan",
+                "abbreviation": "MICH",
+                "displayName": "Michigan Wolverines",
+                "shortDisplayName": "Michigan",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/130.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Edward Jones Capital Showcase"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401851179",
+      "date": "2026-03-12T23:00Z",
+      "name": "Florida State Seminoles at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 19,
+        "text": "Week 19"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401851179/florida-st-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401851179",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401851179",
+          "date": "2026-03-12T23:00Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Spectrum Center",
+            "address": {
+              "city": "Charlotte",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "80",
+                "value": 80.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "52",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "79",
+                "value": 79.0
+              },
+              "team": {
+                "id": "52",
+                "location": "Florida State",
+                "nickname": "Florida St",
+                "abbreviation": "FSU",
+                "displayName": "Florida State Seminoles",
+                "shortDisplayName": "Florida St",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/52.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "T. Rowe Price ACC Tournament - Quarterfinal"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401851182",
+      "date": "2026-03-14T01:35Z",
+      "name": "Clemson Tigers at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 19,
+        "text": "Week 19"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401851182/clemson-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401851182",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401851182",
+          "date": "2026-03-14T01:35Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Spectrum Center",
+            "address": {
+              "city": "Charlotte",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "73",
+                "value": 73.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "228",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "61",
+                "value": 61.0
+              },
+              "team": {
+                "id": "228",
+                "location": "Clemson",
+                "nickname": "Clemson",
+                "abbreviation": "CLEM",
+                "displayName": "Clemson Tigers",
+                "shortDisplayName": "Clemson",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/228.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN2"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "T. Rowe Price ACC Tournament - Semifinal"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401851183",
+      "date": "2026-03-15T00:40Z",
+      "name": "Virginia Cavaliers at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "2",
+        "type": 2,
+        "name": "Regular Season",
+        "abbreviation": "reg"
+      },
+      "week": {
+        "number": 19,
+        "text": "Week 19"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401851183/virginia-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401851183",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401851183",
+          "date": "2026-03-15T00:40Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Spectrum Center",
+            "address": {
+              "city": "Charlotte",
+              "state": "NC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "74",
+                "value": 74.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "258",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "70",
+                "value": 70.0
+              },
+              "team": {
+                "id": "258",
+                "location": "Virginia",
+                "nickname": "Virginia",
+                "abbreviation": "UVA",
+                "displayName": "Virginia Cavaliers",
+                "shortDisplayName": "Virginia",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/258.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "ESPN"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "T. Rowe Price ACC Tournament - Final"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
