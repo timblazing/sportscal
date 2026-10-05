@@ -5,7 +5,7 @@
  * user input.
  */
 
-export const LEAGUE_KEYS = ["nfl", "nba", "wnba", "nhl", "ncaaf", "ncaab", "mls", "epl"] as const;
+export const LEAGUE_KEYS = ["nfl", "nba", "wnba", "nhl", "ncaaf", "ncaab", "mlb", "mls", "epl"] as const;
 export type LeagueKey = (typeof LEAGUE_KEYS)[number];
 
 export type NormalizedSeasonType = "preseason" | "regular" | "postseason" | "other";
@@ -46,6 +46,9 @@ export interface LeagueConfig {
   gameTypes?: ("preseason" | "regular" | "postseason")[];
   defaultTemplates?: Partial<Record<"calendarName" | "title" | "description" | "location", string>>;
   drawLabel?: string;
+  preseasonLabel?: string;
+  titleTemplate?: string;
+  postponedStatus?: "tentative" | "cancelled";
   postseasonLabel?: string;
   note?: string;
   /**
@@ -140,6 +143,22 @@ export const LEAGUES: Record<LeagueKey, LeagueConfig> = {
     teamGrouping: { kind: "standings", defaultGroupIds: ["80"], extendedGroupIds: ["81"] },
     scheduleTimeZone: "America/New_York",
     hasWeeks: true,
+  },
+  mlb: {
+    key: "mlb",
+    sport: "baseball",
+    league: "mlb",
+    label: "MLB",
+    name: "Major League Baseball",
+    defaultDurationMinutes: 180,
+    scheduleSeasonTypes: [1, 2, 3],
+    seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
+    teamGrouping: { kind: "groups" },
+    scheduleTimeZone: "America/New_York",
+    hasWeeks: false,
+    preseasonLabel: "Spring Training",
+    titleTemplate: "{team} {homeAwaySymbol} {opponent} {doubleheader}",
+    postponedStatus: "cancelled",
   },
   ncaab: {
     key: "ncaab",

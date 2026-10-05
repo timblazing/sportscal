@@ -177,7 +177,7 @@ describe("WNBA preview and calendars", () => {
     expect(savedIcs.getAllSubcomponents("vevent")).toHaveLength(7);
     expect(String(savedIcs.getAllSubcomponents("vevent")[0].getFirstPropertyValue("uid"))).toContain("-k3j9x0a1b2c4@");
 
-    for (const league of ["unknown", "mlb"]) {
+    for (const league of ["unknown"]) {
       const response = await getFeed(request, { params: Promise.resolve({ league, path: ["atlanta-dream.ics"] }) });
       expect(response.status).toBe(404);
     }

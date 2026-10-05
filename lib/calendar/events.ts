@@ -3,6 +3,7 @@
  * Shared by the live preview (client) and the .ics generator (server), so the
  * preview always matches the file.
  */
+import { LEAGUES } from "@/lib/config/leagues";
 import type { SportsCalGame } from "@/lib/types";
 import type { CalendarConfig } from "@/lib/validation/calendar-config";
 import { isSeasonTypeIncluded } from "@/lib/calendar/filters";
@@ -47,7 +48,8 @@ export function eventTiming(game: SportsCalGame, durationMinutes: number): Event
 
 export function eventStatus(game: SportsCalGame): EventStatus {
   if (game.status.cancelled) return "CANCELLED";
-  if (game.status.postponed) return "TENTATIVE";
+  if (game.status.postponed) return LEAGUES[game.league].postponedStatus === "cancelled" ? "CANCELLED" : "TENTATIVE";
+  if (game.status.tentative) return "TENTATIVE";
   return "CONFIRMED";
 }
 

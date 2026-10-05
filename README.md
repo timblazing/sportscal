@@ -23,6 +23,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 - **WNBA** (grouped by Eastern/Western conference; Commissioner’s Cup games are included with the regular season)
 - **NHL**
 - **MLS** (regular-season matches and all MLS Cup playoff rounds; other competitions excluded)
+- **MLB** (30 teams; spring training, regular season, postseason)
 - **NCAAF** (NCAA Division I football — FBS by default, grouped by conference, with a "Show all teams" option for FCS and other divisions)
 - **NCAAB** (NCAA Division I men's basketball — grouped by conference)
 
@@ -30,14 +31,14 @@ No ticket links, store links, social links or app ads. Add more with templates i
 
 - Searchable team picker (name, school, mascot, abbreviation) grouped by conference/division from ESPN metadata
 - Automatic season detection: the in-progress season, the upcoming season once ESPN publishes it, otherwise the latest one. NBA labels come from ESPN (`2026-27`), never from the numeric season id.
-- Game types: Regular Season, Postseason, and Preseason on by default (NBA Play-In counts as postseason); individual types can be excluded in Advanced settings.
+- Game types: Regular Season, Postseason, and Preseason on by default (NBA Play-In counts as postseason; MLB Spring Training counts as preseason); individual types can be excluded in Advanced settings.
 - Global templates for calendar name, event title, description and location, with a click-to-insert variable picker and live preview
 - Minor per-game overrides (title, description, location, duration, include/exclude), stored as partial patches so later template changes still apply
-- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, WNBA/MLS/NCAAB 2h, adjustable
+- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, MLB 3h, WNBA/MLS/NCAAB 2h, adjustable
 - Events are **Free** (transparent) by default; optional Busy
 - Optional ESPN link in the iCalendar `URL` field (off by default, never in the description)
 - TBD kickoff times become all-day events and later turn into timed events **with the same UID**
-- Canceled games stay on the calendar with `STATUS:CANCELLED`; postponed games without a new time become tentative all-day events
+- Canceled games stay on the calendar with `STATUS:CANCELLED`; MLB postponements remain cancelled all-day entries while makeups have separate UIDs; other postponed games without a new time become tentative all-day events
 - Downloads (snapshot, nothing stored) and subscription feeds (regenerated from current ESPN data)
 - Anonymous saved calendars with a private edit link — no accounts
 
@@ -49,6 +50,8 @@ Canonical feeds use the default settings and need no database record:
 https://sportscal.site/calendar/mls/san-diego-fc.ics
 https://sportscal.site/calendar/nfl/pittsburgh-steelers.ics
 https://sportscal.site/calendar/nba/oklahoma-city-thunder.ics
+https://sportscal.site/calendar/mlb/los-angeles-dodgers.ics
+https://sportscal.site/calendar/mlb/athletics.ics
 https://sportscal.site/calendar/wnba/indiana-fever.ics
 https://sportscal.site/calendar/ncaaf/oklahoma-sooners.ics
 https://sportscal.site/calendar/ncaab/duke-blue-devils.ics
@@ -187,7 +190,7 @@ Build the image locally with `docker build -t sportscal .`.
 
 ### Caching
 
-Feeds send `Cache-Control: public, max-age=300, s-maxage=900, stale-while-revalidate=3600`, so a caching proxy or CDN in front can absorb calendar-app polling. ESPN requests are cached in the server's data cache: team catalogs 24h, season metadata 6h, schedules 15 min (3h for completed seasons). The cache lives in the container and starts empty after a restart.
+Feeds send `Cache-Control: public, max-age=300, s-maxage=900, stale-while-revalidate=3600`, so a caching proxy or CDN in front can absorb calendar-app polling. ESPN requests are cached in the server's data cache: team catalogs 24h, season metadata 6h, normalized schedules 15 min (3h for completed seasons). Raw schedule responses bypass both the fetch cache and in-memory fallback because completed MLB payloads exceed Next's 2 MB cap; a bounded fallback retains only normalized schedules. The cache lives in the container and starts empty after a restart.
 
 ### Neon
 

@@ -83,6 +83,7 @@ export interface SportsCalGame {
   };
 
   broadcasts: string[];
+  doubleheader?: { game: number };
 
   /** ESPN headline note, e.g. "West Finals - Game 7" or a bowl name. */
   note?: string;
@@ -92,6 +93,7 @@ export interface SportsCalGame {
     completed: boolean;
     cancelled?: boolean;
     postponed?: boolean;
+    tentative?: boolean;
     detail?: string;
   };
 

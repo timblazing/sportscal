@@ -1,0 +1,61 @@
+{
+  "year": 2027,
+  "startDate": "2027-02-18T08:00Z",
+  "endDate": "2027-12-11T07:59Z",
+  "displayName": "2027",
+  "type": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2027/types/2?lang=en&region=us",
+    "id": "2",
+    "type": 2,
+    "name": "Regular Season",
+    "abbreviation": "reg",
+    "year": 2027,
+    "startDate": "2027-03-24T07:00Z",
+    "endDate": "2027-09-29T06:59Z",
+    "hasGroups": false,
+    "hasStandings": false,
+    "hasLegs": false,
+    "groups": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2027/types/2/groups?lang=en&region=us"
+    },
+    "weeks": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2027/types/2/weeks?lang=en&region=us"
+    },
+    "corrections": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/seasons/2027/types/2/corrections?lang=en&region=us"
+    },
+    "slug": "regular-season"
+  },
+  "types": {
+    "items": [
+      {
+        "id": "1",
+        "name": "Spring Training",
+        "abbreviation": "pre",
+        "startDate": "2027-02-18T08:00Z",
+        "endDate": "2027-03-24T06:59Z"
+      },
+      {
+        "id": "2",
+        "name": "Regular Season",
+        "abbreviation": "reg",
+        "startDate": "2027-03-24T07:00Z",
+        "endDate": "2027-09-29T06:59Z"
+      },
+      {
+        "id": "3",
+        "name": "Postseason",
+        "abbreviation": "post",
+        "startDate": "2027-09-29T07:00Z",
+        "endDate": "2027-12-11T07:59Z"
+      },
+      {
+        "id": "4",
+        "name": "Off Season",
+        "abbreviation": "off",
+        "startDate": "2027-12-11T08:00Z",
+        "endDate": "2028-02-18T07:59Z"
+      }
+    ]
+  }
+}

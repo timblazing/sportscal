@@ -15,6 +15,8 @@ const TARGETS = [
   { league: "wnba", slug: "indiana-fever" },
   { league: "nhl", slug: "pittsburgh-penguins" },
   { league: "ncaaf", slug: "oklahoma-sooners" },
+  { league: "mlb", slug: "los-angeles-dodgers" },
+  { league: "mlb", slug: "athletics" },
   { league: "ncaab", slug: "duke-blue-devils" },
   { league: "mls", slug: "san-diego-fc" },
   { league: "epl", slug: "liverpool" },
@@ -48,6 +50,7 @@ describe.each(TARGETS)("live ESPN: $league $slug", ({ league, slug }) => {
     }
     if (league === "epl") expect(games).toHaveLength(38);
     for (const g of games) {
+      if (league === "mlb") expect(g.week).toBeUndefined();
       expect(g.homeTeam.id === team!.id || g.awayTeam.id === team!.id).toBe(true);
     }
   });

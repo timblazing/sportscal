@@ -45,6 +45,7 @@ export function AdvancedSettings({
   overrideCount,
   counts,
   gameTypes,
+  preseasonLabel,
   postseasonLabel,
 }: {
   settings: BuilderSettings;
@@ -54,6 +55,7 @@ export function AdvancedSettings({
   onResetOverrides: () => void;
   overrideCount: number;
   counts?: Partial<Record<keyof BuilderSettings["include"], number>>;
+  preseasonLabel?: string;
   postseasonLabel?: string;
   gameTypes?: ("preseason" | "regular" | "postseason")[];
 }) {
@@ -72,6 +74,7 @@ export function AdvancedSettings({
           value={settings.include}
           counts={counts}
           gameTypes={gameTypes}
+          preseasonLabel={preseasonLabel}
           postseasonLabel={postseasonLabel}
           onChange={(include) => onChange({ include })}
         />
