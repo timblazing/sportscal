@@ -3,6 +3,8 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 
 import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { TeamSearchProvider } from "@/components/search/team-search-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { appUrl } from "@/lib/utils/urls";
@@ -35,11 +37,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
-        <TooltipProvider delayDuration={300}>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <Toaster position="bottom-right" />
-        </TooltipProvider>
+        <TeamSearchProvider>
+          <TooltipProvider delayDuration={300}>
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+            <Toaster position="bottom-right" />
+          </TooltipProvider>
+        </TeamSearchProvider>
       </body>
     </html>
   );

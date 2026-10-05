@@ -6,8 +6,6 @@ import { toast } from "sonner";
 
 import { ActionBar } from "@/components/builder/action-bar";
 import { AdvancedSettings } from "@/components/builder/advanced-settings";
-import { LeagueSelector } from "@/components/builder/league-selector";
-import { TeamPicker } from "@/components/builder/team-picker";
 import { TeamSummary } from "@/components/builder/team-summary";
 import { TemplateEditor } from "@/components/builder/template-editor";
 import { EventOverrideDialog, type OverrideTarget } from "@/components/schedule/event-override-dialog";
@@ -48,7 +46,7 @@ import {
   saveStoredCalendar,
   type BuilderSettings,
 } from "@/lib/client/storage";
-import { LEAGUES, isLeagueKey, type LeagueKey } from "@/lib/config/leagues";
+import { LEAGUES, type LeagueKey } from "@/lib/config/leagues";
 import { canonicalFeedPath, managePath } from "@/lib/utils/urls";
 import {
   DEFAULT_TEMPLATES,
@@ -71,8 +69,6 @@ export interface SavedCalendarContext {
 export interface SportsCalendarBuilderProps {
   initialLeague?: LeagueKey;
   initialTeamSlug?: string;
-  /** Ignore the last-used builder state for an explicit landing-page reset. */
-  resetBuilder?: boolean;
   /** Primary team list for `initialLeague`, rendered on the server. */
   initialTeams?: CatalogTeam[];
   /** Manage mode: editing an existing saved calendar. League and team are fixed. */
@@ -86,14 +82,13 @@ function teamsUrl(league: LeagueKey) {
 export function SportsCalendarBuilder({
   initialLeague = "nfl",
   initialTeamSlug,
-  resetBuilder = false,
   initialTeams,
   saved,
 }: SportsCalendarBuilderProps) {
   const mode = saved ? "manage" : "create";
-  const [league, setLeague] = useState<LeagueKey>(saved?.config.league ?? initialLeague);
-  const [teamSlug, setTeamSlug] = useState<string | undefined>(saved?.config.teamSlug ?? initialTeamSlug);
-  const { settings, setSettings, update, setOverride, resetForTeam } = useBuilderSettings(
+  const league = saved?.config.league ?? initialLeague;
+  const teamSlug = saved?.config.teamSlug ?? initialTeamSlug;
+  const { settings, setSettings, update, setOverride } = useBuilderSettings(
     league,
     saved ? savedSettings(saved.config) : undefined,
   );
@@ -107,17 +102,9 @@ export function SportsCalendarBuilder({
   useEffect(() => {
     if (restored.current || saved) return;
     restored.current = true;
-    const stored = resetBuilder ? {} : loadBuilderState();
-    const storedLeague = isLeagueKey(stored.league) ? stored.league : undefined;
-    const nextLeague = initialTeamSlug ? initialLeague : (storedLeague ?? initialLeague);
-    /* eslint-disable react-hooks/set-state-in-effect -- one-time hydration from localStorage */
-    if (!resetBuilder && !initialTeamSlug && storedLeague) {
-      setLeague(storedLeague);
-      if (stored.teamSlug) setTeamSlug(stored.teamSlug);
-    }
-    if (stored.settings) setSettings(mergeSettings(nextLeague, stored.settings));
-    /* eslint-enable react-hooks/set-state-in-effect */
-  }, [saved, initialLeague, initialTeamSlug, resetBuilder, setSettings]);
+    const stored = loadBuilderState();
+    if (stored.settings) setSettings(mergeSettings(league, stored.settings));
+  }, [saved, league, setSettings]);
 
   useEffect(() => {
     if (saved || !restored.current) return;
@@ -131,11 +118,7 @@ export function SportsCalendarBuilder({
         includeEspnUrl: settings.includeEspnUrl,
       },
     });
-    const params = new URLSearchParams();
-    params.set("league", league);
-    if (teamSlug) params.set("team", teamSlug);
-    window.history.replaceState(null, "", `/?${params.toString()}`);
-  }, [saved, league, teamSlug, settings]);
+  }, [saved, league, settings, teamSlug]);
 
   // --- Data ------------------------------------------------------------------
   const teams = useJson<{ teams: CatalogTeam[] }>(saved ? null : teamsUrl(league));
@@ -174,19 +157,6 @@ export function SportsCalendarBuilder({
   }, [scheduleData]);
 
   // --- Actions ---------------------------------------------------------------
-  function changeLeague(next: LeagueKey) {
-    if (next === league) return;
-    setLeague(next);
-    setTeamSlug(undefined);
-    resetForTeam(next, true);
-  }
-
-  function selectTeam(team: CatalogTeam) {
-    if (team.slug === teamSlug) return;
-    setTeamSlug(team.slug);
-    resetForTeam(league, false);
-  }
-
   const [overrideTarget, setOverrideTarget] = useState<OverrideTarget | null>(null);
   function openOverride(event: CalendarEvent) {
     const [base] = buildCalendarEvents([event.game], { ...settings, overrides: {} }, "preview");
@@ -282,20 +252,6 @@ export function SportsCalendarBuilder({
   // --- Render ----------------------------------------------------------------
   const controls = (
     <div className="space-y-6">
-      {mode === "create" && <LeagueSelector value={league} onChange={changeLeague} />}
-      {mode === "create" && (
-        <div className="space-y-2">
-        <TeamPicker
-        groupByConference={leagueConfig.teamGrouping.kind === "conferenceStandings"}
-          key={league}
-          teams={teams.data?.teams}
-          loading={teams.status === "loading" || teams.status === "idle"}
-          selected={selectedTeam}
-          onSelect={selectTeam}
-        />
-        {leagueConfig.note && <p className="text-xs text-muted-foreground">{leagueConfig.note}</p>}
-        </div>
-      )}
       {teams.status === "error" && !teams.data && (
         <ScheduleError message="We couldn't load teams from ESPN. Try again in a moment." onRetry={teams.retry} />
       )}
@@ -304,6 +260,7 @@ export function SportsCalendarBuilder({
         <>
           <Separator />
           <TeamSummary team={selectedTeam} season={scheduleData?.season} gameCount={scheduleData?.games.length} />
+          {mode === "create" && leagueConfig.note && <p className="-mt-4 text-xs text-muted-foreground">{leagueConfig.note}</p>}
           <FormattingOptions>
             <TemplateEditor
               label="Event title"
