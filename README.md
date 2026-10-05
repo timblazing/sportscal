@@ -4,7 +4,11 @@ Clean, customizable sports calendars. Pick a team, choose how its games appear, 
 
 **https://sportscal.site**
 
-![SportsCal builder](docs/screenshot.png)
+| Landing page | Calendar builder |
+| --- | --- |
+| ![SportsCal landing page](docs/screenshots/landing.png) | ![SportsCal calendar builder](docs/screenshots/builder.png) |
+
+<p align="center"><img src="docs/screenshots/landing-mobile.png" alt="SportsCal on mobile" width="260"></p>
 
 By default an event is just:
 
@@ -68,8 +72,6 @@ Manage a custom feed with its private link (the token lives in the URL fragment,
 ```
 https://sportscal.site/manage/{publicId}#token=SECRET
 ```
-
-Deep links preselect the builder: `https://sportscal.site/?league=ncaaf&team=oklahoma-sooners`.
 
 ### How feeds update
 
