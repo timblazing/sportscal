@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 import { ActionBar } from "@/components/builder/action-bar";
 import { AdvancedSettings } from "@/components/builder/advanced-settings";
-import { SeasonLine, TeamSummary } from "@/components/builder/team-summary";
+import { TeamSummary } from "@/components/builder/team-summary";
 import { TemplateEditor } from "@/components/builder/template-editor";
 import { EventOverrideDialog, type OverrideTarget } from "@/components/schedule/event-override-dialog";
 import {
@@ -75,6 +75,8 @@ export interface SportsCalendarBuilderProps {
   saved?: SavedCalendarContext & { config: CalendarConfig; team: CatalogTeam };
   /** "sheet" renders a single narrow column with a pinned action footer. */
   layout?: "page" | "sheet";
+  /** Called with the season label once the schedule resolves (sheet header shows it). */
+  onSeasonResolved?: (label: string | undefined) => void;
   /** Extra content rendered at the end of the scrolling area (sheet layout). */
   children?: React.ReactNode;
 }
@@ -89,6 +91,7 @@ export function SportsCalendarBuilder({
   initialTeams,
   saved,
   layout = "page",
+  onSeasonResolved,
   children,
 }: SportsCalendarBuilderProps) {
   const mode = saved ? "manage" : "create";
@@ -137,6 +140,10 @@ export function SportsCalendarBuilder({
     selectedTeam ? `/api/schedule?league=${league}&team=${selectedTeam.slug}` : null,
   );
   const scheduleData = schedule.data?.team.id === selectedTeam?.id ? schedule.data : undefined;
+  const seasonLabel = scheduleData?.season.displayName;
+  useEffect(() => {
+    onSeasonResolved?.(seasonLabel);
+  }, [onSeasonResolved, seasonLabel]);
 
   const config: CalendarConfig | undefined = selectedTeam
     ? { league, teamId: selectedTeam.id, teamSlug: selectedTeam.slug, ...settings }
@@ -400,8 +407,7 @@ export function SportsCalendarBuilder({
         )}
         {selectedTeam && (
           <>
-            <SeasonLine season={scheduleData?.season} gameCount={scheduleData?.games.length} />
-            {leagueConfig.note && <p className="-mt-3 text-xs text-muted-foreground">{leagueConfig.note}</p>}
+            {leagueConfig.note && <p className="text-xs text-muted-foreground">{leagueConfig.note}</p>}
             {preview}
           </>
         )}

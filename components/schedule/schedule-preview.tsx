@@ -9,7 +9,6 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { CalendarEvent } from "@/lib/calendar/events";
-import { viewerTimeZoneLabel } from "@/lib/client/format";
 
 export function ScheduleSkeleton({ rows = 6 }: { rows?: number }) {
   return (
@@ -95,8 +94,6 @@ export function SchedulePreview({
   between?: React.ReactNode;
 }) {
   const previews = useMemo(() => pickPreviewEvents(events, 3), [events]);
-  const includedCount = events.filter((e) => e.included).length;
-  const tz = useMemo(() => viewerTimeZoneLabel(), []);
 
   return (
     <div className="space-y-6">
@@ -105,7 +102,6 @@ export function SchedulePreview({
           <h2 id="preview-heading" className="text-sm font-medium text-foreground">
             Preview
           </h2>
-          <span className="text-xs text-muted-foreground">Times in {tz}</span>
         </div>
         {previews.length ? (
           <div className="space-y-2">
@@ -127,9 +123,6 @@ export function SchedulePreview({
           <h2 id="schedule-heading" className="text-sm font-medium text-foreground">
             Schedule
           </h2>
-          <span className="font-mono text-xs text-muted-foreground tabular" data-testid="included-count">
-            {includedCount} of {events.length} games in calendar
-          </span>
         </div>
         <ul className="@container divide-y divide-border overflow-hidden rounded-lg border border-border bg-card">
           {events.map((event) => (

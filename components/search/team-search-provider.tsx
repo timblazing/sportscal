@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { AlertCircleIcon, SearchIcon } from "lucide-react";
+import { AlertCircleIcon } from "lucide-react";
 import {
   createContext,
   useCallback,
@@ -16,7 +16,6 @@ import {
 import { LeagueLogo } from "@/components/builder/league-logo";
 import { TeamLogo } from "@/components/builder/team-logo";
 import { searchTeams } from "@/components/builder/team-picker";
-import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandDialog,
@@ -61,6 +60,7 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [builderOpen, setBuilderOpen] = useState(false);
   const [selectedTeam, setSelectedTeam] = useState<CatalogTeam | null>(null);
+  const [seasonLabel, setSeasonLabel] = useState<string>();
   const openTeamSearch = useCallback(() => {
     // Warm the builder chunk while the user is picking a team so the sheet doesn't flash a loader.
     void loadBuilder();
@@ -81,6 +81,7 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
         onOpenChange={setSearchOpen}
         onSelect={(team) => {
           setSelectedTeam(team);
+          setSeasonLabel(undefined);
           setSearchOpen(false);
           setBuilderOpen(true);
         }}
@@ -97,14 +98,8 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
                 <TeamLogo src={selectedTeam.logo} abbreviation={selectedTeam.abbreviation} size={36} />
                 <div className="min-w-0 flex-1">
                   <SheetTitle className="truncate text-base">{selectedTeam.displayName}</SheetTitle>
-                  <SheetDescription className="truncate">
-                    {LEAGUES[selectedTeam.league].label} calendar
-                  </SheetDescription>
+                  <SheetDescription className="truncate">{seasonLabel ?? "\u00a0"}</SheetDescription>
                 </div>
-                <Button variant="ghost" size="sm" onClick={openTeamSearch}>
-                  <SearchIcon aria-hidden="true" />
-                  Change
-                </Button>
               </SheetHeader>
               <SportsCalendarBuilder
                 key={selectedTeam.id}
@@ -112,6 +107,7 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
                 initialLeague={selectedTeam.league}
                 initialTeamSlug={selectedTeam.slug}
                 initialTeams={[selectedTeam]}
+                onSeasonResolved={setSeasonLabel}
               >
                 <SavedCalendarsList />
               </SportsCalendarBuilder>
@@ -215,7 +211,7 @@ function TeamSearchDialog({
       }}
       title="Search teams and leagues"
       description="Choose a team to see its schedule and calendar settings."
-      className="top-[14dvh] bg-popover/60 ring-foreground/10 backdrop-blur-xl supports-backdrop-filter:bg-popover/50 sm:max-w-xl"
+      className="top-[14dvh] bg-popover ring-1 ring-foreground/20 shadow-2xl sm:max-w-xl"
     >
       <Command shouldFilter={false} loop className="h-[min(70dvh,34rem)] bg-transparent">
         <CommandInput
@@ -266,15 +262,14 @@ function TeamSearchDialog({
             </>
           )}
         </CommandList>
-        <div className="flex min-h-10 items-center justify-between border-t border-border/60 px-3 text-xs text-muted-foreground">
-          <span>{loading ? "Loading available teams" : "Search across all available leagues"}</span>
-          {failedLeagues.size > 0 && (
+        {failedLeagues.size > 0 && (
+          <div className="flex min-h-10 items-center justify-end border-t border-border/60 px-3 text-xs text-muted-foreground">
             <button type="button" onClick={retryFailed} className="inline-flex items-center gap-1.5 hover:text-foreground">
               <AlertCircleIcon className="size-3.5" aria-hidden="true" />
               Retry {failedLeagues.size} league{failedLeagues.size === 1 ? "" : "s"}
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </Command>
     </CommandDialog>
   );
