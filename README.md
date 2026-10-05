@@ -1,253 +1,144 @@
-# SportsCal
+<p align="center">
+  <img src="app/icon.svg" alt="" width="56" height="56">
+</p>
 
-Clean, customizable sports calendars. Pick a team, choose how its games appear, then download an `.ics` file or subscribe to a URL that stays up to date.
+<h1 align="center">SportsCal</h1>
 
-**https://sportscal.site**
+<p align="center">
+  Your team's schedule, in the calendar app you already use.
+  <br>
+  <a href="https://sportscal.site"><strong>sportscal.site</strong></a>
+</p>
 
-| Landing page | Calendar builder |
-| --- | --- |
-| ![SportsCal landing page](docs/screenshots/landing.png) | ![SportsCal calendar builder](docs/screenshots/builder.png) |
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/timblazing/sportscal?color=000&labelColor=111" alt="MIT license"></a>
+</p>
 
-<p align="center"><img src="docs/screenshots/landing-mobile.png" alt="SportsCal on mobile" width="260"></p>
+<br>
 
-By default an event is just:
+![SportsCal landing page](docs/screenshots/landing.png)
 
-| Field       | Value                                   |
-| ----------- | --------------------------------------- |
-| Title       | `Oklahoma vs Texas` / `Oklahoma @ Auburn` |
-| Location    | The venue ESPN lists                    |
-| Description | Blank                                   |
+Pick a team, choose what each event shows, and subscribe. Games land in Apple Calendar, Google Calendar, Outlook, or anything else that reads iCalendar feeds, and they stay current when start times move, venues change, or playoff games are added.
 
-No ticket links, store links, social links or app ads. Add more with templates if you want it.
-
-## Supported leagues
-
-- **NFL**
-- **NBA**
-- **WNBA** (grouped by Eastern/Western conference; Commissioner’s Cup games are included with the regular season)
-- **NHL**
-- **MLS** (regular-season matches and all MLS Cup playoff rounds; other competitions excluded)
-- **MLB** (30 teams; spring training, regular season, postseason)
-- **NCAAF** (NCAA Division I football — FBS by default, grouped by conference, with a "Show all teams" option for FCS and other divisions)
-- **NCAAB** (NCAA Division I men's basketball — grouped by conference)
+Events are clean by default: a title like `Steelers vs Ravens`, the venue, and the start time. No ticket links, promotions, or ads.
 
 ## Features
 
-- Searchable team picker (name, school, mascot, abbreviation) grouped by conference/division from ESPN metadata
-- Automatic season detection: the in-progress season, the upcoming season once ESPN publishes it, otherwise the latest one. NBA labels come from ESPN (`2026-27`), never from the numeric season id.
-- Game types: Regular Season, Postseason, and Preseason on by default (NBA Play-In counts as postseason; MLB Spring Training counts as preseason); individual types can be excluded in Advanced settings.
-- Global templates for calendar name, event title, description and location, with a click-to-insert variable picker and live preview
-- Minor per-game overrides (title, description, location, duration, include/exclude), stored as partial patches so later template changes still apply
-- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, MLB 3h, WNBA/MLS/NCAAB 2h, adjustable
-- Events are **Free** (transparent) by default; optional Busy
-- Optional ESPN link in the iCalendar `URL` field (off by default, never in the description)
-- TBD kickoff times become all-day events and later turn into timed events **with the same UID**
-- Canceled games stay on the calendar with `STATUS:CANCELLED`; MLB postponements remain cancelled all-day entries while makeups have separate UIDs; other postponed games without a new time become tentative all-day events
-- Downloads (snapshot, nothing stored) and subscription feeds (regenerated from current ESPN data)
-- Anonymous saved calendars with a private edit link — no accounts
+- **Live subscriptions.** A feed URL that follows schedule changes, or a one-time `.ics` download.
+- **Every team, nine leagues.** Search by name, school, mascot, or abbreviation.
+- **Your format.** Templates for the calendar name, event title, description, and location, with a live preview.
+- **Per-game edits.** Change a single game's title, details, location, or length, or hide it, without losing later schedule updates.
+- **Sensible defaults.** League-specific game lengths, events marked as free time, and preseason, regular season, and postseason games that can each be turned off.
+- **No duplicates.** Games with a start time to be announced appear as all-day events, then become timed events in place.
+- **No account.** Saved calendars are managed with a private edit link.
 
-## Feed URLs
+| Find a team | Build the calendar |
+| --- | --- |
+| ![Team search](docs/screenshots/search.png) | ![Calendar builder](docs/screenshots/builder.png) |
 
-Canonical feeds use the default settings and need no database record:
+<p align="center">
+  <img src="docs/screenshots/landing-mobile.png" alt="SportsCal on a phone" width="280">
+</p>
+
+## Supported leagues
+
+| League | Coverage |
+| --- | --- |
+| NFL | Preseason, regular season, playoffs |
+| NBA | Preseason, regular season, Play-In, playoffs |
+| WNBA | Preseason, regular season (including Commissioner's Cup), playoffs |
+| NHL | Preseason, regular season, playoffs |
+| MLB | Spring training, regular season, postseason |
+| MLS | League matches and MLS Cup playoffs |
+| Premier League | Premier League matches |
+| NCAA Football | Division I, grouped by conference (FBS by default, FCS on request) |
+| NCAA Men's Basketball | Division I regular season and postseason, grouped by conference |
+
+## Feeds
+
+Every team has a default feed that works without saving anything:
 
 ```
-https://sportscal.site/calendar/mls/san-diego-fc.ics
 https://sportscal.site/calendar/nfl/pittsburgh-steelers.ics
 https://sportscal.site/calendar/nba/oklahoma-city-thunder.ics
 https://sportscal.site/calendar/mlb/los-angeles-dodgers.ics
-https://sportscal.site/calendar/mlb/athletics.ics
-https://sportscal.site/calendar/wnba/indiana-fever.ics
 https://sportscal.site/calendar/ncaaf/oklahoma-sooners.ics
-https://sportscal.site/calendar/ncaab/duke-blue-devils.ics
 ```
 
-Custom feeds are saved configurations:
+Customized calendars get their own URL, plus a private link for editing later:
 
 ```
-https://sportscal.site/calendar/ncaaf/oklahoma-sooners/{publicId}.ics
+https://sportscal.site/calendar/ncaaf/oklahoma-sooners/{id}.ics
+https://sportscal.site/manage/{id}#token={secret}
 ```
 
-Manage a custom feed with its private link (the token lives in the URL fragment, which is never sent to the server):
+The edit token sits in the URL fragment, so it never reaches the server.
 
+### How updates work
+
+Feeds are generated on request from current schedule data, so there is nothing to re-download. Each feed follows a single season and moves to the next one once it's published. Every event keeps a stable UID, so calendar apps update games in place instead of adding duplicates. How often a feed refreshes is up to your calendar app.
+
+## Self-hosting
+
+SportsCal ships as a Docker image for `linux/amd64` and `linux/arm64`:
+
+```yaml
+# compose.yaml
+services:
+  sportscal:
+    image: ghcr.io/timblazing/sportscal:latest
+    env_file: .env
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
 ```
-https://sportscal.site/manage/{publicId}#token=SECRET
+
+```bash
+docker compose up -d
 ```
 
-### How feeds update
+The container runs database migrations on start, then serves on port `3000`. Put a reverse proxy in front for TLS and forward `X-Forwarded-For` so rate limiting sees client IPs. `GET /api/health` reports container health.
 
-Every feed request loads the configuration, resolves the current season, reads the cached ESPN schedule, applies filters, templates and overrides, and generates the calendar. Schedules are never stored, so new start times, venue and broadcast changes, and postseason games show up on their own.
+Downloads and default feeds work without a database. Saved calendars need PostgreSQL.
 
-Feeds always represent **one** current season: when ESPN's next season becomes the right one, the same URL switches to it. Calendar apps may keep events they already imported from the previous season; that depends on the app.
+| Variable | Required | Description |
+| --- | --- | --- |
+| `APP_URL` | Yes | Public origin, e.g. `https://sportscal.site` |
+| `DATABASE_URL` | For saved calendars | PostgreSQL connection string |
+| `DATABASE_URL_POOLED` | No | Pooled connection for app traffic |
+| `DATABASE_POOL_MAX` | No | Connections per instance (default `5`) |
+| `RATE_LIMIT_MAX` | No | Saves per IP per window (default `20`) |
+| `RATE_LIMIT_WINDOW_SECONDS` | No | Rate limit window (default `3600`) |
+| `RATE_LIMIT_SALT` | No | Salt for hashed IPs |
+| `RUN_MIGRATIONS` | No | Set to `false` to skip migrations on start |
 
-### Stable UIDs
+## Development
 
-- Canonical feed: `espn-{eventId}-{teamId}@sportscal.site`
-- Custom feed: `espn-{eventId}-{publicId}@sportscal.site`
-
-UIDs never change between refreshes, so calendar apps update events in place instead of adding duplicates.
-
-## Stack
-
-Next.js (App Router) · TypeScript (strict) · React · Tailwind CSS · shadcn/ui · Geist · Lucide · [`ics`](https://github.com/adamgibbons/ics) · Zod · Drizzle ORM · PostgreSQL · pnpm · Vitest · agent-browser
-
-## Local development
-
-Requirements: Node.js 22.13+ (24 recommended), pnpm, and a PostgreSQL database — either a hosted one (e.g. a Neon dev branch) or the local Docker one below.
+Requires Node.js 22.13+, pnpm, and optionally PostgreSQL.
 
 ```bash
 pnpm install
-cp .env.example .env.local   # set DATABASE_URL (and DATABASE_URL_POOLED for Neon)
-docker compose up -d         # optional: local PostgreSQL on :5432 (Docker Desktop, OrbStack or Colima)
-pnpm db:migrate              # apply migrations to DATABASE_URL
-pnpm dev                     # http://localhost:3000
+cp .env.example .env.local
+docker compose up -d   # optional local PostgreSQL
+pnpm db:migrate
+pnpm dev               # http://localhost:3000
 ```
-
-The root `docker-compose.yml` is only a local development database. The builder, downloads and canonical feeds work without a database; saving custom subscriptions needs PostgreSQL.
-
-### Environment variables
-
-| Variable                    | Required        | Description                                                              |
-| --------------------------- | --------------- | ------------------------------------------------------------------------ |
-| `DATABASE_URL`              | for saved feeds | PostgreSQL connection string. Used for migrations, and for the app when no pooled URL is set |
-| `DATABASE_URL_POOLED`       | no              | Pooled connection for app traffic (Neon's `-pooler` host)                |
-| `APP_URL`                   | yes             | Public origin, read at runtime (`https://sportscal.site` in production, `http://localhost:3000` locally) |
-| `RATE_LIMIT_MAX`            | no              | Anonymous creates/updates per IP per window (default `20`)               |
-| `RATE_LIMIT_WINDOW_SECONDS` | no              | Rate limit window (default `3600`)                                       |
-| `RATE_LIMIT_SALT`           | no              | Salt for hashing IPs in the rate-limit table                             |
-| `RUN_MIGRATIONS`            | no              | Docker only: set `false` to skip migrations on container start           |
-| `DATABASE_POOL_MAX`         | no              | Max connections per server instance (default `5`)                        |
-
-### Database
-
-Schema lives in `lib/db/schema.ts`; migrations in `drizzle/`.
-
-```bash
-pnpm db:generate   # create a migration after changing the schema
-pnpm db:migrate    # apply migrations to DATABASE_URL
-pnpm db:studio     # browse data
-```
-
-Any standard PostgreSQL works (Neon, Supabase, RDS, self-hosted). The driver is [`postgres`](https://github.com/porsager/postgres) with prepared statements disabled, so transaction-mode poolers (PgBouncer) are fine.
-
-## Tests
 
 ```bash
 pnpm lint
 pnpm typecheck
-pnpm test        # unit/integration tests, fixture-based, no network
-pnpm test:live   # optional: live ESPN checks for each supported league
+pnpm test
 ```
 
-Unit tests use small sanitized ESPN fixtures in `tests/fixtures/espn` (Pittsburgh Steelers, Oklahoma City Thunder, Oklahoma Sooners) and parse generated calendars with [ical.js](https://github.com/kewisch/ical.js) as an independent validator. For browser acceptance checks, install and set up [agent-browser](https://agent-browser.dev), start the production app with `pnpm build && pnpm start -p 3100`, then follow the [agent-browser E2E checklist](docs/testing/agent-browser-e2e.md) in another terminal. The browser workflow uses live ESPN data; checks that save subscriptions also need `DATABASE_URL` and migrated tables.
+Built with Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Drizzle ORM, and PostgreSQL.
 
-## Deployment (Docker)
+### Adding a league
 
-SportsCal ships as a single Docker image. Every push to `main` runs `.github/workflows/docker.yml`, which builds the image for `linux/amd64` and `linux/arm64` (about 10 minutes) and publishes it to GitHub Container Registry:
+League behavior is configured in [`lib/config/leagues.ts`](lib/config/leagues.ts). Add an entry and its key to `LEAGUE_KEYS`, then add fixtures and tests for the new league's schedule data. Search, templates, and feeds work from the shared model.
 
-```
-ghcr.io/timblazing/sportscal:latest        # latest main
-ghcr.io/timblazing/sportscal:sha-<commit>  # pinned build, for rollbacks
-```
+## Data
 
-The package is public, so servers can pull without logging in. A separate `CI` workflow runs lint, typecheck, unit tests and a production build on every push and pull request.
-
-### Running on a VPS
-
-`compose.yaml` on the server:
-
-```yaml
-services:
-  sportscal:
-    image: ghcr.io/timblazing/sportscal:latest
-    container_name: sportscal
-    env_file: .env
-    ports:
-      - "127.0.0.1:3006:3000"   # host port is up to you; the container listens on 3000
-    restart: unless-stopped
-```
-
-`.env` next to it (see `deploy/.env.example`):
-
-```bash
-DATABASE_URL=postgresql://...neon.tech/neondb?sslmode=require&channel_binding=require          # direct
-DATABASE_URL_POOLED=postgresql://...-pooler...neon.tech/neondb?sslmode=require&channel_binding=require  # pooled
-APP_URL=https://sportscal.site
-RATE_LIMIT_SALT=any-random-string
-```
-
-```bash
-docker compose pull && docker compose up -d
-```
-
-- The database is external (Neon), so no Postgres container or port is needed on the server.
-- On start the container applies pending Drizzle migrations using `DATABASE_URL` (retrying while Neon wakes from scale-to-zero), then starts the Next.js standalone server on port 3000. Set `RUN_MIGRATIONS=false` to skip.
-- Put a reverse proxy (Caddy, nginx, Traefik) in front for TLS on `sportscal.site`, and have it pass `X-Forwarded-For` so rate limiting sees real client IPs. Bind the host port to `127.0.0.1` when the proxy runs on the same machine.
-- `GET /api/health` is the container health check.
-
-### Updating
-
-After a push to `main` and a finished image build, either run `docker compose pull && docker compose up -d`, or add Watchtower to update automatically — `deploy/docker-compose.yml` has a complete example with it. To roll back, pin `image:` to a `sha-<commit>` tag.
-
-Build the image locally with `docker build -t sportscal .`.
-
-### Caching
-
-Feeds send `Cache-Control: public, max-age=300, s-maxage=900, stale-while-revalidate=3600`, so a caching proxy or CDN in front can absorb calendar-app polling. ESPN requests are cached in the server's data cache: team catalogs 24h, season metadata 6h, normalized schedules 15 min (3h for completed seasons). Raw schedule responses bypass both the fetch cache and in-memory fallback because completed MLB payloads exceed Next's 2 MB cap; a bounded fallback retains only normalized schedules. The cache lives in the container and starts empty after a restart.
-
-### Neon
-
-Create a project with only **Postgres database** enabled (object storage, functions, AI gateway and Neon Auth aren't used), in the region nearest your server. Neon shows two connection strings: the direct one is `DATABASE_URL`, the `-pooler` one is `DATABASE_URL_POOLED`. The Neon CLI/agent setup isn't needed.
-
-## Adding a league
-
-Most of the work is one entry in `lib/config/leagues.ts`. The NHL entry is a minimal example:
-
-```ts
-nhl: {
-  key: "nhl",
-  sport: "hockey",
-  league: "nhl",
-  label: "NHL",
-  name: "National Hockey League",
-  defaultDurationMinutes: 150,
-  scheduleSeasonTypes: [1, 2, 3],
-  seasonTypeFallback: { "1": "preseason", "2": "regular", "3": "postseason", "4": "other" },
-  teamGrouping: { kind: "groups" },
-  scheduleTimeZone: "America/New_York",
-  hasWeeks: false,
-},
-```
-
-Add the key to `LEAGUE_KEYS`, check the ESPN responses for that league (season types, groups), add fixtures and tests. Templates, feeds, the picker and the season resolver work from the normalized model.
-
-## Architecture
-
-```
-lib/
-  config/leagues.ts      league registry (all league-specific behavior)
-  espn/                  the only code that knows ESPN's JSON
-    client.ts            URL building from the registry, fetch + caching, last-good fallback
-    schemas.ts           defensive Zod schemas
-    normalize.ts         normalizeTeam / normalizeGame / normalizeSeason / normalizeBroadcasts / normalizeVenue
-    teams.ts seasons.ts schedules.ts
-  calendar/              templates, filters, overrides, UIDs, events, ICS generator, feed pipeline
-  db/                    Drizzle schema, client, saved-calendar repository
-  security/              edit tokens (hashed, constant-time compare), rate limiting
-  validation/            calendar config schema, limits, defaults
-scripts/migrate.ts       migration runner bundled into the Docker image
-app/
-  api/{leagues,teams,schedule,download,calendars,health}
-  calendar/[league]/[...path]   .ics feeds
-  manage/[publicId]             edit a saved calendar
-components/{builder,schedule,subscription,layout,ui}
-Dockerfile, docker-entrypoint.sh   production image (migrate, then serve)
-deploy/                  example VPS compose file and .env
-.github/workflows/       ci.yml (checks), docker.yml (image on push to main)
-```
-
-## ESPN data disclaimer
-
-Schedule data comes from ESPN's public but undocumented API endpoints. They can change without notice; SportsCal isolates every assumption in `lib/espn` and degrades gracefully when optional fields are missing. SportsCal is not affiliated with or endorsed by ESPN or the leagues and teams listed.
+Schedules come from ESPN's public but undocumented endpoints, which can change without notice. SportsCal is not affiliated with or endorsed by ESPN or any league or team.
 
 ## License
 

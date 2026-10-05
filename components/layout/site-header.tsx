@@ -1,11 +1,14 @@
 "use client";
 
+import { SearchIcon } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import { LogoMark } from "@/components/layout/logo";
 import { useTeamSearch } from "@/components/search/team-search-provider";
-import { Button } from "@/components/ui/button";
+import { Kbd } from "@/components/ui/kbd";
 import { GITHUB_URL } from "@/lib/config/site";
+import { cn } from "@/lib/utils";
 
 function GitHubIcon() {
   return (
@@ -17,31 +20,56 @@ function GitHubIcon() {
 
 export function SiteHeader() {
   const { openTeamSearch, closeToLanding } = useTeamSearch();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/95 supports-[backdrop-filter]:bg-background/80 supports-[backdrop-filter]:backdrop-blur-sm">
+    <header
+      className={cn(
+        "sticky top-0 z-40 border-b transition-[background-color,border-color] duration-200",
+        scrolled
+          ? "border-border bg-background/80 backdrop-blur-md"
+          : "border-transparent bg-background",
+      )}
+    >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
-          href="/"
-          onClick={closeToLanding}
-          className="-mx-1.5 flex items-center gap-2 rounded-md px-1.5 py-1 text-sm font-semibold tracking-tight text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-        >
-          <LogoMark />
-          SportsCal
-        </Link>
-        <nav aria-label="Site" className="flex items-center gap-1">
-          <Button size="sm" onClick={openTeamSearch}>
-            Get started
-          </Button>
+            href="/"
+            onClick={closeToLanding}
+            className="-mx-1.5 flex items-center gap-2 rounded-md px-1.5 py-1 text-sm font-semibold tracking-tight text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          >
+            <LogoMark />
+            SportsCal
+          </Link>
+
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={openTeamSearch}
+            className="flex h-8 items-center gap-2 rounded-full border border-border bg-card pr-1.5 pl-3 text-sm text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:w-56"
+          >
+            <SearchIcon className="size-3.5" aria-hidden="true" />
+            <span className="flex-1 text-left">
+              Find a team<span className="hidden sm:inline">…</span>
+            </span>
+            <Kbd className="hidden rounded-full sm:inline-flex">⌘K</Kbd>
+          </button>
           <a
             href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
             aria-label="SportsCal on GitHub"
-            className="flex items-center rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+            className="flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           >
             <GitHubIcon />
           </a>
-        </nav>
+        </div>
       </div>
     </header>
   );

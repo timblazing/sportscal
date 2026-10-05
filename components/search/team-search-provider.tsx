@@ -73,6 +73,17 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
   }, []);
   const contextValue = useMemo(() => ({ openTeamSearch, closeToLanding }), [closeToLanding, openTeamSearch]);
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() !== "k" || !(event.metaKey || event.ctrlKey)) return;
+      event.preventDefault();
+      void loadBuilder();
+      setSearchOpen((open) => !open);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   return (
     <TeamSearchContext.Provider value={contextValue}>
       {children}
@@ -213,7 +224,7 @@ function TeamSearchDialog({
       description="Choose a team to see its schedule and calendar settings."
       className="top-[14dvh] bg-popover ring-1 ring-foreground/20 shadow-2xl sm:max-w-xl"
     >
-      <Command shouldFilter={false} loop className="h-[min(70dvh,34rem)] bg-transparent">
+      <Command shouldFilter={false} loop className={trimmedQuery ? "h-[min(70dvh,34rem)] bg-transparent" : "h-auto bg-transparent"}>
         <CommandInput
           autoFocus
           value={query}
@@ -222,17 +233,17 @@ function TeamSearchDialog({
         />
         <CommandList className="max-h-none flex-1 py-1">
           {!trimmedQuery ? (
-            <CommandGroup heading="Browse a league">
+            <CommandGroup className="**:[[cmdk-group-items]]:grid **:[[cmdk-group-items]]:grid-cols-3 **:[[cmdk-group-items]]:gap-1.5">
               {LEAGUE_LIST.map((league) => (
                 <CommandItem
                   key={league.key}
                   value={`league:${league.key}`}
                   onSelect={() => setQuery(league.label)}
-                  className="gap-3 py-2"
+                  title={league.name}
+                  className="h-28 flex-col justify-center gap-3 border border-border/60 px-2 text-center data-selected:border-border-strong sm:h-32 [&>svg:last-child]:hidden"
                 >
-                  <LeagueLogo league={league.key} label={league.label} size={20} />
-                  <span className="font-medium">{league.label}</span>
-                  <span className="truncate text-muted-foreground">{league.name}</span>
+                  <LeagueLogo league={league.key} label={league.label} size={36} />
+                  <span className="w-full truncate text-sm font-medium">{league.label}</span>
                 </CommandItem>
               ))}
             </CommandGroup>
