@@ -1,0 +1,432 @@
+{
+  "sports": [
+    {
+      "leagues": [
+        {
+          "teams": [
+            {
+              "team": {
+                "id": "333",
+                "slug": "alabama-crimson-tide",
+                "location": "Alabama",
+                "name": "Crimson Tide",
+                "nickname": "Alabama",
+                "abbreviation": "ALA",
+                "displayName": "Alabama Crimson Tide",
+                "shortDisplayName": "Alabama",
+                "color": "9e1b32",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/333.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "104",
+                "slug": "boston-university-terriers",
+                "location": "Boston University",
+                "name": "Terriers",
+                "nickname": "Boston U",
+                "abbreviation": "BU",
+                "displayName": "Boston University Terriers",
+                "shortDisplayName": "Boston U",
+                "color": "cc0000",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/104.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/104.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "150",
+                "slug": "duke-blue-devils",
+                "location": "Duke",
+                "name": "Blue Devils",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "color": "00539b",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "248",
+                "slug": "houston-cougars",
+                "location": "Houston",
+                "name": "Cougars",
+                "nickname": "Houston",
+                "abbreviation": "HOU",
+                "displayName": "Houston Cougars",
+                "shortDisplayName": "Houston",
+                "color": "c8102e",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/248.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "356",
+                "slug": "illinois-fighting-illini",
+                "location": "Illinois",
+                "name": "Fighting Illini",
+                "nickname": "Illinois",
+                "abbreviation": "ILL",
+                "displayName": "Illinois Fighting Illini",
+                "shortDisplayName": "Illinois",
+                "color": "ff5f05",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/356.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "2305",
+                "slug": "kansas-jayhawks",
+                "location": "Kansas",
+                "name": "Jayhawks",
+                "nickname": "Kansas",
+                "abbreviation": "KU",
+                "displayName": "Kansas Jayhawks",
+                "shortDisplayName": "Kansas",
+                "color": "0051ba",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2305.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "96",
+                "slug": "kentucky-wildcats",
+                "location": "Kentucky",
+                "name": "Wildcats",
+                "nickname": "Kentucky",
+                "abbreviation": "UK",
+                "displayName": "Kentucky Wildcats",
+                "shortDisplayName": "Kentucky",
+                "color": "0033a0",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/96.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "99",
+                "slug": "lsu-tigers",
+                "location": "LSU",
+                "name": "Tigers",
+                "nickname": "LSU",
+                "abbreviation": "LSU",
+                "displayName": "LSU Tigers",
+                "shortDisplayName": "LSU",
+                "color": "461d76",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/99.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "97",
+                "slug": "louisville-cardinals",
+                "location": "Louisville",
+                "name": "Cardinals",
+                "nickname": "Louisville",
+                "abbreviation": "LOU",
+                "displayName": "Louisville Cardinals",
+                "shortDisplayName": "Louisville",
+                "color": "c9001f",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/97.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "2608",
+                "slug": "saint-marys-gaels",
+                "location": "Saint Mary's",
+                "name": "Gaels",
+                "nickname": "Saint Mary's",
+                "abbreviation": "SMC",
+                "displayName": "Saint Mary's Gaels",
+                "shortDisplayName": "Saint Mary's",
+                "color": "d80024",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2608.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "399",
+                "slug": "ualbany-great-danes",
+                "location": "UAlbany",
+                "name": "Great Danes",
+                "nickname": "UAlbany",
+                "abbreviation": "UALB",
+                "displayName": "UAlbany Great Danes",
+                "shortDisplayName": "UAlbany",
+                "color": "3D2777",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/399.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/399.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "2697",
+                "slug": "west-florida-argonauts",
+                "location": "West Florida",
+                "name": "Argonauts",
+                "nickname": "West Florida",
+                "abbreviation": "UWF",
+                "displayName": "West Florida Argonauts",
+                "shortDisplayName": "West Florida",
+                "color": "087dc2",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2697.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2697.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "98",
+                "slug": "western-kentucky-hilltoppers",
+                "location": "Western Kentucky",
+                "name": "Hilltoppers",
+                "nickname": "Western KY",
+                "abbreviation": "WKU",
+                "displayName": "Western Kentucky Hilltoppers",
+                "shortDisplayName": "Western KY",
+                "color": "e13a3e",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/98.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/98.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "team": {
+                "id": "2561",
+                "slug": "siena-saints",
+                "location": "Siena",
+                "name": "Saints",
+                "nickname": "Siena",
+                "abbreviation": "SIE",
+                "displayName": "Siena Saints",
+                "shortDisplayName": "Siena",
+                "color": "037961",
+                "isActive": true,
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2561.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2561.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

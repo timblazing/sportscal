@@ -27,7 +27,7 @@ describe("calendar config validation", () => {
   });
 
   it("rejects unknown leagues, bad ids and extra keys", () => {
-    expect(calendarConfigSchema.safeParse({ ...valid(), league: "mlb" }).success).toBe(false);
+    expect(calendarConfigSchema.safeParse({ ...valid(), league: "unknown" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), teamId: "../../etc" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), teamSlug: "Oklahoma Sooners" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), evil: true }).success).toBe(false);
@@ -40,6 +40,15 @@ describe("calendar config validation", () => {
     expect(calendarConfigSchema.safeParse(nhl).success).toBe(true);
     // Seattle and Utah have 6-digit ESPN ids.
     expect(calendarConfigSchema.safeParse({ ...nhl, teamId: "129764", teamSlug: "utah-mammoth" }).success).toBe(true);
+  });
+
+  it("supports NCAAB defaults and saved calendar validation", () => {
+    expect(LEAGUE_KEYS).toContain("ncaab");
+    const config = defaultConfig("ncaab", { id: "150", slug: "duke-blue-devils" });
+    expect(config.durationMinutes).toBe(120);
+    expect(calendarConfigSchema.parse(config)).toEqual(config);
+    expect(isDefaultConfig(config)).toBe(true);
+    expect(calendarConfigSchema.parse({ ...config, seasonMode: "manual", seasonOverride: 2026 }).league).toBe("ncaab");
   });
 
   it("registers Premier League soccer defaults", () => {

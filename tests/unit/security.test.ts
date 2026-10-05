@@ -49,3 +49,18 @@ describe("ESPN URL building", () => {
       .toContain("fixture=true");
   });
 });
+
+describe("NCAAB ESPN endpoints", () => {
+  it("builds schedule, D-I standings and core season URLs", () => {
+    expect(buildEspnUrl("site", LEAGUES.ncaab, ["teams", "150", "schedule"], { season: 2027, seasontype: 2 })).toBe(
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/schedule?season=2027&seasontype=2",
+    );
+    expect(buildEspnUrl("standings", LEAGUES.ncaab, ["standings"], { group: 50 })).toBe(
+      "https://site.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?group=50",
+    );
+    expect(buildEspnUrl("core", LEAGUES.ncaab, ["season"])).toBe(
+      "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/season",
+    );
+    expect(LEAGUES.ncaab.scheduleSeasonTypes).toEqual([2, 3]);
+  });
+});

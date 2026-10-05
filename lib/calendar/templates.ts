@@ -27,7 +27,7 @@ export const TEMPLATE_VARIABLES: TemplateVariable[] = [
   { name: "awayAbbr", description: "Away team abbreviation" },
   { name: "homeAway", description: "Home, Away, or Neutral" },
   { name: "homeAwaySymbol", description: "vs for home/neutral games, @ for away games", common: true },
-  { name: "league", description: "League (NFL, NBA, NHL, NCAAF)" },
+  { name: "league", description: "League name" },
   { name: "season", description: "Season label from ESPN (2026, 2026-27)", common: true },
   { name: "seasonType", description: "Preseason, Regular Season, Postseason", common: true },
   { name: "week", description: "Week label when ESPN provides one (Week 6)", common: true },

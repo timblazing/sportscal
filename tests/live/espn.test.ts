@@ -14,6 +14,7 @@ const TARGETS = [
   { league: "nba", slug: "oklahoma-city-thunder" },
   { league: "nhl", slug: "pittsburgh-penguins" },
   { league: "ncaaf", slug: "oklahoma-sooners" },
+  { league: "ncaab", slug: "duke-blue-devils" },
   { league: "epl", slug: "liverpool" },
 ] as const;
 
@@ -32,5 +33,20 @@ describe.each(TARGETS)("live ESPN: $league $slug", ({ league, slug }) => {
     for (const g of games) {
       expect(g.homeTeam.id === team!.id || g.awayTeam.id === team!.id).toBe(true);
     }
+  });
+});
+
+describe("live NCAAB D-I catalog", () => {
+  it("backfills all four standings-only teams and excludes non-D-I teams by default", { timeout: 30_000 }, async () => {
+    const teams = await getTeams("ncaab", { includeAll: true });
+    const primary = await getTeams("ncaab");
+    expect(teams.length).toBeGreaterThanOrEqual(350);
+    expect(primary.length).toBeGreaterThanOrEqual(360);
+    for (const id of ["2511", "2598", "88", "2815"]) {
+      expect(primary.find((t) => t.id === id)).toMatchObject({ tier: "primary" });
+    }
+    expect(teams.find((t) => t.slug === "queens-university-royals")).toBeDefined();
+    expect(primary.some((t) => t.id === "2697")).toBe(false);
+    expect(teams.find((t) => t.id === "2697")?.tier).toBe("other");
   });
 });

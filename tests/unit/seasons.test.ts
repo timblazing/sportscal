@@ -156,3 +156,22 @@ describe("NHL season resolution", () => {
     expect(result).toEqual({ espnSeason: 2027, displayName: "2026-27", status: "upcoming" });
   });
 });
+
+describe("NCAAB season resolution", () => {
+  const current = season("ncaab", "season-ncaab-2027.json");
+  const previous = season("ncaab", "season-ncaab-2026.json");
+
+  it("uses the published upcoming season and its ending-year label", () => {
+    expect(seasonPhase(current, at("2026-10-02T12:00:00Z"))).toBe("upcoming");
+    expect(decideSeason({ current }, at("2026-10-02T12:00:00Z"))).toEqual({
+      espnSeason: 2027, displayName: "2026-27", status: "upcoming",
+    });
+  });
+
+  it("stays on the completed season until the next schedule is published", () => {
+    expect(decideSeason({ current: previous, next: current, nextEventCount: 0 }, at("2026-05-01T12:00:00Z"))).toEqual({
+      espnSeason: 2026, displayName: "2025-26", status: "completed",
+      pendingNextSeason: { espnSeason: 2027, displayName: "2026-27" },
+    });
+  });
+});

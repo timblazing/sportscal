@@ -1,0 +1,577 @@
+{
+  "season": {
+    "year": 2027,
+    "type": 1,
+    "name": "Preseason",
+    "displayName": "2026-27",
+    "half": 1
+  },
+  "requestedSeason": {
+    "year": 2026,
+    "type": 3,
+    "name": "Postseason",
+    "displayName": "2025-26"
+  },
+  "events": [
+    {
+      "id": "401856478",
+      "date": "2026-03-19T19:00Z",
+      "name": "Siena Saints at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "3",
+        "type": 3,
+        "name": "Postseason",
+        "abbreviation": "post"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401856478/siena-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401856478",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401856478",
+          "date": "2026-03-19T19:00Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Bon Secours Wellness Arena",
+            "address": {
+              "city": "Greenville",
+              "state": "SC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "71",
+                "value": 71.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2561",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "65",
+                "value": 65.0
+              },
+              "team": {
+                "id": "2561",
+                "location": "Siena",
+                "nickname": "Siena",
+                "abbreviation": "SIE",
+                "displayName": "Siena Saints",
+                "shortDisplayName": "Siena",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2561.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2561.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "CBS"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "NCAA Men's Basketball Championship - East Region - 1st Round"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401856530",
+      "date": "2026-03-21T21:25Z",
+      "name": "TCU Horned Frogs at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "3",
+        "type": 3,
+        "name": "Postseason",
+        "abbreviation": "post"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401856530/tcu-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401856530",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401856530",
+          "date": "2026-03-21T21:25Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Bon Secours Wellness Arena",
+            "address": {
+              "city": "Greenville",
+              "state": "SC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "81",
+                "value": 81.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2628",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "58",
+                "value": 58.0
+              },
+              "team": {
+                "id": "2628",
+                "location": "TCU",
+                "nickname": "TCU",
+                "abbreviation": "TCU",
+                "displayName": "TCU Horned Frogs",
+                "shortDisplayName": "TCU",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2628.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "CBS"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "NCAA Men's Basketball Championship - East Region - 2nd Round"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401856570",
+      "date": "2026-03-27T23:10Z",
+      "name": "St. John's Red Storm at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "3",
+        "type": 3,
+        "name": "Postseason",
+        "abbreviation": "post"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401856570/st-johns-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401856570",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401856570",
+          "date": "2026-03-27T23:10Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Capital One Arena",
+            "address": {
+              "city": "Washington",
+              "state": "DC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": true,
+              "score": {
+                "displayValue": "80",
+                "value": 80.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2599",
+              "homeAway": "away",
+              "winner": false,
+              "score": {
+                "displayValue": "75",
+                "value": 75.0
+              },
+              "team": {
+                "id": "2599",
+                "location": "St. John's",
+                "nickname": "St John's",
+                "abbreviation": "SJU",
+                "displayName": "St. John's Red Storm",
+                "shortDisplayName": "St John's",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/2599.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "CBS"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "NCAA Men's Basketball Championship - East Region - Sweet 16"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "401856577",
+      "date": "2026-03-29T21:05Z",
+      "name": "UConn Huskies at Duke Blue Devils",
+      "timeValid": true,
+      "season": {
+        "year": 2026,
+        "displayName": "2025-26"
+      },
+      "seasonType": {
+        "id": "3",
+        "type": 3,
+        "name": "Postseason",
+        "abbreviation": "post"
+      },
+      "links": [
+        {
+          "href": "https://www.espn.com/mens-college-basketball/game/_/gameId/401856577/uconn-duke",
+          "rel": [
+            "summary",
+            "desktop",
+            "event"
+          ]
+        },
+        {
+          "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=mens-college-basketball&gameId=401856577",
+          "rel": [
+            "summary",
+            "sportscenter",
+            "app",
+            "event"
+          ]
+        }
+      ],
+      "competitions": [
+        {
+          "id": "401856577",
+          "date": "2026-03-29T21:05Z",
+          "timeValid": true,
+          "neutralSite": true,
+          "venue": {
+            "fullName": "Capital One Arena",
+            "address": {
+              "city": "Washington",
+              "state": "DC"
+            }
+          },
+          "competitors": [
+            {
+              "id": "150",
+              "homeAway": "home",
+              "winner": false,
+              "score": {
+                "displayValue": "72",
+                "value": 72.0
+              },
+              "team": {
+                "id": "150",
+                "location": "Duke",
+                "nickname": "Duke",
+                "abbreviation": "DUKE",
+                "displayName": "Duke Blue Devils",
+                "shortDisplayName": "Duke",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/150.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "41",
+              "homeAway": "away",
+              "winner": true,
+              "score": {
+                "displayValue": "73",
+                "value": 73.0
+              },
+              "team": {
+                "id": "41",
+                "location": "UConn",
+                "nickname": "UConn",
+                "abbreviation": "CONN",
+                "displayName": "UConn Huskies",
+                "shortDisplayName": "UConn",
+                "logos": [
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png",
+                    "rel": [
+                      "full",
+                      "default"
+                    ]
+                  },
+                  {
+                    "href": "https://a.espncdn.com/i/teamlogos/ncaa/500-dark/41.png",
+                    "rel": [
+                      "full",
+                      "dark"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "broadcasts": [
+            {
+              "media": {
+                "shortName": "CBS"
+              }
+            }
+          ],
+          "notes": [
+            {
+              "headline": "NCAA Men's Basketball Championship - East Region - Elite 8"
+            }
+          ],
+          "status": {
+            "type": {
+              "name": "STATUS_FINAL",
+              "state": "post",
+              "completed": true,
+              "description": "Final",
+              "detail": "Final",
+              "shortDetail": "Final"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

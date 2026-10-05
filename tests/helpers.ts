@@ -47,3 +47,9 @@ export const nhlPenguinsUpcomingGames = () =>
     "schedule-nhl-penguins-2027-reg.json",
     "schedule-nhl-penguins-2027-post-empty.json",
   ]);
+
+export const dukeUpcomingGames = () =>
+  gamesFromFixtures("ncaab", "150", { espnSeason: 2027, displayName: "2026-27" }, [
+    "schedule-ncaab-duke-2027-reg.json",
+    "schedule-ncaab-duke-2027-post-empty.json",
+  ]);

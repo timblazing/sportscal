@@ -1,11 +1,13 @@
 import ICAL from "ical.js";
 import { describe, expect, it } from "vitest";
 
+import { LEAGUES } from "@/lib/config/leagues";
+import { buildGames } from "@/lib/espn/schedules";
 import { buildCalendarEvents } from "@/lib/calendar/events";
 import { generateIcs } from "@/lib/calendar/generator";
 import type { SportsCalGame } from "@/lib/types";
 import { defaultConfig, type CalendarConfig } from "@/lib/validation/calendar-config";
-import { nhlPenguinsGames, soonersGames, steelersGames } from "../helpers";
+import { dukeUpcomingGames, fixture, nhlPenguinsGames, soonersGames, steelersGames } from "../helpers";
 
 const NOW = new Date("2026-09-28T12:00:00Z");
 
@@ -133,5 +135,51 @@ describe("NHL ICS generation", () => {
     expect(String(event.getFirstPropertyValue("duration"))).toBe("PT2H30M");
     expect(event.getFirstPropertyValue("summary")).toBe("Penguins vs Predators");
     expect(event.getFirstPropertyValue("location")).toBe("Avicii Arena");
+  });
+});
+
+describe("NCAAB calendars", () => {
+  const config = defaultConfig("ncaab", { id: "150", slug: "duke-blue-devils" });
+
+  it("serializes TBD games as all-day and timed games with a two-hour duration", () => {
+    const games = dukeUpcomingGames();
+    const { events } = parse(generate(games, config, "150"));
+    expect(events).toHaveLength(33);
+    expect(events.filter((e) => (e.getFirstPropertyValue("dtstart") as ICAL.Time).isDate)).toHaveLength(26);
+    const timed = events.find((e) => !(e.getFirstPropertyValue("dtstart") as ICAL.Time).isDate)!;
+    expect(String(timed.getFirstPropertyValue("duration"))).toBe("PT2H");
+    expect(events.map((e) => e.getFirstPropertyValue("uid"))).toEqual(
+      parse(generate(games, config, "150")).events.map((e) => e.getFirstPropertyValue("uid")),
+    );
+  });
+
+  it.each(["2027-03-15T04:00Z", "2027-04-01T04:00Z", "2026-11-02T05:00Z"])(
+    "recovers the Eastern calendar date for a TBD instant %s", (date) => {
+      const raw = fixture("schedule-ncaab-duke-2027-reg.json") as { events: { date: string; competitions: { date?: string; timeValid?: boolean }[] }[] };
+      const event = structuredClone(raw.events[0]);
+      event.date = date;
+      event.competitions[0].date = date;
+      event.competitions[0].timeValid = false;
+      const games = buildGames([{ events: [event] }], {
+        league: LEAGUES.ncaab, teamId: "150", season: { espnSeason: 2027, displayName: "2026-27" },
+      });
+      const [before] = parse(generate(games, config, "150")).events;
+      const start = before.getFirstPropertyValue("dtstart") as ICAL.Time;
+      expect(start.isDate).toBe(true);
+      expect(start.toString()).toBe(date.slice(0, 10));
+      const timed = { ...games[0], timeTBD: false, startDate: date.slice(0, 10) + "T20:00:00.000Z" };
+      const [after] = parse(generate([timed], config, "150")).events;
+      expect(after.getFirstPropertyValue("uid")).toBe(before.getFirstPropertyValue("uid"));
+      expect((after.getFirstPropertyValue("dtstart") as ICAL.Time).isDate).toBe(false);
+    },
+  );
+
+  it("uses neutral-site titles and preserves tournament notes in custom calendars", () => {
+    const games = dukeUpcomingGames();
+    const custom = { ...config, templates: { ...config.templates, description: "{note}" } };
+    const event = buildCalendarEvents(games, custom, "custom123456").find((e) => e.gameId === "401909564")!;
+    expect(event.title).toContain(" vs ");
+    expect(event.description).toBe("Champions Classic");
+    expect(event.uid).toBe("espn-401909564-custom123456@sportscal.site");
   });
 });

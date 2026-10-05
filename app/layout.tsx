@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s · SportsCal",
   },
   description:
-    "Pick a team from the NFL, NBA, NHL, college football, Premier League and more, then download or subscribe to a clean, customizable .ics calendar.",
+    "Pick a pro or college team, then download or subscribe to a clean, customizable .ics calendar.",
   applicationName: "SportsCal",
   openGraph: {
     title: "SportsCal",
