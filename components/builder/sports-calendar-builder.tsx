@@ -71,6 +71,8 @@ export interface SavedCalendarContext {
 export interface SportsCalendarBuilderProps {
   initialLeague?: LeagueKey;
   initialTeamSlug?: string;
+  /** Ignore the last-used builder state for an explicit landing-page reset. */
+  resetBuilder?: boolean;
   /** Primary team list for `initialLeague`, rendered on the server. */
   initialTeams?: CatalogTeam[];
   /** Manage mode: editing an existing saved calendar. League and team are fixed. */
@@ -84,6 +86,7 @@ function teamsUrl(league: LeagueKey) {
 export function SportsCalendarBuilder({
   initialLeague = "nfl",
   initialTeamSlug,
+  resetBuilder = false,
   initialTeams,
   saved,
 }: SportsCalendarBuilderProps) {
@@ -104,17 +107,17 @@ export function SportsCalendarBuilder({
   useEffect(() => {
     if (restored.current || saved) return;
     restored.current = true;
-    const stored = loadBuilderState();
+    const stored = resetBuilder ? {} : loadBuilderState();
     const storedLeague = isLeagueKey(stored.league) ? stored.league : undefined;
     const nextLeague = initialTeamSlug ? initialLeague : (storedLeague ?? initialLeague);
     /* eslint-disable react-hooks/set-state-in-effect -- one-time hydration from localStorage */
-    if (!initialTeamSlug && storedLeague) {
+    if (!resetBuilder && !initialTeamSlug && storedLeague) {
       setLeague(storedLeague);
       if (stored.teamSlug) setTeamSlug(stored.teamSlug);
     }
     if (stored.settings) setSettings(mergeSettings(nextLeague, stored.settings));
     /* eslint-enable react-hooks/set-state-in-effect */
-  }, [saved, initialLeague, initialTeamSlug, setSettings]);
+  }, [saved, initialLeague, initialTeamSlug, resetBuilder, setSettings]);
 
   useEffect(() => {
     if (saved || !restored.current) return;
