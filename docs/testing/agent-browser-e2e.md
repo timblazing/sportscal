@@ -58,6 +58,18 @@ agent-browser snapshot -i
    curl -s 'http://localhost:3100/calendar/nhl/pittsburgh-penguins.ics' | rg -m1 'DURATION:PT2H30M'
    ```
 
+## WNBA
+
+1. Reset local storage, open the **League** dropdown, and choose **WNBA**. Confirm it follows NBA and shows **Women's National Basketball Association** as secondary text.
+2. Search `fever`, choose **Indiana Fever**, and confirm the URL includes `league=wnba&team=indiana-fever`, the single-year season label, and schedule rows.
+3. Confirm the **Include** chips offer Preseason, Regular Season, and Postseason. Toggle each and confirm the preview/count changes. Restore all three.
+4. Search `western` and confirm the Western Conference teams appear. Search `golden state`, `toronto`, and `portland` to check expansion teams and logos.
+5. Download the Fever calendar and open the canonical subscription dialog. Confirm the URL ends in `/calendar/wnba/indiana-fever.ics`. Fetch it and check `X-WR-CALNAME`, `UID:espn-…-5@sportscal.site`, and `DURATION:PT2H`.
+6. Open `http://localhost:3100/?league=wnba&team=atlanta-dream`. TBD postseason games should appear on their Eastern calendar date as all-day events. With the description template `{note}`, if-necessary notes should appear in the preview and downloaded calendar.
+7. At a phone viewport of 393×852, repeat Fever selection, Include filtering, download, and canonical subscription; check there is no horizontal overflow.
+8. With a migrated PostgreSQL database, change the title to `{league}: {opponent}`, save a custom subscription, and confirm its feed and private manage link retain WNBA, the formatting, and the chosen filters.
+
+The WNBA fixture regressions run in Vitest; browser checks use live ESPN data. All-star events and a separate Commissioner's Cup filter are outside this flow. Cup games belong to Regular Season. Next-season data may be unpublished; verify the existing pending state after the competitive season ends.
 ## MLS
 
 1. Reset local storage, open the **League** dropdown, choose **MLS**, search `San Diego`, and choose **San Diego FC** under **Western Conference**. Also search `LAFC` and an Eastern Conference club to confirm conference grouping and name/abbreviation search.

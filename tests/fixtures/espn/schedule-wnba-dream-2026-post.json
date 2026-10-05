@@ -1,0 +1,1137 @@
+{
+ "season": {
+  "year": 2026,
+  "type": 3,
+  "name": "Postseason",
+  "displayName": "2026",
+  "half": 1
+ },
+ "team": {
+  "id": "20",
+  "abbreviation": "ATL",
+  "location": "Atlanta",
+  "name": "Dream",
+  "displayName": "Atlanta Dream",
+  "color": "e31837",
+  "logo": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png"
+ },
+ "events": [
+  {
+   "id": "401918013",
+   "date": "2026-09-27T23:00Z",
+   "name": "Washington Mystics at Atlanta Dream",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401918013",
+     "date": "2026-09-27T23:00Z",
+     "type": {
+      "id": "14",
+      "text": "Round of 16",
+      "abbreviation": "RD16",
+      "slug": "round-of-16",
+      "type": "round-of-16"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "State Farm Arena",
+      "address": {
+       "city": "Atlanta",
+       "state": "GA"
+      }
+     },
+     "competitors": [
+      {
+       "id": "20",
+       "homeAway": "home",
+       "winner": true,
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 92.0,
+        "displayValue": "92"
+       }
+      },
+      {
+       "id": "16",
+       "homeAway": "away",
+       "winner": false,
+       "team": {
+        "id": "16",
+        "location": "Washington",
+        "abbreviation": "WSH",
+        "displayName": "Washington Mystics",
+        "shortDisplayName": "Mystics",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/wsh.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/wsh.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/scoreboard/wsh.png",
+          "rel": [
+           "full",
+           "scoreboard",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 77.0,
+        "displayValue": "77"
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "First Round - Game 1"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "Prime Video"
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 4,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401918013/mystics-dream"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401918013"
+    }
+   ]
+  },
+  {
+   "id": "401918019",
+   "date": "2026-09-30T23:00Z",
+   "name": "Atlanta Dream at Washington Mystics",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401918019",
+     "date": "2026-09-30T23:00Z",
+     "type": {
+      "id": "14",
+      "text": "Round of 16",
+      "abbreviation": "RD16",
+      "slug": "round-of-16",
+      "type": "round-of-16"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "CareFirst Arena",
+      "address": {
+       "city": "Washington",
+       "state": "DC"
+      }
+     },
+     "competitors": [
+      {
+       "id": "16",
+       "homeAway": "home",
+       "winner": false,
+       "team": {
+        "id": "16",
+        "location": "Washington",
+        "abbreviation": "WSH",
+        "displayName": "Washington Mystics",
+        "shortDisplayName": "Mystics",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/wsh.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/wsh.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/scoreboard/wsh.png",
+          "rel": [
+           "full",
+           "scoreboard",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 75.0,
+        "displayValue": "75"
+       }
+      },
+      {
+       "id": "20",
+       "homeAway": "away",
+       "winner": true,
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 93.0,
+        "displayValue": "93"
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "First Round - Game 2"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "ESPN"
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 4,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401918019/dream-mystics"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401918019"
+    }
+   ]
+  },
+  {
+   "id": "401918295",
+   "date": "2026-10-04T18:00Z",
+   "name": "New York Liberty at Atlanta Dream",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401918295",
+     "date": "2026-10-04T18:00Z",
+     "type": {
+      "id": "1",
+      "text": "Standard",
+      "abbreviation": "STD",
+      "slug": "standard",
+      "type": "standard"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "State Farm Arena",
+      "address": {
+       "city": "Atlanta",
+       "state": "GA"
+      }
+     },
+     "competitors": [
+      {
+       "id": "20",
+       "homeAway": "home",
+       "winner": true,
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 92.0,
+        "displayValue": "92"
+       }
+      },
+      {
+       "id": "9",
+       "homeAway": "away",
+       "winner": false,
+       "team": {
+        "id": "9",
+        "location": "New York",
+        "abbreviation": "NY",
+        "displayName": "New York Liberty",
+        "shortDisplayName": "Liberty",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/ny.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       },
+       "score": {
+        "value": 82.0,
+        "displayValue": "82"
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "Semifinals - Game 1"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "ABC"
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 600.0,
+      "displayClock": "10:00",
+      "period": 4,
+      "type": {
+       "id": "3",
+       "name": "STATUS_FINAL",
+       "state": "post",
+       "completed": true,
+       "description": "Final",
+       "detail": "Final",
+       "shortDetail": "Final"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401918295/liberty-dream"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401918295"
+    }
+   ]
+  },
+  {
+   "id": "401918297",
+   "date": "2026-10-07T23:30Z",
+   "name": "New York Liberty at Atlanta Dream",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401918297",
+     "date": "2026-10-07T23:30Z",
+     "type": {
+      "id": "16",
+      "text": "Semifinal",
+      "abbreviation": "SEMI",
+      "slug": "semifinal",
+      "type": "semifinal"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "State Farm Arena",
+      "address": {
+       "city": "Atlanta",
+       "state": "GA"
+      }
+     },
+     "competitors": [
+      {
+       "id": "20",
+       "homeAway": "home",
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "9",
+       "homeAway": "away",
+       "team": {
+        "id": "9",
+        "location": "New York",
+        "abbreviation": "NY",
+        "displayName": "New York Liberty",
+        "shortDisplayName": "Liberty",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/ny.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "WNBA Semifinals - Game 2"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "ESPN",
+        "logo": "https://a.espncdn.com/guid/335fd2d2-97b9-336b-81ee-573eb6bdcffc/logos/default.png",
+        "darkLogo": ""
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Wed, October 7th at 7:30 PM EDT",
+       "shortDetail": "10/7 - 7:30 PM EDT"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401918297/liberty-dream"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401918297"
+    }
+   ]
+  },
+  {
+   "id": "401918299",
+   "date": "2026-10-09T23:30Z",
+   "name": "Atlanta Dream at New York Liberty",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "401918299",
+     "date": "2026-10-09T23:30Z",
+     "type": {
+      "id": "16",
+      "text": "Semifinal",
+      "abbreviation": "SEMI",
+      "slug": "semifinal",
+      "type": "semifinal"
+     },
+     "timeValid": true,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Barclays Center",
+      "address": {
+       "city": "Brooklyn",
+       "state": "NY"
+      }
+     },
+     "competitors": [
+      {
+       "id": "9",
+       "homeAway": "home",
+       "team": {
+        "id": "9",
+        "location": "New York",
+        "abbreviation": "NY",
+        "displayName": "New York Liberty",
+        "shortDisplayName": "Liberty",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/ny.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "20",
+       "homeAway": "away",
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "WNBA Semifinals - Game 3"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "ESPN2",
+        "logo": "https://a.espncdn.com/guid/4bab8fd8-cd13-379f-9558-c3614851bf91/logos/default.png",
+        "darkLogo": ""
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Fri, October 9th at 7:30 PM EDT",
+       "shortDetail": "10/9 - 7:30 PM EDT"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401918299/dream-liberty"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401918299"
+    }
+   ]
+  },
+  {
+   "id": "401918301",
+   "date": "2026-10-11T04:00Z",
+   "name": "Atlanta Dream at New York Liberty",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "timeValid": false,
+   "competitions": [
+    {
+     "id": "401918301",
+     "date": "2026-10-11T04:00Z",
+     "type": {
+      "id": "16",
+      "text": "Semifinal",
+      "abbreviation": "SEMI",
+      "slug": "semifinal",
+      "type": "semifinal"
+     },
+     "timeValid": false,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "Barclays Center",
+      "address": {
+       "city": "Brooklyn",
+       "state": "NY"
+      }
+     },
+     "competitors": [
+      {
+       "id": "9",
+       "homeAway": "home",
+       "team": {
+        "id": "9",
+        "location": "New York",
+        "abbreviation": "NY",
+        "displayName": "New York Liberty",
+        "shortDisplayName": "Liberty",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/ny.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "20",
+       "homeAway": "away",
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "WNBA Semifinals - Game 4 If Necessary"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "ABC",
+        "logo": "https://a.espncdn.com/guid/2acff74d-269f-36ac-96eb-9c66f8ba52ff/logos/default.png",
+        "darkLogo": "https://a.espncdn.com/guid/2acff74d-269f-36ac-96eb-9c66f8ba52ff/logos/default-dark.png"
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "10/11 - TBD",
+       "shortDetail": "TBD"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401918301/dream-liberty"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401918301"
+    }
+   ]
+  },
+  {
+   "id": "401918303",
+   "date": "2026-10-14T04:00Z",
+   "name": "New York Liberty at Atlanta Dream",
+   "season": {
+    "year": 2026,
+    "displayName": "2026"
+   },
+   "seasonType": {
+    "id": "3",
+    "type": 3,
+    "name": "Postseason",
+    "abbreviation": "post"
+   },
+   "timeValid": false,
+   "competitions": [
+    {
+     "id": "401918303",
+     "date": "2026-10-14T04:00Z",
+     "type": {
+      "id": "16",
+      "text": "Semifinal",
+      "abbreviation": "SEMI",
+      "slug": "semifinal",
+      "type": "semifinal"
+     },
+     "timeValid": false,
+     "neutralSite": false,
+     "venue": {
+      "fullName": "State Farm Arena",
+      "address": {
+       "city": "Atlanta",
+       "state": "GA"
+      }
+     },
+     "competitors": [
+      {
+       "id": "20",
+       "homeAway": "home",
+       "team": {
+        "id": "20",
+        "location": "Atlanta",
+        "abbreviation": "ATL",
+        "displayName": "Atlanta Dream",
+        "shortDisplayName": "Dream",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/atl.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/atl.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "id": "9",
+       "homeAway": "away",
+       "team": {
+        "id": "9",
+        "location": "New York",
+        "abbreviation": "NY",
+        "displayName": "New York Liberty",
+        "shortDisplayName": "Liberty",
+        "logos": [
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500/ny.png",
+          "rel": [
+           "full",
+           "default"
+          ]
+         },
+         {
+          "href": "https://a.espncdn.com/i/teamlogos/wnba/500-dark/ny.png",
+          "rel": [
+           "full",
+           "dark"
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "notes": [
+      {
+       "type": "event",
+       "headline": "WNBA Semifinals - Game 5 If Necessary"
+      }
+     ],
+     "broadcasts": [
+      {
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       },
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "ESPN",
+        "logo": "https://a.espncdn.com/guid/335fd2d2-97b9-336b-81ee-573eb6bdcffc/logos/default.png",
+        "darkLogo": ""
+       },
+       "lang": "en",
+       "region": "us",
+       "partnered": false
+      }
+     ],
+     "status": {
+      "clock": 0.0,
+      "displayClock": "0.0",
+      "period": 0,
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "10/14 - TBD",
+       "shortDetail": "TBD"
+      }
+     }
+    }
+   ],
+   "links": [
+    {
+     "rel": [
+      "summary",
+      "desktop",
+      "event"
+     ],
+     "href": "https://www.espn.com/wnba/game/_/gameId/401918303/liberty-dream"
+    },
+    {
+     "rel": [
+      "summary",
+      "sportscenter",
+      "app",
+      "event"
+     ],
+     "href": "sportscenter://x-callback-url/showGame?sportName=basketball&leagueAbbrev=wnba&gameId=401918303"
+    }
+   ]
+  }
+ ],
+ "requestedSeason": {
+  "year": 2026,
+  "type": 3,
+  "name": "Postseason",
+  "displayName": "2026"
+ }
+}

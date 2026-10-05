@@ -20,6 +20,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 
 - **NFL**
 - **NBA**
+- **WNBA** (grouped by Eastern/Western conference; Commissioner’s Cup games are included with the regular season)
 - **NHL**
 - **MLS** (regular-season matches and all MLS Cup playoff rounds; other competitions excluded)
 - **NCAAF** (NCAA Division I football — FBS by default, grouped by conference, with a "Show all teams" option for FCS and other divisions)
@@ -31,7 +32,7 @@ No ticket links, store links, social links or app ads. Add more with templates i
 - Game types: Regular Season, Postseason, and Preseason on by default (NBA Play-In counts as postseason); individual types can be excluded in Advanced settings.
 - Global templates for calendar name, event title, description and location, with a click-to-insert variable picker and live preview
 - Minor per-game overrides (title, description, location, duration, include/exclude), stored as partial patches so later template changes still apply
-- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, MLS 2h, adjustable
+- League-default durations: NFL/NCAAF 3h30, NBA/NHL 2h30, WNBA/MLS 2h, adjustable
 - Events are **Free** (transparent) by default; optional Busy
 - Optional ESPN link in the iCalendar `URL` field (off by default, never in the description)
 - TBD kickoff times become all-day events and later turn into timed events **with the same UID**
@@ -47,6 +48,7 @@ Canonical feeds use the default settings and need no database record:
 https://sportscal.site/calendar/mls/san-diego-fc.ics
 https://sportscal.site/calendar/nfl/pittsburgh-steelers.ics
 https://sportscal.site/calendar/nba/oklahoma-city-thunder.ics
+https://sportscal.site/calendar/wnba/indiana-fever.ics
 https://sportscal.site/calendar/ncaaf/oklahoma-sooners.ics
 ```
 
@@ -126,7 +128,7 @@ Any standard PostgreSQL works (Neon, Supabase, RDS, self-hosted). The driver is 
 pnpm lint
 pnpm typecheck
 pnpm test        # unit/integration tests, fixture-based, no network
-pnpm test:live   # optional: live ESPN checks for the three example teams
+pnpm test:live   # optional: live ESPN checks for each supported league
 ```
 
 Unit tests use small sanitized ESPN fixtures in `tests/fixtures/espn` (Pittsburgh Steelers, Oklahoma City Thunder, Oklahoma Sooners) and parse generated calendars with [ical.js](https://github.com/kewisch/ical.js) as an independent validator. For browser acceptance checks, install and set up [agent-browser](https://agent-browser.dev), start the production app with `pnpm build && pnpm start -p 3100`, then follow the [agent-browser E2E checklist](docs/testing/agent-browser-e2e.md) in another terminal. The browser workflow uses live ESPN data; checks that save subscriptions also need `DATABASE_URL` and migrated tables.
