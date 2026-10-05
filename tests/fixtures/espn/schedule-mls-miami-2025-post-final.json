@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-10-05T15:29:22Z",
+  "status": "success",
+  "season": {
+    "year": 2026,
+    "type": 13846,
+    "name": "Regular Season",
+    "displayName": "2026 MLS",
+    "half": 1
+  },
+  "team": {
+    "id": "20232",
+    "abbreviation": "MIA",
+    "location": "Inter Miami CF",
+    "name": "Inter Miami CF",
+    "displayName": "Inter Miami CF",
+    "clubhouse": "https://www.espn.com/soccer/club/_/id/20232/inter-miami-cf",
+    "color": "231f20",
+    "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20232.png",
+    "recordSummary": "12-10-5",
+    "seasonSummary": "2026",
+    "standingSummary": "3rd in MLS",
+    "isNational": false,
+    "groups": {
+      "id": "1"
+    }
+  },
+  "events": [
+    {
+      "id": "762182",
+      "date": "2025-12-06T19:30Z",
+      "name": "Vancouver Whitecaps at Inter Miami CF",
+      "shortName": "VAN @ MIA",
+      "season": {
+        "year": 2025,
+        "displayName": "2025 MLS"
+      },
+      "seasonType": {
+        "id": "17",
+        "type": 13119,
+        "name": "MLS Cup",
+        "abbreviation": "MLS Cup"
+      },
+      "timeValid": true,
+      "competitions": [
+        {
+          "id": "762182",
+          "date": "2025-12-06T19:30Z",
+          "attendance": 21550,
+          "timeValid": true,
+          "neutralSite": false,
+          "boxscoreAvailable": true,
+          "ticketsAvailable": false,
+          "venue": {
+            "fullName": "Chase Stadium",
+            "address": {
+              "city": "Fort Lauderdale, Florida",
+              "country": "USA"
+            }
+          },
+          "competitors": [
+            {
+              "id": "20232",
+              "type": "team",
+              "order": 0,
+              "homeAway": "home",
+              "winner": true,
+              "team": {
+                "id": "20232",
+                "location": "Inter Miami CF",
+                "abbreviation": "MIA",
+                "displayName": "Inter Miami CF",
+                "shortDisplayName": "Miami"
+              },
+              "score": {
+                "value": 3.0,
+                "displayValue": "3",
+                "winner": true,
+                "source": {
+                  "id": "38",
+                  "description": "SA.ENVOY"
+                }
+              },
+              "record": []
+            },
+            {
+              "id": "9727",
+              "type": "team",
+              "order": 1,
+              "homeAway": "away",
+              "winner": false,
+              "team": {
+                "id": "9727",
+                "location": "Vancouver Whitecaps",
+                "nickname": "Whitecaps",
+                "abbreviation": "VAN",
+                "displayName": "Vancouver Whitecaps",
+                "shortDisplayName": "Vancouver"
+              },
+              "score": {
+                "value": 1.0,
+                "displayValue": "1",
+                "winner": false,
+                "source": {
+                  "id": "38",
+                  "description": "SA.ENVOY"
+                }
+              },
+              "record": []
+            }
+          ],
+          "notes": [],
+          "broadcasts": [
+            {
+              "type": {
+                "id": "1",
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "FOX"
+              },
+              "lang": "en",
+              "region": "us"
+            },
+            {
+              "type": {
+                "id": "1",
+                "shortName": "TV"
+              },
+              "media": {
+                "shortName": "FOX Deportes"
+              },
+              "lang": "en",
+              "region": "us"
+            },
+            {
+              "type": {
+                "id": "4",
+                "shortName": "STREAMING"
+              },
+              "media": {
+                "shortName": "Apple TV"
+              },
+              "lang": "en",
+              "region": "us"
+            }
+          ],
+          "status": {
+            "clock": 5400.0,
+            "addedClock": 540.0,
+            "displayClock": "90'+9'",
+            "period": 2,
+            "type": {
+              "id": "28",
+              "name": "STATUS_FULL_TIME",
+              "state": "post",
+              "completed": true,
+              "description": "Full Time",
+              "detail": "FT",
+              "shortDetail": "FT"
+            }
+          }
+        }
+      ],
+      "league": {
+        "id": "770",
+        "alternateId": "19",
+        "name": "MLS",
+        "abbreviation": "MLS",
+        "shortName": "MLS",
+        "midsizeName": "USA.1",
+        "slug": "usa.1",
+        "isTournament": false
+      }
+    }
+  ],
+  "requestedSeason": {
+    "year": 2025,
+    "type": 13119,
+    "name": "MLS Cup",
+    "displayName": "2025 MLS"
+  }
+}

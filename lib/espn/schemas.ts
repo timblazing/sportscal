@@ -131,6 +131,7 @@ export const espnCompetitorSchema = z.looseObject({
       z.string(),
     ])
     .optional(),
+  shootoutScore: z.unknown().optional(),
   team: espnTeamSchema,
 });
 export type EspnCompetitor = z.infer<typeof espnCompetitorSchema>;

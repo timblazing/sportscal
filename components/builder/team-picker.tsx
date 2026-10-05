@@ -55,11 +55,13 @@ export function TeamPicker({
   loading,
   selected,
   onSelect,
+  groupByConference = false,
 }: {
   teams: CatalogTeam[] | undefined;
   loading: boolean;
   selected?: CatalogTeam;
   onSelect: (team: CatalogTeam) => void;
+  groupByConference?: boolean;
 }) {
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -68,6 +70,31 @@ export function TeamPicker({
   const results = useMemo(() => (teams && query ? searchTeams(teams, query) : []), [teams, query]);
   const open = query !== null && query.trim() !== "";
   const showSelected = query === null && selected;
+
+  const conferenceGroups = useMemo(() => {
+    const groups = new Map<string, CatalogTeam[]>();
+    for (const team of results) {
+      const name = team.conference?.name ?? "Other teams";
+      const group = groups.get(name) ?? [];
+      group.push(team);
+      groups.set(name, group);
+    }
+    return [...groups].sort(([a], [b]) => a.localeCompare(b));
+  }, [results]);
+
+  function renderTeam(team: CatalogTeam) {
+    return (
+      <CommandPrimitive.Item
+        key={team.id}
+        value={team.slug}
+        onSelect={() => choose(team)}
+        className="flex cursor-default items-center gap-2.5 rounded-md px-2 py-2 text-sm outline-none select-none data-[selected=true]:bg-muted"
+      >
+        <TeamLogo src={team.tier === "other" ? undefined : team.logo} abbreviation={team.abbreviation} />
+        <span className="truncate">{team.displayName}</span>
+      </CommandPrimitive.Item>
+    );
+  }
 
   function choose(team: CatalogTeam) {
     onSelect(team);
@@ -124,20 +151,15 @@ export function TeamPicker({
             <CommandPrimitive.Empty className="py-6 text-center text-sm text-muted-foreground">
               No teams found.
             </CommandPrimitive.Empty>
-            {results.map((team) => (
-              <CommandPrimitive.Item
-                key={team.id}
-                value={team.slug}
-                onSelect={() => choose(team)}
-                className="flex cursor-default items-center gap-2.5 rounded-md px-2 py-2 text-sm outline-none select-none data-[selected=true]:bg-muted"
+            {groupByConference ? conferenceGroups.map(([name, teams]) => (
+              <CommandPrimitive.Group
+                key={name}
+                heading={name}
+                className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground"
               >
-                <TeamLogo
-                  src={team.tier === "other" ? undefined : team.logo}
-                  abbreviation={team.abbreviation}
-                />
-                <span className="truncate">{team.displayName}</span>
-              </CommandPrimitive.Item>
-            ))}
+                {teams.map(renderTeam)}
+              </CommandPrimitive.Group>
+            )) : results.map(renderTeam)}
           </CommandPrimitive.List>
         </CommandPrimitive>
       )}

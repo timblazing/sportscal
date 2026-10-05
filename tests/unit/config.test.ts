@@ -27,7 +27,7 @@ describe("calendar config validation", () => {
   });
 
   it("rejects unknown leagues, bad ids and extra keys", () => {
-    expect(calendarConfigSchema.safeParse({ ...valid(), league: "mlb" }).success).toBe(false);
+    expect(calendarConfigSchema.safeParse({ ...valid(), league: "not-a-league" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), teamId: "../../etc" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), teamSlug: "Oklahoma Sooners" }).success).toBe(false);
     expect(calendarConfigSchema.safeParse({ ...valid(), evil: true }).success).toBe(false);
