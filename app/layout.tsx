@@ -37,14 +37,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
-        <TeamSearchProvider>
-          <TooltipProvider delayDuration={300}>
+        <TooltipProvider delayDuration={300}>
+          <TeamSearchProvider>
             <SiteHeader />
             <main className="flex-1">{children}</main>
             <SiteFooter />
             <Toaster position="bottom-right" />
-          </TooltipProvider>
-        </TeamSearchProvider>
+          </TeamSearchProvider>
+        </TooltipProvider>
       </body>
     </html>
   );

@@ -1,9 +1,7 @@
 "use client";
 
 import { CalendarClockIcon, CalendarX2Icon, RefreshCwIcon } from "lucide-react";
-import { useMemo } from "react";
 
-import { EventPreview } from "@/components/schedule/event-preview";
 import { ScheduleEventRow } from "@/components/schedule/schedule-event-row";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -13,11 +11,6 @@ import type { CalendarEvent } from "@/lib/calendar/events";
 export function ScheduleSkeleton({ rows = 6 }: { rows?: number }) {
   return (
     <div aria-busy="true" aria-label="Loading schedule" className="space-y-4">
-      <div className="space-y-2">
-        {Array.from({ length: 2 }, (_, i) => (
-          <Skeleton key={i} className="h-[92px] w-full rounded-lg" />
-        ))}
-      </div>
       <div className="divide-y divide-border rounded-lg border border-border">
         {Array.from({ length: rows }, (_, i) => (
           <div key={i} className="flex items-center gap-3 px-3 py-3">
@@ -69,53 +62,18 @@ export function EmptySchedule({ teamName, upcoming }: { teamName: string; upcomi
   );
 }
 
-function pickPreviewEvents(events: CalendarEvent[], count: number): CalendarEvent[] {
-  const included = events.filter((e) => e.included);
-  const now = Date.now();
-  const upcoming = included.filter((e) => {
-    const t = e.timing;
-    if (t.kind === "timed") return Date.parse(t.start) + e.durationMinutes * 60_000 >= now;
-    if (t.kind === "allDay") return Date.parse(`${t.date}T23:59:59`) >= now;
-    return false;
-  });
-  return (upcoming.length ? upcoming : included).slice(0, count);
-}
-
 export function SchedulePreview({
   events,
-  showBroadcast,
   onEdit,
   between,
 }: {
   events: CalendarEvent[];
-  showBroadcast: boolean;
   onEdit: (event: CalendarEvent) => void;
-  /** Rendered between the preview and the full schedule. */
+  /** Settings rendered above the schedule. */
   between?: React.ReactNode;
 }) {
-  const previews = useMemo(() => pickPreviewEvents(events, 3), [events]);
-
   return (
     <div className="space-y-6">
-      <section aria-labelledby="preview-heading" className="space-y-2">
-        <div className="flex items-baseline justify-between gap-2">
-          <h2 id="preview-heading" className="text-sm font-medium text-foreground">
-            Preview
-          </h2>
-        </div>
-        {previews.length ? (
-          <div className="space-y-2">
-            {previews.map((event) => (
-              <EventPreview key={event.gameId} event={event} showBroadcast={showBroadcast} />
-            ))}
-          </div>
-        ) : (
-          <p className="rounded-lg border border-dashed border-border px-4 py-6 text-center text-sm text-muted-foreground">
-            No games match the current filters.
-          </p>
-        )}
-      </section>
-
       {between}
 
       <section aria-labelledby="schedule-heading" className="space-y-2">

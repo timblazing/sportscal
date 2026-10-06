@@ -259,7 +259,6 @@ export function SportsCalendarBuilder({
   }
 
   const overrideCount = Object.keys(settings.overrides).length;
-  const showBroadcast = Object.values(settings.templates).some((t) => t.includes("{broadcast}"));
   const leagueConfig = LEAGUES[league];
 
   // --- Render ----------------------------------------------------------------
@@ -390,7 +389,6 @@ export function SportsCalendarBuilder({
           )}
           <SchedulePreview
             events={events}
-            showBroadcast={showBroadcast}
             onEdit={openOverride}
             between={layout === "sheet" ? settingsPanels : undefined}
           />
