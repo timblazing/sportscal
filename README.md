@@ -32,14 +32,6 @@ Events are clean by default: a title like `Steelers vs Ravens`, the venue, and t
 - **No duplicates.** Games with a start time to be announced appear as all-day events, then become timed events in place.
 - **No account.** Saved calendars are managed with a private edit link.
 
-| Find a team | Build the calendar |
-| --- | --- |
-| ![Team search](docs/screenshots/search.png) | ![Calendar builder](docs/screenshots/builder.png) |
-
-<p align="center">
-  <img src="docs/screenshots/landing-mobile.png" alt="SportsCal on a phone" width="280">
-</p>
-
 ## Supported leagues
 
 | League | Coverage |

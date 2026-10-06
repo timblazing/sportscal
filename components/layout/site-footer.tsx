@@ -11,26 +11,26 @@ function GitHubIcon() {
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto w-full max-w-7xl px-4 pt-16 pb-10 sm:px-6">
-      <div className="flex items-end justify-between gap-6">
-        <div className="space-y-3">
+    <footer className="mx-auto w-full max-w-7xl px-4 pt-8 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-6 sm:pt-16 sm:pb-10">
+      <div className="flex items-center justify-between gap-6 sm:items-end">
+        <div className="sm:space-y-3">
           <div className="flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground">
             <LogoMark />
             SportsCal
           </div>
-          <p className="max-w-sm text-sm text-pretty text-muted-foreground">Team schedules for the calendar app you already use.</p>
+          <p className="hidden max-w-sm text-sm text-pretty text-muted-foreground sm:block">Team schedules for the calendar app you already use.</p>
         </div>
         <a
           href={GITHUB_URL}
           target="_blank"
           rel="noreferrer"
           aria-label="SportsCal on GitHub"
-          className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          className="flex size-8 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:size-9 sm:border sm:border-border"
         >
           <GitHubIcon />
         </a>
       </div>
-      <div className="mt-12 flex flex-col gap-2 text-xs leading-relaxed text-muted-foreground/70 sm:flex-row sm:justify-between sm:gap-8">
+      <div className="mt-4 flex flex-col gap-1 text-xs leading-relaxed text-muted-foreground/70 sm:mt-12 sm:flex-row sm:justify-between sm:gap-8">
         <p className="max-w-xl text-pretty">
           Schedule data comes from ESPN’s public endpoints. SportsCal isn’t affiliated with or endorsed by ESPN or any
           league or team.

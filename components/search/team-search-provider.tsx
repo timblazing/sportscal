@@ -10,6 +10,7 @@ import {
   useMemo,
   useRef,
   useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 
@@ -56,11 +57,29 @@ export function useTeamSearch() {
   return context;
 }
 
+const MOBILE_QUERY = "(max-width: 639px)";
+
+function subscribeToMobile(onChange: () => void) {
+  const query = window.matchMedia(MOBILE_QUERY);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+
+/** Below the `sm` breakpoint the builder sheet rises from the bottom instead of the right edge. */
+function useIsMobile() {
+  return useSyncExternalStore(
+    subscribeToMobile,
+    () => window.matchMedia(MOBILE_QUERY).matches,
+    () => false,
+  );
+}
+
 export function TeamSearchProvider({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [builderOpen, setBuilderOpen] = useState(false);
   const [selectedTeam, setSelectedTeam] = useState<CatalogTeam | null>(null);
   const [seasonLabel, setSeasonLabel] = useState<string>();
+  const isMobile = useIsMobile();
   const openTeamSearch = useCallback(() => {
     // Warm the builder chunk while the user is picking a team so the sheet doesn't flash a loader.
     void loadBuilder();
@@ -99,8 +118,12 @@ export function TeamSearchProvider({ children }: { children: ReactNode }) {
       />
       <Sheet open={builderOpen} onOpenChange={setBuilderOpen}>
         <SheetContent
-          side="right"
-          className="w-full gap-0 p-0 sm:max-w-md"
+          side={isMobile ? "bottom" : "right"}
+          className={
+            isMobile
+              ? "gap-0 overflow-hidden rounded-t-2xl p-0 data-[side=bottom]:h-[92dvh] data-[side=bottom]:data-open:slide-in-from-bottom data-[side=bottom]:data-closed:slide-out-to-bottom"
+              : "w-full gap-0 p-0 sm:max-w-md"
+          }
           onOpenAutoFocus={(event) => event.preventDefault()}
         >
           {selectedTeam && (

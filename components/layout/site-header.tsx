@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { LogoMark } from "@/components/layout/logo";
+import { Button } from "@/components/ui/button";
 import { useTeamSearch } from "@/components/search/team-search-provider";
 import { Kbd } from "@/components/ui/kbd";
 import { GITHUB_URL } from "@/lib/config/site";
@@ -49,16 +50,23 @@ export function SiteHeader() {
           </Link>
 
         <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={openTeamSearch}
+            aria-label="Find a team"
+            className="rounded-full text-muted-foreground sm:hidden"
+          >
+            <SearchIcon aria-hidden="true" />
+          </Button>
           <button
             type="button"
             onClick={openTeamSearch}
-            className="flex h-8 items-center gap-2 rounded-full border border-border bg-card pr-1.5 pl-3 text-sm text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:w-56"
+            className="hidden h-8 items-center gap-2 rounded-full border border-border bg-card pr-1.5 pl-3 text-sm text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none sm:flex sm:w-56"
           >
             <SearchIcon className="size-3.5" aria-hidden="true" />
-            <span className="flex-1 text-left">
-              Find a team<span className="hidden sm:inline">…</span>
-            </span>
-            <Kbd className="hidden rounded-full sm:inline-flex">⌘K</Kbd>
+            <span className="flex-1 text-left">Find a team…</span>
+            <Kbd className="rounded-full">⌘K</Kbd>
           </button>
           <a
             href={GITHUB_URL}

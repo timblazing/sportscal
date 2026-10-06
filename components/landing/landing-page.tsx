@@ -51,17 +51,17 @@ export function LandingPage() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(var(--border)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_70%_at_75%_45%,black,transparent)] bg-size-[22px_22px]"
         />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 pt-16 pb-20 sm:px-6 sm:pt-20 xl:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] xl:gap-12 lg:pt-20 lg:pb-28">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:gap-14 pt-12 pb-16 sm:px-6 sm:pt-20 xl:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] xl:gap-12 lg:pt-20 lg:pb-28">
           <div className="max-w-3xl">
-            <h1 className="text-[3.25rem] leading-[0.95] font-semibold tracking-[-0.06em] text-balance text-foreground sm:text-7xl xl:text-[clamp(4.5rem,6.4vw,5.25rem)]">
-              Never miss the <br className="hidden xl:block" />
+            <h1 className="text-[clamp(2.25rem,11.5vw,3.25rem)] leading-[0.95] font-semibold tracking-[-0.06em] text-balance text-foreground sm:text-7xl xl:text-[clamp(4.5rem,6.4vw,5.25rem)]">
+              Never miss the <br className="sm:max-xl:hidden" />
               games you follow.
             </h1>
-            <p className="mt-7 max-w-lg text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
+            <p className="mt-6 max-w-lg text-base sm:mt-7 leading-relaxed text-pretty text-muted-foreground sm:text-lg">
               Pick a team, choose what each game shows, and subscribe in the calendar app you already use. When a game moves, your calendar moves with it.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Button size="lg" onClick={openTeamSearch} className="h-11 gap-3 rounded-full pr-2 pl-5 text-sm">
+            <div className="mt-8 flex flex-wrap sm:mt-9 items-center gap-3">
+              <Button size="lg" onClick={openTeamSearch} className="h-11 gap-3 rounded-full px-6 text-sm sm:pr-2 sm:pl-5">
                 Find your team
                 <Kbd className="hidden rounded-full bg-primary-foreground/10 px-2 text-primary-foreground/70 sm:inline-flex">⌘K</Kbd>
               </Button>
@@ -88,7 +88,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-24 sm:px-6 sm:py-32">
+      <section id="about" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-16 sm:px-6 sm:py-32">
         <div className="grid gap-8 md:grid-cols-[minmax(12rem,0.7fr)_minmax(0,1.3fr)] md:gap-16">
           <h2 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">About</h2>
           <div className="max-w-2xl">
@@ -114,7 +114,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section id="faq" className="mx-auto max-w-7xl scroll-mt-20 border-t border-border px-4 py-24 sm:px-6 sm:py-32">
+      <section id="faq" className="mx-auto max-w-7xl scroll-mt-20 border-t border-border px-4 py-16 sm:px-6 sm:py-32">
         <div className="grid gap-8 md:grid-cols-[minmax(12rem,0.7fr)_minmax(0,1.3fr)] md:gap-16">
           <h2 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">FAQ</h2>
           <div className="divide-y divide-border">
