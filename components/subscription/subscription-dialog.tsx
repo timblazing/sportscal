@@ -67,14 +67,6 @@ export function SubscriptionDialog({
                 </Button>
               </div>
 
-              <div className="space-y-1 text-xs text-muted-foreground">
-                <p>
-                  Google Calendar only adds subscriptions on the web — on a phone, open this page on a
-                  computer, or copy the URL and add it at calendar.google.com.
-                </p>
-                <p>Using Outlook or another app? Copy the URL above and add it as a subscribed calendar.</p>
-              </div>
-
               {info.manageUrl && (
                 <div className="space-y-2 border-t border-border pt-4">
                   <CalendarUrl

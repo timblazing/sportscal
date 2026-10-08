@@ -132,8 +132,11 @@ export function SportsCalendarBuilder({
   // --- Data ------------------------------------------------------------------
   const teams = useJson<{ teams: CatalogTeam[] }>(saved ? null : teamsUrl(league));
   const selectedTeam = useMemo(
-    () => saved?.team ?? teams.data?.teams.find((t) => t.slug === teamSlug),
-    [saved, teams.data, teamSlug],
+    () =>
+      saved?.team ??
+      initialTeams?.find((t) => t.slug === teamSlug) ??
+      teams.data?.teams.find((t) => t.slug === teamSlug),
+    [saved, initialTeams, teams.data, teamSlug],
   );
 
   const schedule = useJson<ScheduleResponse>(

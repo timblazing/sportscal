@@ -163,6 +163,7 @@ function TeamSearchDialog({
   onSelect: (team: CatalogTeam) => void;
 }) {
   const [query, setQuery] = useState("");
+  const isMobile = useIsMobile();
   const [teamsByLeague, setTeamsByLeague] = useState<Partial<Record<LeagueKey, CatalogTeam[]>>>({});
   const [loadingLeagues, setLoadingLeagues] = useState<Set<LeagueKey>>(() => new Set());
   const [failedLeagues, setFailedLeagues] = useState<Set<LeagueKey>>(() => new Set());
@@ -246,10 +247,12 @@ function TeamSearchDialog({
       title="Search teams and leagues"
       description="Choose a team to see its schedule and calendar settings."
       className="top-[14dvh] bg-popover ring-1 ring-foreground/20 shadow-2xl sm:max-w-xl"
+      onOpenAutoFocus={(event) => {
+        if (isMobile) event.preventDefault();
+      }}
     >
       <Command shouldFilter={false} loop className={trimmedQuery ? "h-[min(70dvh,34rem)] bg-transparent" : "h-auto bg-transparent"}>
         <CommandInput
-          autoFocus
           value={query}
           onValueChange={setQuery}
           placeholder="Search teams or leagues…"
