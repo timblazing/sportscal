@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Must match the Worker name in the Cloudflare dashboard.
+  "name": "sportscal",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "sportscal"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+  // Secrets (DATABASE_URL, DATABASE_URL_POOLED, RATE_LIMIT_SALT) and APP_URL
+  // live in the dashboard: Worker → Settings → Variables and Secrets.
+}

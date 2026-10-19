@@ -21,8 +21,10 @@ function config() {
   };
 }
 
-/** Best-effort client IP from standard proxy headers (set x-forwarded-for at your reverse proxy). */
+/** Client IP from Cloudflare, falling back to standard proxy headers. */
 export function clientIp(headers: Headers): string {
+  const cloudflare = headers.get("cf-connecting-ip");
+  if (cloudflare) return cloudflare;
   const forwarded = headers.get("x-forwarded-for")?.split(",")[0]?.trim();
   return forwarded || headers.get("x-real-ip") || "unknown";
 }
