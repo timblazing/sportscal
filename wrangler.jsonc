@@ -17,7 +17,10 @@
   ],
   "observability": {
     "enabled": true
+  },
+  "vars": {
+    "APP_URL": "https://sportscal.site"
   }
-  // Secrets (DATABASE_URL, DATABASE_URL_POOLED, RATE_LIMIT_SALT) and APP_URL
-  // live in the dashboard: Worker → Settings → Variables and Secrets.
+  // Secrets (DATABASE_URL, DATABASE_URL_POOLED, RATE_LIMIT_SALT) live in the
+  // dashboard: Worker → Settings → Variables and Secrets.
 }

@@ -80,7 +80,7 @@ SportsCal runs on Cloudflare Workers through [OpenNext](https://opennext.js.org/
 | Deploy command | `pnpm opennextjs-cloudflare deploy` |
 | Worker name | `sportscal` (must match `wrangler.jsonc`) |
 
-Set variables under the Worker's **Settings → Variables and Secrets**. Add `APP_URL` as a build variable too. To deploy from your machine instead, run `pnpm deploy`; `pnpm preview` runs the production build locally in `workerd`.
+`APP_URL` is set in `wrangler.jsonc`. Add the secrets under the Worker's **Settings → Variables and Secrets**. To deploy from your machine instead, run `pnpm deploy`; `pnpm preview` runs the production build locally in `workerd`.
 
 Downloads and default feeds work without a database. Saved calendars need PostgreSQL that the Worker can reach over the internet, such as Neon. Migrations don't run on deploy. Run `pnpm db:migrate` with `DATABASE_URL` set to the production database before shipping a schema change.
 
