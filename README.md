@@ -70,39 +70,28 @@ The edit token sits in the URL fragment, so it never reaches the server.
 
 Feeds are generated on request from current schedule data, so there is nothing to re-download. Each feed follows a single season and moves to the next one once it's published. Every event keeps a stable UID, so calendar apps update games in place instead of adding duplicates. How often a feed refreshes is up to your calendar app.
 
-## Self-hosting
+## Deployment
 
-SportsCal ships as a Docker image for `linux/amd64` and `linux/arm64`:
+SportsCal runs on Cloudflare Workers through [OpenNext](https://opennext.js.org/cloudflare). The Worker is connected to this repo with Workers Builds, so every push to `main` deploys.
 
-```yaml
-# compose.yaml
-services:
-  sportscal:
-    image: ghcr.io/timblazing/sportscal:latest
-    env_file: .env
-    ports:
-      - "127.0.0.1:3000:3000"
-    restart: unless-stopped
-```
+| Setting | Value |
+| --- | --- |
+| Build command | `pnpm opennextjs-cloudflare build` |
+| Deploy command | `pnpm opennextjs-cloudflare deploy` |
+| Worker name | `sportscal` (must match `wrangler.jsonc`) |
 
-```bash
-docker compose up -d
-```
+Set variables under the Worker's **Settings → Variables and Secrets**. Add `APP_URL` as a build variable too. To deploy from your machine instead, run `pnpm deploy`; `pnpm preview` runs the production build locally in `workerd`.
 
-The container runs database migrations on start, then serves on port `3000`. Put a reverse proxy in front for TLS and forward `X-Forwarded-For` so rate limiting sees client IPs. `GET /api/health` reports container health.
-
-Downloads and default feeds work without a database. Saved calendars need PostgreSQL.
+Downloads and default feeds work without a database. Saved calendars need PostgreSQL that the Worker can reach over the internet, such as Neon. Migrations don't run on deploy. Run `pnpm db:migrate` with `DATABASE_URL` set to the production database before shipping a schema change.
 
 | Variable | Required | Description |
 | --- | --- | --- |
 | `APP_URL` | Yes | Public origin, e.g. `https://sportscal.site` |
 | `DATABASE_URL` | For saved calendars | PostgreSQL connection string |
 | `DATABASE_URL_POOLED` | No | Pooled connection for app traffic |
-| `DATABASE_POOL_MAX` | No | Connections per instance (default `5`) |
 | `RATE_LIMIT_MAX` | No | Saves per IP per window (default `20`) |
 | `RATE_LIMIT_WINDOW_SECONDS` | No | Rate limit window (default `3600`) |
 | `RATE_LIMIT_SALT` | No | Salt for hashed IPs |
-| `RUN_MIGRATIONS` | No | Set to `false` to skip migrations on start |
 
 ## Development
 
