@@ -90,7 +90,7 @@ export const espnStandingsNodeSchema: z.ZodType<EspnStandingsNode> = z.lazy(() =
 );
 export type { EspnStandingsNode };
 
-/** Core API season: GET core/.../season and core/.../seasons/{year}. */
+/** Season metadata, in the shape ESPN's core API used. Built from scoreboard data. */
 export const espnSeasonTypeSchema = z.looseObject({
   id: idLike,
   type: z.number().optional(),
@@ -115,10 +115,41 @@ export const espnSeasonSchema = z.looseObject({
 });
 export type EspnSeason = z.infer<typeof espnSeasonSchema>;
 
-/** Core API paged ref list (used for event counts). */
-export const espnPagedCountSchema = z.looseObject({
-  count: z.number().default(0),
+/**
+ * Site API scoreboard: GET site/.../scoreboard?dates=YYYYMMDD. Reports the
+ * season containing the date. `calendar` lists season types with date windows
+ * for week-based leagues ("list") or game days for the rest ("day").
+ */
+export const espnScoreboardSchema = z.looseObject({
+  leagues: z
+    .array(
+      z.looseObject({
+        season: z.looseObject({
+          year: z.number(),
+          displayName: z.string().optional(),
+          startDate: z.string().optional(),
+          endDate: z.string().optional(),
+        }),
+        calendarType: z.string().optional(),
+        calendar: z
+          .array(
+            z.union([
+              z.string(),
+              z.looseObject({
+                label: z.string().optional(),
+                value: idLike.optional(),
+                startDate: z.string().optional(),
+                endDate: z.string().optional(),
+                entries: z.array(z.unknown()).optional(),
+              }),
+            ]),
+          )
+          .default([]),
+      }),
+    )
+    .min(1),
 });
+export type EspnScoreboard = z.infer<typeof espnScoreboardSchema>;
 
 /** Team schedule event (site API). */
 export const espnCompetitorSchema = z.looseObject({

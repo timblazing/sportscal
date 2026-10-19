@@ -2,11 +2,31 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 import { LEAGUES, type LeagueKey } from "@/lib/config/leagues";
+import { normalizeSeason } from "@/lib/espn/normalize";
 import { buildGames } from "@/lib/espn/schedules";
+import { espnSeasonSchema } from "@/lib/espn/schemas";
 import type { SportsCalGame } from "@/lib/types";
 
 export function fixture(name: string): unknown {
   return JSON.parse(readFileSync(path.join(__dirname, "fixtures/espn", name), "utf8"));
+}
+
+/**
+ * A scoreboard response for the season (from core-API season fixtures) that
+ * contains `dates`, or for the first fixture without it. Like ESPN, a date
+ * outside every fixture answers with the first (current) season.
+ */
+export function scoreboardFixture(league: LeagueKey, seasonFiles: string[], dates?: string | null): unknown {
+  const seasons = seasonFiles.map((file) => normalizeSeason(espnSeasonSchema.parse(fixture(file)), LEAGUES[league]));
+  const day = dates ? Date.parse(`${dates.slice(0, 4)}-${dates.slice(4, 6)}-${dates.slice(6, 8)}T12:00:00Z`) : undefined;
+  const season = (day !== undefined && seasons.find((s) => Date.parse(s.startDate!) <= day && day <= Date.parse(s.endDate!))) || seasons[0];
+  return {
+    leagues: [{
+      season: { year: season.year, displayName: season.displayName, startDate: season.startDate, endDate: season.endDate },
+      calendarType: "list",
+      calendar: season.types.map((t) => ({ label: t.name, value: t.id, startDate: t.startDate, endDate: t.endDate, entries: [{}] })),
+    }],
+  };
 }
 
 export function gamesFromFixtures(

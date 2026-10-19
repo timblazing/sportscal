@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import ICAL from "ical.js";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { fixture } from "../helpers";
+import { fixture, scoreboardFixture } from "../helpers";
 import { defaultConfig } from "@/lib/validation/calendar-config";
 import { GET as teamsRoute } from "@/app/api/teams/route";
 import { GET as feedRoute } from "@/app/calendar/[league]/[...path]/route";
@@ -36,21 +36,20 @@ beforeEach(() => {
   vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
     const url = new URL(String(input));
     let file: string;
+    if (url.pathname.endsWith("/scoreboard")) {
+      return Response.json(scoreboardFixture("ncaab", ["season-ncaab-2027.json", "season-ncaab-2026.json"], url.searchParams.get("dates")));
+    }
     if (url.pathname.endsWith("/standings")) {
       expect(url.searchParams.get("group")).toBe("50");
       file = "standings-ncaab-d1.json";
     } else if (url.pathname.endsWith("/teams")) {
       expect(url.searchParams.get("limit")).toBe("1000");
       file = "teams-ncaab.json";
-    } else if (url.pathname.endsWith("/season")) {
-      file = "season-ncaab-2027.json";
     } else if (url.pathname.includes("/schedule")) {
       const year = url.searchParams.get("season");
       const type = url.searchParams.get("seasontype");
       expect(["2", "3"]).toContain(type);
       file = `schedule-ncaab-duke-${year}-${type === "2" ? "reg" : year === "2027" ? "post-empty" : "post"}.json`;
-    } else if (/\/seasons\/202[67]$/.test(url.pathname)) {
-      file = `season-ncaab-${url.pathname.split("/").at(-1)}.json`;
     } else {
       throw new Error(`Unexpected ESPN request: ${url}`);
     }

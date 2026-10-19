@@ -87,11 +87,11 @@ describe("WNBA season resolution", () => {
     });
   });
 
-  it("resolves the missing-next-season ESPN error body through the adapter", async () => {
+  it("stays on the completed season when ESPN has not published the next one", async () => {
     const fetch = vi.fn(async (input: string | URL | Request) => {
       const url = String(input);
-      if (url.endsWith("/season")) return Response.json(fixture("season-wnba-2026.json"));
-      if (url.endsWith("/seasons/2027")) return Response.json(fixture("season-wnba-2027.json"));
+      if (url.endsWith("/scoreboard")) return Response.json(fixture("scoreboard-wnba.json"));
+      if (url.endsWith("/scoreboard?dates=20270718")) return Response.json(fixture("scoreboard-wnba-2027-unpublished.json"));
       throw new Error(`Unexpected ESPN request: ${url}`);
     });
     vi.stubGlobal("fetch", fetch);

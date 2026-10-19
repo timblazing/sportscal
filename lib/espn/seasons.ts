@@ -1,13 +1,8 @@
 import type { LeagueConfig } from "@/lib/config/leagues";
-import type { ResolvedSeason, SeasonOption, SeasonStatus } from "@/lib/types";
-import {
-  REVALIDATE,
-  EspnNotFoundError,
-  buildEspnUrl,
-  espnFetchJson,
-} from "@/lib/espn/client";
-import { normalizeSeason } from "@/lib/espn/normalize";
-import { espnPagedCountSchema, espnSeasonSchema } from "@/lib/espn/schemas";
+import type { ResolvedSeason, SeasonStatus } from "@/lib/types";
+import { REVALIDATE, buildEspnUrl, espnFetchJson } from "@/lib/espn/client";
+import { normalizeScoreboardSeason, type ScoreboardSeason } from "@/lib/espn/normalize";
+import { espnScoreboardSchema } from "@/lib/espn/schemas";
 import type { SeasonMeta, SeasonResolverInput } from "@/lib/espn/types";
 
 // ---------------------------------------------------------------------------
@@ -78,33 +73,45 @@ export function decideSeason(input: SeasonResolverInput, now: Date): ResolvedSea
 // ESPN data access
 // ---------------------------------------------------------------------------
 
-export async function fetchCurrentSeason(league: LeagueConfig): Promise<SeasonMeta> {
-  const url = buildEspnUrl("core", league, ["season"]);
+function espnDate(date: Date): string {
+  return date.toISOString().slice(0, 10).replaceAll("-", "");
+}
+
+/** A date inside `year`'s season: the middle of `known`'s season, shifted by whole years. */
+export function probeDate(known: SeasonMeta, year: number): Date {
+  const start = regularSeasonStart(known) ?? toMs(known.startDate);
+  const end = competitiveSeasonEnd(known) ?? toMs(known.endDate);
+  const middle =
+    start !== undefined && end !== undefined
+      ? new Date((start + end) / 2)
+      : new Date(Date.UTC(known.year, 6, 1));
+  middle.setUTCFullYear(middle.getUTCFullYear() + year - known.year);
+  return middle;
+}
+
+/** The season ESPN's scoreboard reports for a date, or for today without one. */
+async function fetchScoreboardSeason(league: LeagueConfig, date?: Date): Promise<ScoreboardSeason> {
+  const url = buildEspnUrl("site", league, ["scoreboard"], { dates: date ? espnDate(date) : undefined });
   const data = await espnFetchJson(url, { revalidate: REVALIDATE.seasons });
-  return normalizeSeason(espnSeasonSchema.parse(data), league);
+  return normalizeScoreboardSeason(espnScoreboardSchema.parse(data), league);
 }
 
-export async function fetchSeason(league: LeagueConfig, year: number): Promise<SeasonMeta | null> {
-  const url = buildEspnUrl("core", league, ["seasons", year]);
-  try {
-    const data = await espnFetchJson(url, { revalidate: REVALIDATE.seasons });
-    return normalizeSeason(espnSeasonSchema.parse(data), league);
-  } catch (error) {
-    if (error instanceof EspnNotFoundError) return null;
-    throw error;
-  }
+export async function fetchCurrentSeason(league: LeagueConfig): Promise<SeasonMeta> {
+  return (await fetchScoreboardSeason(league)).season;
 }
 
-/** Count of regular-season events ESPN lists for a season (0 when unpublished). */
-export async function fetchSeasonEventCount(league: LeagueConfig, year: number): Promise<number> {
-  const url = buildEspnUrl("core", league, ["seasons", year, "types", league.regularSeasonTypeId ?? 2, "events"], { limit: 1 });
-  try {
-    const data = await espnFetchJson(url, { revalidate: REVALIDATE.seasons });
-    return espnPagedCountSchema.parse(data).count;
-  } catch (error) {
-    if (error instanceof EspnNotFoundError) return 0;
-    throw error;
-  }
+/**
+ * Look up another season through a date inside it. ESPN answers with the
+ * current season when that year isn't published, which reads as `null`.
+ */
+export async function fetchSeason(
+  league: LeagueConfig,
+  current: SeasonMeta,
+  year: number,
+): Promise<ScoreboardSeason | null> {
+  if (year === current.year) return { season: current, publishedSlots: 1 };
+  const found = await fetchScoreboardSeason(league, probeDate(current, year));
+  return found.season.year === year ? found : null;
 }
 
 export async function resolveLeagueSeason(
@@ -115,28 +122,8 @@ export async function resolveLeagueSeason(
   if (seasonPhase(current, now) !== "completed") {
     return decideSeason({ current }, now);
   }
-  const next = await fetchSeason(league, current.year + 1);
-  const nextEventCount = next ? await fetchSeasonEventCount(league, next.year) : 0;
-  return decideSeason({ current, next, nextEventCount }, now);
-}
-
-/** Seasons offered in the manual override menu, newest first. */
-export async function listSeasonOptions(
-  league: LeagueConfig,
-  resolved: ResolvedSeason,
-  count = 5,
-): Promise<SeasonOption[]> {
-  const years = Array.from({ length: count }, (_, i) => resolved.espnSeason - i);
-  const metas = await Promise.allSettled(years.map((y) => fetchSeason(league, y)));
-  const options: SeasonOption[] = [];
-  metas.forEach((result, i) => {
-    if (result.status === "fulfilled" && result.value) {
-      options.push({ espnSeason: result.value.year, displayName: result.value.displayName });
-    } else if (years[i] === resolved.espnSeason) {
-      options.push({ espnSeason: resolved.espnSeason, displayName: resolved.displayName });
-    }
-  });
-  return options;
+  const next = await fetchSeason(league, current, current.year + 1);
+  return decideSeason({ current, next: next?.season, nextEventCount: next?.publishedSlots ?? 0 }, now);
 }
 
 /** Resolve a specific (manually chosen) season's display metadata. */
@@ -145,7 +132,9 @@ export async function resolveManualSeason(
   year: number,
   now: Date = new Date(),
 ): Promise<ResolvedSeason | null> {
-  const meta = await fetchSeason(league, year);
-  if (!meta) return null;
+  const current = await fetchCurrentSeason(league);
+  const found = await fetchSeason(league, current, year);
+  if (!found) return null;
+  const meta = found.season;
   return { espnSeason: meta.year, displayName: meta.displayName, status: seasonPhase(meta, now) };
 }

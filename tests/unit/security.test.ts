@@ -33,8 +33,8 @@ describe("ESPN URL building", () => {
     expect(buildEspnUrl("site", LEAGUES.ncaaf, ["teams", "201", "schedule"], { season: 2026, seasontype: 2 })).toBe(
       "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/201/schedule?season=2026&seasontype=2",
     );
-    expect(buildEspnUrl("core", LEAGUES.nba, ["seasons", 2027])).toBe(
-      "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2027",
+    expect(buildEspnUrl("site", LEAGUES.nba, ["scoreboard"], { dates: "20270115" })).toBe(
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20270115",
     );
   });
 
@@ -51,15 +51,15 @@ describe("ESPN URL building", () => {
 });
 
 describe("NCAAB ESPN endpoints", () => {
-  it("builds schedule, D-I standings and core season URLs", () => {
+  it("builds schedule, D-I standings and scoreboard URLs", () => {
     expect(buildEspnUrl("site", LEAGUES.ncaab, ["teams", "150", "schedule"], { season: 2027, seasontype: 2 })).toBe(
       "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/schedule?season=2027&seasontype=2",
     );
     expect(buildEspnUrl("standings", LEAGUES.ncaab, ["standings"], { group: 50 })).toBe(
       "https://site.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?group=50",
     );
-    expect(buildEspnUrl("core", LEAGUES.ncaab, ["season"])).toBe(
-      "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/season",
+    expect(buildEspnUrl("site", LEAGUES.ncaab, ["scoreboard"])).toBe(
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard",
     );
     expect(LEAGUES.ncaab.scheduleSeasonTypes).toEqual([2, 3]);
   });

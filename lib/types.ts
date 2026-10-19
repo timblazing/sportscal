@@ -116,11 +116,6 @@ export interface ResolvedSeason {
   };
 }
 
-export interface SeasonOption {
-  espnSeason: number;
-  displayName: string;
-}
-
 export interface TeamSchedule {
   team: SportsCalTeam;
   season: ResolvedSeason;

@@ -8,7 +8,7 @@ import * as calendars from "@/lib/db/calendars";
 import * as client from "@/lib/espn/client";
 import { parseTeamsResponse } from "@/lib/espn/teams";
 import { defaultConfig } from "@/lib/validation/calendar-config";
-import { fixture } from "../helpers";
+import { fixture, scoreboardFixture } from "../helpers";
 
 const request = new Request("http://localhost/calendar/mls/san-diego-fc.ics") as NextRequest;
 const route = (path = ["san-diego-fc.ics"]) => GET(request, { params: Promise.resolve({ league: "mls", path }) });
@@ -20,7 +20,7 @@ function mockEspn({ missingTeam = false, regularFailure = false } = {}) {
     if (u.pathname.endsWith("/teams/22529")) return { team };
     if (u.pathname.endsWith("/teams")) return missingTeam ? { sports: [{ leagues: [{ teams: [] }] }] } : fixture("teams-mls.json");
     if (u.pathname.endsWith("/standings")) return fixture("standings-mls.json");
-    if (u.pathname.endsWith("/season")) return fixture("season-mls-2026.json");
+    if (u.pathname.endsWith("/scoreboard")) return scoreboardFixture("mls", ["season-mls-2026.json"], u.searchParams.get("dates"));
     if (u.pathname.endsWith("/schedule")) {
       if (u.searchParams.get("seasontype") !== "1") throw new client.EspnError("optional playoff outage");
       if (regularFailure) throw new client.EspnError("required regular outage");

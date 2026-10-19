@@ -1,6 +1,6 @@
 import type { NormalizedSeasonType } from "@/lib/config/leagues";
 
-/** Normalized season-type window from ESPN's core season calendar. */
+/** Normalized season-type window from ESPN's season calendar. */
 export interface SeasonTypeMeta {
   id: string;
   name: string;
@@ -9,7 +9,7 @@ export interface SeasonTypeMeta {
   endDate?: string;
 }
 
-/** Normalized season metadata from ESPN's core API. */
+/** Normalized season metadata from ESPN's scoreboard. */
 export interface SeasonMeta {
   year: number;
   displayName: string;
@@ -24,6 +24,6 @@ export interface SeasonResolverInput {
   current: SeasonMeta;
   /** The following season if ESPN knows about it. */
   next?: SeasonMeta | null;
-  /** Number of regular-season events ESPN lists for `next`. */
+  /** Game days or weeks ESPN has published for `next` (0 when none). */
   nextEventCount?: number;
 }
