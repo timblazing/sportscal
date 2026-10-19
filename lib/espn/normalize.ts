@@ -9,6 +9,7 @@ import type {
   EspnBroadcast,
   EspnCompetitor,
   EspnEvent,
+  EspnScoreboard,
   EspnSeason,
   EspnTeam,
   EspnVenue,
@@ -115,6 +116,32 @@ export function normalizeSeason(raw: EspnSeason, league: LeagueConfig): SeasonMe
     endDate: raw.endDate,
     types,
   };
+}
+
+export interface ScoreboardSeason {
+  season: SeasonMeta;
+  /** Game days ("day" calendars) or weeks ("list" calendars) ESPN has published. */
+  publishedSlots: number;
+}
+
+export function normalizeScoreboardSeason(raw: EspnScoreboard, league: LeagueConfig): ScoreboardSeason {
+  const { season, calendar } = raw.leagues[0];
+  const windows = calendar.filter((entry) => typeof entry !== "string");
+  const meta = normalizeSeason(
+    {
+      ...season,
+      types: {
+        items: windows
+          .filter((entry) => entry.value !== undefined)
+          .map((entry) => ({ id: entry.value!, name: entry.label, startDate: entry.startDate, endDate: entry.endDate })),
+      },
+    },
+    league,
+  );
+  const publishedSlots = windows.length
+    ? windows.reduce((sum, entry) => sum + (entry.entries?.length ?? 0), 0)
+    : calendar.length;
+  return { season: meta, publishedSlots };
 }
 
 function shortSeasonLabel(displayName: string | undefined, abbreviation: string | undefined, leagueNames: string[]): string | undefined {

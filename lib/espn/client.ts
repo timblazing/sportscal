@@ -12,8 +12,8 @@ const BASES = {
   site: "https://site.api.espn.com/apis/site/v2/sports",
   /** Site API v2 standings (conference membership). */
   standings: "https://site.api.espn.com/apis/v2/sports",
-  /** Core API: seasons and season-type calendars. */
-  core: "https://sports.core.api.espn.com/v2/sports",
+  // The core API (sports.core.api.espn.com) answers 403 to Cloudflare Workers,
+  // so seasons come from the site scoreboard instead.
 } as const;
 
 export type EspnApi = keyof typeof BASES;
@@ -57,10 +57,7 @@ export function buildEspnUrl(
   for (const part of parts) {
     if (!SEGMENT_RE.test(part)) throw new EspnError(`Invalid ESPN path segment: ${part}`);
   }
-  const leaguePath =
-    api === "core"
-      ? `${league.sport}/leagues/${league.league}`
-      : `${league.sport}/${league.league}`;
+  const leaguePath = `${league.sport}/${league.league}`;
   const url = new URL(`${BASES[api]}/${leaguePath}${parts.length ? `/${parts.join("/")}` : ""}`);
   for (const [key, value] of Object.entries(query)) {
     if (value !== undefined) url.searchParams.set(key, String(value));

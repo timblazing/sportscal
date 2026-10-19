@@ -1,9 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { LEAGUES, type LeagueKey } from "@/lib/config/leagues";
-import { normalizeSeason } from "@/lib/espn/normalize";
-import { espnSeasonSchema } from "@/lib/espn/schemas";
-import { decideSeason, seasonPhase } from "@/lib/espn/seasons";
+import { normalizeScoreboardSeason, normalizeSeason } from "@/lib/espn/normalize";
+import { espnScoreboardSchema, espnSeasonSchema } from "@/lib/espn/schemas";
+import { decideSeason, probeDate, resolveLeagueSeason, resolveManualSeason, seasonPhase } from "@/lib/espn/seasons";
 import type { SeasonMeta } from "@/lib/espn/types";
 import { fixture } from "../helpers";
 
@@ -173,5 +173,54 @@ describe("NCAAB season resolution", () => {
       espnSeason: 2026, displayName: "2025-26", status: "completed",
       pendingNextSeason: { espnSeason: 2027, displayName: "2026-27" },
     });
+  });
+});
+
+describe("seasons from the site scoreboard", () => {
+  const scoreboard = (league: LeagueKey, file: string) =>
+    normalizeScoreboardSeason(espnScoreboardSchema.parse(fixture(file)), LEAGUES[league]);
+
+  afterEach(() => vi.unstubAllGlobals());
+
+  it("reads season-type windows from a week-based calendar", () => {
+    const { season: nfl, publishedSlots } = scoreboard("nfl", "scoreboard-nfl.json");
+    expect(nfl).toMatchObject({ year: 2026, displayName: "2026" });
+    expect(nfl.types.map((t) => t.normalized)).toEqual(["preseason", "regular", "postseason", "other"]);
+    expect(publishedSlots).toBeGreaterThan(0);
+    expect(seasonPhase(nfl, at("2026-08-20T00:00:00Z"))).toBe("upcoming");
+    expect(seasonPhase(nfl, at("2026-10-20T00:00:00Z"))).toBe("active");
+  });
+
+  it("falls back to season dates for day-based calendars", () => {
+    const { season: mlb, publishedSlots } = scoreboard("mlb", "scoreboard-mlb-2027.json");
+    expect(mlb).toMatchObject({ year: 2027, displayName: "2027", types: [] });
+    expect(publishedSlots).toBe(80);
+    expect(seasonPhase(mlb, at("2027-01-15T00:00:00Z"))).toBe("upcoming");
+  });
+
+  it("probes the middle of the season, shifted by whole years", () => {
+    const { season: wnba } = scoreboard("wnba", "scoreboard-wnba.json");
+    expect(probeDate(wnba, 2027).toISOString().slice(0, 10)).toBe("2027-07-18");
+    expect(probeDate(wnba, 2024).toISOString().slice(0, 10)).toBe("2024-07-18");
+  });
+
+  it("moves to the next season once ESPN publishes it", async () => {
+    vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
+      const url = String(input);
+      if (url.endsWith("/scoreboard")) return Response.json(fixture("scoreboard-wnba.json"));
+      if (url.includes("/scoreboard?dates=")) return Response.json({
+        leagues: [{ season: { year: 2027, displayName: "2027", startDate: "2027-04-02T07:00Z", endDate: "2027-10-31T06:59Z" }, calendarType: "day", calendar: ["2027-05-15T07:00Z"] }],
+      });
+      throw new Error(`Unexpected ESPN request: ${url}`);
+    }));
+    expect(await resolveLeagueSeason(LEAGUES.wnba, at("2026-11-02T12:00:00Z"))).toEqual({ espnSeason: 2027, displayName: "2027", status: "upcoming" });
+  });
+
+  it("returns null for a manual season ESPN doesn't know", async () => {
+    vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => Response.json(fixture(
+      String(input).endsWith("/scoreboard") ? "scoreboard-wnba.json" : "scoreboard-wnba-2027-unpublished.json",
+    ))));
+    expect(await resolveManualSeason(LEAGUES.wnba, 2027, at("2026-11-02T12:00:00Z"))).toBeNull();
+    expect(await resolveManualSeason(LEAGUES.wnba, 2026, at("2026-11-02T12:00:00Z"))).toEqual({ espnSeason: 2026, displayName: "2026", status: "completed" });
   });
 });

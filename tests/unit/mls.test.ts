@@ -14,7 +14,7 @@ import * as client from "@/lib/espn/client";
 import { normalizeSeason, normalizeSeasonType } from "@/lib/espn/normalize";
 import { espnSeasonSchema } from "@/lib/espn/schemas";
 import { buildGames, fetchTeamGames } from "@/lib/espn/schedules";
-import { decideSeason, fetchSeasonEventCount, seasonPhase } from "@/lib/espn/seasons";
+import { decideSeason, seasonPhase } from "@/lib/espn/seasons";
 import { buildCatalog, getTeams, findTeam, membershipFromConferenceStandings, membershipFromGroups, parseTeamsResponse } from "@/lib/espn/teams";
 import { calendarConfigSchema, defaultConfig, isDefaultConfig } from "@/lib/validation/calendar-config";
 import { fixture, gamesFromFixtures } from "../helpers";
@@ -178,10 +178,5 @@ describe("MLS season resolution", () => {
     expect(meta.types.find((t) => t.id === "17")?.normalized).toBe("postseason");
     expect(seasonPhase(meta, new Date("2026-10-02T12:00:00Z"))).toBe("active");
     expect(decideSeason({ current: meta, next: null }, new Date("2027-01-02T12:00:00Z"))).toMatchObject({ espnSeason: 2026, status: "completed", pendingNextSeason: { espnSeason: 2027 } });
-  });
-  it("counts regular type 1 rather than the All-Star type", async () => {
-    const fetch = vi.spyOn(client, "espnFetchJson").mockResolvedValue({ count: 511 });
-    expect(await fetchSeasonEventCount(LEAGUES.mls, 2026)).toBe(511);
-    expect(fetch.mock.calls[0][0]).toContain("/types/1/events");
   });
 });
