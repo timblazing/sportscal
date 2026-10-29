@@ -3,6 +3,9 @@ import "server-only";
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 
+import { CacheUnavailableError } from "@/lib/cache/coordinator";
+import { PublicRateLimitError } from "@/lib/cache/abuse";
+
 import { EspnError } from "@/lib/espn/client";
 import { DatabaseNotConfiguredError } from "@/lib/db/client";
 import { SeasonNotFoundError, TeamNotFoundError } from "@/lib/schedule-service";
@@ -24,6 +27,12 @@ export function jsonError(status: number, code: string, message: string, headers
 
 /** Map known failures to useful, non-scary responses. */
 export function errorResponse(error: unknown) {
+  if (error instanceof CacheUnavailableError) {
+    return jsonError(503, "sports_data_unavailable", error.message, { "retry-after": "60" });
+  }
+  if (error instanceof PublicRateLimitError) {
+    return jsonError(429, "rate_limited", error.message, { "retry-after": "300" });
+  }
   if (error instanceof ZodError) {
     return jsonError(400, "invalid_request", error.issues[0]?.message ?? "Invalid request");
   }
@@ -44,7 +53,7 @@ export function errorResponse(error: unknown) {
   if (error instanceof DatabaseNotConfiguredError) {
     return jsonError(503, "database_unavailable", "Saved calendars aren't available on this deployment.");
   }
-  console.error(error);
+  console.error(JSON.stringify({ event: "request_error" }));
   return jsonError(500, "internal_error", "Unexpected server error. Try again in a moment.");
 }
 
@@ -54,12 +63,41 @@ export function bearerToken(request: Request): string | null {
   return match ? match[1] : null;
 }
 
-/** Reject oversized JSON bodies before parsing. */
+/** Count streamed UTF-8 bytes, including bodies with missing or false lengths. */
 export async function readJson(request: Request, maxBytes = 64 * 1024): Promise<unknown> {
-  const text = await request.text();
-  if (text.length > maxBytes) throw new ZodError([{ code: "custom", message: "Request body is too large", path: [], input: undefined }]);
+  const tooLarge = () => new ZodError([{ code: "custom", message: "Request body is too large", path: [], input: undefined }]);
+  const declaredLength = request.headers.get("content-length");
+  if (declaredLength && /^\d+$/.test(declaredLength) && Number(declaredLength) > maxBytes) {
+    await request.body?.cancel();
+    throw tooLarge();
+  }
+  const reader = request.body?.getReader();
+  const chunks: Uint8Array[] = [];
+  let length = 0;
+  if (reader) {
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        length += value.byteLength;
+        if (length > maxBytes) {
+          await reader.cancel();
+          throw tooLarge();
+        }
+        chunks.push(value);
+      }
+    } finally {
+      reader.releaseLock();
+    }
+  }
+  const bytes = new Uint8Array(length);
+  let offset = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
   try {
-    return JSON.parse(text);
+    return JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
   } catch {
     throw new ZodError([{ code: "custom", message: "Request body must be JSON", path: [], input: undefined }]);
   }

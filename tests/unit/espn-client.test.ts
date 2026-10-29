@@ -13,6 +13,6 @@ it("cache:none uses no-store and never retains or reads raw last-good responses"
   fetch.mockResolvedValue({ ok: true, status: 200, json: async () => ({ normal: true }) });
   await espnFetchJson(url, { revalidate: 900 });
   fetch.mockRejectedValue(new Error("offline"));
-  expect(await espnFetchJson(url, { revalidate: 900 })).toEqual({ normal: true });
+  await expect(espnFetchJson(url, { revalidate: 900 })).rejects.toThrow("offline");
   await expect(espnFetchJson(url, { revalidate: 900, cache: "none" })).rejects.toThrow("offline");
 });

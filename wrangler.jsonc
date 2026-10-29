@@ -15,9 +15,28 @@
       "service": "sportscal"
     }
   ],
-  "observability": {
-    "enabled": true
+  // Workers Paid: cap each invocation's CPU (default is 30 s). Normal cache
+  // hits use a few ms; cold catalog/schedule normalization needs headroom.
+  "limits": {
+    "cpu_ms": 200
   },
+  // Sampled so an abusive request flood can't exceed included Workers Logs.
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1
+  },
+  // Shared normalized-data cache, upstream budget, and public admission
+  // control (db/cache/0001_cache.sql). The placeholder ID is deliberate: a
+  // deploy fails until the database is created and approved, rather than
+  // shipping a Worker that fails closed (503) for all public data.
+  "d1_databases": [
+    {
+      "binding": "SPORTSCAL_CACHE",
+      "database_name": "sportscal-cache",
+      "database_id": "REPLACE_WITH_APPROVED_D1_DATABASE_ID",
+      "migrations_dir": "db/cache"
+    }
+  ],
   "vars": {
     "APP_URL": "https://sportscal.site"
   }

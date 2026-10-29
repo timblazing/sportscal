@@ -1,6 +1,6 @@
 # Cloudflare efficiency and cost-safety implementation plan
 
-Status: handoff for a future implementation agent; no runtime changes in this PR.
+Status: implemented (see `docs/cloudflare-operations.md`). On 2026-10-29 the owner moved the account to Workers Paid; the Free-plan statements below describe the original planning context, and the operations doc restates the cost boundary for Paid. R2 remains unbound.
 Reviewed: 2026-10-29, main at `c80c1ef`.
 
 ## Owner requirements

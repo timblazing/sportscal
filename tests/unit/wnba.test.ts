@@ -131,7 +131,8 @@ describe("WNBA preview and calendars", () => {
     vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request) => {
       const url = new URL(String(input));
       let name: string;
-      if (url.pathname.endsWith("/teams")) name = "teams-wnba.json";
+      if (url.pathname.endsWith("/scoreboard") && !url.search) name = "scoreboard-wnba.json";
+      else if (url.pathname.endsWith("/teams")) name = "teams-wnba.json";
       else if (url.pathname.endsWith("/standings")) {
         expect(url.searchParams.get("group")).toBe("3");
         name = "standings-wnba.json";

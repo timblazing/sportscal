@@ -26,7 +26,7 @@ export function toIcsEvent(event: CalendarEvent, dtstamp: number): EventAttribut
     busyStatus: event.busy ? ("BUSY" as const) : ("FREE" as const),
     transp: event.busy ? ("OPAQUE" as const) : ("TRANSPARENT" as const),
     productId: PRODUCT_ID,
-    lastModified: dtstamp,
+    timestamp: dtstamp,
   };
   const { timing } = event;
   if (timing.kind === "timed") {
@@ -47,13 +47,16 @@ export function toIcsEvent(event: CalendarEvent, dtstamp: number): EventAttribut
 
 export interface GenerateOptions {
   calendarName: string;
-  /** Fixed timestamp for DTSTAMP (tests); defaults to now. */
+  /** Explicit representation timestamp (tests); defaults to a stable service epoch. */
   now?: Date;
 }
 
 /** Build a VCALENDAR string from calendar events (excluded events are skipped). */
 export function generateIcs(events: CalendarEvent[], options: GenerateOptions): string {
-  const dtstamp = (options.now ?? new Date()).getTime();
+  // ESPN does not provide reliable modification times. Do not invent a new
+  // LAST-MODIFIED on every poll. Validators detect content changes; UIDs stay
+  // stable when games move or are cancelled.
+  const dtstamp = (options.now ?? new Date("2026-01-01T00:00:00Z")).getTime();
   const attributes = events
     .filter((e) => e.included)
     .map((e) => toIcsEvent(e, dtstamp))

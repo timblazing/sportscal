@@ -1,4 +1,4 @@
-import { unstable_cache } from "next/cache";
+import { sharedLoad } from "@/lib/cache/shared";
 
 import { LEAGUES, type LeagueConfig, type LeagueKey } from "@/lib/config/leagues";
 import type { SportsCalTeam } from "@/lib/types";
@@ -146,7 +146,7 @@ export function buildCatalog(
 async function loadCatalog(leagueKey: LeagueKey): Promise<CatalogTeam[]> {
   const league = LEAGUES[leagueKey];
   const teamsUrl = buildEspnUrl("site", league, ["teams"], { limit: 1000 });
-  const teamsPromise = espnFetchJson(teamsUrl, { revalidate: REVALIDATE.teams });
+  const teamsData = await espnFetchJson(teamsUrl, { revalidate: REVALIDATE.teams });
 
   let membership: Map<string, Membership>;
   if (league.teamGrouping.kind === "flat") {
@@ -178,22 +178,22 @@ async function loadCatalog(leagueKey: LeagueKey): Promise<CatalogTeam[]> {
     results.forEach((result, i) => {
       if (result.status === "fulfilled") {
         membershipFromStandings(result.value, groups[i].tier, membership);
-      } else if (groups[i].tier === "primary") {
+      } else {
         throw result.reason;
       }
     });
   }
 
-  return buildCatalog(league, parseTeamsResponse(await teamsPromise), membership);
+  return buildCatalog(league, parseTeamsResponse(teamsData), membership);
 }
 
 /**
  * Normalized team catalog, cached as a whole (the raw NCAAF team list is close
  * to Next's per-fetch cache limit, the normalized catalog is small).
  */
-export const getTeamCatalog = unstable_cache(loadCatalog, ["espn-team-catalog-v3"], {
-  revalidate: REVALIDATE.teams,
-});
+export function getTeamCatalog(leagueKey: LeagueKey): Promise<CatalogTeam[]> {
+  return sharedLoad(`catalog:${leagueKey}`, REVALIDATE.teams, () => loadCatalog(leagueKey));
+}
 
 export async function getTeams(
   leagueKey: LeagueKey,
@@ -206,21 +206,21 @@ export async function getTeams(
 export async function findTeam(
   leagueKey: LeagueKey,
   slugOrId: string,
+  allowUncatalogued = false,
 ): Promise<CatalogTeam | undefined> {
   const key = slugOrId.toLowerCase();
-  const numericId = /^\d{1,10}$/.test(slugOrId);
-  try {
-    const catalog = await getTeamCatalog(leagueKey);
-    const found = catalog.find((t) => t.slug === key) ?? catalog.find((t) => t.id === slugOrId);
-    if (found || !numericId) return found;
-  } catch (error) {
-    if (!numericId) throw error;
-  }
-  const league = LEAGUES[leagueKey];
-  const data = await espnFetchJson(buildEspnUrl("site", league, ["teams", slugOrId]), { revalidate: REVALIDATE.teams });
-  const raw = typeof data === "object" && data !== null && "team" in data ? (data as { team: unknown }).team : data;
-  const parsed = espnTeamSchema.safeParse(raw);
-  if (!parsed.success) return undefined;
-  const team = normalizeTeam(parsed.data, league);
-  return { ...team, tier: "primary" };
+  // Catalogs include the standings' transition teams. Unknown numeric IDs
+  // must never become arbitrary ESPN probes or allocate shared cache rows.
+  const catalog = await getTeamCatalog(leagueKey);
+  const found = catalog.find((t) => t.slug === key) ?? catalog.find((t) => t.id === slugOrId);
+  if (found || !allowUncatalogued || !/^\d{1,10}$/.test(slugOrId)) return found;
+  // Only a configuration already persisted behind an edit token may use this
+  // compatibility escape hatch for a team omitted from today's catalog.
+  return sharedLoad(`team:${leagueKey}:${slugOrId}`, REVALIDATE.teams, async () => {
+    const data = await espnFetchJson(buildEspnUrl("site", LEAGUES[leagueKey], ["teams", slugOrId]), { revalidate: REVALIDATE.teams });
+    const raw = typeof data === "object" && data !== null && "team" in data ? data.team : data;
+    const team = normalizeTeam(espnTeamSchema.parse(raw), LEAGUES[leagueKey]);
+    if (team.id !== slugOrId) throw new Error("Unexpected ESPN team");
+    return { ...team, tier: "primary" as const };
+  });
 }

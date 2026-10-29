@@ -13,7 +13,7 @@ import { fixture, scoreboardFixture } from "../helpers";
 const request = new Request("http://localhost/calendar/mls/san-diego-fc.ics") as NextRequest;
 const route = (path = ["san-diego-fc.ics"]) => GET(request, { params: Promise.resolve({ league: "mls", path }) });
 
-function mockEspn({ missingTeam = false, regularFailure = false } = {}) {
+function mockEspn({ missingTeam = false, regularFailure = false, optionalFailure = false } = {}) {
   const team = parseTeamsResponse(fixture("teams-mls.json")).find((t) => t.id === "22529");
   return vi.spyOn(client, "espnFetchJson").mockImplementation(async (url) => {
     const u = new URL(url);
@@ -22,7 +22,10 @@ function mockEspn({ missingTeam = false, regularFailure = false } = {}) {
     if (u.pathname.endsWith("/standings")) return fixture("standings-mls.json");
     if (u.pathname.endsWith("/scoreboard")) return scoreboardFixture("mls", ["season-mls-2026.json"], u.searchParams.get("dates"));
     if (u.pathname.endsWith("/schedule")) {
-      if (u.searchParams.get("seasontype") !== "1") throw new client.EspnError("optional playoff outage");
+      if (u.searchParams.get("seasontype") !== "1") {
+        if (optionalFailure) throw new client.EspnError("optional playoff outage", 503);
+        throw new client.EspnNotFoundError(url);
+      }
       if (regularFailure) throw new client.EspnError("required regular outage");
       return fixture(u.searchParams.has("fixture") ? "schedule-mls-sandiego-2026-reg-fixtures.json" : "schedule-mls-sandiego-2026-reg.json");
     }
@@ -33,7 +36,7 @@ function mockEspn({ missingTeam = false, regularFailure = false } = {}) {
 afterEach(() => vi.restoreAllMocks());
 
 describe("MLS public feed integration", () => {
-  it("serves all 34 canonical events even when optional playoff requests fail", async () => {
+  it("serves all 34 canonical events when optional playoff rounds are unpublished", async () => {
     mockEspn();
     const response = await route();
     expect(response.status).toBe(200);
@@ -43,6 +46,13 @@ describe("MLS public feed integration", () => {
     expect(ics).toContain("X-WR-CALNAME:San Diego 2026 Schedule");
     expect(ics).toContain("DURATION:PT2H");
     expect(ics.match(/UID:espn-\d+-22529@sportscal.site/g)).toHaveLength(34);
+  });
+
+  it("returns 503 instead of publishing a partial calendar during optional-round outages", async () => {
+    mockEspn({ optionalFailure: true });
+    const response = await route();
+    expect(response.status).toBe(503);
+    expect(response.headers.get("retry-after")).toBe("300");
   });
 
   it("returns 503 and retry-after for a required regular-season outage", async () => {

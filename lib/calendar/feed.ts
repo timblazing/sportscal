@@ -18,11 +18,11 @@ export interface Feed {
  * The full feed pipeline: resolve season → fetch cached ESPN schedule →
  * filter → templates → overrides → ICS.
  */
-export async function buildFeed(config: CalendarConfig, uidScope: string): Promise<Feed> {
+export async function buildFeed(config: CalendarConfig, uidScope: string, options: { saved?: boolean } = {}): Promise<Feed> {
   const { team, season, games } = await loadTeamSchedule(config.league, config.teamId, {
     seasonMode: config.seasonMode,
     seasonOverride: config.seasonOverride,
-  });
+  }, options.saved);
   const calendarName =
     renderTemplate(config.templates.calendarName, calendarTemplateValues(team, season.displayName)) ||
     `${team.displayName} ${season.displayName}`;

@@ -2,7 +2,7 @@ import "server-only";
 
 import type { LeagueKey } from "@/lib/config/leagues";
 import { LEAGUES } from "@/lib/config/leagues";
-import { fetchTeamGames } from "@/lib/espn/schedules";
+import { fetchTeamGamesSnapshot } from "@/lib/espn/schedules";
 import { resolveLeagueSeason, resolveManualSeason } from "@/lib/espn/seasons";
 import { findTeam, type CatalogTeam } from "@/lib/espn/teams";
 import type { ResolvedSeason, SportsCalGame } from "@/lib/types";
@@ -55,12 +55,11 @@ export async function loadTeamSchedule(
   leagueKey: LeagueKey,
   teamSlugOrId: string,
   selection: SeasonSelection = { seasonMode: "auto" },
+  saved = false,
 ): Promise<LoadedSchedule> {
-  const [team, season] = await Promise.all([
-    findTeam(leagueKey, teamSlugOrId),
-    resolveSeason(leagueKey, selection),
-  ]);
+  const team = await findTeam(leagueKey, teamSlugOrId, saved);
   if (!team) throw new TeamNotFoundError(leagueKey, teamSlugOrId);
-  const games = await fetchTeamGames(leagueKey, team.id, season);
-  return { team, season, games, fetchedAt: new Date().toISOString() };
+  const season = await resolveSeason(leagueKey, selection);
+  const snapshot = await fetchTeamGamesSnapshot(leagueKey, team.id, season);
+  return { team, season, games: snapshot.value, fetchedAt: new Date(snapshot.fetchedAt).toISOString() };
 }
