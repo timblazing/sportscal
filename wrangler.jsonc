@@ -5,6 +5,10 @@
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  // Serve only through sportscal.site so the zone's rate-limiting rule
+  // applies to every request; workers.dev and preview URLs would bypass it.
+  "workers_dev": false,
+  "preview_urls": false,
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -27,6 +31,17 @@
   },
   // Shared normalized-data cache, upstream budget, and public admission
   // control (db/cache/0001_cache.sql).
+  // Saved-calendar PostgreSQL (Neon) through Hyperdrive: unlimited queries
+  // on Workers Paid at no extra cost; query caching disabled.
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "40b49935761c41a6a7ba32b1751a3212",
+      // Local-only placeholder required by `next dev`/build tooling; production
+      // uses the Hyperdrive config above. Never put a real credential here.
+      "localConnectionString": "postgres://localhost:5432/sportscal"
+    }
+  ],
   "d1_databases": [
     {
       "binding": "SPORTSCAL_CACHE",

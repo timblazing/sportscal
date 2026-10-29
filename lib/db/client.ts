@@ -1,6 +1,7 @@
 import "server-only";
 
 import { AsyncLocalStorage } from "node:async_hooks";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { drizzle, type PostgresJsDatabase } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
@@ -37,16 +38,26 @@ export function getDb(): Database {
   const scope = scopes.getStore();
   if (!scope) throw new Error("Database access requires withDatabase()");
   if (scope.db) return scope.db;
-  const url = process.env.DATABASE_URL_POOLED || process.env.DATABASE_URL;
+  const url = hyperdriveUrl() || process.env.DATABASE_URL_POOLED || process.env.DATABASE_URL;
   if (!url) throw new DatabaseNotConfiguredError();
   scope.client = postgres(url, {
     max: 1,
-    // Validate the peer certificate; prefer the existing pooled endpoint.
-    ssl: "verify-full",
+    // Hyperdrive pools connections and owns TLS to the origin; postgres.js's
+    // node:tls path fails under workerd, so Workers must use the binding.
     prepare: false,
     connect_timeout: 10,
     idle_timeout: 5,
   });
   scope.db = drizzle(scope.client, { schema });
   return scope.db;
+}
+
+/** Hyperdrive in Workers (query caching disabled: auth and edits must be fresh). */
+function hyperdriveUrl(): string | undefined {
+  try {
+    const env = getCloudflareContext().env as { HYPERDRIVE?: { connectionString: string } };
+    return env.HYPERDRIVE?.connectionString;
+  } catch {
+    return undefined; // Node tests and local development.
+  }
 }

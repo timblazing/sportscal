@@ -28,7 +28,7 @@ describe("handler database lifecycle", () => {
     });
     expect(clients).toHaveLength(1);
     expect(clients[0].end).toHaveBeenCalledOnce();
-    expect(clients[0].options).toMatchObject({ max: 1, prepare: false, ssl: "verify-full" });
+    expect(clients[0].options).toMatchObject({ max: 1, prepare: false });
   });
 
   it("isolates concurrent requests and closes both when one fails", async () => {

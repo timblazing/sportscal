@@ -53,7 +53,9 @@ export function errorResponse(error: unknown) {
   if (error instanceof DatabaseNotConfiguredError) {
     return jsonError(503, "database_unavailable", "Saved calendars aren't available on this deployment.");
   }
-  console.error(JSON.stringify({ event: "request_error" }));
+  // Error class and driver code only: never messages, URLs, or credentials.
+  const { name, code } = (error ?? {}) as { name?: unknown; code?: unknown };
+  console.error(JSON.stringify({ event: "request_error", name: String(name ?? "unknown").slice(0, 40), code: String(code ?? "").slice(0, 40) }));
   return jsonError(500, "internal_error", "Unexpected server error. Try again in a moment.");
 }
 

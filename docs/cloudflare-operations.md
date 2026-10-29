@@ -55,7 +55,7 @@ There is no zero-charge guarantee. The enforcement boundaries are:
 
 ## Deployment (requires owner approval; nothing below has been run)
 
-Done on 2026-10-29 with owner approval: `sportscal-cache` D1 created (`a163daa9-6dd9-48a0-86af-d7fbbc65289c`, WNAM), migration `0001_cache.sql` applied, and the zone rate-limiting rule added (50 requests / 10 s per IP on `/api/` and `/calendar/`, block 10 s; Free zone plan limits). Merging to `main` deploys automatically. The steps below are kept for rebuilding or auditing.
+Done on 2026-10-29 with owner approval: `sportscal-cache` D1 created (`a163daa9-6dd9-48a0-86af-d7fbbc65289c`, WNAM), migration `0001_cache.sql` applied, and the zone rate-limiting rule added (50 requests / 10 s per IP on `/api/` and `/calendar/`, block 10 s; Free zone plan limits). Also done: Hyperdrive `sportscal-db` (`40b49935761c41a6a7ba32b1751a3212`, query caching disabled) now carries saved-calendar PostgreSQL traffic. postgres.js's Node TLS path fails on Workers, so saved calendars were failing before this. Hyperdrive queries are unlimited on Workers Paid at no extra cost. `workers.dev` and preview URLs are disabled so every request passes the zone rate limit. Production deployed as version `26665dd9`. Merging to `main` deploys automatically. The steps below are kept for rebuilding or auditing.
 
 1. In the dashboard, confirm the account is on Workers Paid (Workers & Pages → Plans). The available API token could not read subscriptions. Optionally add billing notifications; they are informational only.
 2. Create the database. This creates a production resource:
