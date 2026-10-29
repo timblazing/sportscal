@@ -2,6 +2,19 @@
 
 Applies to the implementation of `docs/cloudflare-efficiency-plan.md`. Written 2026-10-29, after the account moved from Workers Free to Workers Paid ($5/month). Recheck prices against the linked Cloudflare pages before approving; the figures below are the ones in effect when this was written.
 
+## Current plan: Workers Free (since 2026-10-29)
+
+The owner moved the account back to Workers Free and removed R2 paid usage. On Free, every SportsCal resource hits a hard limit instead of a bill:
+
+- Workers: 100,000 requests/day and 10 ms CPU per request. Over the limit, requests fail with errors and are not billed. `limits.cpu_ms` was removed because it is Paid-only.
+- D1 (`sportscal-cache`): 5 M rows read/day, 100 k rows written/day, 5 GB storage. Over the limit, queries fail and the app serves stale data or 503. Design maximum is about 27 k writes/day.
+- Hyperdrive (`sportscal-db`): 100 k queries/day, then refused.
+- Workers Logs: daily Free allowance, then dropped. Sampled at 0.1.
+- R2: SportsCal has no binding and makes no calls. On Free, R2 overages elsewhere on the account would still be billable.
+- The zone rate-limit rule (50 requests / 10 s per IP) and the ESPN budget stay in place, keeping abuse from using up the daily limits.
+
+The enforcement boundary is now Cloudflare's Free-plan cutoffs. The trade-off is availability: a large abuse burst can make the site return errors until 00:00 UTC, but it cannot create charges. The sections below describe the earlier Paid period and stay for reference.
+
 ## What changed with Workers Paid
 
 Workers Free enforced a hard boundary: 100,000 requests/day and 10 ms CPU per invocation, and D1 Free stopped serving once its daily quota was used. **Workers Paid removes those cutoffs.** Usage beyond the included amounts is billed, not refused. Budget alerts and billing notifications report usage after the fact. They do not stop spending.

@@ -19,11 +19,8 @@
       "service": "sportscal"
     }
   ],
-  // Workers Paid: cap each invocation's CPU (default is 30 s). Normal cache
-  // hits use a few ms; cold catalog/schedule normalization needs headroom.
-  "limits": {
-    "cpu_ms": 200
-  },
+  // Workers Free: the platform enforces 10 ms CPU and 100k requests/day.
+  // Custom `limits` are Paid-only and would make deploys fail.
   // Sampled so an abusive request flood can't exceed included Workers Logs.
   "observability": {
     "enabled": true,
@@ -32,7 +29,7 @@
   // Shared normalized-data cache, upstream budget, and public admission
   // control (db/cache/0001_cache.sql).
   // Saved-calendar PostgreSQL (Neon) through Hyperdrive: unlimited queries
-  // on Workers Paid at no extra cost; query caching disabled.
+  // on Workers Free up to 100k/day, then refused (not billed); caching disabled.
   "hyperdrive": [
     {
       "binding": "HYPERDRIVE",
