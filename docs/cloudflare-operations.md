@@ -55,7 +55,7 @@ There is no zero-charge guarantee. The enforcement boundaries are:
 
 ## Deployment (requires owner approval; nothing below has been run)
 
-Merging to `main` appears to deploy automatically: a new production version was created minutes after PR #18 merged. **Do not merge the implementation PR until steps 1–4 are done.** As a tripwire, `wrangler.jsonc` contains the placeholder `database_id` `REPLACE_WITH_APPROVED_D1_DATABASE_ID`. A deploy with the placeholder should fail at upload, leaving the current production version running. This was not tested, because testing it would require a deploy.
+Done on 2026-10-29 with owner approval: `sportscal-cache` D1 created (`a163daa9-6dd9-48a0-86af-d7fbbc65289c`, WNAM), migration `0001_cache.sql` applied, and the zone rate-limiting rule added (50 requests / 10 s per IP on `/api/` and `/calendar/`, block 10 s; Free zone plan limits). Merging to `main` deploys automatically. The steps below are kept for rebuilding or auditing.
 
 1. In the dashboard, confirm the account is on Workers Paid (Workers & Pages → Plans). The available API token could not read subscriptions. Optionally add billing notifications; they are informational only.
 2. Create the database. This creates a production resource:

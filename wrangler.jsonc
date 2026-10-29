@@ -26,14 +26,12 @@
     "head_sampling_rate": 0.1
   },
   // Shared normalized-data cache, upstream budget, and public admission
-  // control (db/cache/0001_cache.sql). The placeholder ID is deliberate: a
-  // deploy fails until the database is created and approved, rather than
-  // shipping a Worker that fails closed (503) for all public data.
+  // control (db/cache/0001_cache.sql).
   "d1_databases": [
     {
       "binding": "SPORTSCAL_CACHE",
       "database_name": "sportscal-cache",
-      "database_id": "REPLACE_WITH_APPROVED_D1_DATABASE_ID",
+      "database_id": "a163daa9-6dd9-48a0-86af-d7fbbc65289c",
       "migrations_dir": "db/cache"
     }
   ],
