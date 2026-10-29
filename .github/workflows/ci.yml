@@ -17,4 +17,7 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test
-      - run: pnpm build
+      # OpenNext + Wrangler dry-run bundle: the exact artifact Workers runs.
+      - run: pnpm build:worker
+      # Runtime tests under workerd: local D1 and stubbed ESPN only.
+      - run: pnpm test:workerd

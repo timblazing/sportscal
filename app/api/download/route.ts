@@ -1,3 +1,4 @@
+import { protectPublic } from "@/lib/cache/abuse";
 import { buildFeed } from "@/lib/calendar/feed";
 import { CACHE, errorResponse, readJson } from "@/lib/http";
 import { calendarConfigSchema } from "@/lib/validation/calendar-config";
@@ -8,6 +9,7 @@ const bodySchema = z.object({ config: calendarConfigSchema });
 /** Snapshot download of the current builder configuration. Nothing is stored. */
 export async function POST(request: Request) {
   try {
+    await protectPublic(request, "download");
     const { config } = bodySchema.parse(await readJson(request));
     const feed = await buildFeed(config, config.teamId);
     return new Response(feed.ics, {

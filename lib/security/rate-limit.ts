@@ -16,8 +16,8 @@ function config() {
   const max = Number(process.env.RATE_LIMIT_MAX ?? 20);
   const windowSeconds = Number(process.env.RATE_LIMIT_WINDOW_SECONDS ?? 3600);
   return {
-    max: Number.isFinite(max) && max > 0 ? max : 20,
-    windowSeconds: Number.isFinite(windowSeconds) && windowSeconds > 0 ? windowSeconds : 3600,
+    max: Number.isFinite(max) && max > 0 ? Math.min(1000, Math.floor(max)) : 20,
+    windowSeconds: Number.isFinite(windowSeconds) && windowSeconds >= 1 ? Math.min(86400, Math.floor(windowSeconds)) : 3600,
   };
 }
 
@@ -32,7 +32,11 @@ export function clientIp(headers: Headers): string {
 /** IPs are hashed before storage so no raw addresses are persisted. */
 function bucketKey(action: string, ip: string): string {
   const salt = process.env.RATE_LIMIT_SALT ?? "sportscal";
-  return `${action}:${createHash("sha256").update(`${salt}:${ip}`).digest("hex").slice(0, 40)}`;
+  if (!["create", "read", "update", "delete"].includes(action)) throw new Error("Unknown rate-limit action");
+  // Deliberate bucket collisions can only make the limit more conservative.
+  // Fixed keys cap new storage at 4 * 2048 rows even with rotating addresses.
+  const hash = createHash("sha256").update(`${salt}:${ip}`).digest();
+  return `${action}:v2:${hash.readUInt16BE(0) % 2048}`;
 }
 
 /**
@@ -43,6 +47,13 @@ export async function checkRateLimit(action: string, headers: Headers): Promise<
   const { max, windowSeconds } = config();
   const key = bucketKey(action, clientIp(headers));
   const db = getDb();
+  // Incremental cleanup also retires the previous unbounded per-IP keys.
+  // At most 32 rows are deleted per management request; no cron is required.
+  await db.execute(sql`delete from ${rateLimits} where ${rateLimits.key} in (
+    select ${rateLimits.key} from ${rateLimits}
+    where ${rateLimits.windowStart} < now() - interval '1 day'
+    limit 32
+  )`);
   const interval = sql.raw(`interval '${Math.floor(windowSeconds)} seconds'`);
   const [row] = await db
     .insert(rateLimits)

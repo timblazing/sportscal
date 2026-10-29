@@ -1,8 +1,8 @@
-import { unstable_cache } from "next/cache";
+import { sharedSnapshot, withUpstreamBatch } from "@/lib/cache/shared";
 
 import { LEAGUES, type LeagueConfig, type LeagueKey } from "@/lib/config/leagues";
 import type { ResolvedSeason, SportsCalGame } from "@/lib/types";
-import { REVALIDATE, buildEspnUrl, espnFetchJson } from "@/lib/espn/client";
+import { REVALIDATE, buildEspnUrl, espnFetchJson, EspnNotFoundError } from "@/lib/espn/client";
 import { normalizeGame } from "@/lib/espn/normalize";
 import { espnEventSchema, espnScheduleResponseSchema } from "@/lib/espn/schemas";
 
@@ -79,70 +79,46 @@ export function compareGames(a: SportsCalGame, b: SportsCalGame): number {
 // ESPN data access
 // ---------------------------------------------------------------------------
 
-// Store only normalized games, never multi-megabyte ESPN responses. Failed
-// refreshes throw through Next's cache; fallback is outside the cached loader
-// so transient failures cannot replace a successful cache entry with stale data.
-const lastGoodSchedules = new Map<string, SportsCalGame[]>();
-const LAST_GOOD_SCHEDULES_MAX = 100;
-
-export async function fetchTeamGames(
+export async function fetchTeamGamesSnapshot(
   leagueKey: LeagueKey,
   teamId: string,
   season: ResolvedSeason,
-): Promise<SportsCalGame[]> {
+) {
   const league = LEAGUES[leagueKey];
   const revalidate =
     season.status === "completed" ? REVALIDATE.offseasonSchedule : REVALIDATE.activeSchedule;
-  const keyParts = ["espn-normalized-schedule-v1", leagueKey, teamId,
-    String(season.espnSeason), season.status, season.displayName];
-  const key = JSON.stringify(keyParts);
+  const key = `schedule:${leagueKey}:${teamId}:${season.espnSeason}:${season.status}`;
   const fetchAndBuild = async () => {
     const queries = (league.scheduleQueries ?? league.scheduleSeasonTypes.map((seasontype) => ({ seasontype })))
       .filter((query) => season.status !== "completed" || !("fixture" in query && query.fixture === true));
-    const requests = queries.map((query) => espnFetchJson(
+    // Two upstream calls at a time even for MLS's 32 result/fixture queries.
+    // Only an explicit unpublished optional round (404) is safe to omit.
+    // Timeout/429/503/malformed optional data must retain the complete snapshot.
+    const responses: unknown[] = [];
+    await withUpstreamBatch(queries.length, async () => {
+    for (let i = 0; i < queries.length; i += 2) {
+      const batch = queries.slice(i, i + 2);
+      const results = await Promise.allSettled(batch.map((query) => espnFetchJson(
         buildEspnUrl("site", league, ["teams", teamId, "schedule"], {
-          season: season.espnSeason,
-          ...query,
-        }),
-        { revalidate, cache: "none" },
-      ));
-    let responses: unknown[];
-    // MLS has many optional playoff schedule requests. Keep regular results and
-    // fixtures required while allowing an unpublished playoff round to be empty.
-    if (league.scheduleQueries && league.scheduleQueries.length > 2) {
-      const results = await Promise.allSettled(requests);
-      responses = [];
+          season: season.espnSeason, ...query,
+        }), { revalidate, cache: "none" },
+      )));
       results.forEach((result, index) => {
         if (result.status === "fulfilled") responses.push(result.value);
-        else if (queries[index].seasontype === league.regularSeasonTypeId) throw result.reason;
+        else if (!(result.reason instanceof EspnNotFoundError) ||
+          batch[index].seasontype === league.regularSeasonTypeId) throw result.reason;
       });
-    } else {
-      responses = await Promise.all(requests);
     }
+    });
     // Distinguish malformed upstream responses from genuinely empty schedules.
     for (const response of responses) espnScheduleResponseSchema.parse(response);
     return buildGames(responses, { league, teamId, season });
   };
-  // Keep other leagues' fixture-driven tests isolated from Next's persistent cache;
-  // MLB's cache contract has dedicated tests below this adapter.
-  const bypassPersistentCache = process.env.NODE_ENV === "test" && leagueKey !== "mlb";
-  const cached = bypassPersistentCache
-    ? fetchAndBuild
-    : unstable_cache(fetchAndBuild, keyParts, { revalidate, tags: [`schedule:${leagueKey}:${teamId}`] });
+  return sharedSnapshot(key, revalidate, fetchAndBuild);
+}
 
-  try {
-    const games = await cached();
-    if (!bypassPersistentCache) {
-      lastGoodSchedules.delete(key);
-      lastGoodSchedules.set(key, games);
-      if (lastGoodSchedules.size > LAST_GOOD_SCHEDULES_MAX) {
-        lastGoodSchedules.delete(lastGoodSchedules.keys().next().value!);
-      }
-    }
-    return games;
-  } catch (error) {
-    const fallback = bypassPersistentCache ? undefined : lastGoodSchedules.get(key);
-    if (fallback) return fallback;
-    throw error;
-  }
+export async function fetchTeamGames(
+  leagueKey: LeagueKey, teamId: string, season: ResolvedSeason,
+): Promise<SportsCalGame[]> {
+  return (await fetchTeamGamesSnapshot(leagueKey, teamId, season)).value;
 }

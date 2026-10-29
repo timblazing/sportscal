@@ -1,3 +1,4 @@
+import { sharedLoad } from "@/lib/cache/shared";
 import type { LeagueConfig } from "@/lib/config/leagues";
 import type { ResolvedSeason, SeasonStatus } from "@/lib/types";
 import { REVALIDATE, buildEspnUrl, espnFetchJson } from "@/lib/espn/client";
@@ -92,8 +93,10 @@ export function probeDate(known: SeasonMeta, year: number): Date {
 /** The season ESPN's scoreboard reports for a date, or for today without one. */
 async function fetchScoreboardSeason(league: LeagueConfig, date?: Date): Promise<ScoreboardSeason> {
   const url = buildEspnUrl("site", league, ["scoreboard"], { dates: date ? espnDate(date) : undefined });
-  const data = await espnFetchJson(url, { revalidate: REVALIDATE.seasons });
-  return normalizeScoreboardSeason(espnScoreboardSchema.parse(data), league);
+  return sharedLoad(`season:${league.key}:${date ? espnDate(date) : "current"}`, REVALIDATE.seasons, async () => {
+    const data = await espnFetchJson(url, { revalidate: REVALIDATE.seasons });
+    return normalizeScoreboardSeason(espnScoreboardSchema.parse(data), league);
+  });
 }
 
 export async function fetchCurrentSeason(league: LeagueConfig): Promise<SeasonMeta> {

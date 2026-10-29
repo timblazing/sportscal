@@ -83,7 +83,7 @@ describe("MLS catalog and configuration", () => {
   it("resolves saved-calendar team ids when absent from the current catalog", async () => {
     const rawTeam = parseTeamsResponse(fixture("teams-mls.json")).find((t) => t.id === "22529")!;
     vi.spyOn(client, "espnFetchJson").mockImplementation(async (url) => url.endsWith("/teams/22529") ? { team: rawTeam } : url.includes("standings") ? { children: [] } : { sports: [{ leagues: [{ teams: [] }] }] });
-    expect(await findTeam("mls", "22529")).toMatchObject({ id: "22529", slug: "san-diego-fc" });
+    expect(await findTeam("mls", "22529", true)).toMatchObject({ id: "22529", slug: "san-diego-fc" });
   });
 });
 
@@ -138,10 +138,10 @@ describe("MLS complete schedules and feeds", () => {
 });
 
 describe("MLS schedule request failure boundaries", () => {
-  it("tolerates optional playoff failures but loads both required regular responses", async () => {
+  it("tolerates unpublished optional playoff rounds but loads both required regular responses", async () => {
     const fetch = vi.spyOn(client, "espnFetchJson").mockImplementation(async (url) => {
       const params = new URL(url).searchParams;
-      if (params.get("seasontype") !== "1") throw new client.EspnError("optional outage");
+      if (params.get("seasontype") !== "1") throw new client.EspnNotFoundError(url);
       return fixture(params.get("fixture") === "true" ? regularFiles[1] : regularFiles[0]);
     });
     expect(await fetchTeamGames("mls", "22529", season)).toHaveLength(34);

@@ -1,5 +1,8 @@
 import type { NextRequest } from "next/server";
 
+import { protectPublic, PublicRateLimitError } from "@/lib/cache/abuse";
+import { publicResponse, validatedResponse } from "@/lib/cache/response";
+import { withDatabase } from "@/lib/db/client";
 import { buildFeed } from "@/lib/calendar/feed";
 import { isLeagueKey } from "@/lib/config/leagues";
 import { getCalendarRow, rowToConfig, touchCalendar } from "@/lib/db/calendars";
@@ -46,27 +49,41 @@ async function resolveConfig(
     if (!PUBLIC_ID_RE.test(publicId)) return text(404, "Calendar not found");
     const row = await getCalendarRow(publicId);
     if (!row || row.league !== league) return text(404, "Calendar not found");
-    touchCalendar(row).catch(() => undefined);
+    await touchCalendar(row);
     return { config: rowToConfig(row), uidScope: publicId };
   }
 
   return text(404, "Not found");
 }
 
-export async function GET(_request: NextRequest, ctx: RouteContext<"/calendar/[league]/[...path]">) {
+export async function GET(request: NextRequest, ctx: RouteContext<"/calendar/[league]/[...path]">) {
   const { league, path } = await ctx.params;
   try {
-    const resolved = await resolveConfig(league, path);
-    if (resolved instanceof Response) return resolved;
-    const feed = await buildFeed(resolved.config, resolved.uidScope);
-    return new Response(feed.ics, {
-      headers: {
-        "content-type": "text/calendar; charset=utf-8",
-        "content-disposition": `inline; filename="${feed.filename}"`,
-        "cache-control": CACHE.feed,
-      },
-    });
+    // Feeds accept no query customization. Reject before key construction.
+    if (new URL(request.url).search) return text(400, "Unexpected query parameters");
+    const saved = path.length === 2;
+    const generate = async () => {
+      await protectPublic(request, "feed");
+      const resolved = await resolveConfig(league, path);
+      if (resolved instanceof Response) return resolved;
+      const feed = await buildFeed(resolved.config, resolved.uidScope, { saved });
+      return new Response(feed.ics, {
+        headers: {
+          "content-type": "text/calendar; charset=utf-8",
+          "content-disposition": `inline; filename="${feed.filename}"`,
+          "cache-control": saved ? CACHE.none : CACHE.feed,
+        },
+      });
+    };
+    // All database access and access bookkeeping share a request-owned client.
+    // Custom feeds always re-read config, so edits/deletes cannot hit old ICS.
+    if (saved) return await withDatabase(async () => validatedResponse(request, await generate()));
+    if (!isLeagueKey(league) || path.length !== 1 || !/^[a-z0-9-]{1,100}\.ics$/.test(path[0])) {
+      return text(404, "Not found");
+    }
+    return await publicResponse(request, `feed/${league}/${path[0]}`, 900, generate);
   } catch (error) {
+    if (error instanceof PublicRateLimitError) return text(429, error.message, { "retry-after": "300" });
     if (error instanceof TeamNotFoundError) return text(404, "Unknown team");
     if (error instanceof SeasonNotFoundError) return text(404, error.message);
     if (error instanceof EspnError) {
@@ -75,7 +92,13 @@ export async function GET(_request: NextRequest, ctx: RouteContext<"/calendar/[l
         "retry-after": "300",
       });
     }
-    console.error(error);
-    return text(500, "Unable to generate calendar");
+    // No credentials, custom text, URLs, or exception payloads in logs.
+    if (Math.random() < 0.01) console.error(JSON.stringify({ event: "feed_unavailable" }));
+    return text(503, "Calendar temporarily unavailable", { "retry-after": "300" });
   }
+}
+
+export async function HEAD(request: NextRequest, ctx: RouteContext<"/calendar/[league]/[...path]">) {
+  const response = await GET(request, ctx);
+  return new Response(null, { status: response.status, headers: response.headers });
 }

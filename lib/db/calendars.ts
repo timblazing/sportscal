@@ -1,6 +1,6 @@
 import "server-only";
 
-import { eq, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 
 import { getDb } from "@/lib/db/client";
 import { calendarConfigs, type CalendarConfigRow, type NewCalendarConfigRow } from "@/lib/db/schema";
@@ -92,7 +92,10 @@ export async function touchCalendar(row: CalendarConfigRow): Promise<void> {
   await getDb()
     .update(calendarConfigs)
     .set({ lastAccessedAt: sql`now()` })
-    .where(eq(calendarConfigs.id, row.id));
+    .where(and(
+      eq(calendarConfigs.id, row.id),
+      sql`(${calendarConfigs.lastAccessedAt} is null or ${calendarConfigs.lastAccessedAt} < now() - interval '1 hour')`,
+    ));
 }
 
 export type AuthorizedResult<T> =
@@ -114,15 +117,17 @@ export async function updateCalendar(
   publicId: string,
   editToken: string,
   config: CalendarConfig,
+  authorizedRow?: CalendarConfigRow,
 ): Promise<AuthorizedResult<CalendarConfig>> {
-  const row = await getCalendarRow(publicId);
-  if (!row) return { ok: false, reason: "not_found" };
+  const row = authorizedRow ?? await getCalendarRow(publicId);
+  if (!row || row.publicId !== publicId) return { ok: false, reason: "not_found" };
   if (!verifyToken(editToken, row.editTokenHash)) return { ok: false, reason: "unauthorized" };
   const [updated] = await getDb()
     .update(calendarConfigs)
     .set({ ...configToColumns(config), updatedAt: sql`now()` })
     .where(eq(calendarConfigs.id, row.id))
     .returning();
+  if (!updated) return { ok: false, reason: "not_found" };
   return { ok: true, value: rowToConfig(updated) };
 }
 

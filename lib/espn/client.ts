@@ -1,4 +1,5 @@
 import "server-only";
+import { upstreamFetch, CacheUnavailableError } from "@/lib/cache/shared";
 
 import type { LeagueConfig } from "@/lib/config/leagues";
 
@@ -65,23 +66,6 @@ export function buildEspnUrl(
   return url.toString();
 }
 
-/**
- * Last successful response per URL, kept in memory so a transient ESPN outage
- * can still be served from the most recent good data on this instance. Next's
- * data cache is the primary cache; this is a small safety net.
- */
-const lastGood = new Map<string, unknown>();
-const LAST_GOOD_MAX = 500;
-
-function remember(url: string, data: unknown) {
-  if (lastGood.has(url)) lastGood.delete(url);
-  lastGood.set(url, data);
-  if (lastGood.size > LAST_GOOD_MAX) {
-    const oldest = lastGood.keys().next().value;
-    if (oldest !== undefined) lastGood.delete(oldest);
-  }
-}
-
 export interface EspnFetchOptions {
   revalidate: number;
   /** Skip both the raw fetch cache and the raw last-good memory map. */
@@ -89,29 +73,29 @@ export interface EspnFetchOptions {
   tags?: string[];
 }
 
-export async function espnFetchJson(url: string, options: EspnFetchOptions): Promise<unknown> {
+export async function espnFetchJson(url: string, _options: EspnFetchOptions): Promise<unknown> {
+  void _options; // Raw responses never persist; normalized snapshots own freshness.
   try {
-    const res = await fetch(url, {
+    const res = await upstreamFetch(url, {
       headers: { accept: "application/json" },
-      ...(options.cache === "none"
-        ? { cache: "no-store" as const }
-        : { next: { revalidate: options.revalidate, tags: options.tags } }),
+      cache: "no-store",
       signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
-    if (res.status === 404) throw new EspnNotFoundError(url);
-    if (!res.ok) throw new EspnError(`ESPN responded with ${res.status}`, res.status, url);
+    if (!res.ok) {
+      await res.body?.cancel();
+      if (res.status === 404) throw new EspnNotFoundError(url);
+      throw new EspnError(`ESPN responded with ${res.status}`, res.status, url);
+    }
     const data: unknown = await res.json();
     // The core API reports missing resources in the body with a 200/404 mix.
     if (isCoreError(data)) {
       if (data.error.code === 404) throw new EspnNotFoundError(url);
       throw new EspnError(data.error.message ?? "ESPN error", data.error.code, url);
     }
-    if (options.cache !== "none") remember(url, data);
     return data;
   } catch (error) {
+    if (error instanceof CacheUnavailableError) throw error;
     if (error instanceof EspnNotFoundError) throw error;
-    const cached = options.cache === "none" ? undefined : lastGood.get(url);
-    if (cached !== undefined) return cached;
     if (error instanceof EspnError) throw error;
     throw new EspnError(
       error instanceof Error ? `Unable to reach ESPN: ${error.message}` : "Unable to reach ESPN",

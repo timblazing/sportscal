@@ -1,3 +1,5 @@
+import { protectPublic } from "@/lib/cache/abuse";
+import { withDatabase } from "@/lib/db/client";
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 
@@ -23,25 +25,30 @@ const unauthorized = () =>
   jsonError(403, "unauthorized", "The edit token for this calendar is missing or incorrect.");
 
 /** Public, read-only view of a saved configuration (never includes the token hash). */
-export async function GET(_request: NextRequest, ctx: Ctx) {
+export async function GET(request: NextRequest, ctx: Ctx) {
   try {
-    const { publicId } = await ctx.params;
-    if (!PUBLIC_ID_RE.test(publicId)) return notFound();
-    const row = await getCalendarRow(publicId);
-    if (!row) return notFound();
-    const config = rowToConfig(row);
-    const feedPath = customFeedPath(config.league, config.teamSlug, publicId);
-    return NextResponse.json(
-      {
-        publicId,
-        config,
-        feedPath,
-        feedUrl: absoluteUrl(feedPath),
-        createdAt: row.createdAt,
-        updatedAt: row.updatedAt,
-      },
-      { headers: { "cache-control": "no-store" } },
-    );
+    await protectPublic(request, "management");
+    return await withDatabase(async () => {
+      const { publicId } = await ctx.params;
+      if (!PUBLIC_ID_RE.test(publicId)) return notFound();
+      const limit = await checkRateLimit("read", request.headers);
+      if (!limit.allowed) return jsonError(429, "rate_limited", "Too many requests. Try again later.", { "retry-after": String(limit.retryAfterSeconds) });
+      const row = await getCalendarRow(publicId);
+      if (!row) return notFound();
+      const config = rowToConfig(row);
+      const feedPath = customFeedPath(config.league, config.teamSlug, publicId);
+      return NextResponse.json(
+        {
+          publicId,
+          config,
+          feedPath,
+          feedUrl: absoluteUrl(feedPath),
+          createdAt: row.createdAt,
+          updatedAt: row.updatedAt,
+        },
+        { headers: { "cache-control": "no-store" } },
+      );
+    });
   } catch (error) {
     return errorResponse(error);
   }
@@ -49,31 +56,34 @@ export async function GET(_request: NextRequest, ctx: Ctx) {
 
 export async function PATCH(request: NextRequest, ctx: Ctx) {
   try {
-    const { publicId } = await ctx.params;
-    if (!PUBLIC_ID_RE.test(publicId)) return notFound();
-    const token = bearerToken(request);
-    if (!token) return unauthorized();
-    const limit = await checkRateLimit("update", request.headers);
-    if (!limit.allowed) {
-      return jsonError(429, "rate_limited", "Too many updates. Try again later.", {
-        "retry-after": String(limit.retryAfterSeconds),
-      });
-    }
-    // Authorize before looking at the body so unauthorized callers learn nothing.
-    const auth = await authorizeCalendar(publicId, token);
-    if (!auth.ok) return auth.reason === "not_found" ? notFound() : unauthorized();
-    const { config } = bodySchema.parse(await readJson(request));
-    if (config.league !== auth.value.league) {
-      return jsonError(400, "invalid_request", "A saved calendar's league can't be changed.");
-    }
-    const canonical = await canonicalizeConfig(config);
-    const result = await updateCalendar(publicId, token, canonical);
-    if (!result.ok) return result.reason === "not_found" ? notFound() : unauthorized();
-    const feedPath = customFeedPath(result.value.league, result.value.teamSlug, publicId);
-    return NextResponse.json(
-      { publicId, config: result.value, feedPath, feedUrl: absoluteUrl(feedPath) },
-      { headers: { "cache-control": "no-store" } },
-    );
+    await protectPublic(request, "management");
+    return await withDatabase(async () => {
+      const { publicId } = await ctx.params;
+      if (!PUBLIC_ID_RE.test(publicId)) return notFound();
+      const token = bearerToken(request);
+      if (!token) return unauthorized();
+      const limit = await checkRateLimit("update", request.headers);
+      if (!limit.allowed) {
+        return jsonError(429, "rate_limited", "Too many updates. Try again later.", {
+          "retry-after": String(limit.retryAfterSeconds),
+        });
+      }
+      // Authorize before looking at the body so unauthorized callers learn nothing.
+      const auth = await authorizeCalendar(publicId, token);
+      if (!auth.ok) return auth.reason === "not_found" ? notFound() : unauthorized();
+      const { config } = bodySchema.parse(await readJson(request));
+      if (config.league !== auth.value.league) {
+        return jsonError(400, "invalid_request", "A saved calendar's league can't be changed.");
+      }
+      const canonical = await canonicalizeConfig(config);
+      const result = await updateCalendar(publicId, token, canonical, auth.value);
+      if (!result.ok) return result.reason === "not_found" ? notFound() : unauthorized();
+      const feedPath = customFeedPath(result.value.league, result.value.teamSlug, publicId);
+      return NextResponse.json(
+        { publicId, config: result.value, feedPath, feedUrl: absoluteUrl(feedPath) },
+        { headers: { "cache-control": "no-store" } },
+      );
+    });
   } catch (error) {
     return errorResponse(error);
   }
@@ -81,13 +91,18 @@ export async function PATCH(request: NextRequest, ctx: Ctx) {
 
 export async function DELETE(request: NextRequest, ctx: Ctx) {
   try {
-    const { publicId } = await ctx.params;
-    if (!PUBLIC_ID_RE.test(publicId)) return notFound();
-    const token = bearerToken(request);
-    if (!token) return unauthorized();
-    const result = await deleteCalendar(publicId, token);
-    if (!result.ok) return result.reason === "not_found" ? notFound() : unauthorized();
-    return new Response(null, { status: 204 });
+    await protectPublic(request, "management");
+    return await withDatabase(async () => {
+      const { publicId } = await ctx.params;
+      if (!PUBLIC_ID_RE.test(publicId)) return notFound();
+      const token = bearerToken(request);
+      if (!token) return unauthorized();
+      const limit = await checkRateLimit("delete", request.headers);
+      if (!limit.allowed) return jsonError(429, "rate_limited", "Too many requests. Try again later.", { "retry-after": String(limit.retryAfterSeconds) });
+      const result = await deleteCalendar(publicId, token);
+      if (!result.ok) return result.reason === "not_found" ? notFound() : unauthorized();
+      return new Response(null, { status: 204, headers: { "cache-control": "no-store" } });
+    });
   } catch (error) {
     return errorResponse(error);
   }

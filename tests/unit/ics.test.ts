@@ -57,10 +57,14 @@ describe("ICS generation", () => {
     }
   });
 
-  it("is identical apart from DTSTAMP when regenerated (stable feed)", () => {
-    const again = generate(steelersGames(), config, "23", "Steelers 2026 Schedule");
-    const strip = (s: string) => s.replace(/^DTSTAMP:.*$/gm, "");
-    expect(strip(again)).toBe(strip(ics));
+  it("is byte-identical across polls without inventing modification times", () => {
+    const attributes = buildCalendarEvents(steelersGames(), config, "23");
+    const first = generateIcs(attributes, { calendarName: "Steelers 2026 Schedule" });
+    const again = generateIcs(attributes, { calendarName: "Steelers 2026 Schedule" });
+    expect(again).toBe(first);
+    expect(first).toContain("DTSTAMP:20260101T000000Z");
+    expect(first).not.toContain("LAST-MODIFIED:");
+    expect(first).not.toContain("SEQUENCE:");
   });
 });
 
