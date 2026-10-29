@@ -81,7 +81,7 @@ export async function GET(request: NextRequest, ctx: RouteContext<"/calendar/[le
     if (!isLeagueKey(league) || path.length !== 1 || !/^[a-z0-9-]{1,100}\.ics$/.test(path[0])) {
       return text(404, "Not found");
     }
-    return await publicResponse(request, `feed/${league}/${path[0]}`, 900, generate);
+    return await publicResponse(request, generate);
   } catch (error) {
     if (error instanceof PublicRateLimitError) return text(429, error.message, { "retry-after": "300" });
     if (error instanceof TeamNotFoundError) return text(404, "Unknown team");

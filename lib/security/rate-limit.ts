@@ -5,6 +5,7 @@ import { sql } from "drizzle-orm";
 
 import { getDb } from "@/lib/db/client";
 import { rateLimits } from "@/lib/db/schema";
+import { clientIp } from "@/lib/security/client-ip";
 
 export interface RateLimitResult {
   allowed: boolean;
@@ -19,14 +20,6 @@ function config() {
     max: Number.isFinite(max) && max > 0 ? Math.min(1000, Math.floor(max)) : 20,
     windowSeconds: Number.isFinite(windowSeconds) && windowSeconds >= 1 ? Math.min(86400, Math.floor(windowSeconds)) : 3600,
   };
-}
-
-/** Client IP from Cloudflare, falling back to standard proxy headers. */
-export function clientIp(headers: Headers): string {
-  const cloudflare = headers.get("cf-connecting-ip");
-  if (cloudflare) return cloudflare;
-  const forwarded = headers.get("x-forwarded-for")?.split(",")[0]?.trim();
-  return forwarded || headers.get("x-real-ip") || "unknown";
 }
 
 /** IPs are hashed before storage so no raw addresses are persisted. */

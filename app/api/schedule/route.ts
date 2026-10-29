@@ -16,7 +16,7 @@ const querySchema = z.object({
 export async function GET(request: NextRequest) {
   try {
     const query = querySchema.parse(Object.fromEntries(new URL(request.url).searchParams));
-    return await publicResponse(request, `schedule/${query.league}/${query.team.toLowerCase()}`, 300, async () => {
+    return await publicResponse(request, async () => {
       await protectPublic(request, "read");
       const schedule = await loadTeamSchedule(query.league, query.team, { seasonMode: "auto" });
       return NextResponse.json(

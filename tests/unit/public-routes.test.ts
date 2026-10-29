@@ -32,10 +32,10 @@ beforeEach(() => {
   vi.mocked(rowToConfig).mockReturnValue(defaultConfig("nfl", { id: "23", slug: "pittsburgh-steelers" }));
   vi.mocked(touchCalendar).mockResolvedValue(undefined);
 });
-afterEach(() => { vi.resetAllMocks(); vi.unstubAllGlobals(); });
+afterEach(() => { vi.resetAllMocks(); });
 
 describe("public route policy", () => {
-  it("rejects unknown queries before loading data or entering a public cache", async () => {
+  it("rejects unknown queries before loading data", async () => {
     expect((await teams(req("/api/teams?league=nfl&unknown=1"))).status).toBe(400);
     expect((await schedule(req("/api/schedule?league=nfl&team=23&unknown=1"))).status).toBe(400);
     expect((await feed(req("/calendar/nfl/pittsburgh-steelers.ics?unknown=1"), context(["pittsburgh-steelers.ics"]))).status).toBe(400);
@@ -64,8 +64,6 @@ describe("public route policy", () => {
   });
 
   it("re-reads saved config after edits/deletes, keeps it no-store, and never exposes token hashes", async () => {
-    const cache = { match: vi.fn(), put: vi.fn() };
-    vi.stubGlobal("caches", { default: cache });
     const request = req("/calendar/nfl/pittsburgh-steelers/abc123def456.ics");
     const first = await feed(request, context());
     const etag = first.headers.get("etag")!;
@@ -80,8 +78,6 @@ describe("public route policy", () => {
     vi.mocked(getCalendarRow).mockResolvedValue(undefined);
     const deleted = await feed(req("/calendar/nfl/pittsburgh-steelers/abc123def456.ics", { headers: { "if-none-match": etag } }), context());
     expect(deleted.status).toBe(404);
-    expect(cache.match).not.toHaveBeenCalled();
-    expect(cache.put).not.toHaveBeenCalled();
     expect(getCalendarRow).toHaveBeenCalledTimes(4);
     expect(touchCalendar).toHaveBeenCalledTimes(3);
   });

@@ -3,7 +3,7 @@ import "server-only";
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 
-import { CacheUnavailableError } from "@/lib/cache/coordinator";
+import { CacheUnavailableError } from "@/lib/cache/shared";
 import { PublicRateLimitError } from "@/lib/cache/abuse";
 
 import { EspnError } from "@/lib/espn/client";
