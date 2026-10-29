@@ -72,17 +72,9 @@ Feeds are generated on request from current schedule data, so there is nothing t
 
 ## Deployment
 
-SportsCal runs on Cloudflare Workers through [OpenNext](https://opennext.js.org/cloudflare). The Worker is connected to this repo with Workers Builds, so every push to `main` deploys.
+SportsCal runs on Vercel (Hobby plan). Every push to `main` deploys to production, and pull requests get preview deployments. Vercel runs `pnpm vercel-build`, which typechecks, lints and tests before `next build`, so a failing check leaves the current version live. Hosting details and limits are in [docs/hosting.md](docs/hosting.md).
 
-| Setting | Value |
-| --- | --- |
-| Build command | `pnpm opennextjs-cloudflare build` |
-| Deploy command | `pnpm opennextjs-cloudflare deploy` |
-| Worker name | `sportscal` (must match `wrangler.jsonc`) |
-
-`APP_URL` is set in `wrangler.jsonc`. Add the secrets under the Worker's **Settings → Variables and Secrets**. To deploy from your machine instead, run `pnpm deploy`; `pnpm preview` runs the production build locally in `workerd`.
-
-Downloads and default feeds work without a database. Saved calendars need PostgreSQL that the Worker can reach over the internet, such as Neon. Migrations don't run on deploy. Run `pnpm db:migrate` with `DATABASE_URL` set to the production database before shipping a schema change.
+Downloads and default feeds work without a database. Saved calendars need PostgreSQL, such as Neon. Migrations don't run on deploy. Run `pnpm db:migrate` with `DATABASE_URL` set to the production database before shipping a schema change.
 
 | Variable | Required | Description |
 | --- | --- | --- |
@@ -92,6 +84,7 @@ Downloads and default feeds work without a database. Saved calendars need Postgr
 | `RATE_LIMIT_MAX` | No | Saves per IP per window (default `20`) |
 | `RATE_LIMIT_WINDOW_SECONDS` | No | Rate limit window (default `3600`) |
 | `RATE_LIMIT_SALT` | No | Salt for hashed IPs |
+| `SPORTS_DATA_DISABLED` | No | Set to `1` to stop all ESPN requests |
 
 ## Development
 

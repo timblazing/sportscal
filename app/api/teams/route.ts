@@ -16,7 +16,7 @@ const querySchema = z.object({
 export async function GET(request: NextRequest) {
   try {
     const query = querySchema.parse(Object.fromEntries(new URL(request.url).searchParams));
-    return await publicResponse(request, `teams/${query.league}/${query.all === "1" ? "all" : "primary"}`, 3600, async () => {
+    return await publicResponse(request, async () => {
       await protectPublic(request, "read");
       const teams = await getTeams(query.league, { includeAll: query.all === "1" });
       return NextResponse.json({ teams }, { headers: { "cache-control": CACHE.teams } });

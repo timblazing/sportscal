@@ -46,8 +46,6 @@ next-env.d.ts
 /dist/
 /spec.md
 
-# cloudflare
-/.open-next/
-/.wrangler/
-.dev.vars*
-cloudflare-env.d.ts
+# vercel
+.vercel
+

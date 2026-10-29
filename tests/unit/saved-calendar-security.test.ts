@@ -13,7 +13,7 @@ vi.mock("@/lib/db/calendars", () => ({
 vi.mock("@/lib/security/rate-limit", () => ({ checkRateLimit: stubs.limit }));
 vi.mock("@/lib/calendar-service", () => ({ canonicalizeConfig: stubs.canonicalize }));
 import { PublicRateLimitError } from "@/lib/cache/abuse";
-import { CacheUnavailableError } from "@/lib/cache/coordinator";
+import { CacheUnavailableError } from "@/lib/cache/shared";
 import { POST } from "@/app/api/calendars/route";
 import { DELETE, GET, PATCH } from "@/app/api/calendars/[publicId]/route";
 
@@ -57,7 +57,7 @@ it("keeps successful DELETE responses out of caches", async () => {
 });
 
 
-it("fails closed on global admission denial or coordinator failure before PostgreSQL", async () => {
+it("fails closed on admission denial or data unavailability before PostgreSQL", async () => {
   for (const [error, status] of [[new PublicRateLimitError(), 429], [new CacheUnavailableError(), 503]] as const) {
     stubs.admission.mockRejectedValue(error);
     for (const method of ["POST", "GET", "PATCH", "DELETE"]) {
