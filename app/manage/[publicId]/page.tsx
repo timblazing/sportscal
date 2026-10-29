@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { ManageCalendar } from "@/components/subscription/manage-calendar";
 import { getCalendarRow, rowToConfig } from "@/lib/db/calendars";
+import { withDatabase } from "@/lib/db/client";
 import { findTeam } from "@/lib/espn/teams";
 import { PUBLIC_ID_RE } from "@/lib/security/tokens";
 import { customFeedPath } from "@/lib/utils/urls";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 export default async function ManagePage({ params }: PageProps<"/manage/[publicId]">) {
   const { publicId } = await params;
   if (!PUBLIC_ID_RE.test(publicId)) notFound();
-  const row = await getCalendarRow(publicId);
+  const row = await withDatabase(() => getCalendarRow(publicId));
   if (!row) notFound();
   const config = rowToConfig(row);
   const team = await findTeam(config.league, config.teamId).catch(() => undefined);
