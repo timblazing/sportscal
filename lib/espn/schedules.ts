@@ -4,7 +4,7 @@ import { LEAGUES, type LeagueConfig, type LeagueKey } from "@/lib/config/leagues
 import type { ResolvedSeason, SportsCalGame } from "@/lib/types";
 import { REVALIDATE, buildEspnUrl, espnFetchJson, EspnNotFoundError } from "@/lib/espn/client";
 import { normalizeGame } from "@/lib/espn/normalize";
-import { espnEventSchema, espnScheduleResponseSchema } from "@/lib/espn/schemas";
+import { espnEventSchema, espnScheduleResponseSchema, type EspnEvent } from "@/lib/espn/schemas";
 
 // ---------------------------------------------------------------------------
 // Pure builder (unit tested with fixtures)
@@ -24,28 +24,38 @@ export function buildGames(
 ): SportsCalGame[] {
   const byId = new Map<string, SportsCalGame>();
   for (const response of responses) {
-    const parsed = espnScheduleResponseSchema.safeParse(response);
-    if (!parsed.success) continue;
-    const requested = parsed.data.requestedSeason;
+    // Malformed payloads and events throw so a refresh fails and the cache keeps
+    // its last good snapshot. Only legitimate exclusions are skipped below.
+    const parsed = espnScheduleResponseSchema.parse(response);
+    const requested = parsed.requestedSeason;
     if (requested?.year !== undefined && requested.year !== context.season.espnSeason) continue;
 
-    for (const rawEvent of parsed.data.events) {
-      const event = espnEventSchema.safeParse(rawEvent);
-      if (!event.success) continue;
-      if (event.data.season?.year !== undefined && event.data.season.year !== context.season.espnSeason)
+    for (const rawEvent of parsed.events) {
+      const event = espnEventSchema.parse(rawEvent);
+      if (event.season?.year !== undefined && event.season.year !== context.season.espnSeason)
         continue;
-      const game = normalizeGame(event.data, {
+      const game = normalizeGame(event, {
         league: context.league,
         teamId: context.teamId,
         seasonYear: context.season.espnSeason,
         seasonDisplayName: requested?.displayName ?? context.season.displayName,
       });
       if (game) byId.set(game.id, game);
+      else if (!isOtherTeamsGame(event, context.teamId))
+        throw new Error(`Malformed ESPN event ${event.id}: missing competition or competitors`);
     }
   }
   const games = [...byId.values()].sort(compareGames);
   if (context.league.key === "mlb") markDoubleheaders(games);
   return games;
+}
+
+/** A well-formed event (home and away present) that doesn't involve the requested team. */
+function isOtherTeamsGame(event: EspnEvent, teamId: string): boolean {
+  const competitors = event.competitions[0]?.competitors ?? [];
+  const home = competitors.find((c) => c.homeAway === "home");
+  const away = competitors.find((c) => c.homeAway === "away");
+  return Boolean(home && away && home.team.id !== teamId && away.team.id !== teamId);
 }
 
 /** Only unambiguous, timed same-opponent pairs on the same Eastern date. */
@@ -110,8 +120,8 @@ export async function fetchTeamGamesSnapshot(
       });
     }
     });
-    // Distinguish malformed upstream responses from genuinely empty schedules.
-    for (const response of responses) espnScheduleResponseSchema.parse(response);
+    // buildGames throws on malformed payloads/events, so the refresh fails
+    // (retaining the previous snapshot) rather than publishing a partial one.
     return buildGames(responses, { league, teamId, season });
   };
   return sharedSnapshot(key, revalidate, fetchAndBuild);
