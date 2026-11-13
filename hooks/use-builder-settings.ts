@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 
 import type { BuilderSettings } from "@/lib/client/storage";
-import { LEAGUES, type LeagueKey } from "@/lib/config/leagues";
+import { isLeagueKey, LEAGUES, type LeagueKey } from "@/lib/config/leagues";
 import { defaultTemplates, type GameOverride } from "@/lib/validation/calendar-config";
 
 export function defaultSettings(league: LeagueKey): BuilderSettings {
@@ -18,12 +18,30 @@ export function defaultSettings(league: LeagueKey): BuilderSettings {
   };
 }
 
-/** Merge possibly-stale stored settings over defaults, ignoring malformed values. */
-export function mergeSettings(league: LeagueKey, stored?: Partial<BuilderSettings>): BuilderSettings {
+/**
+ * Merge possibly-stale stored settings over defaults, ignoring malformed values.
+ * `storedLeague` is the league the settings were saved under: templates still at
+ * that league's defaults are translated to `league`'s defaults, customized ones
+ * are kept. Without a valid stored league there is nothing to compare against,
+ * so templates fall back to `league`'s defaults.
+ */
+export function mergeSettings(
+  league: LeagueKey,
+  stored?: Partial<BuilderSettings>,
+  storedLeague?: unknown,
+): BuilderSettings {
   const base = defaultSettings(league);
   if (!stored || typeof stored !== "object") return base;
   const str = (v: unknown, fallback: string) => (typeof v === "string" ? v : fallback);
   const bool = (v: unknown, fallback: boolean) => (typeof v === "boolean" ? v : fallback);
+  const previousLeague = isLeagueKey(storedLeague) ? storedLeague : undefined;
+  const previous = defaultSettings(previousLeague ?? league).templates;
+  const storedTemplates = {
+    calendarName: str(stored.templates?.calendarName, previous.calendarName),
+    title: str(stored.templates?.title, previous.title),
+    description: str(stored.templates?.description, previous.description),
+    location: str(stored.templates?.location, previous.location),
+  };
   return {
     ...base,
     include: {
@@ -31,12 +49,7 @@ export function mergeSettings(league: LeagueKey, stored?: Partial<BuilderSetting
       regularSeason: bool(stored.include?.regularSeason, base.include.regularSeason),
       postseason: bool(stored.include?.postseason, base.include.postseason),
     },
-    templates: {
-      calendarName: str(stored.templates?.calendarName, base.templates.calendarName),
-      title: str(stored.templates?.title, base.templates.title),
-      description: str(stored.templates?.description, base.templates.description),
-      location: str(stored.templates?.location, base.templates.location),
-    },
+    templates: previousLeague ? templatesForLeagueChange(storedTemplates, previousLeague, league) : base.templates,
     busyStatus: stored.busyStatus === "busy" ? "busy" : "free",
     includeEspnUrl: bool(stored.includeEspnUrl, false),
   };

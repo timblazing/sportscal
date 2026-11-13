@@ -112,7 +112,7 @@ export function SportsCalendarBuilder({
     if (restored.current || saved) return;
     restored.current = true;
     const stored = loadBuilderState();
-    if (stored.settings) setSettings(mergeSettings(league, stored.settings));
+    if (stored.settings) setSettings(mergeSettings(league, stored.settings, stored.league));
   }, [saved, league, setSettings]);
 
   useEffect(() => {
