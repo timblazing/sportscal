@@ -24,22 +24,24 @@ export function buildGames(
 ): SportsCalGame[] {
   const byId = new Map<string, SportsCalGame>();
   for (const response of responses) {
-    const parsed = espnScheduleResponseSchema.safeParse(response);
-    if (!parsed.success) continue;
-    const requested = parsed.data.requestedSeason;
+    // Malformed payloads and events throw so a refresh fails and the cache keeps
+    // its last good snapshot. Only legitimate exclusions are skipped below.
+    const parsed = espnScheduleResponseSchema.parse(response);
+    const requested = parsed.requestedSeason;
     if (requested?.year !== undefined && requested.year !== context.season.espnSeason) continue;
 
-    for (const rawEvent of parsed.data.events) {
-      const event = espnEventSchema.safeParse(rawEvent);
-      if (!event.success) continue;
-      if (event.data.season?.year !== undefined && event.data.season.year !== context.season.espnSeason)
+    for (const rawEvent of parsed.events) {
+      const event = espnEventSchema.parse(rawEvent);
+      if (event.season?.year !== undefined && event.season.year !== context.season.espnSeason)
         continue;
-      const game = normalizeGame(event.data, {
+      const game = normalizeGame(event, {
         league: context.league,
         teamId: context.teamId,
         seasonYear: context.season.espnSeason,
         seasonDisplayName: requested?.displayName ?? context.season.displayName,
       });
+      // Events without a usable competition or a home/away pair (for example a
+      // bracket slot with no opponent yet) are skipped, as are other teams' games.
       if (game) byId.set(game.id, game);
     }
   }
@@ -47,6 +49,7 @@ export function buildGames(
   if (context.league.key === "mlb") markDoubleheaders(games);
   return games;
 }
+
 
 /** Only unambiguous, timed same-opponent pairs on the same Eastern date. */
 function markDoubleheaders(games: SportsCalGame[]) {
@@ -110,8 +113,8 @@ export async function fetchTeamGamesSnapshot(
       });
     }
     });
-    // Distinguish malformed upstream responses from genuinely empty schedules.
-    for (const response of responses) espnScheduleResponseSchema.parse(response);
+    // buildGames throws on malformed payloads/events, so the refresh fails
+    // (retaining the previous snapshot) rather than publishing a partial one.
     return buildGames(responses, { league, teamId, season });
   };
   return sharedSnapshot(key, revalidate, fetchAndBuild);

@@ -249,5 +249,6 @@ export const espnScheduleResponseSchema = z.looseObject({
       displayName: z.string().optional(),
     })
     .nullish(),
-  events: z.array(z.unknown()).default([]),
+  // Required: a missing `events` is a malformed payload, not an empty schedule.
+  events: z.array(z.unknown()),
 });
