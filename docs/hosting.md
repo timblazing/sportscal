@@ -48,6 +48,16 @@ Inside those limits, the app keeps one client or runaway misses from using them 
 - Each instance also limits CDN misses per client and in total
   (`lib/cache/abuse.ts`). Saved-calendar writes have a per-IP limit stored in
   Postgres (`lib/security/rate-limit.ts`).
+- The `/manage/[publicId]` page runs the same `management` admission check as
+  `/api/calendars/[publicId]` before it opens a database scope. A malformed ID
+  gets a 404 with no admission and no database work. A denied request renders a
+  "Too many requests" page with no database work. Viewing stays public and
+  needs no edit token. The page is dynamic, so each request is checked and
+  never served from a cache.
+- All of these in-memory limits are per function instance, not a global quota:
+  they reset on a cold start and are not shared between instances. They bound
+  what one client can do to one instance. Hobby's plan limits remain the
+  overall ceiling.
 - Client IPs come from `x-forwarded-for`, which Vercel overwrites.
   `cf-connecting-ip` is ignored because any client can set it here.
 

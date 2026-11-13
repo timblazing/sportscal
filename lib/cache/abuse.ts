@@ -38,7 +38,7 @@ function reserve(key: string, window: number, limit: number, now: number): boole
  * addresses rotate. Vercel's plan limits are the billing boundary
  * (docs/hosting.md); this keeps one client from using them up.
  */
-export async function protectPublic(request: Request, kind: Kind): Promise<void> {
+export async function protectPublic(request: Pick<Request, "headers">, kind: Kind): Promise<void> {
   const now = Date.now();
   const policy = POLICY[kind];
   const hash = createHash("sha256").update(`${process.env.RATE_LIMIT_SALT ?? "sportscal"}:${clientIp(request.headers)}`).digest();
