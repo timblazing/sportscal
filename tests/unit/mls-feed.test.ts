@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { NextRequest } from "next/server";
 
 vi.mock("@/lib/db/calendars", () => ({ getCalendarRow: vi.fn(), rowToConfig: vi.fn(), touchCalendar: vi.fn().mockResolvedValue(undefined) }));
@@ -33,7 +33,17 @@ function mockEspn({ missingTeam = false, regularFailure = false, optionalFailure
   });
 }
 
-afterEach(() => vi.restoreAllMocks());
+// The route resolves the MLS season from the current date. Pin it inside the
+// 2026 fixture season so the test doesn't start failing once that season ends.
+beforeEach(() => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  vi.setSystemTime(new Date("2026-10-02T12:00:00Z"));
+});
+
+afterEach(() => {
+  vi.useRealTimers();
+  vi.restoreAllMocks();
+});
 
 describe("MLS public feed integration", () => {
   it("serves all 34 canonical events when optional playoff rounds are unpublished", async () => {
