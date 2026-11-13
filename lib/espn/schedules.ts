@@ -4,7 +4,7 @@ import { LEAGUES, type LeagueConfig, type LeagueKey } from "@/lib/config/leagues
 import type { ResolvedSeason, SportsCalGame } from "@/lib/types";
 import { REVALIDATE, buildEspnUrl, espnFetchJson, EspnNotFoundError } from "@/lib/espn/client";
 import { normalizeGame } from "@/lib/espn/normalize";
-import { espnEventSchema, espnScheduleResponseSchema, type EspnEvent } from "@/lib/espn/schemas";
+import { espnEventSchema, espnScheduleResponseSchema } from "@/lib/espn/schemas";
 
 // ---------------------------------------------------------------------------
 // Pure builder (unit tested with fixtures)
@@ -40,9 +40,9 @@ export function buildGames(
         seasonYear: context.season.espnSeason,
         seasonDisplayName: requested?.displayName ?? context.season.displayName,
       });
+      // Events without a usable competition or a home/away pair (for example a
+      // bracket slot with no opponent yet) are skipped, as are other teams' games.
       if (game) byId.set(game.id, game);
-      else if (!isOtherTeamsGame(event, context.teamId))
-        throw new Error(`Malformed ESPN event ${event.id}: missing competition or competitors`);
     }
   }
   const games = [...byId.values()].sort(compareGames);
@@ -50,13 +50,6 @@ export function buildGames(
   return games;
 }
 
-/** A well-formed event (home and away present) that doesn't involve the requested team. */
-function isOtherTeamsGame(event: EspnEvent, teamId: string): boolean {
-  const competitors = event.competitions[0]?.competitors ?? [];
-  const home = competitors.find((c) => c.homeAway === "home");
-  const away = competitors.find((c) => c.homeAway === "away");
-  return Boolean(home && away && home.team.id !== teamId && away.team.id !== teamId);
-}
 
 /** Only unambiguous, timed same-opponent pairs on the same Eastern date. */
 function markDoubleheaders(games: SportsCalGame[]) {

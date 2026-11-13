@@ -28,10 +28,11 @@ deployment), then revert the bad commit on `main`.
 - Normalized ESPN data (team catalogs, seasons, schedules) lives in Next's data
   cache (`unstable_cache` in `lib/cache/shared.ts`), shared by every function
   instance. A failed refresh keeps serving the previous entry. A schedule
-  response with a missing or invalid `events` field, or an event that can't be
-  normalized for the requested team, fails the refresh instead of publishing a
-  partial schedule; `events: []` is a valid empty schedule, and events from
-  another season or for another team are skipped.
+  response with a missing or invalid `events` field, or an event that fails its
+  schema, fails the refresh instead of publishing a partial schedule;
+  `events: []` is a valid empty schedule, and events from another season, for
+  another team, or without both a home and an away slot (an unfilled bracket
+  game) are skipped.
 - Saved custom feeds are `no-store` and re-read their config on every request,
   so edits and deletes take effect immediately. They still send an ETag, so
   calendar apps get a bodyless 304 when nothing changed.

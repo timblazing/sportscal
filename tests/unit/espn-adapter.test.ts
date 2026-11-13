@@ -89,10 +89,14 @@ describe("optional fields", () => {
 
     it("rejects a schedule containing a malformed event instead of publishing a partial one", () => {
       expect(() => buildGames([{ events: [goodEvent(), { nope: true }] }], context)).toThrow();
-      expect(() => buildGames([{ events: [{ id: "1", competitions: [] }] }], context)).toThrow();
-      const noHome = goodEvent() as { competitions: { competitors: { homeAway: string }[] }[] };
+    });
+
+    it("skips events with no competition or a missing home/away slot, like unfilled bracket games", () => {
+      expect(buildGames([{ events: [goodEvent(), { id: "1", competitions: [] }] }], context)).toHaveLength(1);
+      const noHome = goodEvent() as { id: string; competitions: { competitors: { homeAway: string }[] }[] };
+      noHome.id = "one-sided";
       noHome.competitions[0].competitors = noHome.competitions[0].competitors.filter((c) => c.homeAway !== "home");
-      expect(() => buildGames([{ events: [noHome] }], context)).toThrow();
+      expect(buildGames([{ events: [noHome] }], context)).toEqual([]);
     });
 
     it("still excludes another season's events and games of unrelated teams", () => {
@@ -387,9 +391,9 @@ describe("NCAAB D-I catalogs and schedules", () => {
     });
     expect(game.awayTeam).toMatchObject({ id: "-1", displayName: "TBD" });
     event.competitions[0].competitors = event.competitions[0].competitors.filter((c) => c.homeAway === "home");
-    // An event for the requested team with no opponent slot at all is malformed, not a placeholder.
-    expect(() => buildGames([{ events: [event] }], {
+    // A bracket slot with no opponent yet is skipped rather than failing the schedule.
+    expect(buildGames([{ events: [event] }], {
       league: LEAGUES.ncaab, teamId: "150", season: { espnSeason: 2027, displayName: "2026-27" },
-    })).toThrow(/Malformed ESPN event/);
+    })).toEqual([]);
   });
 });
