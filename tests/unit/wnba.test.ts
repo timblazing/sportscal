@@ -5,7 +5,7 @@ import { GET as getFeed } from "@/app/calendar/[league]/[...path]/route";
 import { POST as download } from "@/app/api/download/route";
 import { getCalendarRow } from "@/lib/db/calendars";
 import type { CalendarConfigRow } from "@/lib/db/schema";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { buildCalendarEvents } from "@/lib/calendar/events";
 import { buildFeed } from "@/lib/calendar/feed";
@@ -30,7 +30,17 @@ const games = gamesFromFixtures("wnba", "20", { espnSeason: 2026, displayName: "
 const config = defaultConfig("wnba", { id: "20", slug: "atlanta-dream" });
 const season = normalizeSeason(espnSeasonSchema.parse(fixture("season-wnba-2026.json")), LEAGUES.wnba);
 
-afterEach(() => vi.unstubAllGlobals());
+// The fixtures are a 2026 snapshot, so pin the clock inside that season. Without
+// this the feed resolves the season against the real date and, once 2026 ends,
+// probes 2027 on the scoreboard endpoint, which the mocks don't serve.
+beforeEach(() => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  vi.setSystemTime(new Date("2026-10-02T12:00:00Z"));
+});
+afterEach(() => {
+  vi.useRealTimers();
+  vi.unstubAllGlobals();
+});
 
 describe("WNBA catalog and schedules", () => {
   it("uses standings to show all 15 teams across two conferences", () => {
@@ -97,6 +107,41 @@ describe("WNBA season resolution", () => {
     vi.stubGlobal("fetch", fetch);
     expect(await resolveLeagueSeason(LEAGUES.wnba, new Date("2026-10-02T12:00Z"))).toMatchObject({ espnSeason: 2026, displayName: "2026", status: "active" });
     expect(await resolveLeagueSeason(LEAGUES.wnba, new Date("2026-11-02T12:00Z"))).toMatchObject({ status: "completed", pendingNextSeason: { espnSeason: 2027 } });
+  });
+
+  it("rolls over to the next season once ESPN publishes it", async () => {
+    // Same shape as the 2026 scoreboard, shifted a year, with a published calendar.
+    const published = {
+      leagues: [{
+        id: "59", name: "Women's National Basketball Association", abbreviation: "WNBA",
+        season: {
+          year: 2027, startDate: "2027-04-02T07:00Z", endDate: "2027-11-01T06:59Z", displayName: "2027",
+          type: { id: "1", type: 1, name: "Preseason", abbreviation: "pre" },
+        },
+        calendarType: "list",
+        calendar: [
+          { label: "Preseason", value: "1", startDate: "2027-04-02T07:00Z", endDate: "2027-05-08T06:59Z", entries: [{}] },
+          { label: "Regular Season", value: "2", startDate: "2027-05-08T07:00Z", endDate: "2027-09-20T06:59Z", entries: [{}] },
+          { label: "Postseason", value: "3", startDate: "2027-09-20T07:00Z", endDate: "2027-10-31T06:59Z", entries: [{}] },
+        ],
+      }],
+    };
+    const fetch = vi.fn(async (input: string | URL | Request) => {
+      const url = String(input);
+      if (url.endsWith("/scoreboard")) return Response.json(fixture("scoreboard-wnba.json"));
+      if (url.endsWith("/scoreboard?dates=20270718")) return Response.json(published);
+      throw new Error(`Unexpected ESPN request: ${url}`);
+    });
+    vi.stubGlobal("fetch", fetch);
+    // While 2026 is still running, the next season is never probed.
+    expect(await resolveLeagueSeason(LEAGUES.wnba, new Date("2026-10-02T12:00Z"))).toMatchObject({ espnSeason: 2026, status: "active" });
+    expect(fetch).not.toHaveBeenCalledWith(expect.stringContaining("dates="), expect.anything());
+    // After it ends, the published 2027 season takes over; it hasn't started yet.
+    const rolled = await resolveLeagueSeason(LEAGUES.wnba, new Date("2026-11-02T12:00Z"));
+    expect(rolled).toEqual({ espnSeason: 2027, displayName: "2027", status: "upcoming" });
+    expect(rolled.pendingNextSeason).toBeUndefined();
+    // Once 2027 begins it is the active season.
+    expect(await resolveLeagueSeason(LEAGUES.wnba, new Date("2027-06-01T12:00Z"))).toMatchObject({ espnSeason: 2027, status: "active" });
   });
 });
 
