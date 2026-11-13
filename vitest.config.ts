@@ -13,6 +13,7 @@ export default defineConfig({
     environment: "node",
     include: ["tests/unit/**/*.test.ts", ...(process.env.LIVE_ESPN ? ["tests/live/**/*.test.ts"] : [])],
     // Pin the process time zone so date assertions don't depend on the machine.
-    env: { TZ: "UTC" },
+    // NODE_ENV: Vercel runs the tests with NODE_ENV=production, where React has no act().
+    env: { TZ: "UTC", NODE_ENV: "test" },
   },
 });
