@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   devIndicators: false,
+  // Keep `next dev` from writing its managed block into AGENTS.md when it detects a coding agent.
+  agentRules: false,
   images: {
     // Team logos are optional decorative data from ESPN's CDN.
     remotePatterns: [{ protocol: "https", hostname: "a.espncdn.com" }],
